@@ -1,0 +1,98 @@
+'use client';
+
+import Image from 'next/image';
+
+export default function AboutSection() {
+  return (
+    <section className="py-26 px-4 sm:px-6 lg:px-8 ">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+          {/* Text left with white background */}
+          <div className="relative bg-white rounded-3xl p-10 md:p-14 shadow-2xl overflow-hidden">
+            {/* Decorative image element */}
+            <div className="absolute top-0 right-0 w-full h-full ">
+              <Image
+                src="/images/decorative.webp"
+                alt="Decorative"
+                fill
+                className="object-cover opacity-40"
+              />
+            </div>
+            
+            <div className="relative z-10 space-y-7">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 bg-blue-50 px-5 py-2.5 rounded-full">
+                <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                <span className="text-sm font-semibold text-blue-700">About Us</span>
+              </div>
+
+              {/* Title */}
+              <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-[1.15] text-gray-900 tracking-tight">
+                Bringing Freshness, Comfort, and Care to Every Home
+              </h2>
+
+              {/* Description */}
+              <p className="text-gray-600 leading-relaxed text-[15px] md:text-base">
+                At HomyClean, we go beyond surface cleaning — we bring life back to your space. Our dedicated team combines expert care, eco-friendly solutions, and attention to detail to ensure every home feels fresh.
+              </p>
+
+              {/* Features with checkmarks */}
+              <div className="space-y-4 pt-2">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
+                    <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-800 font-medium text-[15px]">Professional & Trusted Team</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
+                    <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-800 font-medium text-[15px]">Eco-Friendly Cleaning Products</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
+                    <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-800 font-medium text-[15px]">Satisfaction Guaranteed</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
+                    <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-800 font-medium text-[15px]">Flexible Tariff Plans</span>
+                </div>
+              </div>
+
+              {/* Button */}
+              <button className="px-9 py-4 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] hover:scale-105 text-[15px]">
+                Learn More
+              </button>
+            </div>
+          </div>
+
+          {/* Image right - same height as left block */}
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl min-h-[600px]">
+            <Image
+              src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?q=80&w=1200&auto=format&fit=crop"
+              alt="Professional Cleaning Service"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
