@@ -144,24 +144,12 @@ export default function RegularCleaningService() {
               
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <div className="relative h-[500px] md:h-[600px]">
-                  <div className="absolute inset-0 grid grid-cols-2">
-                    <div className="relative">
-                      <Image
-                        src="/images/cleaning/general1.jpg"
-                        alt="Before Cleaning"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="relative">
-                      <Image
-                        src="/images/cleaning/general2.jpg"
-                        alt="After Cleaning"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  </div>
+                  <Image
+                    src="/images/room_cleaning.png"
+                    alt="Cleaning Process"
+                    fill
+                    className="object-cover"
+                  />
                   
                   <div className="absolute top-8 left-8 bg-white/95 backdrop-blur-sm px-6 py-3 rounded-2xl shadow-lg">
                     <h3 className="text-2xl font-bold text-gray-900">{t('sofa.before')}</h3>
@@ -197,7 +185,7 @@ export default function RegularCleaningService() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-[1400px] mx-auto">
           <div className="relative bg-white rounded-3xl p-8 md:p-12 shadow-2xl mb-12 overflow-hidden">
-            <div className="absolute top-0 right-0 w-full h-full opacity-5">
+            <div className="absolute top-0 right-0 w-full h-full opacity-45">
               <Image
                 src="/images/decorative2.webp"
                 alt="Decorative"
@@ -306,7 +294,7 @@ export default function RegularCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop"
+                    src="/images/cleaning/legka.jpg"
                     alt="Light Cleaning"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -326,7 +314,7 @@ export default function RegularCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1563453392212-326f5e854473?q=80&w=800&auto=format&fit=crop"
+                    src="/images/cleaning/vyvoz.webp"
                     alt="Trash Removal"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -347,7 +335,7 @@ export default function RegularCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1585421514738-01798e348b17?q=80&w=800&auto=format&fit=crop"
+                    src="/images/cleaning/ochistka.jpg"
                     alt="Surface Cleaning"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -368,7 +356,7 @@ export default function RegularCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop"
+                    src="/images/cleaning/podmet.jpg"
                     alt="Floor Cleaning"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -389,7 +377,7 @@ export default function RegularCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=800&auto=format&fit=crop"
+                    src="/images/cleaning/regular.webp"
                     alt="Vacuuming"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -410,7 +398,7 @@ export default function RegularCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop"
+                    src="/images/cleaning/vanna.jpg"
                     alt="Bathroom Cleaning"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -433,7 +421,7 @@ export default function RegularCleaningService() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-[1400px] mx-auto">
           <div className="relative bg-white rounded-3xl p-8 md:p-12 shadow-2xl mb-12 overflow-hidden">
-            <div className="absolute top-0 right-0 w-full h-full opacity-5">
+            <div className="absolute top-0 right-0 w-full h-full opacity-45">
               <Image
                 src="/images/decorative2.webp"
                 alt="Decorative"
@@ -455,7 +443,7 @@ export default function RegularCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=800&auto=format&fit=crop"
+                    src="/images/cleaning/tchatelna.jpeg"
                     alt="Kitchen Cleaning"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -476,7 +464,7 @@ export default function RegularCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?q=80&w=800&auto=format&fit=crop"
+                    src="/images/cleaning/pol.jpg"
                     alt="Floor Care"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -497,7 +485,7 @@ export default function RegularCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1585421514738-01798e348b17?q=80&w=800&auto=format&fit=crop"
+                    src="/images/cleaning/chustvitelna.jpg"
                     alt="Sensitive Areas"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -518,7 +506,7 @@ export default function RegularCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1563453392212-326f5e854473?q=80&w=800&auto=format&fit=crop"
+                    src="/images/cleaning/poverhna.webp"
                     alt="Surface Cleaning"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -539,7 +527,7 @@ export default function RegularCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop"
+                    src="/images/cleaning/okna.webp"
                     alt="Window Cleaning"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -560,7 +548,7 @@ export default function RegularCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop"
+                    src="/images/cleaning/dezinfecciz-vanna.jpg"
                     alt="Bathroom Disinfection"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
