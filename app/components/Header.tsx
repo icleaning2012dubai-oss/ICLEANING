@@ -2,11 +2,22 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 export default function Header() {
   const [cartCount, setCartCount] = useState(3);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const { language, setLanguage, t } = useLanguage();
+
+  const languages = [
+    { code: 'ru', name: 'Русский', flag: '🇷🇺' },
+    { code: 'en', name: 'English', flag: '🇬🇧' },
+    { code: 'ar', name: 'العربية', flag: '🇸🇦' }
+  ];
 
   return (
     <header className="fixed top-1 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8">
@@ -24,43 +35,92 @@ export default function Header() {
             <nav className="hidden md:flex items-center space-x-8">
               <Link 
                 href="/" 
-                className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
+                className={`transition-colors font-medium ${
+                  pathname === '/' 
+                    ? 'text-blue-600 font-semibold' 
+                    : 'text-gray-700 hover:text-gray-900'
+                }`}
               >
-                Home
+                {t('nav.home')}
               </Link>
               <Link 
-                href="#about" 
-                className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
+                href="/about" 
+                className={`transition-colors font-medium ${
+                  pathname === '/about' 
+                    ? 'text-blue-600 font-semibold' 
+                    : 'text-gray-700 hover:text-gray-900'
+                }`}
               >
-                About
+                {t('nav.about')}
               </Link>
               <Link 
-                href="#services" 
+                href="/#services" 
                 className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
               >
-                Service
+                {t('nav.services')}
               </Link>
               <Link 
-                href="#pricing" 
-                className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
+                href="/contact" 
+                className={`transition-colors font-medium ${
+                  pathname === '/contact' 
+                    ? 'text-blue-600 font-semibold' 
+                    : 'text-gray-700 hover:text-gray-900'
+                }`}
               >
-                Pricing
-              </Link>
-              <Link 
-                href="#testimonial" 
-                className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
-              >
-                Testimonial
+                {t('nav.contact')}
               </Link>
             </nav>
 
-            {/* Contact Button & Cart */}
+            {/* Contact Button & Cart & Language Switcher */}
             <div className="flex items-center space-x-4">
-              <button 
+              {/* Language Switcher */}
+              <div className="relative">
+                <button
+                  onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                  className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
+                >
+                  <span className="text-xl">{languages.find(l => l.code === language)?.flag}</span>
+                  <span className="text-sm font-medium text-gray-700 hidden lg:inline">
+                    {languages.find(l => l.code === language)?.name}
+                  </span>
+                  <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {/* Language Dropdown */}
+                {isLangMenuOpen && (
+                  <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden z-50">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => {
+                          setLanguage(lang.code as any);
+                          setIsLangMenuOpen(false);
+                        }}
+                        className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors ${
+                          language === lang.code ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
+                        }`}
+                      >
+                        <span className="text-xl">{lang.flag}</span>
+                        <span className="font-medium">{lang.name}</span>
+                        {language === lang.code && (
+                          <svg className="w-5 h-5 ml-auto text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <Link 
+                href="/contact"
                 className="hidden md:block px-6 py-2.5 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] hover:scale-105"
               >
-                Contact Us
-              </button>
+                {t('nav.contactUs')}
+              </Link>
 
               {/* Cart Button */}
               <button 
@@ -111,44 +171,76 @@ export default function Header() {
             <nav className="flex flex-col space-y-4">
               <Link 
                 href="/" 
-                className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
+                className={`transition-colors font-medium ${
+                  pathname === '/' 
+                    ? 'text-blue-600 font-semibold' 
+                    : 'text-gray-700 hover:text-gray-900'
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Home
+                {t('nav.home')}
               </Link>
               <Link 
-                href="#about" 
-                className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
+                href="/about" 
+                className={`transition-colors font-medium ${
+                  pathname === '/about' 
+                    ? 'text-blue-600 font-semibold' 
+                    : 'text-gray-700 hover:text-gray-900'
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                About
+                {t('nav.about')}
               </Link>
               <Link 
-                href="#services" 
+                href="/#services" 
                 className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Service
+                {t('nav.services')}
               </Link>
               <Link 
-                href="#pricing" 
-                className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
+                href="/contact" 
+                className={`transition-colors font-medium ${
+                  pathname === '/contact' 
+                    ? 'text-blue-600 font-semibold' 
+                    : 'text-gray-700 hover:text-gray-900'
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Pricing
+                {t('nav.contact')}
               </Link>
+              
+              {/* Mobile Language Switcher */}
+              <div className="border-t border-gray-200 pt-4 space-y-2">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => {
+                      setLanguage(lang.code as any);
+                      setIsMenuOpen(false);
+                    }}
+                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-blue-50 transition-colors ${
+                      language === lang.code ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
+                    }`}
+                  >
+                    <span className="text-xl">{lang.flag}</span>
+                    <span className="font-medium">{lang.name}</span>
+                    {language === lang.code && (
+                      <svg className="w-5 h-5 ml-auto text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    )}
+                  </button>
+                ))}
+              </div>
+
               <Link 
-                href="#testimonial" 
-                className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
+                href="/contact"
+                className="w-full block text-center px-6 py-2.5 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] hover:scale-105"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Testimonial
+                {t('nav.contactUs')}
               </Link>
-              <button 
-                className="w-full px-6 py-2.5 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] hover:scale-105"
-              >
-                Contact Us
-              </button>
             </nav>
           </div>
         )}
@@ -172,7 +264,7 @@ export default function Header() {
               {/* Header */}
               <div className="flex items-center justify-between p-6 border-b border-gray-200">
                 <h2 className="text-2xl font-bold text-gray-900">
-                  Your Cart
+                  {t('cart.title')}
                 </h2>
                 <button 
                   onClick={() => setIsCartOpen(false)}
@@ -245,11 +337,11 @@ export default function Header() {
               <div className="border-t border-gray-200 p-6 bg-gray-50/50">
                 <div className="space-y-2 mb-5">
                   <div className="flex justify-between items-center text-sm">
-                    <span className="text-gray-600">Subtotal</span>
+                    <span className="text-gray-600">{t('cart.subtotal')}</span>
                     <span className="font-semibold text-gray-900">$324</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="font-bold text-gray-900">Total</span>
+                    <span className="font-bold text-gray-900">{t('cart.total')}</span>
                     <span className="text-2xl font-bold text-blue-600">
                       $324
                     </span>
@@ -257,7 +349,7 @@ export default function Header() {
                 </div>
 
                 <button className="w-full px-8 py-4 bg-blue-600 text-white rounded-full font-semibold text-base transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] hover:scale-105">
-                  Proceed to Checkout
+                  {t('cart.checkout')}
                 </button>
               </div>
             </div>

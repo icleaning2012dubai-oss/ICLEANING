@@ -1,33 +1,36 @@
 'use client';
 
 import Image from 'next/image';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 export default function TeamSection() {
+  const { t } = useLanguage();
+  
   const reasons = [
     {
       number: '1',
-      title: 'Qualified personnel',
-      description: 'All employees are trained and work according to strict quality standards.'
+      title: t('team.reason1Title'),
+      description: t('team.reason1Desc')
     },
     {
       number: '2',
-      title: 'Modern equipment',
-      description: 'Professional equipment and safe chemicals from leading brands.'
+      title: t('team.reason2Title'),
+      description: t('team.reason2Desc')
     },
     {
       number: '3',
-      title: 'Eco-friendly approach',
-      description: 'We care about the health of our clients and minimize our impact on the environment.'
+      title: t('team.reason3Title'),
+      description: t('team.reason3Desc')
     },
     {
       number: '4',
-      title: 'Flexible plans and subscriptions',
-      description: 'Favorable rates for those who want cleaning surfaces and more to become an unnoticeable routine.'
+      title: t('team.reason4Title'),
+      description: t('team.reason4Desc')
     },
     {
       number: '5',
-      title: 'Convenient online system',
-      description: 'select the required service and time in a couple of clicks directly from the website.'
+      title: t('team.reason5Title'),
+      description: t('team.reason5Desc')
     }
   ];
 
@@ -54,10 +57,10 @@ export default function TeamSection() {
               {/* Header */}
               <div className="mb-8">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-3">
-                  WHY CHOOSE ICLEANING?
+                  {t('team.whyChoose')}
                 </h2>
                 <p className="text-base md:text-lg text-white/90 font-light">
-                  There are a number of reasons for this:
+                  {t('team.subtitle')}
                 </p>
               </div>
 

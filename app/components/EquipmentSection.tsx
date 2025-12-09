@@ -1,8 +1,10 @@
 'use client';
 
 import Image from 'next/image';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 export default function EquipmentSection() {
+  const { t } = useLanguage();
   return (
     <section className="pb-26 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[1400px] mx-auto">
@@ -19,10 +21,10 @@ export default function EquipmentSection() {
           
           <div className="relative z-10 flex items-start justify-between gap-8">
             <h2 className="text-xl md:text-2xl lg:text-4xl font-bold text-gray-900 leading-tight max-w-3xl">
-              <span className="text-blue-600">Professional Equipment</span> & Eco-Friendly Solutions
+              {t('equipment.title')}
             </h2>
             <p className="text-gray-600 text-sm max-w-xs hidden lg:block">
-              Modern tools for perfect results
+              {t('equipment.subtitle')}
             </p>
           </div>
         </div>
@@ -33,12 +35,10 @@ export default function EquipmentSection() {
           <div className="rounded-3xl bg-gradient-to-br from-blue-600 to-blue-700 p-8 md:p-10 text-white shadow-2xl">
             <div className="grid lg:grid-cols-[280px_1fr] gap-8 items-start">
               <h3 className="text-xl md:text-2xl font-bold leading-tight">
-                Eco-Friendly
-                <br />
-                Products
+                {t('equipment.ecoTitle')}
               </h3>
               <p className="text-white/95 leading-relaxed">
-                We use only environmentally friendly and hypoallergenic cleaning products that contain no harmful chemicals. Safe for people, pets, and the environment while maintaining high effectiveness.
+                {t('equipment.ecoDesc')}
               </p>
             </div>
           </div>
@@ -47,12 +47,10 @@ export default function EquipmentSection() {
           <div className="rounded-3xl bg-gradient-to-br from-blue-600 to-blue-700 p-8 md:p-10 text-white shadow-2xl">
             <div className="grid lg:grid-cols-[280px_1fr] gap-8 items-start mb-10">
               <h3 className="text-xl md:text-2xl font-bold leading-tight">
-                Advanced
-                <br />
-                Equipment
+                {t('equipment.proTitle')}
               </h3>
               <p className="text-white/95 leading-relaxed">
-                Modern professional equipment for high-quality and efficient cleaning solutions
+                {t('equipment.proDesc')}
               </p>
             </div>
 

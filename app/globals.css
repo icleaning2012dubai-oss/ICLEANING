@@ -24,3 +24,37 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* RTL Support for Arabic */
+[dir="rtl"] {
+  direction: rtl;
+}
+
+[dir="rtl"] * {
+  text-align: start;
+}
+
+/* Arabic font support */
+html[lang="ar"] {
+  font-family: var(--font-tajawal), 'Arial', sans-serif;
+}
+
+/* Adjust spacing for RTL */
+[dir="rtl"] .space-x-4 > * + * {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+
+[dir="rtl"] .space-x-8 > * + * {
+  margin-left: 0;
+  margin-right: 2rem;
+}
+
+/* Flip icons for RTL */
+[dir="rtl"] svg {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .no-flip {
+  transform: none;
+}

@@ -2,8 +2,10 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 export default function ContactSection() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -46,11 +48,11 @@ export default function ContactSection() {
             
             <div className="relative z-10 space-y-6">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                Get in Touch with Us
+                {t('contact.title')}
               </h2>
               
               <p className="text-gray-600 leading-relaxed text-base">
-                Our company's expertise extends beyond just cleaning services; we prioritize customer satisfaction and tailor our approach to meet the unique needs of each client. Our commitment to sustainability sets us apart, as we strive to minimize our environmental footprint while delivering exceptional results.
+                {t('contact.subtitle')}
               </p>
 
               {/* Contact info */}

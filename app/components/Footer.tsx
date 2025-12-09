@@ -1,8 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="pb-4 px-4 sm:px-6 lg:px-8 ">
       <div className="max-w-[1400px] mx-auto bg-gray-900 rounded-3xl shadow-2xl overflow-hidden">
@@ -11,9 +13,9 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Section */}
           <div className="space-y-6">
-            <h3 className="text-3xl font-bold">iCleaning</h3>
+            <h3 className="text-3xl font-bold">HomyClean</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Crafting meaningful designs that blend creativity, usability, and impact.
+              {t('footer.brandDesc')}
             </p>
             
             {/* Social Icons */}
@@ -39,7 +41,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="space-y-6">
-            <h4 className="text-xl font-bold mb-6">Contact info</h4>
+            <h4 className="text-xl font-bold mb-6">{t('footer.contactInfo')}</h4>
             <div className="space-y-4">
               <a href="tel:+971508648401" className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
                 <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center group-hover:bg-gray-700 transition-colors">
@@ -65,7 +67,7 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
-                <span className="text-sm">Store #10, Jebel Ali Industrial Area - Dubai - UAE</span>
+                <span className="text-sm">{t('footer.address2')}</span>
               </div>
 
               <Link href="/terms" className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
@@ -74,7 +76,7 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
-                <span className="text-sm">Terms and Conditions</span>
+                <span className="text-sm">{t('footer.terms')}</span>
               </Link>
             </div>
           </div>

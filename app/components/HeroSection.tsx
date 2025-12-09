@@ -2,9 +2,11 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 export default function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <>
@@ -31,14 +33,14 @@ export default function HeroSection() {
               {/* Main Heading */}
               <div className="space-y-6">
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight">
-                  Reliable Cleanliness
+                  {t('hero.title1')}
                   <br />
                   <span className="inline-block mt-2 bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">
-                    Is Our Mission!
+                    {t('hero.title2')}
                   </span>
                 </h1>
                 <p className="text-xl md:text-2xl text-white/95 leading-relaxed max-w-2xl font-light">
-                  Your home is our responsibility - trust us with its care.
+                  {t('hero.subtitle')}
                 </p>
               </div>
 
@@ -48,13 +50,13 @@ export default function HeroSection() {
                   onClick={() => setIsModalOpen(true)}
                   className="px-10 py-4 bg-blue-600 text-white rounded-full font-semibold text-base md:text-lg hover:bg-blue-700 transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] hover:scale-105"
                 >
-                  Book Now
+                  {t('hero.getQuote')}
                 </button>
                 
                 <button 
                   className="px-8 py-4 text-white border-2 border-white/50 rounded-full font-semibold text-base md:text-lg hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-sm"
                 >
-                  See Our Services
+                  {t('hero.watchVideo')}
                 </button>
               </div>
 

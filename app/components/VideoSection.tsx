@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 export default function VideoSection() {
+  const { t } = useLanguage();
   const [activeVideo, setActiveVideo] = useState('SIokByRC8gQ');
 
   const videos = [
@@ -26,10 +28,10 @@ export default function VideoSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Watch Our Work in Action
+            {t('video.title')}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            See how we transform spaces with our professional cleaning services
+            {t('video.subtitle')}
           </p>
         </div>
 
