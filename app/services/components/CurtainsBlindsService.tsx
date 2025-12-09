@@ -389,7 +389,7 @@ export default function CurtainsBlindsService() {
                     <iframe
                       width="100%"
                       height="100%"
-                      src="https://www.youtube.com/embed/VIDEO_ID"
+                      src="https://youtu.be/n1qc8ftjpzU"
                       title="Curtains and Blinds Cleaning"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
@@ -413,7 +413,7 @@ export default function CurtainsBlindsService() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="relative h-[200px] rounded-2xl overflow-hidden shadow-xl group">
                     <Image
-                      src="/images/curtains/curtain-1.jpg"
+                      src="/images/curtains/shtory-video.jpg"
                       alt="Elegant Curtains"
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -422,7 +422,7 @@ export default function CurtainsBlindsService() {
                   </div>
                   <div className="relative h-[200px] rounded-2xl overflow-hidden shadow-xl group">
                     <Image
-                      src="/images/curtains/curtain-2.jpg"
+                      src="/images/curtains/zaluzi-video.webp"
                       alt="Modern Blinds"
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-500"

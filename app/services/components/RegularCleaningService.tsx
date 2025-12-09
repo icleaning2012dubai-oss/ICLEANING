@@ -140,15 +140,14 @@ export default function RegularCleaningService() {
             </div>
             
             <div className="relative z-10">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-12">PROCESS</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-12">{t('sofa.processTitle')}</h2>
               
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl mb-12">
-                {/* Before/After Image with split */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <div className="relative h-[500px] md:h-[600px]">
                   <div className="absolute inset-0 grid grid-cols-2">
                     <div className="relative">
                       <Image
-                        src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?q=80&w=1200&auto=format&fit=crop"
+                        src="/images/cleaning/general1.jpg"
                         alt="Before Cleaning"
                         fill
                         className="object-cover"
@@ -156,7 +155,7 @@ export default function RegularCleaningService() {
                     </div>
                     <div className="relative">
                       <Image
-                        src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1200&auto=format&fit=crop"
+                        src="/images/cleaning/general2.jpg"
                         alt="After Cleaning"
                         fill
                         className="object-cover"
@@ -164,36 +163,28 @@ export default function RegularCleaningService() {
                     </div>
                   </div>
                   
-                  {/* Vertical divider */}
-                  <div className="absolute top-0 left-1/2 w-1 h-full bg-white shadow-2xl transform -translate-x-1/2"></div>
-                  
-                  {/* Before Label */}
                   <div className="absolute top-8 left-8 bg-white/95 backdrop-blur-sm px-6 py-3 rounded-2xl shadow-lg">
-                    <h3 className="text-2xl font-bold text-gray-900">До</h3>
+                    <h3 className="text-2xl font-bold text-gray-900">{t('sofa.before')}</h3>
                   </div>
                   
-                  {/* After Label */}
                   <div className="absolute bottom-8 right-8 bg-white/95 backdrop-blur-sm px-6 py-3 rounded-2xl shadow-lg">
-                    <h3 className="text-2xl font-bold text-gray-900">После</h3>
+                    <h3 className="text-2xl font-bold text-gray-900">{t('sofa.after')}</h3>
                   </div>
                 </div>
               </div>
               
-              {/* Description */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
                 <div className="bg-blue-50/50 rounded-3xl p-8 hover:bg-blue-50 transition-colors duration-300">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">До</h3>
-                  <p className="text-gray-600 leading-relaxed text-lg">
-                    Ежедневные дела, рабочие заботы и накопившаяся пыль превращают ваше пространство в место, 
-                    где сложно почувствовать уют. Это обычная картина до нашего вмешательства.
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('sofa.before')}</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {t('sofa.beforeDesc')}
                   </p>
                 </div>
                 
                 <div className="bg-blue-50/50 rounded-3xl p-8 hover:bg-blue-50 transition-colors duration-300">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">После</h3>
-                  <p className="text-gray-600 leading-relaxed text-lg">
-                    После нашей профессиональной уборки ваше пространство преображается — теперь оно чистое, 
-                    светлое и уютное. Наша команда внимательно заботится о каждом уголке вашего дома, оставляя его безупречным.
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('sofa.after')}</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {t('sofa.afterDesc')}
                   </p>
                 </div>
               </div>
