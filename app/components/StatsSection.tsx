@@ -1,8 +1,9 @@
 'use client';
 
+import { memo } from 'react';
 import { useLanguage } from '@/app/contexts/LanguageContext';
 
-export default function StatsSection() {
+const StatsSection = memo(function StatsSection() {
   const { t } = useLanguage();
   return (
     <section className="pb-20 sm:pb-26 px-4 sm:px-6 lg:px-8">
@@ -44,4 +45,6 @@ export default function StatsSection() {
       </div>
     </section>
   );
-}
+});
+
+export default StatsSection;

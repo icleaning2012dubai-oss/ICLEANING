@@ -12,21 +12,25 @@ const inter = Inter({
   subsets: ["latin"],
   display: 'swap',
   preload: true,
+  weight: ["400", "500", "600", "700"],
+  adjustFontFallback: true,
 });
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   subsets: ["latin"],
   display: 'swap',
-  preload: true,
+  preload: false,
+  adjustFontFallback: true,
 });
 
 const tajawal = Tajawal({
   variable: "--font-tajawal",
-  weight: ["400", "500", "700"],
+  weight: ["400", "700"],
   subsets: ["arabic"],
   display: 'swap',
   preload: false,
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
@@ -53,6 +57,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
+      <head>
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://img.youtube.com" />
+        <link rel="dns-prefetch" href="https://img.youtube.com" />
+        <link rel="preconnect" href="https://www.youtube.com" />
+      </head>
       <body
         className={`${inter.variable} ${plusJakarta.variable} ${tajawal.variable} font-sans antialiased`}
       >

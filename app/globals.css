@@ -1,8 +1,29 @@
 @import "tailwindcss";
 
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Performance optimizations */
+  font-feature-settings: "kern" 1;
+  text-rendering: optimizeLegibility;
+}
+
+/* Improve scroll performance */
+* {
+  scroll-behavior: smooth;
+}
+
+/* GPU acceleration for transforms */
+.transform, .transition {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 @theme inline {
