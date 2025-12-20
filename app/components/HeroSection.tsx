@@ -10,9 +10,9 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="relative pt-24 px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-20 sm:pt-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-[1400px] mx-auto">
-          <div className="relative min-h-[650px] rounded-3xl overflow-hidden flex items-center shadow-2xl">
+          <div className="relative min-h-[500px] sm:min-h-[550px] md:min-h-[650px] rounded-2xl sm:rounded-3xl overflow-hidden flex items-center shadow-2xl">
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
               <Image
@@ -23,47 +23,47 @@ export default function HeroSection() {
                 priority
               />
               {/* Dark Overlay for better text readability */}
-              <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
             </div>
 
             {/* Content */}
-            <div className="relative z-10 w-full px-8 md:px-12 lg:px-16 py-16">
+            <div className="relative z-10 w-full px-5 sm:px-8 md:px-12 lg:px-16 py-12 sm:py-16">
           <div className="max-w-3xl">
-            <div className="space-y-8">
+            <div className="space-y-5 sm:space-y-6 md:space-y-8">
               {/* Main Heading */}
-              <div className="space-y-6">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight">
+              <div className="space-y-4 sm:space-y-6">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.15] tracking-tight">
                   {t('hero.title1')}
                   <br />
-                  <span className="inline-block mt-2 bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">
+                  <span className="inline-block mt-1 sm:mt-2 bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">
                     {t('hero.title2')}
                   </span>
                 </h1>
-                <p className="text-xl md:text-2xl text-white/95 leading-relaxed max-w-2xl font-light">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 leading-relaxed max-w-2xl font-light">
                   {t('hero.subtitle')}
                 </p>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap items-center gap-4">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <button 
                   onClick={() => setIsModalOpen(true)}
-                  className="px-10 py-4 bg-blue-600 text-white rounded-full font-semibold text-base md:text-lg hover:bg-blue-700 transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] hover:scale-105"
+                  className="px-8 sm:px-10 py-3.5 sm:py-4 bg-blue-600 text-white rounded-full font-semibold text-sm sm:text-base md:text-lg hover:bg-blue-700 transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] hover:scale-105 text-center"
                 >
                   {t('hero.getQuote')}
                 </button>
                 
                 <button 
-                  className="px-8 py-4 text-white border-2 border-white/50 rounded-full font-semibold text-base md:text-lg hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-sm"
+                  className="px-6 sm:px-8 py-3.5 sm:py-4 text-white border-2 border-white/50 rounded-full font-semibold text-sm sm:text-base md:text-lg hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-sm text-center"
                 >
                   {t('hero.watchVideo')}
                 </button>
               </div>
 
               {/* Years Badge */}
-              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
-                <span className="text-4xl font-bold text-white">8+</span>
-                <span className="text-sm text-white/90 font-medium uppercase tracking-wide">Years in UAE</span>
+              <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-md px-4 sm:px-6 py-2.5 sm:py-3 rounded-full border border-white/20">
+                <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">8+</span>
+                <span className="text-xs sm:text-sm text-white/90 font-medium uppercase tracking-wide">Years in UAE</span>
               </div>
             </div>
           </div>

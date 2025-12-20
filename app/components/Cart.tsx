@@ -81,6 +81,9 @@ export default function Cart() {
                             alt={item.name}
                             fill
                             className="object-cover"
+                            sizes="80px"
+                            loading="lazy"
+                            quality={80}
                           />
                         </div>
                       )}

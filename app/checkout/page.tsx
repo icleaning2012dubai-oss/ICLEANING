@@ -5,6 +5,8 @@ import { useCart } from '@/app/contexts/CartContext';
 import { useLanguage } from '@/app/contexts/LanguageContext';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function CheckoutPage() {
   const { items, totalPrice, clearCart } = useCart();
@@ -71,10 +73,11 @@ export default function CheckoutPage() {
 
   return (
     <>
+    <Header/>
       {/* Background */}
       <div className="fixed inset-0 bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 -z-10">
         <div className="absolute inset-0 opacity-30">
-          <Image src="/images/bubble.webp" alt="Background" fill className="object-cover" />
+          <Image src="/images/buble.webp" alt="Background" fill className="object-cover" />
         </div>
       </div>
 
@@ -223,6 +226,7 @@ export default function CheckoutPage() {
           </form>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

@@ -16,6 +16,8 @@ export default function EquipmentSection() {
               alt="Decorative"
               fill
               className="object-cover"
+              loading="lazy"
+              quality={70}
             />
           </div>
           
