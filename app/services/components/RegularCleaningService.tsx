@@ -2,9 +2,11 @@
 
 import Image from 'next/image';
 import { useLanguage } from '@/app/contexts/LanguageContext';
+import { useCart } from '@/app/contexts/CartContext';
 
 export default function RegularCleaningService() {
   const { t } = useLanguage();
+  const { addToCart } = useCart();
   
   return (
     <>
@@ -70,11 +72,11 @@ export default function RegularCleaningService() {
               
               <div className="space-y-6">
                 {[
-                  { bedrooms: '1', price: 'AED 729' },
-                  { bedrooms: '2', price: 'AED 989' },
-                  { bedrooms: '3', price: 'AED 1329' },
-                  { bedrooms: '4', price: 'AED 1599' },
-                  { bedrooms: '5', price: 'AED 1899' }
+                  { bedrooms: '1', price: 729, id: 'villa-1br' },
+                  { bedrooms: '2', price: 989, id: 'villa-2br' },
+                  { bedrooms: '3', price: 1329, id: 'villa-3br' },
+                  { bedrooms: '4', price: 1599, id: 'villa-4br' },
+                  { bedrooms: '5', price: 1899, id: 'villa-5br' }
                 ].map((item, index) => (
                   <div key={index} className="flex items-center justify-between bg-gray-700/30 rounded-2xl p-5 hover:bg-gray-700/50 transition-all duration-300 group">
                     <div>
@@ -82,8 +84,15 @@ export default function RegularCleaningService() {
                     </div>
                     
                     <div className="flex items-center gap-4">
-                      <span className="text-2xl md:text-3xl font-bold text-blue-400">{item.price}</span>
-                      <button className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-xl font-semibold transition-all duration-300 group-hover:scale-105 shadow-lg hover:shadow-xl">
+                      <span className="text-2xl md:text-3xl font-bold text-blue-400">AED {item.price}</span>
+                      <button 
+                        onClick={() => addToCart({ 
+                          id: item.id, 
+                          name: `${t('regular.villa')} - ${item.bedrooms} ${t('regular.bedroom')}`, 
+                          price: item.price, 
+                          category: 'cleaning' 
+                        })}
+                        className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-xl font-semibold transition-all duration-300 group-hover:scale-105 shadow-lg hover:shadow-xl">
                         {t('carpet.addBasket')}
                       </button>
                     </div>
@@ -101,11 +110,11 @@ export default function RegularCleaningService() {
               
               <div className="space-y-6">
                 {[
-                  { type: t('regular.studio'), price: 'AED 350' },
-                  { type: `1 ${t('regular.bedroom')}`, price: 'AED 525' },
-                  { type: `2 ${t('regular.bedroom')}`, price: 'AED 705' },
-                  { type: `3 ${t('regular.bedroom')}`, price: 'AED 899' },
-                  { type: `4 ${t('regular.bedroom')}`, price: 'AED 1189' }
+                  { type: t('regular.studio'), price: 350, id: 'apt-studio' },
+                  { type: `1 ${t('regular.bedroom')}`, price: 525, id: 'apt-1br' },
+                  { type: `2 ${t('regular.bedroom')}`, price: 705, id: 'apt-2br' },
+                  { type: `3 ${t('regular.bedroom')}`, price: 899, id: 'apt-3br' },
+                  { type: `4 ${t('regular.bedroom')}`, price: 1189, id: 'apt-4br' }
                 ].map((item, index) => (
                   <div key={index} className="flex items-center justify-between bg-gray-700/30 rounded-2xl p-5 hover:bg-gray-700/50 transition-all duration-300 group">
                     <div>
@@ -113,8 +122,15 @@ export default function RegularCleaningService() {
                     </div>
                     
                     <div className="flex items-center gap-4">
-                      <span className="text-2xl md:text-3xl font-bold text-blue-400">{item.price}</span>
-                      <button className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-xl font-semibold transition-all duration-300 group-hover:scale-105 shadow-lg hover:shadow-xl">
+                      <span className="text-2xl md:text-3xl font-bold text-blue-400">AED {item.price}</span>
+                      <button 
+                        onClick={() => addToCart({ 
+                          id: item.id, 
+                          name: `${t('regular.apartment')} - ${item.type}`, 
+                          price: item.price, 
+                          category: 'cleaning' 
+                        })}
+                        className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-xl font-semibold transition-all duration-300 group-hover:scale-105 shadow-lg hover:shadow-xl">
                         {t('carpet.addBasket')}
                       </button>
                     </div>

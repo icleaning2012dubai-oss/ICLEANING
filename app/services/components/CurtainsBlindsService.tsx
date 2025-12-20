@@ -2,9 +2,11 @@
 
 import Image from 'next/image';
 import { useLanguage } from '@/app/contexts/LanguageContext';
+import { useCart } from '@/app/contexts/CartContext';
 
 export default function CurtainsBlindsService() {
   const { t } = useLanguage();
+  const { addToCart } = useCart();
   
   return (
     <>
@@ -51,7 +53,9 @@ export default function CurtainsBlindsService() {
                   </div>
                 </div>
                 
-                <button className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] transform hover:scale-105">
+                <button 
+                  onClick={() => addToCart({ id: 'blinds-cleaning', name: t('curtains.blinds'), price: 25, category: 'curtains' })}
+                  className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] transform hover:scale-105">
                   {t('carpet.addBasket')}
                 </button>
               </div>
@@ -72,7 +76,9 @@ export default function CurtainsBlindsService() {
                   </div>
                 </div>
                 
-                <button className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] transform hover:scale-105">
+                <button 
+                  onClick={() => addToCart({ id: 'curtains-cleaning', name: t('curtains.curtains'), price: 17, category: 'curtains' })}
+                  className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] transform hover:scale-105">
                   {t('carpet.addBasket')}
                 </button>
               </div>

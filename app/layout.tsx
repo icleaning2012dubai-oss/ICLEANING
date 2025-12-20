@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans, Tajawal } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { CartProvider } from "./contexts/CartContext";
+import Cart from "./components/Cart";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -35,7 +39,12 @@ export default function RootLayout({
         className={`${inter.variable} ${plusJakarta.variable} ${tajawal.variable} font-sans antialiased`}
       >
         <LanguageProvider>
-          {children}
+          <CartProvider>
+            <Header />
+            {children}
+            <Footer />
+            <Cart />
+          </CartProvider>
         </LanguageProvider>
       </body>
     </html>

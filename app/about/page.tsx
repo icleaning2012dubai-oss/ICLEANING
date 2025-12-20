@@ -23,9 +23,9 @@ export default function AboutPage() {
         
         <main>
           {/* Hero Section */}
-          <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <section className="py-30 px-4 sm:px-6 lg:px-8">
             <div className="max-w-[1400px] mx-auto">
-              <div className="text-center mb-8">
+              <div className="text-center mb-2">
                 <div className="flex items-center justify-center gap-3 text-sm text-gray-600 mb-6">
                   <a href="/" className="hover:text-blue-600 transition-colors">{t('breadcrumb.home')}</a>
                   <span>/</span>
@@ -39,9 +39,9 @@ export default function AboutPage() {
           </section>
 
           {/* Main Content */}
-          <section className="py-12 px-4 sm:px-6 lg:px-8">
+          <section className=" px-4 sm:px-6 lg:px-8">
             <div className="max-w-[1400px] mx-auto">
-              <div className="relative bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl overflow-hidden mb-12">
+              <div className="relative bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl overflow-hidden mb-12">
                 <div className="absolute top-0 right-0 w-full h-full opacity-5">
                   <Image
                     src="/images/decorative2.webp"
@@ -71,7 +71,7 @@ export default function AboutPage() {
 
                   {/* Approach */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="bg-white border-2 border-blue-100 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-blue-200">
+                    <div className="bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30">
                       <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
                         <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -85,7 +85,7 @@ export default function AboutPage() {
                       </p>
                     </div>
 
-                    <div className="bg-white border-2 border-blue-100 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-blue-200">
+                    <div className="bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30">
                       <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6">
                         <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -163,7 +163,7 @@ export default function AboutPage() {
                           description: 'Всегда на связи, готовы ответить на вопросы и помочь с выбором услуги'
                         }
                       ].map((item, index) => (
-                        <div key={index} className="bg-blue-50/50 rounded-3xl p-6 hover:bg-blue-50 transition-colors duration-300">
+                        <div key={index} className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 hover:bg-white/15 transition-all duration-300">
                           <div className="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-4">
                             {item.icon}
                           </div>
@@ -196,7 +196,7 @@ export default function AboutPage() {
                       { number: '15+', label: 'Специалистов в команде' },
                       { number: '99%', label: 'Положительных отзывов' }
                     ].map((stat, index) => (
-                      <div key={index} className="text-center bg-white rounded-3xl p-6 shadow-lg border-2 border-blue-100">
+                      <div key={index} className="text-center bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-3xl p-6 shadow-lg hover:bg-white/15 transition-all duration-300">
                         <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">
                           {stat.number}
                         </div>

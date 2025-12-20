@@ -23,9 +23,9 @@ export default function ContactPage() {
         
         <main>
           {/* Hero Section */}
-          <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <section className="py-30 px-4 sm:px-6 lg:px-8">
             <div className="max-w-[1400px] mx-auto">
-              <div className="text-center mb-8">
+              <div className="text-center mb-2">
                 <div className="flex items-center justify-center gap-3 text-sm text-gray-600 mb-6">
                   <a href="/" className="hover:text-blue-600 transition-colors">{t('breadcrumb.home')}</a>
                   <span>/</span>
@@ -39,9 +39,9 @@ export default function ContactPage() {
           </section>
 
           {/* Main Content */}
-          <section className="py-12 px-4 sm:px-6 lg:px-8">
+          <section className=" px-4 sm:px-6 lg:px-8">
             <div className="max-w-[1400px] mx-auto">
-              <div className="relative bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl overflow-hidden mb-12">
+              <div className="relative bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl overflow-hidden mb-12">
                 <div className="absolute top-0 right-0 w-full h-full opacity-5">
                   <Image
                     src="/images/decorative2.webp"
@@ -76,7 +76,7 @@ export default function ContactPage() {
                     </div>
 
                     {/* Email */}
-                    <div className="bg-blue-50/50 rounded-3xl p-6 hover:bg-blue-50 transition-colors duration-300">
+                    <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 hover:bg-white/15 transition-all duration-300 border-2 border-white/20">
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">
                         Электронная почта:
                       </h3>
@@ -89,7 +89,7 @@ export default function ContactPage() {
                     </div>
 
                     {/* Address */}
-                    <div className="bg-blue-50/50 rounded-3xl p-6 hover:bg-blue-50 transition-colors duration-300">
+                    <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 hover:bg-white/15 transition-all duration-300 border-2 border-white/20">
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">
                         Адрес офиса и склада:
                       </h3>
@@ -99,7 +99,7 @@ export default function ContactPage() {
                     </div>
 
                     {/* Note */}
-                    <div className="bg-amber-50 border-l-4 border-amber-400 rounded-r-3xl p-6">
+                    <div className="bg-white/10 backdrop-blur-md border-l-4 border-amber-400 rounded-r-3xl p-6">
                       <p className="text-gray-700 italic">
                         (Мы не принимаем посетителей без предварительной записи — пожалуйста, уточняйте детали заранее).
                       </p>
@@ -117,7 +117,7 @@ export default function ContactPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                       {/* WhatsApp */}
-                      <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                      <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-white/20">
                         <div className="flex items-center gap-4 mb-4">
                           <div className="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
                             <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -132,7 +132,7 @@ export default function ContactPage() {
                       </div>
 
                       {/* Instagram */}
-                      <div className="bg-gradient-to-br from-pink-50 to-purple-100 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                      <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-white/20">
                         <div className="flex items-center gap-4 mb-4">
                           <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
                             <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -147,7 +147,7 @@ export default function ContactPage() {
                       </div>
 
                       {/* Telegram */}
-                      <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                      <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-white/20">
                         <div className="flex items-center gap-4 mb-4">
                           <div className="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center shadow-lg">
                             <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -174,7 +174,7 @@ export default function ContactPage() {
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                       Ждем вас — в любой день недели!
                     </h2>
-                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8">
+                    <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border-2 border-white/20">
                       <p className="text-gray-700 text-lg leading-relaxed mb-6">
                         Будь то экстренная чистка мебели перед приездом гостей или регулярный уход за тканями — мы рядом. Оставьте заявку через сайт, позвоните или напишите нам в мессенджер, и мы предложим оптимальное решение для вашей задачи.
                       </p>

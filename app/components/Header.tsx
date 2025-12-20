@@ -1,17 +1,19 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '@/app/contexts/LanguageContext';
+import { useCart } from '@/app/contexts/CartContext';
+import Cart from './Cart';
 
 export default function Header() {
-  const [cartCount, setCartCount] = useState(3);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isCartOpen, setIsCartOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const pathname = usePathname();
   const { language, setLanguage, t } = useLanguage();
+  const { totalItems, toggleCart } = useCart();
 
   const languages = [
     { code: 'ru', name: 'Русский', flag: '🇷🇺' },
@@ -20,77 +22,95 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-1 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8">
+    <header className="fixed top-1 left-0 right-0 z-50 px-2 sm:px-4 lg:px-8">
       <div className="max-w-[1400px] mx-auto">
-        <div className="bg-white/80 backdrop-blur-md rounded-full px-8 py-4 shadow-2xl border border-gray-200/50">
+        <div className="bg-white/80 backdrop-blur-md rounded-full px-4 sm:px-8 py-3 sm:py-4 shadow-2xl border border-gray-200/50">
           <div className="flex justify-between items-center">
             {/* Logo */}
             <Link href="/" className="flex items-center">
-              <span className="text-xl font-bold text-gray-900 tracking-wide uppercase">
-                HOMYCLEAN
-              </span>
+              <div className="relative w-32 h-10 sm:w-40 sm:h-12">
+                <Image
+                  src="/images/logo.svg"
+                  alt="iCleaning Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
               <Link 
                 href="/" 
-                className={`transition-colors font-medium ${
+                className={`relative transition-all duration-300 font-medium group ${
                   pathname === '/' 
                     ? 'text-blue-600 font-semibold' 
-                    : 'text-gray-700 hover:text-gray-900'
+                    : 'text-gray-700 hover:text-blue-600'
                 }`}
               >
                 {t('nav.home')}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
+                  pathname === '/' ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
               </Link>
               <Link 
                 href="/about" 
-                className={`transition-colors font-medium ${
+                className={`relative transition-all duration-300 font-medium group ${
                   pathname === '/about' 
                     ? 'text-blue-600 font-semibold' 
-                    : 'text-gray-700 hover:text-gray-900'
+                    : 'text-gray-700 hover:text-blue-600'
                 }`}
               >
                 {t('nav.about')}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
+                  pathname === '/about' ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
               </Link>
               <Link 
                 href="/#services" 
-                className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
+                className="relative text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium group"
               >
                 {t('nav.services')}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </Link>
               <Link 
                 href="/contact" 
-                className={`transition-colors font-medium ${
+                className={`relative transition-all duration-300 font-medium group ${
                   pathname === '/contact' 
                     ? 'text-blue-600 font-semibold' 
-                    : 'text-gray-700 hover:text-gray-900'
+                    : 'text-gray-700 hover:text-blue-600'
                 }`}
               >
                 {t('nav.contact')}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
+                  pathname === '/contact' ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
               </Link>
             </nav>
 
             {/* Contact Button & Cart & Language Switcher */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 sm:space-x-4">
               {/* Language Switcher */}
               <div className="relative">
                 <button
                   onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                  className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
+                  className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-white hover:bg-gray-50 border border-gray-200 rounded-xl transition-all duration-200 shadow-sm"
                 >
                   <span className="text-xl">{languages.find(l => l.code === language)?.flag}</span>
-                  <span className="text-sm font-medium text-gray-700 hidden lg:inline">
+                  <span className="text-sm font-medium text-gray-700 hidden sm:inline">
                     {languages.find(l => l.code === language)?.name}
                   </span>
-                  <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <svg className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${
+                    isLangMenuOpen ? 'rotate-180' : ''
+                  }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
 
                 {/* Language Dropdown */}
                 {isLangMenuOpen && (
-                  <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden z-50">
+                  <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden z-50">
                     {languages.map((lang) => (
                       <button
                         key={lang.code}
@@ -98,15 +118,17 @@ export default function Header() {
                           setLanguage(lang.code as any);
                           setIsLangMenuOpen(false);
                         }}
-                        className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors ${
-                          language === lang.code ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
+                        className={`w-full flex items-center gap-3 px-4 py-3 transition-colors ${
+                          language === lang.code 
+                            ? 'bg-blue-50 text-blue-600' 
+                            : 'text-gray-700 hover:bg-gray-50'
                         }`}
                       >
                         <span className="text-xl">{lang.flag}</span>
                         <span className="font-medium">{lang.name}</span>
                         {language === lang.code && (
-                          <svg className="w-5 h-5 ml-auto text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          <svg className="w-5 h-5 ml-auto text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                           </svg>
                         )}
                       </button>
@@ -123,41 +145,44 @@ export default function Header() {
               </Link>
 
               {/* Cart Button */}
-              <button 
-                onClick={() => setIsCartOpen(!isCartOpen)}
-                className="relative p-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.4)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] hover:scale-110 group"
-                aria-label="Cart"
+              <button
+                onClick={toggleCart}
+                className="relative p-1.5 sm:p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
+                aria-label="Shopping Cart"
               >
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                <svg
+                  className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                  />
                 </svg>
-                
-                {/* Animated Count Badge */}
-                {cartCount > 0 && (
-                  <div className="absolute -top-2 -right-2 min-w-[22px] h-[22px] bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center border-2 border-white shadow-lg animate-bounce">
-                    <span className="text-white text-xs font-bold">{cartCount}</span>
-                  </div>
-                )}
-                
-                {/* Pulse Effect */}
-                {cartCount > 0 && (
-                  <span className="absolute inset-0 rounded-full bg-blue-400 opacity-0 group-hover:opacity-30 group-hover:animate-ping"></span>
+                {totalItems > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-blue-600 text-white text-xs font-bold rounded-full h-4 w-4 sm:h-5 sm:w-5 flex items-center justify-center text-[10px] sm:text-xs">
+                    {totalItems}
+                  </span>
                 )}
               </button>
 
               {/* Mobile menu button */}
               <button 
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="md:hidden p-2 text-gray-700 hover:text-gray-900 transition-colors"
+                className="md:hidden p-1.5 sm:p-2 text-gray-700 hover:text-gray-900 transition-colors"
                 aria-label="Меню"
               >
                 {isMenuOpen ? (
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 ) : (
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6h16M4 12h16M4 18h16" />
                   </svg>
                 )}
               </button>
@@ -245,116 +270,6 @@ export default function Header() {
           </div>
         )}
       </div>
-
-      {/* Cart Sidebar - Slide from Right */}
-      <>
-        {/* Backdrop */}
-        <div 
-          className={`fixed inset-0 bg-black/30 backdrop-blur-sm z-40 transition-opacity duration-300 ${
-            isCartOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-          }`}
-          onClick={() => setIsCartOpen(false)}
-        />
-        
-        {/* Cart Panel */}
-        <div className={`fixed top-4 right-0 bottom-4 w-full sm:w-[420px] bg-white/95 backdrop-blur-xl z-50 shadow-2xl rounded-tl-3xl rounded-bl-3xl border border-gray-200/50 overflow-hidden transition-transform duration-500 ease-out ${
-          isCartOpen ? 'translate-x-0' : 'translate-x-[calc(100%+1rem)]'
-        }`}>
-            <div className="flex flex-col h-full">
-              {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-gray-200">
-                <h2 className="text-2xl font-bold text-gray-900">
-                  {t('cart.title')}
-                </h2>
-                <button 
-                  onClick={() => setIsCartOpen(false)}
-                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-                >
-                  <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-
-              {/* Cart Items - Scrollable */}
-              <div className="flex-1 overflow-y-auto p-6 space-y-3">
-                {/* Item 1 */}
-                <div className="group bg-blue-50 rounded-2xl p-4 hover:shadow-md transition-all duration-300 border border-blue-100">
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-bold text-gray-900">Deep Cleaning</h3>
-                      <p className="text-xs text-gray-500">1x Service</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-lg font-bold text-blue-600">$99</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Item 2 */}
-                <div className="group bg-purple-50 rounded-2xl p-4 hover:shadow-md transition-all duration-300 border border-purple-100">
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-bold text-gray-900">Carpet Cleaning</h3>
-                      <p className="text-xs text-gray-500">2x Service</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-lg font-bold text-purple-600">$150</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Item 3 */}
-                <div className="group bg-pink-50 rounded-2xl p-4 hover:shadow-md transition-all duration-300 border border-pink-100">
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 bg-pink-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-bold text-gray-900">Sofa Cleaning</h3>
-                      <p className="text-xs text-gray-500">1x Service</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-lg font-bold text-pink-600">$75</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Footer - Total & Checkout */}
-              <div className="border-t border-gray-200 p-6 bg-gray-50/50">
-                <div className="space-y-2 mb-5">
-                  <div className="flex justify-between items-center text-sm">
-                    <span className="text-gray-600">{t('cart.subtotal')}</span>
-                    <span className="font-semibold text-gray-900">$324</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="font-bold text-gray-900">{t('cart.total')}</span>
-                    <span className="text-2xl font-bold text-blue-600">
-                      $324
-                    </span>
-                  </div>
-                </div>
-
-                <button className="w-full px-8 py-4 bg-blue-600 text-white rounded-full font-semibold text-base transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] hover:scale-105">
-                  {t('cart.checkout')}
-                </button>
-              </div>
-            </div>
-          </div>
-      </>
     </header>
   );
 }

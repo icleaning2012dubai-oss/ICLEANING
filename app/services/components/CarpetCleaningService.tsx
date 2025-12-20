@@ -2,9 +2,11 @@
 
 import Image from 'next/image';
 import { useLanguage } from '@/app/contexts/LanguageContext';
+import { useCart } from '@/app/contexts/CartContext';
 
 export default function CarpetCleaningService() {
   const { t } = useLanguage();
+  const { addItem } = useCart();
   return (
     <>
       {/* Pricing Section */}
@@ -53,7 +55,16 @@ export default function CarpetCleaningService() {
                   
                   <p className="text-gray-500 text-sm mb-6">Our team will come and measure the carpet for you</p>
                   
-                  <button className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)]">
+                  <button 
+                    onClick={() => addItem({
+                      id: 'carpet-small',
+                      name: t('carpet.small'),
+                      price: 99,
+                      category: 'carpet',
+                      description: t('carpet.sizeUpTo') + ' 4 m²',
+                    })}
+                    className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)]"
+                  >
                     Add to basket
                   </button>
                 </div>
@@ -76,7 +87,16 @@ export default function CarpetCleaningService() {
                   
                   <p className="text-gray-500 text-sm mb-6">{t('carpet.ourTeam')}</p>
                   
-                  <button className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)]">
+                  <button 
+                    onClick={() => addItem({
+                      id: 'carpet-medium',
+                      name: t('carpet.medium'),
+                      price: 150,
+                      category: 'carpet',
+                      description: t('carpet.sizeUpTo') + ' 6 m²',
+                    })}
+                    className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)]"
+                  >
                     {t('carpet.addBasket')}
                   </button>
                 </div>
@@ -99,7 +119,16 @@ export default function CarpetCleaningService() {
                   
                   <p className="text-gray-500 text-sm mb-6">{t('carpet.ourTeam')}</p>
                   
-                  <button className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)]">
+                  <button 
+                    onClick={() => addItem({
+                      id: 'carpet-large',
+                      name: t('carpet.large'),
+                      price: 300,
+                      category: 'carpet',
+                      description: t('carpet.sizeUpTo') + ' 12 m²',
+                    })}
+                    className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)]"
+                  >
                     {t('carpet.addBasket')}
                   </button>
                 </div>

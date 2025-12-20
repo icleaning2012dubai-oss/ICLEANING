@@ -40,7 +40,7 @@ export default function ServicesSection() {
       id: 5,
       title: t('services.aircon'),
       description: t('services.airconDesc'),
-      image: 'https://images.unsplash.com/photo-1631545806609-c2c27f0c2bfe?q=80&w=800&auto=format&fit=crop',
+      image: '/images/ac_cleaning.png',
       slug: 'air-conditioner'
     }
   ];
