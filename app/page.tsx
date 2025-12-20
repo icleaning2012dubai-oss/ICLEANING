@@ -1,11 +1,13 @@
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-import AboutSection from './components/AboutSection';
-import StatsSection from './components/StatsSection';
-import ServicesSection from './components/ServicesSection';
 import Footer from './components/Footer';
+
+// Lazy load всі компоненти окрім Header/Footer
+const HeroSection = dynamic(() => import('./components/HeroSection'));
+const AboutSection = dynamic(() => import('./components/AboutSection'));
+const StatsSection = dynamic(() => import('./components/StatsSection'));
+const ServicesSection = dynamic(() => import('./components/ServicesSection'));
 
 // Lazy load компоненты ниже fold
 const EquipmentSection = dynamic(() => import('./components/EquipmentSection'), {
@@ -23,11 +25,19 @@ const VideoSection = dynamic(() => import('./components/VideoSection'), {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50">
-      <div className="absolute inset-0 z-0 opacity-80 pointer-events-none bg-[url('/images/buble.webp')] bg-repeat" style={{
-        backgroundSize: '100%',
-      }}></div>
-      <div className="relative z-10">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 relative">
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <Image
+          src="/images/buble.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          quality={60}
+          priority={false}
+          loading="lazy"
+        />
+      </div>
+      <div className="relative">
         <Header />
         <main>
           <HeroSection />

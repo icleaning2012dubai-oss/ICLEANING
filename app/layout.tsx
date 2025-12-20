@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans, Tajawal } from "next/font/google";
-import "./critical.css";
 import "./globals.css";
 import { LanguageProvider } from "./contexts/LanguageProvider";
 import { CartProvider } from "./contexts/CartProvider";
@@ -13,7 +12,7 @@ const inter = Inter({
   subsets: ["latin"],
   display: 'swap',
   preload: true,
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600"],
   adjustFontFallback: true,
 });
 
