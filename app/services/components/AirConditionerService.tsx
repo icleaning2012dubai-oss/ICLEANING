@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useLanguage } from '@/app/contexts/LanguageContext';
-import { useCart } from '@/app/contexts/CartContext';
+import { useLanguage } from '@/app/contexts/LanguageProvider';
+import { useCart } from '@/app/contexts/CartProvider';
 
 export default function AirConditionerService() {
   const { t } = useLanguage();
@@ -119,7 +119,7 @@ export default function AirConditionerService() {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <div className="relative h-[500px] md:h-[600px]">
                   <Image
-                    src="/images/ac_cleaning.png"
+                    src="/images/ac_cleaning.webp"
                     alt="AC Cleaning Process"
                     fill
                     className="object-cover"
@@ -245,7 +245,7 @@ export default function AirConditionerService() {
             <div className="relative group lg:order-1">
               <div className="relative h-[400px] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/ac/standart.jpeg"
+                  src="/images/ac/standart.webp"
                   alt="Standard Cleaning"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -260,7 +260,7 @@ export default function AirConditionerService() {
             <div className="relative group">
               <div className="relative h-[400px] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/ac/promyshlena.jpg"
+                  src="/images/ac/promyshlena.webp"
                   alt="Industrial Cleaning"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -328,7 +328,7 @@ export default function AirConditionerService() {
                 <div className="lg:col-span-1">
                   <div className="relative h-[300px] rounded-3xl overflow-hidden shadow-xl bg-gray-100">
                     <Image
-                      src="/images/ac_cleaning.png"
+                      src="/images/ac_cleaning.webp"
                       alt="Video Tutorial"
                       fill
                       className="object-cover"

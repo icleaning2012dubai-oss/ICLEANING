@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useLanguage } from '@/app/contexts/LanguageContext';
-import { useCart } from '@/app/contexts/CartContext';
+import { useLanguage } from '@/app/contexts/LanguageProvider';
+import { useCart } from '@/app/contexts/CartProvider';
 
 export default function SofaMattressesService() {
   const { t } = useLanguage();
@@ -178,7 +178,7 @@ export default function SofaMattressesService() {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <div className="relative h-[500px] md:h-[600px]">
                   <Image
-                    src="/images/sofa_cleaning.png"
+                    src="/images/sofa_cleaning.webp"
                     alt="Sofa Cleaning Process"
                     fill
                     className="object-cover"

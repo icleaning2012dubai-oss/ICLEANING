@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans, Tajawal } from "next/font/google";
+import "./critical.css";
 import "./globals.css";
-import { LanguageProvider } from "./contexts/LanguageContext";
-import { CartProvider } from "./contexts/CartContext";
+import { LanguageProvider } from "./contexts/LanguageProvider";
+import { CartProvider } from "./contexts/CartProvider";
 import Cart from "./components/Cart";
 import Header from "./components/Header";
 import Footer from "./components/Footer";

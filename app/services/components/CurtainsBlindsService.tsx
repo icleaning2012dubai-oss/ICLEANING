@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useLanguage } from '@/app/contexts/LanguageContext';
-import { useCart } from '@/app/contexts/CartContext';
+import { useLanguage } from '@/app/contexts/LanguageProvider';
+import { useCart } from '@/app/contexts/CartProvider';
 
 export default function CurtainsBlindsService() {
   const { t } = useLanguage();
@@ -107,7 +107,7 @@ export default function CurtainsBlindsService() {
                 {/* Before/After Image */}
                 <div className="relative h-[500px] md:h-[600px]">
                   <Image
-                    src="/images/curtains/curtains_cleaning.png"
+                    src="/images/curtains/curtains_cleaning.webp"
                     alt="Curtains Cleaning Process"
                     fill
                     className="object-cover"
@@ -157,7 +157,7 @@ export default function CurtainsBlindsService() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                 <div className="relative h-[350px] lg:h-[450px] overflow-hidden">
                   <Image
-                    src="/images/curtains/machina-chistka.jpg"
+                    src="/images/curtains/machina-chistka.webp"
                     alt="Factory Cleaning"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -183,7 +183,7 @@ export default function CurtainsBlindsService() {
                 </div>
                 <div className="order-1 lg:order-2 relative h-[350px] lg:h-[450px] overflow-hidden">
                   <Image
-                    src="/images/curtains/comlex.jpg"
+                    src="/images/curtains/comlex.webp"
                     alt="Complex Treatment"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -225,7 +225,7 @@ export default function CurtainsBlindsService() {
             <div className="group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
               <div className="relative h-[250px] rounded-2xl overflow-hidden mb-6">
                 <Image
-                  src="/images/curtains/texstil.jpg"
+                  src="/images/curtains/texstil.webp"
                   alt="Textile Curtains"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -241,7 +241,7 @@ export default function CurtainsBlindsService() {
             <div className="group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
               <div className="relative h-[250px] rounded-2xl overflow-hidden mb-6">
                 <Image
-                  src="/images/curtains/derevo.jpg"
+                  src="/images/curtains/derevo.webp"
                   alt="Wooden Blinds"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -257,7 +257,7 @@ export default function CurtainsBlindsService() {
             <div className="group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
               <div className="relative h-[250px] rounded-2xl overflow-hidden mb-6">
                 <Image
-                  src="/images/curtains/plastik.jpg"
+                  src="/images/curtains/plastik.webp"
                   alt="Plastic Blinds"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -273,7 +273,7 @@ export default function CurtainsBlindsService() {
             <div className="group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
               <div className="relative h-[250px] rounded-2xl overflow-hidden mb-6">
                 <Image
-                  src="/images/curtains/rulon.jpg"
+                  src="/images/curtains/rulon.webp"
                   alt="Roller Blinds"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -373,7 +373,7 @@ export default function CurtainsBlindsService() {
             {/* Right - Image */}
             <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/curtains/wash-machine.jpg"
+                src="/images/curtains/wash-machine.webp"
                 alt="Professional Laundry Facility"
                 fill
                 className="object-cover"
@@ -419,7 +419,7 @@ export default function CurtainsBlindsService() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="relative h-[200px] rounded-2xl overflow-hidden shadow-xl group">
                     <Image
-                      src="/images/curtains/shtory-video.jpg"
+                      src="/images/curtains/shtory-video.webp"
                       alt="Elegant Curtains"
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-500"

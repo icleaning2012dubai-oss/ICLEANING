@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useLanguage } from '@/app/contexts/LanguageContext';
-import { useCart } from '@/app/contexts/CartContext';
+import { useLanguage } from '@/app/contexts/LanguageProvider';
+import { useCart } from '@/app/contexts/CartProvider';
 
 export default function RegularCleaningService() {
   const { t } = useLanguage();
@@ -161,7 +161,7 @@ export default function RegularCleaningService() {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <div className="relative h-[500px] md:h-[600px]">
                   <Image
-                    src="/images/room_cleaning.png"
+                    src="/images/room_cleaning.webp"
                     alt="Cleaning Process"
                     fill
                     className="object-cover"
@@ -310,7 +310,7 @@ export default function RegularCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
-                    src="/images/cleaning/legka.jpg"
+                    src="/images/cleaning/legka.webp"
                     alt="Light Cleaning"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -351,7 +351,7 @@ export default function RegularCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
-                    src="/images/cleaning/ochistka.jpg"
+                    src="/images/cleaning/ochistka.webp"
                     alt="Surface Cleaning"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -372,7 +372,7 @@ export default function RegularCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
-                    src="/images/cleaning/podmet.jpg"
+                    src="/images/cleaning/podmet.webp"
                     alt="Floor Cleaning"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -414,7 +414,7 @@ export default function RegularCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
-                    src="/images/cleaning/vanna.jpg"
+                    src="/images/cleaning/vanna.webp"
                     alt="Bathroom Cleaning"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -459,7 +459,7 @@ export default function RegularCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
-                    src="/images/cleaning/tchatelna.jpeg"
+                    src="/images/cleaning/tchatelna.webp"
                     alt="Kitchen Cleaning"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -480,7 +480,7 @@ export default function RegularCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
-                    src="/images/cleaning/pol.jpg"
+                    src="/images/cleaning/pol.webp"
                     alt="Floor Care"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -501,7 +501,7 @@ export default function RegularCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
-                    src="/images/cleaning/chustvitelna.jpg"
+                    src="/images/cleaning/chustvitelna.webp"
                     alt="Sensitive Areas"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -564,7 +564,7 @@ export default function RegularCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
-                    src="/images/cleaning/dezinfecciz-vanna.jpg"
+                    src="/images/cleaning/dezinfecciz-vanna.webp"
                     alt="Bathroom Disinfection"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"

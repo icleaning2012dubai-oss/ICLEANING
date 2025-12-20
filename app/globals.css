@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Critical performance optimizations */
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,16 +12,16 @@
   
   /* Performance optimizations */
   font-feature-settings: "kern" 1;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizeSpeed;
 }
 
-/* Improve scroll performance */
+/* Remove smooth scroll for better performance */
 * {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
-/* GPU acceleration for transforms */
-.transform, .transition {
+/* GPU acceleration only for necessary transforms */
+.gpu-accelerate {
   will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;

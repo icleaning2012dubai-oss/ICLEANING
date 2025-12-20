@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { useCart } from '@/app/contexts/CartContext';
-import { useLanguage } from '@/app/contexts/LanguageContext';
+import { useCart } from '@/app/contexts/CartProvider';
+import { useLanguage } from '@/app/contexts/LanguageProvider';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import Header from '../components/Header';

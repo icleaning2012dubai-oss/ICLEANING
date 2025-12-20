@@ -1,7 +1,7 @@
 'use client';
 
 import { memo } from 'react';
-import { useLanguage } from '@/app/contexts/LanguageContext';
+import { useLanguage } from '@/app/contexts/LanguageProvider';
 
 const StatsSection = memo(function StatsSection() {
   const { t } = useLanguage();

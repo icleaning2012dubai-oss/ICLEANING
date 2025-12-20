@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useLanguage } from '@/app/contexts/LanguageContext';
+import { useLanguage } from '@/app/contexts/LanguageProvider';
 
 export default function VideoSection() {
   const { t } = useLanguage();

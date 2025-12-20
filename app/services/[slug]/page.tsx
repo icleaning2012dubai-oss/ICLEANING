@@ -5,7 +5,7 @@ import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import ContactSection from '@/app/components/ContactSection';
 import { servicesData } from '../serviceData';
-import { useLanguage } from '@/app/contexts/LanguageContext';
+import { useLanguage } from '@/app/contexts/LanguageProvider';
 import { use } from 'react';
 import CarpetCleaningService from '../components/CarpetCleaningService';
 import SofaMattressesService from '../components/SofaMattressesService';

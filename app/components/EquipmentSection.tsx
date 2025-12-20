@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useLanguage } from '@/app/contexts/LanguageContext';
+import { useLanguage } from '@/app/contexts/LanguageProvider';
 
 export default function EquipmentSection() {
   const { t } = useLanguage();

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useLanguage } from '@/app/contexts/LanguageContext';
+import { useLanguage } from '@/app/contexts/LanguageProvider';
 
 export default function TeamSection() {
   const { t } = useLanguage();
@@ -42,7 +42,7 @@ export default function TeamSection() {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/team.png"
+              src="/images/team.webp"
               alt="Professional cleaning team"
               fill
               className="object-cover object-right"

@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useCart } from '@/app/contexts/CartContext';
-import { useLanguage } from '@/app/contexts/LanguageContext';
+import { useCart } from '@/app/contexts/CartProvider';
+import { useLanguage } from '@/app/contexts/LanguageProvider';
 
 export default function Cart() {
   const { items, removeItem, updateQuantity, clearCart, totalItems, totalPrice, isOpen, closeCart } = useCart();

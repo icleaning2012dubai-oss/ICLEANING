@@ -2,13 +2,12 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import { usePathname } from 'next/navigation';
-import { useLanguage } from '@/app/contexts/LanguageContext';
-import { useCart } from '@/app/contexts/CartContext';
-import Cart from './Cart';
+import { useLanguage } from '@/app/contexts/LanguageProvider';
+import { useCart } from '@/app/contexts/CartProvider';
 
-export default function Header() {
+const Header = memo(function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -273,4 +272,6 @@ export default function Header() {
       </div>
     </header>
   );
-}
+});
+
+export default Header;

@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useLanguage } from '@/app/contexts/LanguageContext';
-import { useCart } from '@/app/contexts/CartContext';
+import { useLanguage } from '@/app/contexts/LanguageProvider';
+import { useCart } from '@/app/contexts/CartProvider';
 
 export default function CarpetCleaningService() {
   const { t } = useLanguage();
@@ -203,7 +203,7 @@ export default function CarpetCleaningService() {
                 {/* Before/After Image with diagonal split */}
                 <div className="relative h-[500px] md:h-[600px]">
                   <Image
-                    src="/images/carpet_cleaning.png"
+                    src="/images/carpet_cleaning.webp"
                     alt="Carpet Cleaning Process"
                     fill
                     className="object-cover"
@@ -272,7 +272,7 @@ export default function CarpetCleaningService() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                 <div className="relative h-[300px] lg:h-[400px] overflow-hidden">
                   <Image
-                    src="/images/carpet/pure-wool.jpg"
+                    src="/images/carpet/pure-wool.webp"
                     alt="Pure Wool Carpet"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -338,7 +338,7 @@ export default function CarpetCleaningService() {
                 </div>
                 <div className="order-1 lg:order-2 relative h-[300px] lg:h-[400px] overflow-hidden">
                   <Image
-                    src="/images/carpet/len.jpg"
+                    src="/images/carpet/len.webp"
                     alt="Linen Carpet"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -378,7 +378,7 @@ export default function CarpetCleaningService() {
                 </div>
                 <div className="order-1 lg:order-2 relative h-[300px] lg:h-[400px] overflow-hidden">
                   <Image
-                    src="/images/carpet/wool.jpg"
+                    src="/images/carpet/wool.webp"
                     alt="Wool Carpet"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -469,7 +469,7 @@ export default function CarpetCleaningService() {
                 </div>
                 <div className="relative rounded-2xl overflow-hidden shadow-xl mt-12">
                   <Image
-                    src="/images/rugs.jpg"
+                    src="/images/rugs.webp"
                     alt="Luxury Rugs"
                     fill
                     className="object-cover"
