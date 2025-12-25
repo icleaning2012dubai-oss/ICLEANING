@@ -8,11 +8,11 @@ export default function VideoSection() {
   const [activeVideo, setActiveVideo] = useState('SIokByRC8gQ');
 
   const videos = [
-    { id: 'SIokByRC8gQ', title: 'Welcome to our production facility!' },
-    { id: 'bYE27CnQBLU', title: 'How a Young Entrepreneur Transforms Dubai' },
-    { id: 'bpmJGOyzj7o', title: 'Sofa Cleaning Process' },
-    { id: 'n1qc8ftjpzU', title: 'Curtains and Blinds Cleaning' },
-    { id: 'bYE27CnQBLU', title: 'Carpet Care Services' }
+    { id: 'SIokByRC8gQ', title: t('video.video1Title') },
+    { id: 'bYE27CnQBLU', title: t('video.video2Title') },
+    { id: 'bpmJGOyzj7o', title: t('video.video3Title') },
+    { id: 'n1qc8ftjpzU', title: t('video.video4Title') },
+    { id: 'bYE27CnQBLU', title: t('video.video5Title') }
   ];
 
   const mainVideo = videos.find(v => v.id === activeVideo);
