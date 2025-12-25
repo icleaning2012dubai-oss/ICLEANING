@@ -14,15 +14,6 @@ export default function TestimonialsSection() {
   const { t } = useLanguage();
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const testimonials = [1, 2, 3, 4].map((num) => ({
-    id: num,
-    name: t(`testimonials.person${num}Name`),
-    service: t(`testimonials.person${num}Service`),
-    text: t(`testimonials.person${num}Text`),
-    rating: 5,
-    avatar: `https://ui-avatars.com/api/?name=${encodeURIComponent(t(`testimonials.person${num}Name`))}&background=3b82f6&color=fff&size=80`
-  }));
-
   return (
     <section className="py-24 bg-white relative overflow-hidden">
       {/* Background decoration */}
@@ -106,7 +97,16 @@ export default function TestimonialsSection() {
           }}
           className="testimonials-swiper"
         >
-          {testimonials.map((testimonial, index) => (
+          {[1, 2, 3, 4].map((num, index) => {
+            const testimonial = {
+              id: num,
+              name: t(`testimonials.person${num}Name`),
+              service: t(`testimonials.person${num}Service`),
+              text: t(`testimonials.person${num}Text`),
+              rating: 5,
+              avatar: `https://ui-avatars.com/api/?name=${encodeURIComponent(t(`testimonials.person${num}Name`))}&background=3b82f6&color=fff&size=80`
+            };
+            return (
             <SwiperSlide key={testimonial.id}>
               <div className={`rounded-[32px] bg-white p-8 md:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 h-full border-2 ${
                 index === activeIndex ? 'border-blue-600' : 'border-transparent'
@@ -145,7 +145,8 @@ export default function TestimonialsSection() {
                 </p>
               </div>
             </SwiperSlide>
-          ))}
+          );
+          })}
         </Swiper>
 
         {/* Bottom Stats */}

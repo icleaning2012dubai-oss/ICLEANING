@@ -115,7 +115,7 @@ export const servicesData: Record<string, ServiceData> = {
   'air-conditioner': {
     title: 'Air Conditioner',
     description: 'Maintain air quality and efficiency',
-    image: '/images/ac_cleaning.png',
+    image: '/images/ac_cleaning.webp',
     features: [
       'Filter cleaning',
       'Coil treatment',

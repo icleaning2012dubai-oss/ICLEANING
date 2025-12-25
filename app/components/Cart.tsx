@@ -24,7 +24,7 @@ export default function Cart() {
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b">
               <h2 className="text-2xl font-bold text-gray-900">
-                {t('cart.title') || 'Shopping Cart'}
+                {t('cart.title')}
               </h2>
               <button
                 onClick={closeCart}
@@ -64,7 +64,7 @@ export default function Cart() {
                     />
                   </svg>
                   <p className="text-gray-500 text-lg">
-                    {t('cart.empty') || 'Your cart is empty'}
+                    {t('cart.empty')}
                   </p>
                 </div>
               ) : (
@@ -146,7 +146,7 @@ export default function Cart() {
             {items.length > 0 && (
               <div className="border-t p-6 space-y-4">
                 <div className="flex justify-between items-center text-lg font-semibold">
-                  <span className="text-gray-700">{t('cart.total') || 'Total'}:</span>
+                  <span className="text-gray-700">{t('cart.total')}:</span>
                   <span className="text-2xl text-blue-600">AED {totalPrice.toFixed(0)}</span>
                 </div>
                 
@@ -157,14 +157,14 @@ export default function Cart() {
                   }}
                   className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-colors shadow-lg hover:shadow-xl"
                 >
-                  {t('cart.checkout') || 'Proceed to Checkout'}
+                  {t('cart.checkout')}
                 </button>
                 
                 <button
                   onClick={clearCart}
                   className="w-full py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-xl transition-colors"
                 >
-                  {t('cart.clear') || 'Clear Cart'}
+                  {t('cart.clear')}
                 </button>
               </div>
             )}

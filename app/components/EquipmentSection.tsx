@@ -63,9 +63,9 @@ export default function EquipmentSection() {
                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
                   <div className="w-2.5 h-2.5 rounded-full bg-white"></div>
                 </div>
-                <h4 className="text-lg font-bold">HEPA Filter Vacuums</h4>
+                <h4 className="text-lg font-bold">{t('equipment.hepaTitle')}</h4>
                 <p className="text-white/90 leading-relaxed text-sm">
-                  Capture finest dust particles and allergens for healthier air quality
+                  {t('equipment.hepaDesc')}
                 </p>
               </div>
 
@@ -74,9 +74,9 @@ export default function EquipmentSection() {
                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
                   <div className="w-2.5 h-2.5 rounded-full bg-white"></div>
                 </div>
-                <h4 className="text-lg font-bold">Steam Generators</h4>
+                <h4 className="text-lg font-bold">{t('equipment.steamTitle')}</h4>
                 <p className="text-white/90 leading-relaxed text-sm">
-                  Deep cleaning and sanitization without harsh chemicals
+                  {t('equipment.steamDesc')}
                 </p>
               </div>
 
@@ -85,9 +85,9 @@ export default function EquipmentSection() {
                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
                   <div className="w-2.5 h-2.5 rounded-full bg-white"></div>
                 </div>
-                <h4 className="text-lg font-bold">Floor Cleaning Machines</h4>
+                <h4 className="text-lg font-bold">{t('equipment.floorTitle')}</h4>
                 <p className="text-white/90 leading-relaxed text-sm">
-                  Effective for all floor types including tile, laminate, and carpet
+                  {t('equipment.floorDesc')}
                 </p>
               </div>
 
@@ -96,9 +96,9 @@ export default function EquipmentSection() {
                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
                   <div className="w-2.5 h-2.5 rounded-full bg-white"></div>
                 </div>
-                <h4 className="text-lg font-bold">Upholstery Cleaning</h4>
+                <h4 className="text-lg font-bold">{t('equipment.upholsteryTitle')}</h4>
                 <p className="text-white/90 leading-relaxed text-sm">
-                  Professional cleaning for carpets, furniture, removing stains and odors
+                  {t('equipment.upholsteryDesc')}
                 </p>
               </div>
             </div>

@@ -1,12 +1,25 @@
 'use client';
 
 import Image from 'next/image';
+import { useState } from 'react';
 import { useLanguage } from '@/app/contexts/LanguageProvider';
 import { useCart } from '@/app/contexts/CartProvider';
 
 export default function AirConditionerService() {
   const { t } = useLanguage();
   const { addToCart } = useCart();
+  const [selectedPackage, setSelectedPackage] = useState(1); // Default to 1 bedroom
+
+  // Pricing packages
+  const packages = [
+    { id: 0, type: t('regular.studio'), units: 1, price: 950, identifier: 'ac-studio' },
+    { id: 1, type: `1 ${t('regular.bedroom')}`, units: 2, price: 2150, identifier: 'ac-1br' },
+    { id: 2, type: `2 ${t('regular.bedroom')}`, units: 3, price: 2900, identifier: 'ac-2br' },
+    { id: 3, type: `3 ${t('regular.bedroom')}`, units: 4, price: 3600, identifier: 'ac-3br' },
+    { id: 4, type: `4 ${t('regular.bedroom')}`, units: 5, price: 4250, identifier: 'ac-4br' }
+  ];
+
+  const currentPackage = packages[selectedPackage];
   
   return (
     <>
@@ -41,61 +54,141 @@ export default function AirConditionerService() {
       {/* Pricing Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-[1400px] mx-auto">
-          {/* Header */}
-          <div className="relative bg-white rounded-3xl p-8 md:p-12 shadow-2xl mb-12 overflow-hidden">
-            <div className="absolute top-0 right-0 w-full h-full opacity-35">
-              <Image
-                src="/images/decorative2.webp"
-                alt="Decorative"
-                fill
-                className="object-cover"
-              />
-            </div>
-            
-            <div className="relative z-10 text-center">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                {t('aircon.sizesTitle')}
-              </h2>
-              <h3 className="text-2xl md:text-3xl font-semibold text-gray-700 mb-2">
-                {t('aircon.acCleaning')}
-              </h3>
-              <p className="text-gray-500 uppercase tracking-wide">{t('regular.services')}</p>
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              {t('aircon.sizesTitle')}
+            </h2>
+            <p className="text-gray-600 text-lg">{t('aircon.selectApartment')}</p>
           </div>
-          
-          {/* Pricing Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {[
-              { type: t('regular.studio'), units: 1, price: 950, id: 'ac-studio' },
-              { type: `1 ${t('regular.bedroom')}`, units: 2, price: 2150, id: 'ac-1br' },
-              { type: `2 ${t('regular.bedroom')}`, units: 3, price: 2900, id: 'ac-2br' },
-              { type: `3 ${t('regular.bedroom')}`, units: 4, price: 3600, id: 'ac-3br' },
-              { type: `4 ${t('regular.bedroom')}`, units: 5, price: 4250, id: 'ac-4br' }
-            ].map((pkg, index) => (
-              <div key={index} className="group relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+
+          {/* Apartment Type Selection Cards */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
+            {packages.map((pkg) => (
+              <button
+                key={pkg.id}
+                onClick={() => setSelectedPackage(pkg.id)}
+                className={`relative group p-6 rounded-2xl border-2 transition-all duration-300 ${
+                  selectedPackage === pkg.id
+                    ? 'border-blue-600 bg-blue-50 shadow-xl scale-105'
+                    : 'border-gray-200 bg-white hover:border-blue-300 hover:shadow-lg'
+                }`}
+              >
+                {/* Selected indicator */}
+                {selectedPackage === pkg.id && (
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                )}
+                
+                {/* AC Units Icons */}
+                <div className="flex justify-center items-center gap-1 mb-3 h-12">
+                  {[...Array(pkg.units)].map((_, i) => (
+                    <svg key={i} className={`w-6 h-6 ${selectedPackage === pkg.id ? 'text-blue-600' : 'text-gray-400'}`} fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h12v2H6zm0 4h8v2H6z"/>
+                    </svg>
+                  ))}
+                </div>
+                
+                {/* Type label */}
                 <div className="text-center">
-                  <h4 className="text-xl font-bold text-white mb-2">{pkg.type}</h4>
-                  <p className="text-gray-300 text-sm mb-8">{pkg.units} {t('aircon.units')}</p>
-                  
-                  <div className="mb-8">
-                    <div className="text-5xl font-bold text-blue-400 mb-4">
-                      AED {pkg.price}
+                  <p className={`font-bold text-sm mb-1 ${selectedPackage === pkg.id ? 'text-blue-600' : 'text-gray-900'}`}>
+                    {pkg.type}
+                  </p>
+                  <p className={`text-xs ${selectedPackage === pkg.id ? 'text-blue-500' : 'text-gray-500'}`}>
+                    {pkg.units} {t('aircon.units')}
+                  </p>
+                </div>
+              </button>
+            ))}
+          </div>
+
+          {/* Selected Package Display */}
+          <div className="relative w-full">
+            <div className="relative bg-white rounded-3xl p-6 md:p-8 shadow-2xl overflow-hidden border border-gray-100">
+              {/* Decorative background */}
+              <div className="absolute top-0 right-0 w-48 h-48 bg-blue-100 rounded-full blur-3xl opacity-20 -translate-y-1/2 translate-x-1/2"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-100 rounded-full blur-3xl opacity-15 translate-y-1/2 -translate-x-1/2"></div>
+
+              <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+                {/* Left side - Package info */}
+                <div className="lg:col-span-2">
+                  <div className="flex items-center gap-4 mb-4">
+                    {/* Header Badge */}
+                    <div className="inline-flex items-center gap-2 bg-blue-50 rounded-full px-4 py-2 border border-blue-200">
+                      <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h12v2H6zm0 4h8v2H6z"/>
+                      </svg>
+                      <span className="text-blue-600 text-sm font-bold">{t('aircon.acCleaning')}</span>
+                    </div>
+
+                    <div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+                        {currentPackage.type}
+                      </h3>
+                      <p className="text-gray-600 text-sm">{currentPackage.units} {t('aircon.units')}</p>
                     </div>
                   </div>
-                  
+
+                  {/* AC Units Visual Display */}
+                  <div className="flex flex-wrap gap-2">
+                    {[...Array(currentPackage.units)].map((_, i) => (
+                      <div key={i} className="group">
+                        <div className="flex items-center gap-1.5 bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-lg px-3 py-2 border border-blue-200 hover:border-blue-400 transition-all duration-300 hover:shadow-md">
+                          <svg className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h12v2H6zm0 4h8v2H6z"/>
+                          </svg>
+                          <span className="text-blue-700 text-xs font-semibold">{t('aircon.unit')} {i + 1}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right side - Price and CTA */}
+                <div className="lg:col-span-1 flex flex-col gap-4">
+                  {/* Price Display */}
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-500 rounded-2xl blur-xl opacity-20"></div>
+                    <div className="relative bg-gradient-to-br from-blue-600 via-blue-600 to-blue-700 rounded-2xl p-6 text-center shadow-xl">
+                      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMC41IiBvcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30 rounded-2xl"></div>
+                      
+                      <div className="relative z-10">
+                        <p className="text-blue-100 text-[10px] font-bold mb-1 uppercase tracking-widest">
+                          {t('aircon.totalPrice')}
+                        </p>
+                        <div className="flex items-baseline justify-center gap-2">
+                          <span className="text-5xl md:text-6xl font-bold text-white leading-none">
+                            {currentPackage.price}
+                          </span>
+                          <span className="text-xl font-bold text-blue-100">AED</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
                   <button 
                     onClick={() => addToCart({ 
-                      id: pkg.id, 
-                      name: `${t('aircon.acCleaning')} - ${pkg.type}`, 
-                      price: pkg.price, 
-                      category: 'aircon' 
+                      id: currentPackage.identifier, 
+                      name: `${t('aircon.acCleaning')} - ${currentPackage.type}`, 
+                      price: currentPackage.price, 
+                      category: 'aircon',
+                      description: `${currentPackage.units} ${t('aircon.units')}`
                     })}
-                    className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)]">
-                    {t('carpet.addBasket')}
+                    className="group w-full py-3.5 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-full font-bold text-base transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02] flex items-center justify-center gap-2">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    <span>{t('carpet.addBasket')}</span>
+                    <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </button>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
@@ -160,10 +253,10 @@ export default function AirConditionerService() {
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              ТИПЫ ОЧИСТКИ КОНДИЦИОНЕРОВ
+              {t('aircon.typesTitle')}
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Мы предлагаем три уровня обслуживания — в зависимости от степени загрязненности и типа помещения:
+              {t('aircon.typesSubtitle')}
             </p>
           </div>
 
@@ -183,17 +276,17 @@ export default function AirConditionerService() {
 
             <div className="flex flex-col justify-center">
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                ГЛУБОКАЯ ОЧИСТКА
+                {t('aircon.deepCleaning')}
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Рекомендуется, если кондиционер работает ежедневно или давно не обслуживался.
+                {t('aircon.deepDesc')}
               </p>
               <ul className="space-y-4 mb-6">
                 {[
-                  'разборка устройства;',
-                  'промывка всех внутренних элементов;',
-                  'обработка от плесени и бактерий;',
-                  'восстановление производительности.'
+                  t('aircon.deepPoint1'),
+                  t('aircon.deepPoint2'),
+                  t('aircon.deepPoint3'),
+                  t('aircon.deepPoint4')
                 ].map((item, index) => (
                   <li key={index} className="flex items-start">
                     <svg className="w-6 h-6 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -205,7 +298,7 @@ export default function AirConditionerService() {
               </ul>
               <div className="bg-blue-50 rounded-2xl p-6">
                 <p className="text-gray-700 font-semibold">
-                  Время работы нашей команды: от 1 часа.
+                  {t('aircon.deepTime')}
                 </p>
               </div>
             </div>
@@ -215,17 +308,17 @@ export default function AirConditionerService() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             <div className="flex flex-col justify-center lg:order-2">
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                СТАНДАРТНАЯ ОЧИСТКА
+                {t('aircon.standardCleaning')}
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Идеально для квартир и офисов с нормальной нагрузкой:
+                {t('aircon.standardDesc')}
               </p>
               <ul className="space-y-4 mb-6">
                 {[
-                  'удаление пыли с фильтров;',
-                  'обработка безопасными дезинфицирующими средствами;',
-                  'промывка дренажной системы;',
-                  'улучшение циркуляции воздуха.'
+                  t('aircon.standardPoint1'),
+                  t('aircon.standardPoint2'),
+                  t('aircon.standardPoint3'),
+                  t('aircon.standardPoint4')
                 ].map((item, index) => (
                   <li key={index} className="flex items-start">
                     <svg className="w-6 h-6 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -237,7 +330,7 @@ export default function AirConditionerService() {
               </ul>
               <div className="bg-blue-50 rounded-2xl p-6">
                 <p className="text-gray-700 font-semibold">
-                  Время работы специалистов: 30-60 минут на блок.
+                  {t('aircon.standardTime')}
                 </p>
               </div>
             </div>
@@ -271,16 +364,16 @@ export default function AirConditionerService() {
 
             <div className="flex flex-col justify-center">
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                ПРОМЫШЛЕННАЯ ОЧИСТКА
+                {t('aircon.industrialCleaning')}
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Подходит для ресторанов, отелей, складов и крупных объектов:
+                {t('aircon.industrialDesc')}
               </p>
               <ul className="space-y-4 mb-6">
                 {[
-                  'чистка крупных систем вентиляции и кондиционирования;',
-                  'удаление жира, запахов, загрязнений;',
-                  'обработка антисептическими средствами.'
+                  t('aircon.industrialPoint1'),
+                  t('aircon.industrialPoint2'),
+                  t('aircon.industrialPoint3')
                 ].map((item, index) => (
                   <li key={index} className="flex items-start">
                     <svg className="w-6 h-6 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -292,7 +385,7 @@ export default function AirConditionerService() {
               </ul>
               <div className="bg-blue-50 rounded-2xl p-6">
                 <p className="text-gray-700 font-semibold">
-                  Индивидуальные условия, по выезду специалиста.
+                  {t('aircon.industrialTime')}
                 </p>
               </div>
             </div>
@@ -316,10 +409,10 @@ export default function AirConditionerService() {
             <div className="relative z-10">
               <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                  Какую чистку выбрать?
+                  {t('aircon.chooseTitle')}
                 </h2>
                 <p className="text-gray-600 text-lg">
-                  Кому и какая чистка подойдет:
+                  {t('aircon.chooseSubtitle')}
                 </p>
               </div>
 
@@ -347,8 +440,8 @@ export default function AirConditionerService() {
                 <div className="lg:col-span-2 grid grid-cols-3 gap-4">
                   {[
                     '/images/ac/gluboka.webp',
-                    '/images/ac/promyshlena.jpg',
-                    '/images/ac/standart.jpeg'
+                    '/images/ac/promyshlena.webp',
+                    '/images/ac/standart.webp'
                   ].map((img, index) => (
                     <div key={index} className="relative h-[300px] rounded-3xl overflow-hidden shadow-xl">
                       <Image
@@ -366,32 +459,32 @@ export default function AirConditionerService() {
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <div className="bg-blue-50/50 rounded-3xl p-6">
                   <p className="mb-2">
-                    <span className="font-semibold text-gray-900">1.</span> Жителям квартир подойдет стандартная или глубокая чистка 1–3 раза в год.
+                    <span className="font-semibold text-gray-900">1.</span> {t('aircon.choose1')}
                   </p>
                 </div>
                 
                 <div className="bg-blue-50/50 rounded-3xl p-6">
                   <p className="mb-2">
-                    <span className="font-semibold text-gray-900">2.</span> Семьям с детьми и домашними животными лучше выбирать глубокую очистку каждые 4–6 месяцев.
+                    <span className="font-semibold text-gray-900">2.</span> {t('aircon.choose2')}
                   </p>
                 </div>
                 
                 <div className="bg-blue-50/50 rounded-3xl p-6">
                   <p className="mb-2">
-                    <span className="font-semibold text-gray-900">3.</span> Офисам и салонам красоты показана регулярная чистка для соблюдения санитарных норм.
+                    <span className="font-semibold text-gray-900">3.</span> {t('aircon.choose3')}
                   </p>
                 </div>
                 
                 <div className="bg-blue-50/50 rounded-3xl p-6">
                   <p className="mb-2">
-                    <span className="font-semibold text-gray-900">4.</span> Кафе, ресторанам и отелям — обязательна промышленная очистка по установленным графикам.
+                    <span className="font-semibold text-gray-900">4.</span> {t('aircon.choose4')}
                   </p>
                 </div>
               </div>
 
               <div className="mt-12 text-center">
                 <p className="text-gray-600 text-lg mb-6">
-                  Если вы не уверены, какой вариант выбрать, просто отправьте фото кондиционера и мы порекомендуем оптимальное решение для вашей ситуации.
+                  {t('aircon.chooseHelp')}
                 </p>
               </div>
             </div>
@@ -399,7 +492,7 @@ export default function AirConditionerService() {
         </div>
       </section>
 
-      {/* Pricing Info Section */}
+      {/* Pricing Info Section
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-[1400px] mx-auto">
           <div className="relative bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden">
@@ -414,18 +507,18 @@ export default function AirConditionerService() {
             
             <div className="relative z-10 text-center text-white">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                У нас обновлённый прайс-лист
+                {t('aircon.priceTitle')}
               </h2>
               <p className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
-                Для точной стоимости услуги просто свяжитесь с нами по WhatsApp, и мы оперативно отправим информацию. Также можно организовать выезд специалиста — он осмотрит оборудование, подберёт нужный тип чистки и выполнит работу сразу.
+                {t('aircon.priceDesc')}
               </p>
-              <button className="px-12 py-4 bg-white text-blue-600 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-[0_8px_30px_rgba(255,255,255,0.3)] hover:shadow-[0_8px_40px_rgba(255,255,255,0.4)] hover:scale-105">
-                Связаться по WhatsApp
+              <button className="px-12 py-4 bg-white text-blue-600 rounded-full font-bold text-lg hover:bg-blue-50 transition-all duration-300 shadow-[0_8px_30px_rgba(255,255,255,0.3)] hover:shadow-[0_8px_40px_rgba(255,255,255,0.4)] hover:scale-105">
+                {t('aircon.contactWhatsApp')}
               </button>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

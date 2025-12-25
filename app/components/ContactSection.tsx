@@ -10,7 +10,7 @@ export default function ContactSection() {
     name: '',
     phone: '',
     email: '',
-    business: 'HOTELS',
+    business: 'INDIVIDUAL',
     message: ''
   });
 
@@ -64,8 +64,8 @@ export default function ContactSection() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-lg font-bold text-gray-900">+971 XX XXX XXXX</div>
-                    <div className="text-sm text-gray-500">Available 24/7</div>
+                    <div className="text-lg font-bold text-gray-900">+971 50 864 8401</div>
+                    <div className="text-sm text-gray-500">{t('contactForm.available')}</div>
                   </div>
                 </div>
 
@@ -76,8 +76,8 @@ export default function ContactSection() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-lg font-bold text-gray-900">info@icleaning.ae</div>
-                    <div className="text-sm text-gray-500">Send us an email</div>
+                    <div className="text-lg font-bold text-gray-900">customer@icleaning.ae</div>
+                    <div className="text-sm text-gray-500">{t('contactForm.sendEmail')}</div>
                   </div>
                 </div>
               </div>
@@ -101,7 +101,7 @@ export default function ContactSection() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 {/* Name */}
                 <div>
-                  <label className="block text-gray-900 text-sm font-medium mb-2">Name</label>
+                  <label className="block text-gray-900 text-sm font-medium mb-2">{t('contactForm.name')}</label>
                   <input
                     type="text"
                     name="name"
@@ -114,7 +114,7 @@ export default function ContactSection() {
 
                 {/* Phone */}
                 <div>
-                  <label className="block text-gray-900 text-sm font-medium mb-2">Phone</label>
+                  <label className="block text-gray-900 text-sm font-medium mb-2">{t('contactForm.phone')}</label>
                   <input
                     type="tel"
                     name="phone"
@@ -127,7 +127,7 @@ export default function ContactSection() {
 
                 {/* Mail */}
                 <div>
-                  <label className="block text-gray-900 text-sm font-medium mb-2">Mail</label>
+                  <label className="block text-gray-900 text-sm font-medium mb-2">{t('contactForm.mail')}</label>
                   <input
                     type="email"
                     name="email"
@@ -140,7 +140,7 @@ export default function ContactSection() {
 
                 {/* Business */}
                 <div>
-                  <label className="block text-gray-900 text-sm font-medium mb-2">Business</label>
+                  <label className="block text-gray-900 text-sm font-medium mb-2">{t('contactForm.business')}</label>
                   <select
                     name="business"
                     value={formData.business}
@@ -148,11 +148,12 @@ export default function ContactSection() {
                     className="w-full px-6 py-3.5 bg-white/80 backdrop-blur-sm rounded-full text-gray-900 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none cursor-pointer"
                     required
                   >
-                    <option value="HOTELS">HOTELS</option>
-                    <option value="РЕСТОРАНЫ И ФАСТФУД">РЕСТОРАНЫ И ФАСТФУД</option>
-                    <option value="OFFICES">OFFICES</option>
-                    <option value="SHOPS & BOUTIQUES">SHOPS & BOUTIQUES</option>
-                    <option value="ДОМА И КОТТЕДЖИ">ДОМА И КОТТЕДЖИ</option>
+                    <option value="INDIVIDUAL">{t('contactForm.individual')}</option>
+                    <option value="HOTELS">{t('contactForm.hotels')}</option>
+                    <option value="RESTAURANTS">{t('contactForm.restaurants')}</option>
+                    <option value="OFFICES">{t('contactForm.offices')}</option>
+                    <option value="SHOPS">{t('contactForm.shops')}</option>
+                    <option value="HOMES">{t('contactForm.homes')}</option>
                   </select>
                 </div>
 
@@ -164,7 +165,7 @@ export default function ContactSection() {
                     onChange={handleChange}
                     rows={4}
                     className="w-full px-6 py-3.5 bg-white/80 backdrop-blur-sm rounded-3xl text-gray-900 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                    placeholder="Your message..."
+                    placeholder={t('contactForm.message')}
                   />
                 </div>
 
@@ -173,7 +174,7 @@ export default function ContactSection() {
                   type="submit"
                   className="w-full px-8 py-4 bg-blue-600 text-white rounded-full font-semibold text-base hover:bg-blue-700 transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] hover:scale-105"
                 >
-                  Send
+                  {t('contactForm.send')}
                 </button>
               </form>
             </div>

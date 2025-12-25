@@ -46,7 +46,7 @@ export default function ServicesSection() {
   ];
   
   return (
-    <section id="services" className="px-4 sm:px-6 lg:px-8">
+    <section id="services" className="px-4 sm:px-6 lg:px-8 pt-10">
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
         <div className="relative bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-xl mb-8 sm:mb-10 overflow-hidden">
@@ -75,14 +75,23 @@ export default function ServicesSection() {
 
       {/* Horizontal Scrollable Services with overlap - starts at container, extends right */}
       <div className="relative -mx-4 sm:mx-0">
-        <div className="flex overflow-x-auto pb-20 sm:pb-26 snap-x snap-mandatory scrollbar-hide gap-3 sm:gap-0 px-4 sm:px-0" style={{ paddingLeft: 'max(1rem, calc((100vw - 1460px) / 2 + 0rem))' }}>
+        <div className="flex overflow-x-auto pb-20 sm:pb-26 pt-8 snap-x snap-mandatory scrollbar-hide gap-3 sm:gap-0 px-4 sm:px-0" style={{ paddingLeft: 'max(1rem, calc((100vw - 1460px) / 2 + 0rem))' }}>
           {services.map((service, index) => (
             <div
               key={service.id}
-              className={`flex-shrink-0 snap-start transition-all duration-500 w-[280px] sm:w-[320px] ${index > 0 ? 'sm:-ml-12' : ''} ${index === services.length - 1 ? 'mr-4 sm:mr-6 lg:mr-8' : ''}`}
-              style={{ zIndex: 10 - index }}
+              className={`flex-shrink-0 snap-start w-[280px] sm:w-[320px] ${index > 0 ? 'sm:-ml-12' : ''} ${index === services.length - 1 ? 'mr-4 sm:mr-6 lg:mr-8' : ''}`}
+              style={{ 
+                zIndex: 10 - index,
+                transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.zIndex = '100';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.zIndex = String(10 - index);
+              }}
             >
-              <div className="group relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 h-[480px] sm:h-[550px] bg-white">
+              <div className="group relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl hover:shadow-[0_30px_70px_rgba(0,0,0,0.5)] transition-all duration-500 h-[480px] sm:h-[550px] bg-white hover:scale-102 hover:-translate-y-4" style={{ transformOrigin: 'center center' }}>
                 {/* Full image background */}
                 <div className="absolute inset-0">
                   <Image

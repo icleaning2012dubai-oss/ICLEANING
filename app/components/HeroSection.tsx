@@ -57,11 +57,12 @@ export default function HeroSection() {
                   {t('hero.getQuote')}
                 </button>
                 
-                <button 
+                <a 
+                  href="/#services"
                   className="px-6 sm:px-8 py-3.5 sm:py-4 text-white border-2 border-white/50 rounded-full font-semibold text-sm sm:text-base md:text-lg hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-sm text-center"
                 >
                   {t('hero.watchVideo')}
-                </button>
+                </a>
               </div>
 
               {/* Years Badge */}
@@ -69,25 +70,99 @@ export default function HeroSection() {
                 <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">8+</span>
                 <span className="text-xs sm:text-sm text-white/90 font-medium uppercase tracking-wide">Years in UAE</span>
               </div>
+
+              {/* Reviews Section - Mobile/Tablet */}
+              <div className="lg:hidden flex items-center gap-3 bg-white/95 backdrop-blur-md px-5 py-3.5 rounded-2xl shadow-xl border border-white/20">
+                <div className="flex -space-x-3">
+                  <Image
+                    src="https://i.pravatar.cc/150?img=1"
+                    alt="Customer"
+                    width={44}
+                    height={44}
+                    className="rounded-full border-3 border-white shadow-md"
+                  />
+                  <Image
+                    src="https://i.pravatar.cc/150?img=5"
+                    alt="Customer"
+                    width={44}
+                    height={44}
+                    className="rounded-full border-3 border-white shadow-md"
+                  />
+                  <Image
+                    src="https://i.pravatar.cc/150?img=9"
+                    alt="Customer"
+                    width={44}
+                    height={44}
+                    className="rounded-full border-3 border-white shadow-md"
+                  />
+                  <Image
+                    src="https://i.pravatar.cc/150?img=12"
+                    alt="Customer"
+                    width={44}
+                    height={44}
+                    className="rounded-full border-3 border-white shadow-md"
+                  />
+                </div>
+                <div>
+                  <div className="flex items-center gap-1 mb-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-yellow-400 text-base">★</span>
+                    ))}
+                    <span className="font-bold text-gray-900 ml-1">5.0</span>
+                  </div>
+                  <p className="text-xs text-gray-600 font-medium">
+                    <span className="font-bold text-gray-900">4,234+</span> Happy Customers
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Reviews Badge - Top Right */}
-          <div className="absolute top-8 right-8 bg-white/95 backdrop-blur-md rounded-2xl px-6 py-4 shadow-2xl hidden lg:block">
-            <div className="flex items-center gap-3">
-              <div className="flex -space-x-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-white"></div>
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 border-2 border-white"></div>
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-pink-600 border-2 border-white"></div>
+          {/* Reviews Badge - Desktop (Top Right) */}
+          <div className="absolute top-8 right-8 bg-white/95 backdrop-blur-md rounded-2xl px-6 py-5 shadow-2xl hidden lg:block max-w-sm">
+            <div className="flex items-center gap-4">
+              <div className="flex -space-x-3">
+                <Image
+                  src="https://i.pravatar.cc/150?img=1"
+                  alt="Customer"
+                  width={50}
+                  height={50}
+                  className="rounded-full border-3 border-white shadow-lg"
+                />
+                <Image
+                  src="https://i.pravatar.cc/150?img=5"
+                  alt="Customer"
+                  width={50}
+                  height={50}
+                  className="rounded-full border-3 border-white shadow-lg"
+                />
+                <Image
+                  src="https://i.pravatar.cc/150?img=9"
+                  alt="Customer"
+                  width={50}
+                  height={50}
+                  className="rounded-full border-3 border-white shadow-lg"
+                />
+                <Image
+                  src="https://i.pravatar.cc/150?img=12"
+                  alt="Customer"
+                  width={50}
+                  height={50}
+                  className="rounded-full border-3 border-white shadow-lg"
+                />
               </div>
               <div>
-                <div className="flex items-center gap-1 mb-1">
-                  <span className="text-yellow-400 text-lg">★</span>
-                  <span className="font-bold text-gray-900">4.5</span>
-                  <span className="text-sm text-gray-500">(4234+ review)</span>
+                <div className="flex items-center gap-1.5 mb-1">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-xl">★</span>
+                  ))}
+                  <span className="font-bold text-gray-900 text-lg ml-1">5.0</span>
                 </div>
-                <p className="text-xs text-gray-600 leading-tight">
-                  Over 500 people have trusted us and left<br />positive reviews. Join them!
+                <p className="text-sm text-gray-600 font-medium">
+                  <span className="font-bold text-gray-900">4,234+</span> reviews
+                </p>
+                <p className="text-xs text-gray-500 leading-tight mt-1">
+                  Trusted by customers<br />across UAE
                 </p>
               </div>
             </div>
@@ -110,37 +185,47 @@ export default function HeroSection() {
               </svg>
             </button>
 
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Оставить заявку</h2>
-            <p className="text-gray-600 mb-6">Заполните форму и мы свяжемся с вами в течение 15 минут</p>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('form.title')}</h2>
+            <p className="text-gray-600 mb-6">{t('form.subtitle')}</p>
 
             <form className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Ваше имя</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.name')}</label>
                 <input
                   type="text"
-                  placeholder="Иван Иванов"
+                  placeholder={t('form.namePlaceholder')}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Телефон</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.phone')}</label>
                 <input
                   type="tel"
-                  placeholder="+7 (999) 999-99-99"
+                  placeholder={t('form.phonePlaceholder')}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Тип уборки</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.serviceType')}</label>
                 <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
-                  <option>Выберите тип уборки</option>
-                  <option>Генеральная уборка</option>
-                  <option>Поддерживающая уборка</option>
-                  <option>Уборка после ремонта</option>
-                  <option>Мытье окон</option>
-                  <option>Химчистка мебели</option>
+                  <option value="">{t('form.selectService')}</option>
+                  <option value="carpet-cleaning">{t('form.carpetCleaning')}</option>
+                  <option value="sofa-mattresses">{t('form.sofaMattresses')}</option>
+                  <option value="curtains-blinds">{t('form.curtainsBlinds')}</option>
+                  <option value="regular-cleaning">{t('form.regularCleaning')}</option>
+                  <option value="deep-cleaning">{t('form.deepCleaning')}</option>
+                  <option value="air-conditioner">{t('form.airConditioner')}</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.clientType')}</label>
+                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
+                  <option value="">{t('form.selectService')}</option>
+                  <option value="individual">{t('form.individual')}</option>
+                  <option value="business">{t('form.business')}</option>
                 </select>
               </div>
 
@@ -148,11 +233,11 @@ export default function HeroSection() {
                 type="submit"
                 className="w-full py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg"
               >
-                Отправить заявку
+                {t('form.submit')}
               </button>
 
               <p className="text-xs text-gray-500 text-center">
-                Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+                {t('form.privacy')}
               </p>
             </form>
           </div>

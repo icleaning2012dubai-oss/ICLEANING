@@ -42,6 +42,10 @@ export default function ServicePage({ params }: { params: Promise<{ slug: string
     );
   }
 
+  // Get translated title and description
+  const title = t(`serviceDetails.${slug}.title`);
+  const description = t(`serviceDetails.${slug}.description`);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 relative">
       {/* Background pattern */}
@@ -57,8 +61,8 @@ export default function ServicePage({ params }: { params: Promise<{ slug: string
         <Header />
         <main>
           <ServiceHero 
-            title={service.title}
-            description={service.description}
+            title={title}
+            description={description}
             image={service.image}
           />
 

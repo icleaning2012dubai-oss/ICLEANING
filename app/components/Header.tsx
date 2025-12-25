@@ -10,6 +10,7 @@ import { useCart } from '@/app/contexts/CartProvider';
 const Header = memo(function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+  const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
   const pathname = usePathname();
   const { language, setLanguage, t } = useLanguage();
   const { totalItems, toggleCart } = useCart();
@@ -18,6 +19,14 @@ const Header = memo(function Header() {
     { code: 'ru', name: 'Русский', flag: '🇷🇺' },
     { code: 'en', name: 'English', flag: '🇬🇧' },
     { code: 'ar', name: 'العربية', flag: '🇸🇦' }
+  ];
+
+  const services = [
+    { slug: 'carpet-cleaning', name: { ru: 'Чистка ковров', en: 'Carpet Cleaning', ar: 'تنظيف السجاد' } },
+    { slug: 'sofa-mattresses', name: { ru: 'Диваны и матрасы', en: 'Sofa & Mattresses', ar: 'الأرائك والمراتب' } },
+    { slug: 'curtains-blinds', name: { ru: 'Шторы и жалюзи', en: 'Curtains & Blinds', ar: 'الستائر والستائر' } },
+    { slug: 'regular-cleaning', name: { ru: 'Регулярная уборка', en: 'Regular Cleaning', ar: 'التنظيف المنتظم' } },
+    { slug: 'air-conditioner', name: { ru: 'Кондиционеры', en: 'Air Conditioner', ar: 'مكيف الهواء' } },
   ];
 
   return (
@@ -54,6 +63,51 @@ const Header = memo(function Header() {
                   pathname === '/' ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
               </Link>
+              
+              {/* Services Dropdown */}
+              <div 
+                className="relative"
+                onMouseEnter={() => setIsServicesMenuOpen(true)}
+                onMouseLeave={() => setIsServicesMenuOpen(false)}
+              >
+                <button 
+                  className={`relative transition-all duration-300 font-medium group flex items-center gap-1 ${
+                    pathname.startsWith('/services') 
+                      ? 'text-blue-600 font-semibold' 
+                      : 'text-gray-700 hover:text-blue-600'
+                  }`}
+                >
+                  {t('nav.services')}
+                  <svg className={`w-4 h-4 transition-transform duration-200 ${
+                    isServicesMenuOpen ? 'rotate-180' : ''
+                  }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                  </svg>
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
+                    pathname.startsWith('/services') ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}></span>
+                </button>
+
+                {/* Services Dropdown Menu */}
+                {isServicesMenuOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden z-50">
+                    {services.map((service) => (
+                      <Link
+                        key={service.slug}
+                        href={`/services/${service.slug}`}
+                        className={`block px-4 py-3 transition-colors ${
+                          pathname === `/services/${service.slug}`
+                            ? 'bg-blue-50 text-blue-600'
+                            : 'text-gray-700 hover:bg-gray-50'
+                        }`}
+                      >
+                        <span className="font-medium">{service.name[language as keyof typeof service.name]}</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
               <Link 
                 href="/about" 
                 className={`relative transition-all duration-300 font-medium group ${
@@ -67,13 +121,7 @@ const Header = memo(function Header() {
                   pathname === '/about' ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
               </Link>
-              <Link 
-                href="/#services" 
-                className="relative text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium group"
-              >
-                {t('nav.services')}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
+              
               <Link 
                 href="/contact" 
                 className={`relative transition-all duration-300 font-medium group ${
@@ -205,6 +253,46 @@ const Header = memo(function Header() {
               >
                 {t('nav.home')}
               </Link>
+              
+              {/* Mobile Services Dropdown */}
+              <div>
+                <button
+                  onClick={() => setIsServicesMenuOpen(!isServicesMenuOpen)}
+                  className={`w-full flex items-center justify-between transition-colors font-medium ${
+                    pathname.startsWith('/services') 
+                      ? 'text-blue-600 font-semibold' 
+                      : 'text-gray-700 hover:text-gray-900'
+                  }`}
+                >
+                  {t('nav.services')}
+                  <svg className={`w-4 h-4 transition-transform duration-200 ${
+                    isServicesMenuOpen ? 'rotate-180' : ''
+                  }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {/* Mobile Services Menu */}
+                {isServicesMenuOpen && (
+                  <div className="mt-2 ml-4 space-y-2">
+                    {services.map((service) => (
+                      <Link
+                        key={service.slug}
+                        href={`/services/${service.slug}`}
+                        className={`block py-2 text-sm ${
+                          pathname === `/services/${service.slug}`
+                            ? 'text-blue-600 font-medium'
+                            : 'text-gray-600 hover:text-gray-900'
+                        }`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {service.name[language as keyof typeof service.name]}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+              
               <Link 
                 href="/about" 
                 className={`transition-colors font-medium ${
@@ -216,13 +304,7 @@ const Header = memo(function Header() {
               >
                 {t('nav.about')}
               </Link>
-              <Link 
-                href="/#services" 
-                className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('nav.services')}
-              </Link>
+              
               <Link 
                 href="/contact" 
                 className={`transition-colors font-medium ${

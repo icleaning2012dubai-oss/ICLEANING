@@ -41,11 +41,13 @@ export default function Home() {
         <Header />
         <main>
           <HeroSection />
-          <AboutSection />
-          <StatsSection />
           <ServicesSection />
-          <EquipmentSection />
           <TeamSection />
+          {/* <AboutSection /> */}
+          <StatsSection />
+          
+          <EquipmentSection />
+          
           {/* <TestimonialsSection /> */}
           <ContactSection />
           <VideoSection />

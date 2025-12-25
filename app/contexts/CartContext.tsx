@@ -24,6 +24,8 @@ interface CartContextType {
   isOpen: boolean;
   toggleCart: () => void;
   closeCart: () => void;
+  notification: { show: boolean; itemName: string };
+  hideNotification: () => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -32,6 +34,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [notification, setNotification] = useState<{ show: boolean; itemName: string }>({ show: false, itemName: '' });
 
   // Load cart from localStorage on mount
   useEffect(() => {
@@ -67,6 +70,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
       
       return [...currentItems, { ...newItem, quantity: 1 }];
     });
+    
+    // Show notification
+    setNotification({ show: true, itemName: newItem.name });
+  }, []);
+
+  const hideNotification = useCallback(() => {
+    setNotification({ show: false, itemName: '' });
   }, []);
 
   const removeItem = useCallback((id: string) => {
@@ -113,7 +123,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
     isOpen,
     toggleCart,
     closeCart,
-  }), [items, addItem, removeItem, updateQuantity, clearCart, totalItems, totalPrice, isOpen, toggleCart, closeCart]);
+    notification,
+    hideNotification,
+  }), [items, addItem, removeItem, updateQuantity, clearCart, totalItems, totalPrice, isOpen, toggleCart, closeCart, notification, hideNotification]);
 
   return (
     <CartContext.Provider value={value}>

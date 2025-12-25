@@ -212,45 +212,44 @@ export default function RegularCleaningService() {
             
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                REGULAR CLEANING: MAINTENANCE WITHOUT HASSLE
+                {t('regular.detailsTitle')}
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed max-w-5xl">
-                This format is perfect for those who want a clean home or office at all times, but don't have time to do it themselves. 
-                We take on all the basic tasks to ensure your space is always neat and fresh.
+                {t('regular.detailsDesc')}
               </p>
             </div>
           </div>
 
           {/* What's Included */}
           <div className="mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">What's included in regular cleaning:</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">{t('regular.includedTitle')}</h3>
             
             <div className="space-y-6">
               {[
                 {
                   number: '1',
-                  title: 'Organizing',
-                  description: 'We arrange items and organize your space.'
+                  title: t('regular.step1Title'),
+                  description: t('regular.step1Desc')
                 },
                 {
                   number: '2',
-                  title: 'Dust Removal',
-                  description: 'We wipe all horizontal surfaces: shelves, countertops, windowsills.'
+                  title: t('regular.step2Title'),
+                  description: t('regular.step2Desc')
                 },
                 {
                   number: '3',
-                  title: 'Vacuuming',
-                  description: 'We clean carpets, rugs, and upholstered furniture from dust, wool, and debris.'
+                  title: t('regular.step3Title'),
+                  description: t('regular.step3Desc')
                 },
                 {
                   number: '4',
-                  title: 'Floor Care',
-                  description: 'We carefully sweep and mop hard floors, including tiles and laminate.'
+                  title: t('regular.step4Title'),
+                  description: t('regular.step4Desc')
                 },
                 {
                   number: '5',
-                  title: 'Bathroom & Kitchen Care',
-                  description: 'We clean sinks, toilets, shower stalls, appliances, and disinfect key areas.'
+                  title: t('regular.step5Title'),
+                  description: t('regular.step5Desc')
                 }
               ].map((item, index) => (
                 <div key={index} className="group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
@@ -271,13 +270,12 @@ export default function RegularCleaningService() {
           {/* Schedule Info */}
           <div className="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-3xl p-8 md:p-12">
             <p className="text-gray-700 text-lg leading-relaxed mb-6">
-              Regular cleaning can be scheduled individually: once a week, twice, or more often — depending on your needs. 
-              And if you subscribe to 4 visits per month, you'll receive a favorable discount.
+              {t('regular.scheduleInfo')}
             </p>
             <div className="flex items-center gap-3">
               <div className="w-12 h-1 bg-blue-500 rounded-full"></div>
               <p className="text-blue-600 font-semibold uppercase tracking-wide text-sm">
-                Flexible Scheduling & Discounts Available
+                {t('regular.scheduleFooter')}
               </p>
             </div>
           </div>
@@ -299,7 +297,7 @@ export default function RegularCleaningService() {
             
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
-                REGULAR CLEANING SERVICES
+                {t('regular.servicesTitle')}
               </h2>
             </div>
           </div>
@@ -317,9 +315,9 @@ export default function RegularCleaningService() {
                   />
                 </div>
                 <div className="p-8 flex flex-col justify-center lg:col-span-3 bg-gradient-to-br from-blue-50/30 to-transparent">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">LIGHT CLEANING</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('regular.lightCleaning')}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    We help with basic organizing and tidying so that your home looks neat and orderly.
+                    {t('regular.lightCleaningDesc')}
                   </p>
                 </div>
               </div>
@@ -337,10 +335,9 @@ export default function RegularCleaningService() {
                   />
                 </div>
                 <div className="p-8 flex flex-col justify-center lg:col-span-3 bg-gradient-to-br from-blue-50/30 to-transparent">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">TRASH REMOVAL</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('regular.trashRemoval')}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    General cleaning includes wiping all accessible surfaces, including tables, countertops and shelves, 
-                    to remove dust and small stains.
+                    {t('regular.trashRemovalDesc')}
                   </p>
                 </div>
               </div>
@@ -358,10 +355,9 @@ export default function RegularCleaningService() {
                   />
                 </div>
                 <div className="p-8 flex flex-col justify-center lg:col-span-3 bg-gradient-to-br from-blue-50/30 to-transparent">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">CLEANING & DISINFECTION</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('regular.surfaceDisinfection')}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    General cleaning includes wiping all accessible surfaces, including tables, countertops and shelves, 
-                    to remove dust and small stains.
+                    {t('regular.surfaceDisinfectionDesc')}
                   </p>
                 </div>
               </div>
@@ -379,10 +375,9 @@ export default function RegularCleaningService() {
                   />
                 </div>
                 <div className="p-8 flex flex-col justify-center lg:col-span-3 bg-gradient-to-br from-blue-50/30 to-transparent">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">SWEEPING & MOPPING</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('regular.floorSweeping')}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Hard floors are carefully swept and mopped to maintain their cleanliness and shine. 
-                    We pay special attention to removing dirt and stains to ensure flawless floors and extend their lifespan.
+                    {t('regular.floorSweepingDesc')}
                   </p>
                 </div>
               </div>
@@ -400,10 +395,9 @@ export default function RegularCleaningService() {
                   />
                 </div>
                 <div className="p-8 flex flex-col justify-center lg:col-span-3 bg-gradient-to-br from-blue-50/30 to-transparent">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">REGULAR DUSTING & VACUUMING</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('regular.vacuumDusting')}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    General cleaning includes regular dust removal from surfaces, furniture, and decor. 
-                    We vacuum carpets and hard floors to maintain cleanliness and prevent dust in the room.
+                    {t('regular.vacuumDustingDesc')}
                   </p>
                 </div>
               </div>
@@ -421,10 +415,9 @@ export default function RegularCleaningService() {
                   />
                 </div>
                 <div className="p-8 flex flex-col justify-center lg:col-span-3 bg-gradient-to-br from-blue-50/30 to-transparent">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">BATHROOM & KITCHEN CARE</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('regular.bathroomKitchen')}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    We maintain cleanliness in bathrooms and kitchens, regularly cleaning surfaces, sinks, countertops, and appliances, 
-                    as well as disinfecting actively used areas.
+                    {t('regular.bathroomKitchenDesc')}
                   </p>
                 </div>
               </div>
@@ -448,7 +441,7 @@ export default function RegularCleaningService() {
             
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
-                DEEP CLEANING SERVICES
+                {t('regular.deepServicesTitle')}
               </h2>
             </div>
           </div>
@@ -466,10 +459,9 @@ export default function RegularCleaningService() {
                   />
                 </div>
                 <div className="p-8 flex flex-col justify-center lg:col-span-3 bg-gradient-to-br from-blue-50/30 to-transparent">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">DEEP KITCHEN CLEANING</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('regular.deepKitchen')}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    We thoroughly clean kitchen appliances, both inside and outside, including ovens, microwaves, and refrigerators. 
-                    Cabinets, countertops, and back panels are carefully cleaned from grease and grime.
+                    {t('regular.deepKitchenDesc')}
                   </p>
                 </div>
               </div>
@@ -487,10 +479,9 @@ export default function RegularCleaningService() {
                   />
                 </div>
                 <div className="p-8 flex flex-col justify-center lg:col-span-3 bg-gradient-to-br from-blue-50/30 to-transparent">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">FLOOR CARE</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('regular.floorCare')}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    All types of floor coverings, including parquet, tiles, and laminate, are cleaned with specialized equipment 
-                    that improves their appearance and protects the finish, extending their lifespan.
+                    {t('regular.floorCareDesc')}
                   </p>
                 </div>
               </div>
@@ -508,10 +499,9 @@ export default function RegularCleaningService() {
                   />
                 </div>
                 <div className="p-8 flex flex-col justify-center lg:col-span-3 bg-gradient-to-br from-blue-50/30 to-transparent">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">SPECIAL ATTENTION TO SENSITIVE AREAS</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('regular.sensitiveAreas')}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Special attention is given to sensitive surfaces such as door handles, light switches, and remote controls 
-                    to reduce the spread of microbes and ensure a healthier living environment.
+                    {t('regular.sensitiveAreasDesc')}
                   </p>
                 </div>
               </div>
@@ -529,10 +519,9 @@ export default function RegularCleaningService() {
                   />
                 </div>
                 <div className="p-8 flex flex-col justify-center lg:col-span-3 bg-gradient-to-br from-blue-50/30 to-transparent">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">COMPREHENSIVE SURFACE CLEANING</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('regular.comprehensiveSurface')}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Deep cleaning goes beyond regular dusting. We thoroughly clean each surface in your home, 
-                    including hard-to-reach areas such as baseboards, lights, and ceiling fans.
+                    {t('regular.comprehensiveSurfaceDesc')}
                   </p>
                 </div>
               </div>
@@ -550,10 +539,9 @@ export default function RegularCleaningService() {
                   />
                 </div>
                 <div className="p-8 flex flex-col justify-center lg:col-span-3 bg-gradient-to-br from-blue-50/30 to-transparent">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">WINDOW & BLIND CLEANING</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('regular.windowBlinds')}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    We thoroughly clean windows both inside and outside, ensuring ideal glass transparency. 
-                    We also clean sills and tracks, removing dirt and dust to ensure complete cleanliness and freshness in your space.
+                    {t('regular.windowBlindsDesc')}
                   </p>
                 </div>
               </div>
@@ -571,10 +559,9 @@ export default function RegularCleaningService() {
                   />
                 </div>
                 <div className="p-8 flex flex-col justify-center lg:col-span-3 bg-gradient-to-br from-blue-50/30 to-transparent">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">BATHROOM DISINFECTION</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('regular.bathroomDisinfection')}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Bathrooms require thorough deep cleaning of tiles, grout, and all plumbing fixtures. 
-                    We disinfect and clean shower cabins, baths, toilets, and sinks, ensuring flawless cleanliness and preventing mold and plaque.
+                    {t('regular.bathroomDisinfectionDesc')}
                   </p>
                 </div>
               </div>
@@ -588,17 +575,17 @@ export default function RegularCleaningService() {
         <div className="max-w-[1400px] mx-auto bg-gradient-to-br from-blue-600 to-blue-500 px-8 py-16 rounded-3xl shadow-2xl">
           <div className="text-center text-white">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready for a Cleaner Space?
+              {t('regular.ctaTitle')}
             </h2>
-            <p className="text-xl md:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto">
-              Let our professional team take care of your home or office. Book your cleaning service today!
+            <p className="text-xl md:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+              {t('regular.ctaDesc')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button className="bg-white text-blue-600 px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 shadow-2xl hover:scale-105">
-                Book Now
+                {t('regular.bookNow')}
               </button>
               <button className="bg-blue-500 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-400 transition-all duration-300 shadow-2xl hover:scale-105 border-2 border-white/20">
-                Get a Quote
+                {t('regular.getQuote')}
               </button>
             </div>
           </div>
