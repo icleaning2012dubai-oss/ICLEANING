@@ -28,7 +28,7 @@ export default function CarpetCleaningService() {
   return (
     <>
       {/* Pricing Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section id="pricing-section" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-[1400px] mx-auto">
           {/* Header with decorative element */}
           <div className="relative bg-white rounded-3xl p-8 md:p-12 shadow-2xl mb-12 overflow-hidden">

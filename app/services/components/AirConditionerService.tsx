@@ -26,7 +26,7 @@ export default function AirConditionerService() {
       
 
       {/* Pricing Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section id="pricing-section" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">

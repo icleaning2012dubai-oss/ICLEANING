@@ -96,109 +96,72 @@ export default function ServiceHero({ title, description, image }: ServiceHeroPr
 
       {/* Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
-          <div className="relative bg-gradient-to-br from-white via-blue-50 to-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden animate-scaleIn">
-            {/* Decorative gradient overlay */}
-            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-br from-blue-600 via-blue-500 to-blue-600 opacity-10"></div>
-            
-            {/* Close button */}
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 bg-opacity-90 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
             <button
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-6 right-6 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm text-gray-600 hover:text-gray-900 hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl hover:rotate-90"
-              aria-label="Close modal"
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            
-            <div className="relative p-8 md:p-10">
-              {/* Header with icon */}
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                  </svg>
-                </div>
-                <h3 className="text-3xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 bg-clip-text text-transparent mb-2">
-                  {t('serviceHero.bookTitle')} {title}
-                </h3>
-                <p className="text-gray-600 text-sm">{t('serviceHero.bookSubtitle')}</p>
+
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('form.title')}</h2>
+            <p className="text-gray-600 mb-6">{t('form.subtitle')}</p>
+
+            <form className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-900 mb-1">{t('form.name')}</label>
+                <input
+                  type="text"
+                  placeholder={t('form.namePlaceholder')}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
+                />
               </div>
-              
-              <form className="space-y-5">
-                {/* Name field with icon */}
-                <div className="group">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
-                    <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                    {t('serviceHero.yourName')}
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-5 py-3.5 bg-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 group-hover:border-gray-300 shadow-sm"
-                    placeholder="John Doe"
-                  />
-                </div>
-                
-                {/* Phone field with icon */}
-                <div className="group">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
-                    <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    {t('serviceHero.phoneNumber')}
-                  </label>
-                  <input
-                    type="tel"
-                    className="w-full px-5 py-3.5 bg-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 group-hover:border-gray-300 shadow-sm"
-                    placeholder="+971 50 864 8401"
-                  />
-                </div>
-                
-                {/* Email field with icon */}
-                <div className="group">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
-                    <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    {t('serviceHero.emailOptional')}
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full px-5 py-3.5 bg-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 group-hover:border-gray-300 shadow-sm"
-                    placeholder="john@example.com"
-                  />
-                </div>
-                
-                {/* Message field with icon */}
-                <div className="group">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
-                    <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                    </svg>
-                    {t('serviceHero.message')}
-                  </label>
-                  <textarea
-                    rows={3}
-                    className="w-full px-5 py-3.5 bg-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 group-hover:border-gray-300 resize-none shadow-sm"
-                    placeholder={t('serviceHero.messagePlaceholder')}
-                  ></textarea>
-                </div>
-                
-                {/* Submit button with gradient */}
-                <button
-                  type="submit"
-                  className="w-full py-4 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 text-white rounded-xl font-bold text-base hover:from-blue-700 hover:via-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-[1.02] flex items-center justify-center gap-2"
-                >
-                  {t('serviceHero.submitRequest')}
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </button>
-              </form>
-            </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-900 mb-1">{t('form.phone')}</label>
+                <input
+                  type="tel"
+                  placeholder={t('form.phonePlaceholder')}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-900 mb-1">{t('form.serviceType')}</label>
+                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900 bg-white">
+                  <option value="" className="text-gray-400">{t('form.selectService')}</option>
+                  <option value="carpet-cleaning">{t('form.carpetCleaning')}</option>
+                  <option value="sofa-mattresses">{t('form.sofaMattresses')}</option>
+                  <option value="curtains-blinds">{t('form.curtainsBlinds')}</option>
+                  <option value="regular-cleaning">{t('form.regularCleaning')}</option>
+                  <option value="deep-cleaning">{t('form.deepCleaning')}</option>
+                  <option value="air-conditioner">{t('form.airConditioner')}</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-900 mb-1">{t('form.clientType')}</label>
+                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900 bg-white">
+                  <option value="" className="text-gray-400">{t('form.selectClient')}</option>
+                  <option value="individual">{t('form.individual')}</option>
+                  <option value="business">{t('form.business')}</option>
+                </select>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg"
+              >
+                {t('form.submit')}
+              </button>
+
+              <p className="text-xs text-gray-500 text-center">
+                {t('form.privacy')}
+              </p>
+            </form>
           </div>
         </div>
       )}
