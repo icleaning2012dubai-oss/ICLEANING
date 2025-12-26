@@ -69,14 +69,14 @@ export const metadata: Metadata = {
     description: "Expert cleaning services: carpets, sofas, curtains, air conditioners. Eco-friendly, professional team. Book online!",
     images: [
       {
-        url: "/images/hero.webp",
+        url: "https://icleaning.ae/images/hero.webp",
         width: 1200,
         height: 630,
         alt: "iCleaning Dubai - Professional Cleaning Services",
         type: "image/webp",
       },
       {
-        url: "/images/logo.svg",
+        url: "https://icleaning.ae/images/logo.svg",
         width: 512,
         height: 512,
         alt: "iCleaning Logo",
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "iCleaning - Professional Cleaning Services in Dubai",
     description: "Expert cleaning services: carpets, sofas, curtains, air conditioners",
-    images: ["/images/hero.webp"],
+    images: ["https://icleaning.ae/images/hero.webp"],
     creator: "@icleaningdubai",
   },
   icons: {
@@ -129,9 +129,14 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.youtube.com" />
         
         {/* Additional meta tags for better social media preview */}
+        <meta property="og:image" content="https://icleaning.ae/images/hero.webp" />
+        <meta property="og:image:secure_url" content="https://icleaning.ae/images/hero.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/webp" />
+        <meta property="og:image:alt" content="iCleaning Dubai - Professional Cleaning Services" />
+        
+        {/* Telegram specific */}
         <meta name="telegram:card" content="summary_large_image" />
         <meta name="telegram:image" content="https://icleaning.ae/images/hero.webp" />
         
