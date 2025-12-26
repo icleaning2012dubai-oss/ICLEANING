@@ -35,19 +35,81 @@ const tajawal = Tajawal({
 });
 
 export const metadata: Metadata = {
-  title: "HomyClean - Профессиональная клининговая компания",
-  description: "Высококачественные услуги по уборке домов и офисов. Опытные специалисты, экологичные средства, гарантия качества.",
-  keywords: ["клининг", "уборка", "cleaning", "Dubai", "ОАЭ", "чистка ковров", "чистка мебели"],
-  authors: [{ name: "HomyClean" }],
+  title: "iCleaning - Professional Cleaning Services in Dubai | Чистка ковров, диванов, штор",
+  description: "Professional cleaning services in Dubai: carpet cleaning, sofa & mattress cleaning, curtains & blinds, air conditioner cleaning. Eco-friendly products, experienced specialists. Профессиональная химчистка в Дубае.",
+  keywords: ["cleaning Dubai", "carpet cleaning Dubai", "sofa cleaning", "curtain cleaning", "air conditioner cleaning", "клининг Дубай", "чистка ковров", "химчистка мебели", "iCleaning"],
+  authors: [{ name: "iCleaning Dubai" }],
+  metadataBase: new URL('https://icleaning.ae'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en': '/en',
+      'ru': '/ru',
+      'ar': '/ar',
+    },
+  },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   openGraph: {
     type: "website",
-    locale: "ru_RU",
-    title: "HomyClean - Профессиональная клининговая компания",
-    description: "Высококачественные услуги по уборке домов и офисов",
+    locale: "en_AE",
+    alternateLocale: ["ru_RU", "ar_AE"],
+    url: "https://icleaning.ae",
+    siteName: "iCleaning Dubai",
+    title: "iCleaning - Professional Cleaning Services in Dubai",
+    description: "Expert cleaning services: carpets, sofas, curtains, air conditioners. Eco-friendly, professional team. Book online!",
+    images: [
+      {
+        url: "/images/hero.webp",
+        width: 1200,
+        height: 630,
+        alt: "iCleaning Dubai - Professional Cleaning Services",
+        type: "image/webp",
+      },
+      {
+        url: "/images/logo.svg",
+        width: 512,
+        height: 512,
+        alt: "iCleaning Logo",
+        type: "image/svg+xml",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "iCleaning - Professional Cleaning Services in Dubai",
+    description: "Expert cleaning services: carpets, sofas, curtains, air conditioners",
+    images: ["/images/hero.webp"],
+    creator: "@icleaningdubai",
+  },
+  icons: {
+    icon: [
+      { url: "/logo.ico", sizes: "any" },
+      { url: "/images/logo.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/images/logo.svg", sizes: "180x180", type: "image/svg+xml" },
+    ],
+    shortcut: "/logo.ico",
+  },
+  manifest: "/site.webmanifest",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+  },
+  verification: {
+    google: "your-google-verification-code",
+    yandex: "your-yandex-verification-code",
   },
 };
 
@@ -59,11 +121,32 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
+        {/* Preconnect for performance */}
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <link rel="preconnect" href="https://img.youtube.com" />
         <link rel="dns-prefetch" href="https://img.youtube.com" />
         <link rel="preconnect" href="https://www.youtube.com" />
+        
+        {/* Additional meta tags for better social media preview */}
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/webp" />
+        <meta name="telegram:card" content="summary_large_image" />
+        <meta name="telegram:image" content="https://icleaning.ae/images/hero.webp" />
+        
+        {/* Theme colors */}
+        <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#1e40af" media="(prefers-color-scheme: dark)" />
+        
+        {/* Apple specific */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="iCleaning" />
+        
+        {/* Microsoft specific */}
+        <meta name="msapplication-TileColor" content="#2563eb" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
       </head>
       <body
         className={`${inter.variable} ${plusJakarta.variable} ${tajawal.variable} font-sans antialiased`}

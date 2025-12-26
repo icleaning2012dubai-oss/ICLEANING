@@ -1,0 +1,27 @@
+{
+  "name": "iCleaning Dubai - Professional Cleaning Services",
+  "short_name": "iCleaning",
+  "description": "Professional cleaning services in Dubai: carpets, sofas, curtains, air conditioners",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["lifestyle", "cleaning", "services"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/"
+}
