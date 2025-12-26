@@ -107,7 +107,8 @@ export default function ContactSection() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-6 py-3.5 bg-white/80 backdrop-blur-sm rounded-full text-gray-900 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder={t('contactForm.namePlaceholder')}
+                    className="w-full px-6 py-3.5 bg-white/80 backdrop-blur-sm rounded-full text-gray-900 placeholder:text-gray-500 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     required
                   />
                 </div>
@@ -120,7 +121,8 @@ export default function ContactSection() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-6 py-3.5 bg-white/80 backdrop-blur-sm rounded-full text-gray-900 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder={t('contactForm.phonePlaceholder')}
+                    className="w-full px-6 py-3.5 bg-white/80 backdrop-blur-sm rounded-full text-gray-900 placeholder:text-gray-500 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     required
                   />
                 </div>
@@ -133,7 +135,8 @@ export default function ContactSection() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-6 py-3.5 bg-white/80 backdrop-blur-sm rounded-full text-gray-900 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder={t('contactForm.mailPlaceholder')}
+                    className="w-full px-6 py-3.5 bg-white/80 backdrop-blur-sm rounded-full text-gray-900 placeholder:text-gray-500 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     required
                   />
                 </div>

@@ -464,8 +464,11 @@
   "terms.condition5": "Клиент предупреждается о том, что любые существующие повреждения, дефекты или вытяжки могут ухудшиться в результате стирки, и Компания не несет ответственности за такие проблемы, даже если они преувеличены.",
   
   "contactForm.name": "Имя",
+  "contactForm.namePlaceholder": "Иван Иванов",
   "contactForm.phone": "Телефон",
+  "contactForm.phonePlaceholder": "+971 50 123 4567",
   "contactForm.mail": "Email",
+  "contactForm.mailPlaceholder": "example@email.com",
   "contactForm.business": "Тип клиента",
   "contactForm.message": "Ваше сообщение...",
   "contactForm.send": "Отправить",

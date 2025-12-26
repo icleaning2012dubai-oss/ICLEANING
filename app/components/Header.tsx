@@ -46,7 +46,7 @@ const Header = memo(function Header() {
   ];
 
   return (
-    <header className="fixed top-1 left-0 right-0 z-50 px-2 sm:px-4 lg:px-8">
+    <header className="fixed top-1 left-0 right-0 z-150 px-2 sm:px-4 lg:px-8">
       <div className="max-w-[1400px] mx-auto">
         <div className="bg-white/80 backdrop-blur-md rounded-full px-4 sm:px-8 py-3 sm:py-4 shadow-2xl border border-gray-200/50">
           <div className="flex justify-between items-center">

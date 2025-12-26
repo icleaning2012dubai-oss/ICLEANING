@@ -464,8 +464,11 @@
   "terms.condition5": "يتم تحذير العميل من أن أي ضرر أو عيوب أو سحب موجودة قد تزداد سوءًا نتيجة للغسيل، والشركة غير مسؤولة عن مثل هذه المشاكل، حتى لو تم المبالغة فيها.",
   
   "contactForm.name": "الاسم",
+  "contactForm.namePlaceholder": "محمد أحمد",
   "contactForm.phone": "الهاتف",
+  "contactForm.phonePlaceholder": "+971 50 123 4567",
   "contactForm.mail": "البريد الإلكتروني",
+  "contactForm.mailPlaceholder": "example@email.com",
   "contactForm.business": "نوع العميل",
   "contactForm.message": "رسالتك...",
   "contactForm.send": "إرسال",

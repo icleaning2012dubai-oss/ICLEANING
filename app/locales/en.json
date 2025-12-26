@@ -462,8 +462,11 @@
   "terms.condition5": "The client is warned that any existing damage, defects or pulls may worsen as a result of washing, and the Company is not responsible for such problems, even if they are exaggerated.",
   
   "contactForm.name": "Name",
+  "contactForm.namePlaceholder": "John Doe",
   "contactForm.phone": "Phone",
+  "contactForm.phonePlaceholder": "+971 50 123 4567",
   "contactForm.mail": "Email",
+  "contactForm.mailPlaceholder": "example@email.com",
   "contactForm.business": "Client Type",
   "contactForm.message": "Your message...",
   "contactForm.send": "Send",
