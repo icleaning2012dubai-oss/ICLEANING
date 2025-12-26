@@ -1,6 +1,9 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect, useCallback, useMemo, ReactNode } from 'react';
+import ruTranslations from '@/app/locales/ru.json';
+import enTranslations from '@/app/locales/en.json';
+import arTranslations from '@/app/locales/ar.json';
 
 type Language = 'ru' | 'en' | 'ar';
 
@@ -13,30 +16,34 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-// Предзагруженные переводы для ru языка (по умолчанию)
-const defaultTranslations: Record<string, any> = {};
+// Предзагруженные переводы
+const allTranslations = {
+  ru: ruTranslations,
+  en: enTranslations,
+  ar: arTranslations,
+};
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('ru');
-  const [translations, setTranslations] = useState<Record<string, string>>(defaultTranslations);
+  // Инициализируем с языка по умолчанию 'ru' и сразу проверяем localStorage
+  const getInitialLanguage = (): Language => {
+    if (typeof window !== 'undefined') {
+      const savedLang = localStorage.getItem('language') as Language;
+      if (savedLang && ['ru', 'en', 'ar'].includes(savedLang)) {
+        return savedLang;
+      }
+    }
+    return 'ru';
+  };
+
+  const [language, setLanguageState] = useState<Language>(getInitialLanguage);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
-    // Load saved language from localStorage
-    const savedLang = localStorage.getItem('language') as Language;
-    if (savedLang && ['ru', 'en', 'ar'].includes(savedLang)) {
-      setLanguageState(savedLang);
-    }
   }, []);
 
   useEffect(() => {
     if (!isClient) return;
-    
-    // Load translations for current language
-    import(`@/app/locales/${language}.json`)
-      .then((module) => setTranslations(module.default))
-      .catch(() => setTranslations({}));
 
     // Update document direction and lang attribute
     document.documentElement.lang = language;
@@ -51,8 +58,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const t = useCallback((key: string): string => {
+    const translations = allTranslations[language];
     return translations[key] || key;
-  }, [translations]);
+  }, [language]);
 
   const dir: 'ltr' | 'rtl' = language === 'ar' ? 'rtl' : 'ltr';
 

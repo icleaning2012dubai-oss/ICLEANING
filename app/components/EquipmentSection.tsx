@@ -22,7 +22,7 @@ export default function EquipmentSection() {
           </div>
           
           <div className="relative z-10 flex items-start justify-between gap-8">
-            <h2 className="text-xl md:text-2xl lg:text-4xl font-bold text-gray-900 leading-tight max-w-3xl">
+            <h2 className="text-xl md:text-2xl lg:text-4xl font-bold text-gray-900 leading-tight max-w-3xl" suppressHydrationWarning>
               {t('equipment.title')}
             </h2>
             <p className="text-gray-600 text-sm max-w-xs hidden lg:block">

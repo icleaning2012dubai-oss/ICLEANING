@@ -27,7 +27,7 @@ export default function VideoSection() {
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4" suppressHydrationWarning>
             {t('video.title')}
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-4">

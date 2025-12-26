@@ -36,14 +36,14 @@ export default function HeroSection() {
             <div className="space-y-5 sm:space-y-6 md:space-y-8">
               {/* Main Heading */}
               <div className="space-y-4 sm:space-y-6">
-                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.15] tracking-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.15] tracking-tight" suppressHydrationWarning>
                   {t('hero.title1')}
                   <br />
                   <span className="inline-block mt-1 sm:mt-2 bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">
                     {t('hero.title2')}
                   </span>
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 leading-relaxed max-w-2xl font-light">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 leading-relaxed max-w-2xl font-light" suppressHydrationWarning>
                   {t('hero.subtitle')}
                 </p>
               </div>
@@ -53,6 +53,7 @@ export default function HeroSection() {
                 <button 
                   onClick={() => setIsModalOpen(true)}
                   className="px-8 sm:px-10 py-3.5 sm:py-4 bg-blue-600 text-white rounded-full font-semibold text-sm sm:text-base md:text-lg hover:bg-blue-700 transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] hover:scale-105 text-center"
+                  suppressHydrationWarning
                 >
                   {t('hero.getQuote')}
                 </button>
@@ -60,6 +61,7 @@ export default function HeroSection() {
                 <a 
                   href="/#services"
                   className="px-6 sm:px-8 py-3.5 sm:py-4 text-white border-2 border-white/50 rounded-full font-semibold text-sm sm:text-base md:text-lg hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-sm text-center"
+                  suppressHydrationWarning
                 >
                   {t('hero.watchVideo')}
                 </a>
@@ -119,7 +121,7 @@ export default function HeroSection() {
           </div>
 
           {/* Reviews Badge - Desktop (Top Right) */}
-          <div className="absolute top-8 right-8 bg-white/95 backdrop-blur-md rounded-2xl px-6 py-5 shadow-2xl hidden lg:block max-w-sm">
+          <div className="absolute top-8 ltr:right-8 rtl:left-8 z-20 bg-white/95 backdrop-blur-md rounded-2xl px-6 py-5 shadow-2xl hidden lg:block max-w-sm">
             <div className="flex items-center gap-4">
               <div className="flex -space-x-3">
                 <Image

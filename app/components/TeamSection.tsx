@@ -56,7 +56,7 @@ export default function TeamSection() {
             <div className="max-w-2xl">
               {/* Header */}
               <div className="mb-8">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-3">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-3" suppressHydrationWarning>
                   {t('team.whyChoose')}
                 </h2>
                 <p className="text-base md:text-lg text-white/90 font-light">
