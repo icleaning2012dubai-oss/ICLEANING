@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   description: "Professional cleaning services in Dubai: carpet cleaning, sofa & mattress cleaning, curtains & blinds, air conditioner cleaning. Eco-friendly products, experienced specialists. Профессиональная химчистка в Дубае.",
   keywords: ["cleaning Dubai", "carpet cleaning Dubai", "sofa cleaning", "curtain cleaning", "air conditioner cleaning", "клининг Дубай", "чистка ковров", "химчистка мебели", "iCleaning"],
   authors: [{ name: "iCleaning Dubai" }],
-  metadataBase: new URL('https://icleaning.ae'),
+  metadataBase: new URL('https://clining-ten.vercel.app'),
   alternates: {
     canonical: '/',
     languages: {
@@ -69,18 +69,11 @@ export const metadata: Metadata = {
     description: "Expert cleaning services: carpets, sofas, curtains, air conditioners. Eco-friendly, professional team. Book online!",
     images: [
       {
-        url: "https://icleaning.ae/images/hero.webp",
+        url: "https://clining-ten.vercel.app/images/hero.webp",
         width: 1200,
         height: 630,
         alt: "iCleaning Dubai - Professional Cleaning Services",
         type: "image/webp",
-      },
-      {
-        url: "https://icleaning.ae/images/logo.svg",
-        width: 512,
-        height: 512,
-        alt: "iCleaning Logo",
-        type: "image/svg+xml",
       },
     ],
   },
@@ -88,7 +81,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "iCleaning - Professional Cleaning Services in Dubai",
     description: "Expert cleaning services: carpets, sofas, curtains, air conditioners",
-    images: ["https://icleaning.ae/images/hero.webp"],
+    images: ["https://clining-ten.vercel.app/images/hero.webp"],
     creator: "@icleaningdubai",
   },
   icons: {
@@ -129,8 +122,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.youtube.com" />
         
         {/* Additional meta tags for better social media preview */}
-        <meta property="og:image" content="https://icleaning.ae/images/hero.webp" />
-        <meta property="og:image:secure_url" content="https://icleaning.ae/images/hero.webp" />
+        <meta property="og:image" content="https://clining-ten.vercel.app/images/hero.webp" />
+        <meta property="og:image:secure_url" content="https://clining-ten.vercel.app/images/hero.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/webp" />
@@ -138,7 +131,7 @@ export default function RootLayout({
         
         {/* Telegram specific */}
         <meta name="telegram:card" content="summary_large_image" />
-        <meta name="telegram:image" content="https://icleaning.ae/images/hero.webp" />
+        <meta name="telegram:image" content="https://clining-ten.vercel.app/images/hero.webp" />
         
         {/* Theme colors */}
         <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)" />

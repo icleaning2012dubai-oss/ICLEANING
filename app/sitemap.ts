@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
  
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://icleaning.ae'
+  const baseUrl = 'https://clining-ten.vercel.app'
   const currentDate = new Date()
   
   return [

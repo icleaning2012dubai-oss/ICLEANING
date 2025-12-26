@@ -2,10 +2,10 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://icleaning.ae/sitemap.xml
+Sitemap: https://clining-ten.vercel.app/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
 
 # Host
-Host: https://icleaning.ae
+Host: https://clining-ten.vercel.app
