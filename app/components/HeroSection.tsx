@@ -174,7 +174,7 @@ export default function HeroSection() {
 
       {/* Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 bg-opacity-90 backdrop-blur-sm">
           <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
             <button
               onClick={() => setIsModalOpen(false)}
@@ -190,27 +190,27 @@ export default function HeroSection() {
 
             <form className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.name')}</label>
+                <label className="block text-sm font-medium text-gray-900 mb-1">{t('form.name')}</label>
                 <input
                   type="text"
                   placeholder={t('form.namePlaceholder')}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-500"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.phone')}</label>
+                <label className="block text-sm font-medium text-gray-900 mb-1">{t('form.phone')}</label>
                 <input
                   type="tel"
                   placeholder={t('form.phonePlaceholder')}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-500"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.serviceType')}</label>
-                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
-                  <option value="">{t('form.selectService')}</option>
+                <label className="block text-sm font-medium text-gray-900 mb-1">{t('form.serviceType')}</label>
+                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900 bg-white">
+                  <option value="" className="text-gray-400">{t('form.selectService')}</option>
                   <option value="carpet-cleaning">{t('form.carpetCleaning')}</option>
                   <option value="sofa-mattresses">{t('form.sofaMattresses')}</option>
                   <option value="curtains-blinds">{t('form.curtainsBlinds')}</option>
@@ -221,9 +221,9 @@ export default function HeroSection() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.clientType')}</label>
-                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
-                  <option value="">{t('form.selectService')}</option>
+                <label className="block text-sm font-medium text-gray-900 mb-1">{t('form.clientType')}</label>
+                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900 bg-white">
+                  <option value="" className="text-gray-400">{t('form.selectClient')}</option>
                   <option value="individual">{t('form.individual')}</option>
                   <option value="business">{t('form.business')}</option>
                 </select>

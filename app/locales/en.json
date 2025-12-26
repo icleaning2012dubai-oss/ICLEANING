@@ -77,6 +77,7 @@
   "form.serviceType": "Service Type",
   "form.selectService": "Select Service",
   "form.clientType": "Client Type",
+  "form.selectClient": "Select Client Type",
   "form.individual": "Individual",
   "form.business": "Business",
   "form.carpetCleaning": "Carpet Cleaning",

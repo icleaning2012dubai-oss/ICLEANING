@@ -77,6 +77,7 @@
   "form.serviceType": "نوع الخدمة",
   "form.selectService": "اختر الخدمة",
   "form.clientType": "نوع العميل",
+  "form.selectClient": "اختر نوع العميل",
   "form.individual": "فرد",
   "form.business": "شركة",
   "form.carpetCleaning": "تنظيف السجاد",
