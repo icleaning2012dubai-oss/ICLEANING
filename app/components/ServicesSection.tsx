@@ -47,31 +47,7 @@ export default function ServicesSection() {
   
   return (
     <section id="services" className="px-4 sm:px-6 lg:px-8 pt-10">
-      <div className="max-w-[1400px] mx-auto">
-        {/* Header */}
-        <div className="relative bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-xl mb-8 sm:mb-10 overflow-hidden">
-          {/* Decorative background image */}
-          <div className="absolute top-0 right-0 w-full h-full opacity-40">
-            <Image
-              src="/images/decorative2.webp"
-              alt="Decorative"
-              fill
-              className="object-cover"
-              loading="lazy"
-              quality={75}
-            />
-          </div>
-          
-          <div className="relative z-10">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
-              {t('services.title')}
-            </h2>
-            <p className="text-gray-600 text-sm sm:text-base max-w-2xl">
-              {t('services.subtitle')}
-            </p>
-          </div>
-        </div>
-      </div>
+      
 
       {/* Horizontal Scrollable Services with overlap - starts at container, extends right */}
       <div className="relative -mx-4 sm:mx-0">
@@ -144,7 +120,31 @@ export default function ServicesSection() {
           ))}
         </div>
       </div>
-
+          <div className="max-w-[1400px] mx-auto">
+        {/* Header */}
+        <div className="relative bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-xl mb-8 sm:mb-10 overflow-hidden">
+          {/* Decorative background image */}
+          <div className="absolute top-0 right-0 w-full h-full opacity-40">
+            <Image
+              src="/images/decorative2.webp"
+              alt="Decorative"
+              fill
+              className="object-cover"
+              loading="lazy"
+              quality={75}
+            />
+          </div>
+          
+          <div className="relative z-10">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
+              {t('services.title')}
+            </h2>
+            <p className="text-gray-600 text-sm sm:text-base max-w-2xl">
+              {t('services.subtitle')}
+            </p>
+          </div>
+        </div>
+      </div>
       <style jsx>{`
         .scrollbar-hide::-webkit-scrollbar {
           display: none;

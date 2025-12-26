@@ -11,9 +11,25 @@ const Header = memo(function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
+  const [servicesCloseTimer, setServicesCloseTimer] = useState<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
   const { language, setLanguage, t } = useLanguage();
   const { totalItems, toggleCart } = useCart();
+
+  const handleServicesMouseEnter = () => {
+    if (servicesCloseTimer) {
+      clearTimeout(servicesCloseTimer);
+      setServicesCloseTimer(null);
+    }
+    setIsServicesMenuOpen(true);
+  };
+
+  const handleServicesMouseLeave = () => {
+    const timer = setTimeout(() => {
+      setIsServicesMenuOpen(false);
+    }, 300);
+    setServicesCloseTimer(timer);
+  };
 
   const languages = [
     { code: 'ru', name: 'Русский', flag: '🇷🇺' },
@@ -67,8 +83,8 @@ const Header = memo(function Header() {
               {/* Services Dropdown */}
               <div 
                 className="relative"
-                onMouseEnter={() => setIsServicesMenuOpen(true)}
-                onMouseLeave={() => setIsServicesMenuOpen(false)}
+                onMouseEnter={handleServicesMouseEnter}
+                onMouseLeave={handleServicesMouseLeave}
               >
                 <button 
                   className={`relative transition-all duration-300 font-medium group flex items-center gap-1 ${
@@ -90,7 +106,11 @@ const Header = memo(function Header() {
 
                 {/* Services Dropdown Menu */}
                 {isServicesMenuOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden z-50">
+                  <div 
+                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden z-50"
+                    onMouseEnter={handleServicesMouseEnter}
+                    onMouseLeave={handleServicesMouseLeave}
+                  >
                     {services.map((service) => (
                       <Link
                         key={service.slug}
@@ -100,6 +120,7 @@ const Header = memo(function Header() {
                             ? 'bg-blue-50 text-blue-600'
                             : 'text-gray-700 hover:bg-gray-50'
                         }`}
+                        onClick={() => setIsServicesMenuOpen(false)}
                       >
                         <span className="font-medium">{service.name[language as keyof typeof service.name]}</span>
                       </Link>
