@@ -23,33 +23,7 @@ export default function AirConditionerService() {
   
   return (
     <>
-      {/* Hero Description */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 ">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="relative bg-white rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden">
-            <div className="absolute top-0 right-0 w-full h-full opacity-45">
-              <Image
-                src="/images/decorative2.webp"
-                alt="Decorative"
-                fill
-                className="object-cover"
-              />
-            </div>
-            
-            <div className="relative z-10 text-center max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                {t('aircon.heroTitle')}
-              </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                {t('aircon.heroDesc1')}
-              </p>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                {t('aircon.heroDesc2')}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Pricing Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -192,7 +166,33 @@ export default function AirConditionerService() {
           </div>
         </div>
       </section>
-
+{/* Hero Description */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 ">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="relative bg-white rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden">
+            <div className="absolute top-0 right-0 w-full h-full opacity-45">
+              <Image
+                src="/images/decorative2.webp"
+                alt="Decorative"
+                fill
+                className="object-cover"
+              />
+            </div>
+            
+            <div className="relative z-10 text-center max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                {t('aircon.heroTitle')}
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                {t('aircon.heroDesc1')}
+              </p>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                {t('aircon.heroDesc2')}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Process Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 ">
         <div className="max-w-[1400px] mx-auto">
