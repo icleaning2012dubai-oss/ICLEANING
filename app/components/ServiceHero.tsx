@@ -33,7 +33,7 @@ export default function ServiceHero({ title, description, image }: ServiceHeroPr
                 src={image}
                 alt={title}
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 priority
               />
               {/* Dark Overlay for better text readability */}

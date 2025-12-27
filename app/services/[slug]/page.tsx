@@ -25,6 +25,7 @@ export default function ServicePage({ params }: { params: Promise<{ slug: string
           <div className="absolute inset-0" style={{
             backgroundImage: 'url(/images/buble.webp)',
             backgroundRepeat: 'repeat',
+          
             backgroundSize: '100%',
           }}></div>
         </div>
