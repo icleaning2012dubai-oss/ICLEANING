@@ -12,35 +12,35 @@ export default function ServicesSection() {
       id: 1,
       title: t('services.carpet'),
       description: t('services.carpetDesc'),
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
+      image: '/images/service/kover.png',
       slug: 'carpet-cleaning'
     },
     {
       id: 2,
       title: t('services.sofa'),
       description: t('services.sofaDesc'),
-      image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop',
-      slug: 'sofa-mattresses'
+      image: '/images/service/sofa.png',
+      slug: 'sofa-cleaning'
     },
     {
       id: 3,
       title: t('services.curtains'),
       description: t('services.curtainsDesc'),
-      image: 'https://images.unsplash.com/photo-1582735689369-4fe89db7114c?q=80&w=800&auto=format&fit=crop',
+      image: '/images/service/shtora.png',
       slug: 'curtains-blinds'
     },
-    {
-      id: 4,
-      title: `${t('services.regular')} & ${t('services.deep')}`,
-      description: t('services.cleaningDesc'),
-      image: 'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?q=80&w=800&auto=format&fit=crop',
-      slug: 'regular-cleaning'
-    },
+    // {
+    //   id: 4,
+    //   title: `${t('services.regular')} & ${t('services.deep')}`,
+    //   description: t('services.cleaningDesc'),
+    //   image: 'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?q=80&w=800&auto=format&fit=crop',
+    //   slug: 'regular-cleaning'
+    // },
     {
       id: 5,
       title: t('services.aircon'),
       description: t('services.airconDesc'),
-      image: '/images/ac_cleaning.png',
+      image: '/images/service/konder.png',
       slug: 'air-conditioner'
     }
   ];
@@ -51,11 +51,11 @@ export default function ServicesSection() {
 
       {/* Horizontal Scrollable Services with overlap - starts at container, extends right */}
       <div className="relative -mx-4 sm:mx-0">
-        <div className="flex overflow-x-auto pb-20 sm:pb-26 pt-8 snap-x snap-mandatory scrollbar-hide gap-3 sm:gap-0 px-4 sm:px-0" style={{ paddingLeft: 'max(1rem, calc((100vw - 1460px) / 2 + 0rem))' }}>
+        <div className="flex overflow-x-auto pb-20 sm:pb-26 pt-8 snap-x snap-mandatory scrollbar-hide gap-3 sm:gap-6 px-4 sm:px-0" style={{ paddingLeft: 'max(1rem, calc((100vw - 1460px) / 2 + 0rem))' }}>
           {services.map((service, index) => (
             <div
               key={service.id}
-              className={`flex-shrink-0 snap-start w-[280px] sm:w-[320px] ${index > 0 ? 'sm:-ml-12' : ''} ${index === services.length - 1 ? 'mr-4 sm:mr-6 lg:mr-8' : ''}`}
+              className={`flex-shrink-0 snap-start w-[280px] sm:w-[320px] ${index === services.length - 1 ? 'mr-4 sm:mr-6 lg:mr-8' : ''}`}
               style={{ 
                 zIndex: 10 - index,
                 transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
