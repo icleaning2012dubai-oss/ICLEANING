@@ -20,7 +20,7 @@ export default function ServicesSection() {
       title: t('services.sofa'),
       description: t('services.sofaDesc'),
       image: '/images/service/sofa.png',
-      slug: 'sofa-cleaning'
+      slug: 'sofa-mattresses'
     },
     {
       id: 3,
