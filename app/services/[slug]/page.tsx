@@ -65,6 +65,7 @@ export default function ServicePage({ params }: { params: Promise<{ slug: string
             title={title}
             description={description}
             image={service.image}
+            slug={slug}
           />
 
           {/* Service-specific content */}

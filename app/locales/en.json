@@ -563,6 +563,7 @@
   "checkout.infoMessage": "After placing the order, we will contact you within 1-2 days.",
   "checkout.submitButton": "Place Order",
   "checkout.submitting": "Processing...",
+  "checkout.successTitle": "Thank you for your order!",
   "checkout.successMessage": "Order placed successfully! We will contact you within 1-2 days.",
   
   "testimonials.title": "What our",

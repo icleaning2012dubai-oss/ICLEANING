@@ -564,8 +564,7 @@
   "checkout.total": "المجموع",
   "checkout.infoMessage": "بعد تقديم الطلب، سنتواصل معك خلال 1-2 أيام.",
   "checkout.submitButton": "تقديم الطلب",
-  "checkout.submitting": "جارٍ المعالجة...",
-  "checkout.successMessage": "تم تقديم الطلب بنجاح! سنتواصل معك خلال 1-2 أيام.",
+  "checkout.submitting": "جارٍ المعالجة...",  "checkout.successTitle": "شكراً لطلبك!",  "checkout.successMessage": "تم تقديم الطلب بنجاح! سنتواصل معك خلال 1-2 أيام.",
   
   "testimonials.title": "ماذا يقول",
   "testimonials.titleHighlight": "عملاؤنا",

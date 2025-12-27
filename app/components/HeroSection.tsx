@@ -216,8 +216,6 @@ export default function HeroSection() {
                   <option value="carpet-cleaning">{t('form.carpetCleaning')}</option>
                   <option value="sofa-mattresses">{t('form.sofaMattresses')}</option>
                   <option value="curtains-blinds">{t('form.curtainsBlinds')}</option>
-                  <option value="regular-cleaning">{t('form.regularCleaning')}</option>
-                  <option value="deep-cleaning">{t('form.deepCleaning')}</option>
                   <option value="air-conditioner">{t('form.airConditioner')}</option>
                 </select>
               </div>

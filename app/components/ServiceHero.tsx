@@ -9,9 +9,10 @@ interface ServiceHeroProps {
   title: string;
   description: string;
   image: string;
+  slug?: string;
 }
 
-export default function ServiceHero({ title, description, image }: ServiceHeroProps) {
+export default function ServiceHero({ title, description, image, slug }: ServiceHeroProps) {
   const { t } = useLanguage();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -131,13 +132,11 @@ export default function ServiceHero({ title, description, image }: ServiceHeroPr
 
               <div>
                 <label className="block text-sm font-medium text-gray-900 mb-1">{t('form.serviceType')}</label>
-                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900 bg-white">
+                <select defaultValue={slug || ""} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900 bg-white">
                   <option value="" className="text-gray-400">{t('form.selectService')}</option>
                   <option value="carpet-cleaning">{t('form.carpetCleaning')}</option>
                   <option value="sofa-mattresses">{t('form.sofaMattresses')}</option>
                   <option value="curtains-blinds">{t('form.curtainsBlinds')}</option>
-                  <option value="regular-cleaning">{t('form.regularCleaning')}</option>
-                  <option value="deep-cleaning">{t('form.deepCleaning')}</option>
                   <option value="air-conditioner">{t('form.airConditioner')}</option>
                 </select>
               </div>

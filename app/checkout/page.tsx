@@ -24,6 +24,7 @@ export default function CheckoutPage() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -39,11 +40,15 @@ export default function CheckoutPage() {
     console.log('Order submitted:', { ...formData, items, totalPrice });
 
     clearCart();
-    alert(t('checkout.successMessage'));
+    setShowSuccessModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowSuccessModal(false);
     router.push('/');
   };
 
-  if (items.length === 0) {
+  if (items.length === 0 && !showSuccessModal) {
     return (
       <div className="min-h-screen relative overflow-hidden">
         <div className="fixed inset-0 bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 -z-10">
@@ -110,32 +115,32 @@ export default function CheckoutPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-gray-700 font-semibold mb-2">{t('checkout.firstName')} <span className="text-red-500">*</span></label>
-                    <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} required className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all" placeholder="John" />
+                    <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} required className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all text-gray-900 placeholder:text-gray-500" placeholder="John" />
                   </div>
                   <div>
                     <label className="block text-gray-700 font-semibold mb-2">{t('checkout.lastName')} <span className="text-red-500">*</span></label>
-                    <input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} required className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all" placeholder="Doe" />
+                    <input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} required className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all text-gray-900 placeholder:text-gray-500" placeholder="Doe" />
                   </div>
                 </div>
 
                 <div className="mt-6">
                   <label className="block text-gray-700 font-semibold mb-2">{t('checkout.address')} <span className="text-red-500">*</span></label>
-                  <input type="text" name="address" value={formData.address} onChange={handleInputChange} required className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all" placeholder={t('checkout.addressPlaceholder')} />
+                  <input type="text" name="address" value={formData.address} onChange={handleInputChange} required className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all text-gray-900 placeholder:text-gray-500" placeholder={t('checkout.addressPlaceholder')} />
                 </div>
 
                 <div className="mt-6">
                   <label className="block text-gray-700 font-semibold mb-2">{t('checkout.phone')} <span className="text-red-500">*</span></label>
-                  <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} required className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all" placeholder="+971 50 123 4567" />
+                  <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} required className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all text-gray-900 placeholder:text-gray-500" placeholder="+971 50 123 4567" />
                 </div>
 
                 <div className="mt-6">
                   <label className="block text-gray-700 font-semibold mb-2">{t('checkout.email')} <span className="text-red-500">*</span></label>
-                  <input type="email" name="email" value={formData.email} onChange={handleInputChange} required className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all" placeholder="example@email.com" />
+                  <input type="email" name="email" value={formData.email} onChange={handleInputChange} required className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all text-gray-900 placeholder:text-gray-500" placeholder="example@email.com" />
                 </div>
 
                 <div className="mt-6">
                   <label className="block text-gray-700 font-semibold mb-2">{t('checkout.notes')}</label>
-                  <textarea name="notes" value={formData.notes} onChange={handleInputChange} rows={4} className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all resize-none" placeholder={t('checkout.notesPlaceholder')} />
+                  <textarea name="notes" value={formData.notes} onChange={handleInputChange} rows={4} className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all resize-none text-gray-900 placeholder:text-gray-500" placeholder={t('checkout.notesPlaceholder')} />
                 </div>
               </div>
 
@@ -226,6 +231,43 @@ export default function CheckoutPage() {
           </form>
         </div>
       </div>
+
+      {/* Success Modal */}
+      {showSuccessModal && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-in fade-in duration-200">
+          <div className="bg-white rounded-3xl p-10 max-w-md w-full shadow-2xl transform transition-all animate-in zoom-in-95 duration-300">
+            <div className="text-center">
+              {/* Success Icon with animation */}
+              <div className="relative mx-auto mb-6">
+                <div className="w-24 h-24 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto shadow-xl animate-in zoom-in duration-500">
+                  <svg className="w-12 h-12 text-white animate-in zoom-in duration-700 delay-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                {/* Decorative circles */}
+                <div className="absolute inset-0 w-24 h-24 mx-auto bg-green-200 rounded-full animate-ping opacity-20"></div>
+              </div>
+
+              {/* Message */}
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                {t('checkout.successTitle')}
+              </h3>
+              <p className="text-gray-600 mb-8 text-base leading-relaxed">
+                {t('checkout.successMessage')}
+              </p>
+
+              {/* OK Button */}
+              <button
+                onClick={handleCloseModal}
+                className="w-full py-4 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white rounded-2xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-95"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <Footer/>
     </>
   );

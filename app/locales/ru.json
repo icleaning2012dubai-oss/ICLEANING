@@ -565,6 +565,7 @@
   "checkout.infoMessage": "После оформления заказа мы свяжемся с Вами в течении 1-2 дней.",
   "checkout.submitButton": "Оформить заказ",
   "checkout.submitting": "Оформление...",
+  "checkout.successTitle": "Спасибо за заказ!",
   "checkout.successMessage": "Заказ успешно оформлен! Мы свяжемся с вами в течение 1-2 дней.",
   
   "testimonials.title": "Что говорят",
