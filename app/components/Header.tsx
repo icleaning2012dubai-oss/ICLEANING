@@ -107,7 +107,7 @@ const Header = memo(function Header() {
                 {/* Services Dropdown Menu */}
                 {isServicesMenuOpen && (
                   <div 
-                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden z-50"
+                    className="absolute top-full -left-4 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden z-50"
                     onMouseEnter={handleServicesMouseEnter}
                     onMouseLeave={handleServicesMouseLeave}
                   >

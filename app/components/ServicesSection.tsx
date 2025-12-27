@@ -95,7 +95,7 @@ export default function ServicesSection() {
                 <div className="relative z-20 h-full flex flex-col justify-end p-8">
                   <div className="space-y-4">
                     {/* Title block - always visible */}
-                    <div className="bg-white rounded-2xl p-6 shadow-xl">
+                    <div className="bg-white rounded-2xl py-6 px-4 shadow-xl">
                       <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                         {service.title}
                       </h3>
@@ -120,10 +120,10 @@ export default function ServicesSection() {
           ))}
         </div>
       </div>
-          <div className="max-w-[1400px] mx-auto">
-        {/* Header */}
+       {/* Header */}
+          {/* <div className="max-w-[1400px] mx-auto">
+       
         <div className="relative bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-xl mb-8 sm:mb-10 overflow-hidden">
-          {/* Decorative background image */}
           <div className="absolute top-0 right-0 w-full h-full opacity-40">
             <Image
               src="/images/decorative2.webp"
@@ -144,7 +144,7 @@ export default function ServicesSection() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       <style jsx>{`
         .scrollbar-hide::-webkit-scrollbar {
           display: none;
