@@ -123,9 +123,14 @@ export default function ContactPage() {
                           <h3 className="text-lg font-semibold text-gray-900 mb-2">
                             {t('contactPage.addressTitle')}
                           </h3>
-                          <p className="text-xl md:text-2xl text-gray-900 font-semibold">
+                          <a 
+                            href="https://www.google.com/maps/place/iCleaning/data=!4m2!3m1!1s0x0:0x9301ee88c16524e5?sa=X&ved=1t:2428&hl=en-il&ictx=111" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-xl md:text-2xl text-blue-600 hover:text-blue-700 font-semibold hover:underline transition-colors cursor-pointer block"
+                          >
                             {t('contactPage.addressText')}
-                          </p>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -157,7 +162,7 @@ export default function ContactPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                       {/* WhatsApp */}
-                      <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-white/20">
+                      <a href="https://api.whatsapp.com/send/?phone=971508648401&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="bg-white/10 backdrop-blur-md rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-white/20 cursor-pointer">
                         <div className="flex items-center gap-4 mb-4">
                           <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center shadow-lg">
                             <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -169,10 +174,10 @@ export default function ContactPage() {
                         <p className="text-gray-700 text-sm leading-relaxed">
                           {t('contactPage.whatsappDesc')}
                         </p>
-                      </div>
+                      </a>
 
                       {/* Instagram */}
-                      <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-white/20">
+                      <a href="https://www.instagram.com/icleaning_dubai/" target="_blank" rel="noopener noreferrer" className="bg-white/10 backdrop-blur-md rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-white/20 cursor-pointer">
                         <div className="flex items-center gap-4 mb-4">
                           <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
                             <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -184,10 +189,10 @@ export default function ContactPage() {
                         <p className="text-gray-700 text-sm leading-relaxed">
                           {t('contactPage.instagramDesc')}
                         </p>
-                      </div>
+                      </a>
 
                       {/* Telegram */}
-                      <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-white/20">
+                      <a href="https://t.me/icleaning_dubai" target="_blank" rel="noopener noreferrer" className="bg-white/10 backdrop-blur-md rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-white/20 cursor-pointer">
                         <div className="flex items-center gap-4 mb-4">
                           <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center shadow-lg">
                             <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -199,7 +204,7 @@ export default function ContactPage() {
                         <p className="text-gray-700 text-sm leading-relaxed">
                           {t('contactPage.telegramDesc')}
                         </p>
-                      </div>
+                      </a>
                     </div>
 
                     <div className="mt-6 text-center bg-blue-50/50 rounded-2xl p-4">

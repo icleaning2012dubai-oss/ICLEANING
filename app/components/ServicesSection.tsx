@@ -61,7 +61,7 @@ export default function ServicesSection() {
                 transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.zIndex = '100';
+                e.currentTarget.style.zIndex = '20';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.zIndex = String(10 - index);
@@ -83,13 +83,13 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Arrow button top right */}
-                <div className="absolute top-6 right-6 z-30">
-                  <div className="w-12 h-12 rounded-full border-2 border-white/50 backdrop-blur-sm flex items-center justify-center transition-transform duration-300 hover:scale-110 hover:bg-white/20">
+                <Link href={`/services/${service.slug}`} className="absolute top-6 right-6 z-30">
+                  <div className="w-12 h-12 rounded-full border-2 border-white/50 backdrop-blur-sm flex items-center justify-center transition-transform duration-300 hover:scale-110 hover:bg-white/20 cursor-pointer">
                     <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
                     </svg>
                   </div>
-                </div>
+                </Link>
 
                 {/* Content */}
                 <div className="relative z-20 h-full flex flex-col justify-end p-8">

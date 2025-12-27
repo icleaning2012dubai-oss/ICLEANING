@@ -44,14 +44,20 @@ export default function Footer() {
                 <span className="text-xs sm:text-sm break-all">customer@icleaning.ae</span>
               </a>
 
-              <div className="flex items-start gap-2.5 sm:gap-3 text-gray-300">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0">
+              <a 
+                href="https://www.google.com/maps/place/iCleaning/data=!4m2!3m1!1s0x0:0x9301ee88c16524e5?sa=X&ved=1t:2428&hl=en-il&ictx=111" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-start gap-2.5 sm:gap-3 text-gray-300 hover:text-white transition-colors group cursor-pointer"
+              >
+                <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center group-hover:bg-gray-700 transition-colors flex-shrink-0">
                   <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
                 <span className="text-xs sm:text-sm leading-relaxed">{t('footer.address2')}</span>
-              </div>
+              </a>
 
               <Link href="/terms" className="flex items-center gap-2.5 sm:gap-3 text-gray-300 hover:text-white transition-colors group">
                 <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center group-hover:bg-gray-700 transition-colors flex-shrink-0">

@@ -15,9 +15,9 @@
   text-rendering: optimizeSpeed;
 }
 
-/* Remove smooth scroll for better performance */
-* {
-  scroll-behavior: auto;
+/* Smooth scroll for better UX */
+html {
+  scroll-behavior: smooth;
 }
 
 /* GPU acceleration only for necessary transforms */
