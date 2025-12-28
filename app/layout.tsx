@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans, Tajawal } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "./contexts/LanguageProvider";
@@ -33,6 +33,16 @@ const tajawal = Tajawal({
   preload: false,
   adjustFontFallback: true,
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#2563eb" },
+    { media: "(prefers-color-scheme: dark)", color: "#1e40af" },
+  ],
+};
 
 export const metadata: Metadata = {
   title: "iCleaning - Professional Cleaning Services in Dubai | Чистка ковров, диванов, штор",
@@ -95,11 +105,6 @@ export const metadata: Metadata = {
     shortcut: "/logo.ico",
   },
   manifest: "/site.webmanifest",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
   verification: {
     google: "your-google-verification-code",
     yandex: "your-yandex-verification-code",
@@ -132,10 +137,6 @@ export default function RootLayout({
         {/* Telegram specific */}
         <meta name="telegram:card" content="summary_large_image" />
         <meta name="telegram:image" content="https://clining-ten.vercel.app/images/hero.webp" />
-        
-        {/* Theme colors */}
-        <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)" />
-        <meta name="theme-color" content="#1e40af" media="(prefers-color-scheme: dark)" />
         
         {/* Apple specific */}
         <meta name="apple-mobile-web-app-capable" content="yes" />

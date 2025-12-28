@@ -2,25 +2,28 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import HeroSection from './components/HeroSection';
+import ServicesSection from './components/ServicesSection';
 
-// Lazy load всі компоненти окрім Header/Footer
-const HeroSection = dynamic(() => import('./components/HeroSection'));
-const AboutSection = dynamic(() => import('./components/AboutSection'));
-const StatsSection = dynamic(() => import('./components/StatsSection'));
-const ServicesSection = dynamic(() => import('./components/ServicesSection'));
-
-// Lazy load компоненты ниже fold
-const EquipmentSection = dynamic(() => import('./components/EquipmentSection'), {
-  loading: () => <div className="h-96" />
+// Lazy load компоненты ниже fold (не видны сразу)
+const StatsSection = dynamic(() => import('./components/StatsSection'), {
+  loading: () => <div className="h-48 bg-gradient-to-br from-blue-50 to-blue-100" />
 });
+
 const TeamSection = dynamic(() => import('./components/TeamSection'), {
-  loading: () => <div className="h-96" />
+  loading: () => <div className="h-96 bg-white" />
 });
+
+const EquipmentSection = dynamic(() => import('./components/EquipmentSection'), {
+  loading: () => <div className="h-96 bg-gradient-to-br from-blue-50 to-blue-100" />
+});
+
 const ContactSection = dynamic(() => import('./components/ContactSection'), {
-  loading: () => <div className="h-96" />
+  loading: () => <div className="h-96 bg-white" />
 });
+
 const VideoSection = dynamic(() => import('./components/VideoSection'), {
-  loading: () => <div className="h-96" />
+  loading: () => <div className="h-96 bg-gradient-to-br from-blue-50 to-blue-100" />
 });
 
 export default function Home() {
