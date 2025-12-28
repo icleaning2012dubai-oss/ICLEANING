@@ -7,7 +7,7 @@
   
   "hero.title1": "Reliable Cleanliness",
   "hero.title2": "Is Our Mission!",
-  "hero.subtitle": "We clean sofas, carpets, curtains, mattresses and air conditioners — fast and quality",
+  "hero.subtitle": "We clean sofas, carpets, curtains, mattresses, and air conditioners — quickly and professionally.",
   "hero.getQuote": "Get a Quote",
   "hero.watchVideo": "Our Services",
   
@@ -31,9 +31,9 @@
   "services.carpet": "Carpet Cleaning",
   "services.carpetDesc": "Professional deep cleaning",
   "services.sofa": "Sofa & Mattresses",
-  "services.sofaDesc": "",
+  "services.sofaDesc": "Deep cleaning of upholstery",
   "services.curtains": "Curtains & Blinds",
-  "services.curtainsDesc": "",
+  "services.curtainsDesc": "Gentle textile care",
   "services.regular": "Regular Cleaning",
   "services.deep": "Deep Cleaning",
   "services.cleaningDesc": "Regular maintenance & thorough sanitization",
