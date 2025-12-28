@@ -64,7 +64,7 @@ export default function ServicePage({ params }: { params: Promise<{ slug: string
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 relative">
       {/* Background pattern */}
-      <div className="absolute inset-0 z-0 opacity-30 pointer-events-none bg-blue-100">
+      <div className="absolute inset-0 z-0 opacity-60 pointer-events-none bg-blue-100">
         <div className="absolute inset-0" style={{
           backgroundImage: 'url(/images/buble.webp)',
           backgroundRepeat: 'repeat',

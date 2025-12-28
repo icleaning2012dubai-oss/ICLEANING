@@ -40,18 +40,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 relative">
       <PrefetchLinks />
-      <div className="absolute inset-0 pointer-events-none">
-        <Image
-          src="/images/buble.webp"
-          alt=""
-          fill
-          sizes="100vw"
-          quality={70}
-          priority={false}
-          loading="lazy"
-        />
+      <div className="absolute inset-0 z-0 opacity-80 pointer-events-none">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'url(/images/buble.webp)',
+          backgroundRepeat: 'repeat',
+          backgroundSize: '100%',
+        }}></div>
       </div>
-      <div className="relative">
+      <div className="relative z-10"> 
         <Header />
         <main>
           <HeroSection />
