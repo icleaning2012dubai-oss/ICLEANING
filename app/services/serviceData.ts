@@ -11,7 +11,7 @@ export const servicesData: Record<string, ServiceData> = {
   'carpet-cleaning': {
     title: 'Carpet Cleaning',
     description: 'Professional deep cleaning for all types of carpets',
-    image: '/images/service/kover-page.png',
+    image: '/images/service/kover-page.webp',
     features: [
       'Deep steam cleaning',
       'Stain removal',
@@ -37,7 +37,7 @@ export const servicesData: Record<string, ServiceData> = {
   'sofa-mattresses': {
     title: 'Sofa & Mattresses',
     description: 'Remove dust mites, stains and allergens',
-    image: '/images/service/dyvan-page.png',
+    image: '/images/service/dyvan-page.webp',
     features: [
       'Dust mite elimination',
       'Deep fabric cleaning',
@@ -63,7 +63,7 @@ export const servicesData: Record<string, ServiceData> = {
   'curtains-blinds': {
     title: 'Curtains & Blinds',
     description: 'Professional dust and allergen removal',
-    image: '/images/service/shtory-page.png',
+    image: '/images/service/shtory-page.webp',
     features: [
       'On-site cleaning',
       'Delicate fabric care',

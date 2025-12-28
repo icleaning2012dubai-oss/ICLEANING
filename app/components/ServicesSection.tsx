@@ -12,21 +12,21 @@ export default function ServicesSection() {
       id: 1,
       title: t('services.carpet'),
       description: t('services.carpetDesc'),
-      image: '/images/service/kover.png',
+      image: '/images/service/kover.webp',
       slug: 'carpet-cleaning'
     },
     {
       id: 2,
       title: t('services.sofa'),
       description: t('services.sofaDesc'),
-      image: '/images/service/sofa.png',
+      image: '/images/service/sofa.webp',
       slug: 'sofa-mattresses'
     },
     {
       id: 3,
       title: t('services.curtains'),
       description: t('services.curtainsDesc'),
-      image: '/images/service/shtora.png',
+      image: '/images/service/shtora.webp',
       slug: 'curtains-blinds'
     },
     // {
@@ -40,7 +40,7 @@ export default function ServicesSection() {
       id: 5,
       title: t('services.aircon'),
       description: t('services.airconDesc'),
-      image: '/images/service/konder.png',
+      image: '/images/service/konder.webp',
       slug: 'air-conditioner'
     }
   ];

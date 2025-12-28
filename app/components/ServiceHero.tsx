@@ -29,13 +29,15 @@ export default function ServiceHero({ title, description, image, slug }: Service
         <div className="max-w-[1400px] mx-auto">
           <div className="relative min-h-[550px] rounded-3xl overflow-hidden flex items-center shadow-2xl">
             {/* Background Image */}
-            <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 z-0 bg-gray-900">
               <Image
                 src={image}
                 alt={title}
                 fill
                 className="object-cover object-top"
-                priority
+                loading="eager"
+                quality={85}
+                sizes="100vw"
               />
               {/* Dark Overlay for better text readability */}
               <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
