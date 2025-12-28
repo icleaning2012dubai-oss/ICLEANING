@@ -40,13 +40,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 relative">
       <PrefetchLinks />
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+      <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
         <Image
           src="/images/buble.webp"
           alt=""
           fill
           sizes="100vw"
-          quality={50}
+          quality={70}
           priority={false}
           loading="lazy"
         />
