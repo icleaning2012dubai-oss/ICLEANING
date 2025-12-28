@@ -34,9 +34,9 @@ html {
 
 /* GPU acceleration only for necessary transforms */
 .gpu-accelerate {
-  will-change: transform;
-  transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 @theme inline {

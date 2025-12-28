@@ -27,6 +27,15 @@ const VideoSection = dynamic(() => import('./components/VideoSection'), {
   loading: () => <div className="h-96 bg-gradient-to-br from-blue-50 to-blue-100" />
 });
 
+// Preload critical resources
+if (typeof window !== 'undefined') {
+  const link = document.createElement('link');
+  link.rel = 'preload';
+  link.as = 'image';
+  link.href = '/images/hero-mob.webp';
+  document.head.appendChild(link);
+}
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 relative">
@@ -37,7 +46,7 @@ export default function Home() {
           alt=""
           fill
           sizes="100vw"
-          quality={60}
+          quality={50}
           priority={false}
           loading="lazy"
         />

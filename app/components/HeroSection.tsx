@@ -22,7 +22,7 @@ export default function HeroSection() {
                 fill
                 className="object-cover md:hidden"
                 priority
-                quality={90}
+                quality={75}
                 sizes="100vw"
               />
               {/* Desktop Image */}
@@ -32,7 +32,7 @@ export default function HeroSection() {
                 fill
                 className="object-cover hidden md:block"
                 priority
-                quality={90}
+                quality={80}
                 sizes="100vw"
               />
               {/* Dark Overlay for better text readability */}
@@ -88,13 +88,7 @@ export default function HeroSection() {
                   <div className="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 border-3 border-white shadow-md flex items-center justify-center text-white font-bold text-sm">A</div>
                   <div className="w-11 h-11 rounded-full bg-gradient-to-br from-green-500 to-green-600 border-3 border-white shadow-md flex items-center justify-center text-white font-bold text-sm">M</div>
                   <div className="w-11 h-11 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 border-3 border-white shadow-md flex items-center justify-center text-white font-bold text-sm">S</div>
-                  <Image
-                    src="https://i.pravatar.cc/150?img=12"
-                    alt="Customer"
-                    width={44}
-                    height={44}
-                    className="rounded-full border-3 border-white shadow-md"
-                  />
+                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 border-3 border-white shadow-md flex items-center justify-center text-white font-bold text-sm">K</div>
                 </div>
                 <div>
                   <div className="flex items-center gap-1 mb-0.5">
