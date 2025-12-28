@@ -15,11 +15,22 @@ export default function HeroSection() {
           <div className="relative min-h-[500px] sm:min-h-[550px] md:min-h-[650px] rounded-2xl sm:rounded-3xl overflow-hidden flex items-center shadow-2xl">
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
+              {/* Mobile Image */}
+              <Image
+                src="/images/hero-mob.PNG"
+                alt="Professional Cleaning Service"
+                fill
+                className="object-cover md:hidden"
+                priority
+                quality={90}
+                sizes="100vw"
+              />
+              {/* Desktop Image */}
               <Image
                 src="/images/hero.webp"
                 alt="Professional Cleaning Service"
                 fill
-                className="object-cover"
+                className="object-cover hidden md:block"
                 priority
                 quality={90}
                 sizes="100vw"
