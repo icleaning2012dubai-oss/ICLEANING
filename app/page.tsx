@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HeroSection from './components/HeroSection';
 import ServicesSection from './components/ServicesSection';
+import PrefetchLinks from './components/PrefetchLinks';
 
 // Lazy load компоненты ниже fold (не видны сразу)
 const StatsSection = dynamic(() => import('./components/StatsSection'), {
@@ -29,6 +30,7 @@ const VideoSection = dynamic(() => import('./components/VideoSection'), {
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 relative">
+      <PrefetchLinks />
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <Image
           src="/images/buble.webp"

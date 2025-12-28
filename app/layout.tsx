@@ -15,6 +15,7 @@ const inter = Inter({
   preload: true,
   weight: ["400", "600"],
   adjustFontFallback: true,
+  fallback: ['system-ui', 'arial'],
 });
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -23,6 +24,7 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: 'swap',
   preload: false,
   adjustFontFallback: true,
+  fallback: ['system-ui', 'arial'],
 });
 
 const tajawal = Tajawal({
@@ -32,6 +34,7 @@ const tajawal = Tajawal({
   display: 'swap',
   preload: false,
   adjustFontFallback: true,
+  fallback: ['Tahoma', 'Arial'],
 });
 
 export const viewport: Viewport = {
@@ -120,11 +123,17 @@ export default function RootLayout({
     <html lang="ru">
       <head>
         {/* Preconnect for performance */}
-        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* DNS Prefetch for external resources */}
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
-        <link rel="preconnect" href="https://img.youtube.com" />
         <link rel="dns-prefetch" href="https://img.youtube.com" />
-        <link rel="preconnect" href="https://www.youtube.com" />
+        
+        {/* Prefetch service pages for faster navigation */}
+        <link rel="prefetch" href="/services/carpet-cleaning" />
+        <link rel="prefetch" href="/services/sofa-mattresses" />
+        <link rel="prefetch" href="/services/curtains-blinds" />
+        <link rel="prefetch" href="/services/air-conditioner" />
         
         {/* Additional meta tags for better social media preview */}
         <meta property="og:image" content="https://clining-ten.vercel.app/images/hero.webp" />

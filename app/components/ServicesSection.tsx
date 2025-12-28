@@ -77,7 +77,7 @@ export default function ServicesSection() {
                     className="object-cover"
                     sizes="(max-width: 640px) 280px, 320px"
                     loading="lazy"
-                    quality={85}
+                    quality={80}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                 </div>

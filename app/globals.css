@@ -6,6 +6,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -13,6 +22,9 @@
   /* Performance optimizations */
   font-feature-settings: "kern" 1;
   text-rendering: optimizeSpeed;
+  
+  /* Improve scrolling performance */
+  scroll-behavior: smooth;
 }
 
 /* Smooth scroll for better UX */

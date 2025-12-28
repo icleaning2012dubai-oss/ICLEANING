@@ -85,27 +85,9 @@ export default function HeroSection() {
               {/* Reviews Section - Mobile/Tablet */}
               <div className="lg:hidden flex items-center gap-3 bg-white/95 backdrop-blur-md px-5 py-3.5 rounded-2xl shadow-xl border border-white/20">
                 <div className="flex -space-x-3">
-                  <Image
-                    src="https://i.pravatar.cc/150?img=1"
-                    alt="Customer"
-                    width={44}
-                    height={44}
-                    className="rounded-full border-3 border-white shadow-md"
-                  />
-                  <Image
-                    src="https://i.pravatar.cc/150?img=5"
-                    alt="Customer"
-                    width={44}
-                    height={44}
-                    className="rounded-full border-3 border-white shadow-md"
-                  />
-                  <Image
-                    src="https://i.pravatar.cc/150?img=9"
-                    alt="Customer"
-                    width={44}
-                    height={44}
-                    className="rounded-full border-3 border-white shadow-md"
-                  />
+                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 border-3 border-white shadow-md flex items-center justify-center text-white font-bold text-sm">A</div>
+                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-green-500 to-green-600 border-3 border-white shadow-md flex items-center justify-center text-white font-bold text-sm">M</div>
+                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 border-3 border-white shadow-md flex items-center justify-center text-white font-bold text-sm">S</div>
                   <Image
                     src="https://i.pravatar.cc/150?img=12"
                     alt="Customer"
@@ -133,34 +115,10 @@ export default function HeroSection() {
           <div className="absolute top-8 ltr:right-8 rtl:left-8 z-20 bg-white/95 backdrop-blur-md rounded-2xl px-6 py-5 shadow-2xl hidden lg:block max-w-sm">
             <div className="flex items-center gap-4">
               <div className="flex -space-x-3">
-                <Image
-                  src="https://i.pravatar.cc/150?img=1"
-                  alt="Customer"
-                  width={50}
-                  height={50}
-                  className="rounded-full border-3 border-white shadow-lg"
-                />
-                <Image
-                  src="https://i.pravatar.cc/150?img=5"
-                  alt="Customer"
-                  width={50}
-                  height={50}
-                  className="rounded-full border-3 border-white shadow-lg"
-                />
-                <Image
-                  src="https://i.pravatar.cc/150?img=9"
-                  alt="Customer"
-                  width={50}
-                  height={50}
-                  className="rounded-full border-3 border-white shadow-lg"
-                />
-                <Image
-                  src="https://i.pravatar.cc/150?img=12"
-                  alt="Customer"
-                  width={50}
-                  height={50}
-                  className="rounded-full border-3 border-white shadow-lg"
-                />
+                <div className="w-[50px] h-[50px] rounded-full bg-gradient-to-br from-blue-500 to-blue-600 border-3 border-white shadow-lg flex items-center justify-center text-white font-bold">A</div>
+                <div className="w-[50px] h-[50px] rounded-full bg-gradient-to-br from-green-500 to-green-600 border-3 border-white shadow-lg flex items-center justify-center text-white font-bold">M</div>
+                <div className="w-[50px] h-[50px] rounded-full bg-gradient-to-br from-purple-500 to-purple-600 border-3 border-white shadow-lg flex items-center justify-center text-white font-bold">S</div>
+                <div className="w-[50px] h-[50px] rounded-full bg-gradient-to-br from-orange-500 to-orange-600 border-3 border-white shadow-lg flex items-center justify-center text-white font-bold">K</div>
               </div>
               <div>
                 <div className="flex items-center gap-1.5 mb-1">
