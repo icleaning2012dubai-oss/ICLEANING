@@ -51,11 +51,11 @@ export default function ServicesSection() {
 
       {/* Horizontal Scrollable Services with overlap - starts at container, extends right */}
       <div className="relative -mx-4 sm:mx-0">
-        <div className="flex overflow-x-auto pb-20 sm:pb-26 pt-8 snap-x snap-mandatory scrollbar-hide gap-3 sm:gap-6 px-4 sm:px-0" style={{ paddingLeft: 'max(1rem, calc((100vw - 1460px) / 2 + 0rem))' }}>
+        <div className="flex overflow-x-auto pb-20 sm:pb-26 pt-8 snap-x snap-mandatory scrollbar-hide gap-4 sm:gap-6 pl-4 sm:pl-0" style={{ paddingLeft: 'max(1rem, calc((100vw - 1400px) / 2))' }}>
           {services.map((service, index) => (
             <div
               key={service.id}
-              className={`flex-shrink-0 snap-start w-[280px] sm:w-[320px] ${index === services.length - 1 ? 'mr-4 sm:mr-6 lg:mr-8' : ''}`}
+              className={`flex-shrink-0 snap-start w-[280px] sm:w-[320px] ${index === services.length - 1 ? 'mr-0 sm:mr-6 lg:mr-8' : ''}`}
               style={{ 
                 zIndex: 10 - index,
                 transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)'

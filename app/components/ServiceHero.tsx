@@ -34,7 +34,10 @@ export default function ServiceHero({ title, description, image, slug }: Service
                 src={image}
                 alt={title}
                 fill
-                className="object-cover object-top"
+                className={slug === 'sofa-mattresses' 
+                  ? 'object-cover object-center scale-120' 
+                  : 'object-cover object-top'
+                }
                 loading="eager"
                 quality={85}
                 sizes="100vw"

@@ -152,7 +152,7 @@ export default function SofaMattressesService() {
                     src="/images/sofa_cleaning.webp"
                     alt="Sofa Cleaning Process"
                     fill
-                    className="object-cover"
+                    className="object-cover scale-110"
                   />
                   
                   <div className="absolute top-8 left-8 bg-white/95 backdrop-blur-sm px-6 py-3 rounded-2xl shadow-lg">
