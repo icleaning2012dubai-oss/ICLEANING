@@ -567,6 +567,13 @@
   "checkout.submitting": "Оформление...",
   "checkout.successTitle": "Спасибо за заказ!",
   "checkout.successMessage": "Заказ успешно оформлен! Мы свяжемся с вами в течение 1-2 дней.",
+  "checkout.paymentError": "Ошибка оплаты. Пожалуйста, попробуйте снова.",
+  "checkout.submitError": "Произошла ошибка. Пожалуйста, попробуйте снова.",
+  "checkout.loading": "Загрузка...",
+  "checkout.paymentStatus": "Статус оплаты",
+  "checkout.paid": "Оплачено",
+  "checkout.confirmationEmail": "Письмо с подтверждением было отправлено на ваш email.",
+  "checkout.backToHome": "На главную",
   
   "testimonials.title": "Что говорят",
   "testimonials.titleHighlight": "наши клиенты",

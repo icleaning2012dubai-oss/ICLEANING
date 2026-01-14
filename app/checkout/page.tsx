@@ -7,6 +7,9 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { loadStripe } from '@stripe/stripe-js';
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
 export default function CheckoutPage() {
   const { items, totalPrice, clearCart } = useCart();
@@ -20,7 +23,7 @@ export default function CheckoutPage() {
     phone: '',
     email: '',
     notes: '',
-    paymentMethod: 'cash'
+    paymentMethod: 'card'
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -35,12 +38,44 @@ export default function CheckoutPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      // Stripe оплата (единственный вариант)
+      const response = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          items,
+          customerInfo: {
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            email: formData.email,
+            phone: formData.phone,
+            address: formData.address,
+            notes: formData.notes,
+          },
+        }),
+      });
 
-    console.log('Order submitted:', { ...formData, items, totalPrice });
+      const { sessionId, url, error } = await response.json();
 
-    clearCart();
-    setShowSuccessModal(true);
+      if (error) {
+        console.error('Stripe error:', error);
+        alert(t('checkout.paymentError') || 'Payment error occurred. Please try again.');
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Перенаправление на Stripe Checkout
+      if (url) {
+        window.location.href = url;
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert(t('checkout.submitError') || 'An error occurred. Please try again.');
+      setIsSubmitting(false);
+    }
   };
 
   const handleCloseModal = () => {
@@ -151,23 +186,29 @@ export default function CheckoutPage() {
                 </div>
 
                 <div className="space-y-4">
-                  <label className="flex items-start gap-4 p-5 bg-white/80 backdrop-blur-sm rounded-2xl cursor-pointer hover:bg-white hover:shadow-md transition-all duration-200 border-2 border-transparent hover:border-blue-200">
-                    <input type="radio" name="paymentMethod" value="cash" checked={formData.paymentMethod === 'cash'} onChange={handleInputChange} className="mt-1" />
-                    <div className="flex-1">
-                      <div className="font-semibold text-gray-900">{t('checkout.paymentCashTitle')}</div>
-                      <p className="text-sm text-gray-600 mt-1">{t('checkout.paymentCashDescription')}</p>
-                    </div>
-                  </label>
-
-                  <label className="flex items-start gap-4 p-5 bg-white/80 backdrop-blur-sm rounded-2xl cursor-pointer hover:bg-white hover:shadow-md transition-all duration-200 border-2 border-transparent hover:border-blue-200">
-                    <input type="radio" name="paymentMethod" value="card" checked={formData.paymentMethod === 'card'} onChange={handleInputChange} className="mt-1" />
+                  <div className="flex items-start gap-4 p-5 bg-white/80 backdrop-blur-sm rounded-2xl border-2 border-blue-500 bg-blue-50/50">
                     <div className="flex-1">
                       <div className="font-semibold text-gray-900 flex items-center gap-2">
+                        <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
                         {t('checkout.paymentCardTitle')}
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
+                      </div>
+                      <p className="text-sm text-gray-600 mt-2">
+                        Secure payment via Stripe. All major credit and debit cards accepted.
+                      </p>
+                      <div className="flex gap-2 mt-3">
+                        <svg className="w-10 h-6" viewBox="0 0 48 32" fill="none">
+                          <rect width="48" height="32" rx="4" fill="#252525"/>
+                          <circle cx="18" cy="16" r="8" fill="#EB001B"/>
+                          <circle cx="30" cy="16" r="8" fill="#F79E1B"/>
+                          <path d="M24 9.6a9.6 9.6 0 000 12.8 9.6 9.6 0 000-12.8z" fill="#FF5F00"/>
+                        </svg>
+                        <svg className="w-10 h-6" viewBox="0 0 48 32" fill="none">
+                          <rect width="48" height="32" rx="4" fill="#0066B2"/>
+                          <rect x="8" y="12" width="32" height="8" fill="white"/>
+                        </svg>
                       </div>
                     </div>
-                  </label>
+                  </div>
                 </div>
 
                 <div className="mt-6 p-5 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl border border-blue-100">

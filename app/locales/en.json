@@ -565,6 +565,13 @@
   "checkout.submitting": "Processing...",
   "checkout.successTitle": "Thank you for your order!",
   "checkout.successMessage": "Order placed successfully! We will contact you within 1-2 days.",
+  "checkout.paymentError": "Payment error occurred. Please try again.",
+  "checkout.submitError": "An error occurred. Please try again.",
+  "checkout.loading": "Loading...",
+  "checkout.paymentStatus": "Payment Status",
+  "checkout.paid": "Paid",
+  "checkout.confirmationEmail": "A confirmation email has been sent to your email address.",
+  "checkout.backToHome": "Back to Home",
   
   "testimonials.title": "What our",
   "testimonials.titleHighlight": "clients say",
