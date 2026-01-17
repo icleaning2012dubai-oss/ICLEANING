@@ -6,6 +6,54 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 });
 
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
+const BITRIX_WEBHOOK_URL = 'https://sladikmladik.bitrix24.ru/rest/19494/pswzhpup008nfd6i/crm.lead.add';
+
+// Функция для создания лида в Bitrix24
+async function createBitrixLead(session: Stripe.Checkout.Session) {
+  try {
+    const customerName = session.metadata?.customerName || session.customer_details?.name || 'No name';
+    const customerPhone = session.metadata?.customerPhone || session.customer_details?.phone || '';
+    const customerEmail = session.customer_email || '';
+    const amount = session.amount_total ? (session.amount_total / 100).toFixed(2) : '0';
+
+    const bitrixData = {
+      fields: {
+        TITLE: `Оплаченный заказ - ${amount} AED`,
+        NAME: customerName,
+        PHONE: customerPhone ? [{ VALUE: customerPhone, VALUE_TYPE: 'WORK' }] : [],
+        EMAIL: customerEmail ? [{ VALUE: customerEmail, VALUE_TYPE: 'WORK' }] : [],
+        SOURCE_ID: 'WEB',
+        SOURCE_DESCRIPTION: 'Оплата через сайт (Stripe)',
+        OPPORTUNITY: amount,
+        CURRENCY_ID: 'AED',
+        STATUS_ID: 'CONVERTED', // Статус "Конвертирован" (оплачено)
+        COMMENTS: `Stripe Session ID: ${session.id}\nСумма: ${amount} AED\nEmail: ${customerEmail}\nАдрес: ${session.metadata?.customerAddress || 'Не указан'}\nПримечания: ${session.metadata?.notes || 'Нет'}`,
+        ASSIGNED_BY_ID: 1,
+      }
+    };
+
+    const response = await fetch(BITRIX_WEBHOOK_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(bitrixData),
+    });
+
+    const result = await response.json();
+
+    if (result.result) {
+      console.log('✅ Lead created in Bitrix24:', result.result);
+      return result.result;
+    } else {
+      console.error('❌ Bitrix24 error:', result);
+      return null;
+    }
+  } catch (error) {
+    console.error('❌ Error creating Bitrix lead:', error);
+    return null;
+  }
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -26,16 +74,23 @@ export async function POST(req: NextRequest) {
       case 'checkout.session.completed':
         const session = event.data.object as Stripe.Checkout.Session;
         
-        // Здесь можно сохранить заказ в БД
-        console.log('Payment successful:', {
+        console.log('💳 Payment successful:', {
           sessionId: session.id,
           customerEmail: session.customer_email,
           amountTotal: session.amount_total,
           metadata: session.metadata,
         });
 
-        // TODO: Отправить email подтверждения
-        // TODO: Создать запись заказа в базе данных
+        // Создаём лид в Bitrix24
+        const leadId = await createBitrixLead(session);
+        
+        if (leadId) {
+          console.log(`✅ Order recorded in CRM with Lead ID: ${leadId}`);
+        } else {
+          console.error('⚠️ Failed to create lead in CRM, but payment was successful');
+        }
+
+        // TODO: Отправить email подтверждения клиенту
         // TODO: Уведомить администратора
         
         break;
