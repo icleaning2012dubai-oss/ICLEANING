@@ -32,6 +32,8 @@ async function createBitrixLead(session: Stripe.Checkout.Session) {
       }
     };
 
+    console.log('📤 Sending to Bitrix24:', JSON.stringify(bitrixData, null, 2));
+    
     const response = await fetch(BITRIX_WEBHOOK_URL, {
       method: 'POST',
       headers: {
@@ -41,12 +43,18 @@ async function createBitrixLead(session: Stripe.Checkout.Session) {
     });
 
     const result = await response.json();
+    
+    console.log('📥 Bitrix24 response status:', response.status);
+    console.log('📥 Bitrix24 response:', JSON.stringify(result, null, 2));
 
     if (result.result) {
-      console.log('✅ Lead created in Bitrix24:', result.result);
+      console.log('✅ Lead created in Bitrix24 with ID:', result.result);
       return result.result;
     } else {
-      console.error('❌ Bitrix24 error:', result);
+      console.error('❌ Bitrix24 error:', JSON.stringify(result, null, 2));
+      if (result.error_description) {
+        console.error('❌ Error description:', result.error_description);
+      }
       return null;
     }
   } catch (error) {
