@@ -8,7 +8,7 @@ import PrefetchLinks from './components/PrefetchLinks';
 
 export const metadata: Metadata = {
   title: 'Профессиональная химчистка с выездом на дом',
-  description: 'Professional cleaning services: carpets, sofas, curtains, air conditioners. Quality and reliability guaranteed.',
+  description: 'Заказать профессиональную, качественную, экологическую химчистку онлайн в любое удобное для вас время! Звоните!',
 }
 
 // Lazy load компоненты ниже fold (не видны сразу)
