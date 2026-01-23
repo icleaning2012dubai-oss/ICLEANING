@@ -48,8 +48,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "iCleaning - Professional Cleaning Services in Dubai | Чистка ковров, диванов, штор",
-  description: "Professional cleaning services in Dubai: carpet cleaning, sofa & mattress cleaning, curtains & blinds, air conditioner cleaning. Eco-friendly products, experienced specialists. Профессиональная химчистка в Дубае.",
+  title: "Профессиональная химчистка с выездом на дом",
+  description: "Заказать профессиональную, качественную, экологическую химчистку онлайн в любое удобное для вас время! Звоните!",
   keywords: ["cleaning Dubai", "carpet cleaning Dubai", "sofa cleaning", "curtain cleaning", "air conditioner cleaning", "клининг Дубай", "чистка ковров", "химчистка мебели", "iCleaning"],
   authors: [{ name: "iCleaning Dubai" }],
   metadataBase: new URL('https://clining-ten.vercel.app'),
