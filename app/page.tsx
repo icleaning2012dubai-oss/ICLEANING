@@ -6,6 +6,11 @@ import HeroSection from './components/HeroSection';
 import ServicesSection from './components/ServicesSection';
 import PrefetchLinks from './components/PrefetchLinks';
 
+export const metadata: Metadata = {
+  title: 'Профессиональная химчистка с выездом на дом',
+  description: 'Professional cleaning services: carpets, sofas, curtains, air conditioners. Quality and reliability guaranteed.',
+}
+
 // Lazy load компоненты ниже fold (не видны сразу)
 const StatsSection = dynamic(() => import('./components/StatsSection'), {
   loading: () => <div className="h-48 bg-gradient-to-br from-blue-50 to-blue-100" />
