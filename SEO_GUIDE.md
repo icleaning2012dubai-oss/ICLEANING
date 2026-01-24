@@ -46,43 +46,74 @@ app/
 
 ```tsx
 export const metadata: Metadata = {
-  title: 'iCleaning - Professional Cleaning Services in Dubai',
-  description: 'Professional cleaning services: carpets, sofas, curtains, air conditioners. Quality and reliability guaranteed.',
+  title: 'iCleaning Dubai - Professional Cleaning Services | Carpets, Sofas, AC Cleaning',
+  description: 'Professional cleaning services in Dubai. Expert carpet cleaning, sofa cleaning...',
+  keywords: ['cleaning services Dubai', 'carpet cleaning Dubai', ...],
 }
 ```
 
 **Где изменить:**
 - Откройте: [`app/page.tsx`](app/page.tsx)
-- Найдите блок `export const metadata`
-- Измените `title` и `description`
+- Найдите блок `export const metadata` (строки 11-26)
+- Измените `title`, `description`, `keywords`
 
 ---
 
-### 2. **Страница "О нас"** (`app/about/page.tsx`)
+### 2. **Страница "О нас"** (`app/about/layout.tsx`)
 
 ```tsx
 export const metadata: Metadata = {
-  title: 'About Us - iCleaning Dubai',
-  description: 'Learn about iCleaning professional cleaning services...',
+  title: 'About Us - iCleaning Dubai | Professional Cleaning Company',
+  description: 'Learn about iCleaning Dubai. Professional cleaning company...',
 }
 ```
 
 **Где изменить:**
-- [`app/about/page.tsx`](app/about/page.tsx) - строки 5-8
+- [`app/about/layout.tsx`](app/about/layout.tsx) - строки 4-14
 
 ---
 
-### 3. **Страница "Контакты"** (`app/contact/page.tsx`)
+### 3. **Страница "Контакты"** (`app/contact/layout.tsx`)
 
 ```tsx
 export const metadata: Metadata = {
-  title: 'Contact Us - iCleaning Dubai',
-  description: 'Get in touch with iCleaning for professional cleaning services...',
+  title: 'Contact Us - iCleaning Dubai | Get Free Quote Today',
+  description: 'Contact iCleaning Dubai for professional cleaning services...',
 }
 ```
 
 **Где изменить:**
-- [`app/contact/page.tsx`](app/contact/page.tsx) - строки 5-8
+- [`app/contact/layout.tsx`](app/contact/layout.tsx) - строки 4-14
+
+---
+
+### 4. **Privacy Policy** (`app/privacy/layout.tsx`)
+
+```tsx
+export const metadata: Metadata = {
+  title: 'Privacy Policy - iCleaning Dubai',
+  description: 'Privacy policy for iCleaning Dubai...',
+  robots: { index: false, follow: true }, // Не индексируется
+}
+```
+
+**Где изменить:**
+- [`app/privacy/layout.tsx`](app/privacy/layout.tsx) - строки 4-12
+
+---
+
+### 5. **Terms of Service** (`app/terms/layout.tsx`)
+
+```tsx
+export const metadata: Metadata = {
+  title: 'Terms of Service - iCleaning Dubai',
+  description: 'Terms and conditions for iCleaning Dubai services...',
+  robots: { index: false, follow: true }, // Не индексируется
+}
+```
+
+**Где изменить:**
+- [`app/terms/layout.tsx`](app/terms/layout.tsx) - строки 4-12
 
 ---
 

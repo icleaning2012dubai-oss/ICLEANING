@@ -2,6 +2,14 @@
 
 import { useLanguage } from '@/app/contexts/LanguageProvider';
 
+// ===== SEO METADATA - ДЛЯ СЕОШНИКА =====
+// TODO: Добавить metadata для Privacy Policy
+// Рекомендуемые значения:
+// title: 'Privacy Policy - iCleaning Dubai'
+// description: 'Privacy policy for iCleaning Dubai cleaning services. Learn how we protect your personal data and information.'
+// robots: 'noindex, follow' (опционально - если не хотите индексировать эту страницу)
+// ===== КОНЕЦ SEO METADATA =====
+
 export default function PrivacyPage() {
   const { t } = useLanguage();
   

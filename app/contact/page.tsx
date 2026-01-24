@@ -5,6 +5,14 @@ import Footer from '@/app/components/Footer';
 import Image from 'next/image';
 import { useLanguage } from '@/app/contexts/LanguageProvider';
 
+// ===== SEO METADATA - ДЛЯ СЕОШНИКА =====
+// TODO: Добавить metadata для страницы "Контакты"
+// ВАЖНО: Эта страница использует 'use client', metadata нужно в layout
+// Рекомендуемые значения:
+// title: 'Contact iCleaning Dubai - Get Free Quote | +971-XX-XXX-XXXX'
+// description: 'Contact iCleaning Dubai for professional cleaning services. Get free quote, book online or call +971-XX-XXX-XXXX. Available 7 days a week in Dubai, UAE.'
+// ===== КОНЕЦ SEO METADATA =====
+
 export default function ContactPage() {
   const { t } = useLanguage();
   return (
