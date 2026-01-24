@@ -56,10 +56,7 @@ if (typeof window !== 'undefined') {
   link.href = '/images/hero-mob.webp';
   document.head.appendChild(link);
 }
-export const metadata: Metadata = {
-  title: 'Профессиональная химчистка с выездом на дом',
-  description: 'Заказать профессиональную, качественную, экологическую химчистку онлайн в любое удобное для вас время! Звоните!',
-}
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 relative">
