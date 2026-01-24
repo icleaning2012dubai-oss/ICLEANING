@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import HeroSection from './components/HeroSection';
 import ServicesSection from './components/ServicesSection';
 import PrefetchLinks from './components/PrefetchLinks';
+import { Metadata } from 'next';
 
 
 
