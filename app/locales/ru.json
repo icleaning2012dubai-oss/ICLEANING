@@ -481,12 +481,6 @@
   "contactForm.shops": "Магазины и бутики",
   "contactForm.homes": "Дома и коттеджи",
   
-  "equipment.title": "Наше преимущество",
-  "equipment.subtitle": "Используем только лучшее оборудование и экологически чистые средства",
-  "equipment.ecoTitle": "Экологически чистые продукты",
-  "equipment.ecoDesc": "Мы используем только экологически чистые и гипоаллергенные чистящие средства, не содержащие вредных химикатов. Безопасны для людей, домашних животных и окружающей среды, сохраняя при этом высокую эффективность.",
-  "equipment.proTitle": "Профессиональное оборудование",
-  "equipment.proDesc": "Используем современные паропылесосы, роторные машины для ковров, профессиональные пылесосы HEPA и специализированное оборудование для очистки мягкой мебели.",
   "equipment.hepaTitle": "Пылесосы с HEPA-фильтрами",
   "equipment.hepaDesc": "Улавливают мельчайшие частицы пыли и аллергены для более здорового качества воздуха",
   "equipment.steamTitle": "Парогенераторы",
@@ -523,18 +517,8 @@
   "serviceDetails.air-conditioner.title": "Кондиционеры",
   "serviceDetails.air-conditioner.description": "Поддержание качества воздуха",
   
-  "servicePage.notFound": "Услуга не найдена",
-  "servicePage.notFoundDesc": "Запрашиваемая услуга не существует",
-  
   "common.addToBasket": "Добавить в корзину",
   "common.measurementNote": "Наша команда приедет и замерит для вас",
-  
-  "cart.added": "Добавлено в корзину",
-  "cart.title": "Корзина",
-  "cart.empty": "Ваша корзина пуста",
-  "cart.total": "Итого",
-  "cart.checkout": "Оформить заказ",
-  "cart.clear": "Очистить корзину",
   
   "checkout.emptyTitle": "Корзина пуста",
   "checkout.emptyDescription": "Добавьте товары в корзину, чтобы оформить заказ",
@@ -575,9 +559,6 @@
   "checkout.confirmationEmail": "Письмо с подтверждением было отправлено на ваш email.",
   "checkout.backToHome": "На главную",
   
-  "testimonials.title": "Что говорят",
-  "testimonials.titleHighlight": "наши клиенты",
-  "testimonials.subtitle": "Мы гордимся качеством наших услуг и довольными клиентами",
   "testimonials.prevButton": "Предыдущий отзыв",
   "testimonials.nextButton": "Следующий отзыв",
   "testimonials.stat1Number": "500+",
