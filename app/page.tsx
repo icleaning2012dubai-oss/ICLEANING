@@ -7,6 +7,24 @@ import ServicesSection from './components/ServicesSection';
 import PrefetchLinks from './components/PrefetchLinks';
 import { Metadata } from 'next';
 
+// ===== SEO METADATA - ДЛЯ СЕОШНИКА =====
+// TODO: Оптимизировать title и description для главной страницы
+// Рекомендации:
+// - Title: 50-60 символов, включить основные ключевые слова
+// - Description: 150-160 символов, призыв к действию
+// - Keywords: основные услуги + локация (Dubai, UAE)
+export const metadata: Metadata = {
+  title: 'iCleaning Dubai - Professional Cleaning Services | Carpets, Sofas, AC Cleaning',
+  description: 'Professional cleaning services in Dubai. Expert carpet cleaning, sofa cleaning, curtains, mattresses, and air conditioner maintenance. Quality guaranteed. Book online today!',
+  keywords: ['cleaning services Dubai', 'carpet cleaning Dubai', 'sofa cleaning', 'AC cleaning', 'professional cleaning UAE', 'home cleaning Dubai'],
+  openGraph: {
+    title: 'iCleaning Dubai - Professional Cleaning Services',
+    description: 'Expert cleaning services for your home and office in Dubai',
+    images: ['/images/og-home.jpg'],
+  },
+};
+// ===== КОНЕЦ SEO METADATA =====
+
 
 
 // Lazy load компоненты ниже fold (не видны сразу)

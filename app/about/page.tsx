@@ -4,6 +4,17 @@ import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import Image from 'next/image';
 import { useLanguage } from '@/app/contexts/LanguageProvider';
+import { Metadata } from 'next';
+
+// ===== SEO METADATA - ДЛЯ СЕОШНИКА =====
+// TODO: Добавить metadata для страницы "О нас"
+// ВАЖНО: Эта страница использует 'use client', поэтому metadata нужно вынести
+// в отдельный серверный компонент или добавить через layout
+// Временное решение: добавить в layout.tsx как default для /about
+// Рекомендуемые значения:
+// title: 'About iCleaning Dubai - Professional Cleaning Company | Our Story'
+// description: 'Learn about iCleaning Dubai. Professional cleaning company with 5+ years experience. Expert team, eco-friendly products, and guaranteed quality service.'
+// ===== КОНЕЦ SEO METADATA =====
 
 export default function AboutPage() {
   const { t } = useLanguage();

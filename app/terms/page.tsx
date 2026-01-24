@@ -2,6 +2,14 @@
 
 import { useLanguage } from '@/app/contexts/LanguageProvider';
 
+// ===== SEO METADATA - ДЛЯ СЕОШНИКА =====
+// TODO: Добавить metadata для Terms of Service
+// Рекомендуемые значения:
+// title: 'Terms of Service - iCleaning Dubai'
+// description: 'Terms and conditions for using iCleaning Dubai services. Read our service terms, booking policy, and cancellation rules.'
+// robots: 'noindex, follow' (опционально)
+// ===== КОНЕЦ SEO METADATA =====
+
 export default function TermsPage() {
   const { t } = useLanguage();
   
