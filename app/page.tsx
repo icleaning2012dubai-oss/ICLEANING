@@ -14,12 +14,12 @@ import { Metadata } from 'next';
 // - Description: 150-160 символов, призыв к действию
 // - Keywords: основные услуги + локация (Dubai, UAE)
 export const metadata: Metadata = {
-  title: 'iCleaning Dubai - Professional Cleaning Services | Carpets, Sofas, AC Cleaning',
-  description: 'Professional cleaning services in Dubai. Expert carpet cleaning, sofa cleaning, curtains, mattresses, and air conditioner maintenance. Quality guaranteed. Book online today!',
+  title: 'Профессиональная химчистка с выездом на дом',
+  description: 'Заказать профессиональную, качественную, экологическую химчистку онлайн в любое удобное для вас время! Звоните!',
   keywords: ['cleaning services Dubai', 'carpet cleaning Dubai', 'sofa cleaning', 'AC cleaning', 'professional cleaning UAE', 'home cleaning Dubai'],
   openGraph: {
-    title: 'iCleaning Dubai - Professional Cleaning Services',
-    description: 'Expert cleaning services for your home and office in Dubai',
+    title: 'Профессиональная химчистка с выездом на дом',
+    description: 'Заказать профессиональную, качественную, экологическую химчистку онлайн в любое удобное для вас время! Звоните!',
     images: ['/images/og-home.jpg'],
   },
 };
