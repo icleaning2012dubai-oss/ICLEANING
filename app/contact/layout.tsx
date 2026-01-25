@@ -3,12 +3,12 @@ import { Metadata } from 'next';
 // ===== SEO METADATA - ДЛЯ СЕОШНИКА =====
 // TODO: Оптимизировать для страницы "Контакты"
 export const metadata: Metadata = {
-  title: 'Contact Us - iCleaning Dubai | Get Free Quote Today',
-  description: 'Contact iCleaning Dubai for professional cleaning services. Get a free quote, book online or call us. Available 7 days a week in Dubai, UAE. Fast response guaranteed.',
+  title: 'Контакты - Icleaning',
+  description: 'Мы в iCleaning уверены: чистота — это не только про порядок, но и про надежность. Именно поэтому мы всегда открыты',
   keywords: ['contact iCleaning', 'cleaning quote Dubai', 'book cleaning service', 'Dubai cleaners contact'],
   openGraph: {
-    title: 'Contact iCleaning Dubai',
-    description: 'Get in touch for professional cleaning services in Dubai',
+    title: 'Контакты - Icleaning',
+    description: 'Мы в iCleaning уверены: чистота — это не только про порядок, но и про надежность. Именно поэтому мы всегда открыты',
     images: ['/images/og-contact.jpg'],
   },
 };
