@@ -12,8 +12,8 @@ import { Metadata } from 'next';
 // в отдельный серверный компонент или добавить через layout
 // Временное решение: добавить в layout.tsx как default для /about
 // Рекомендуемые значения:
-// title: 'About iCleaning Dubai - Professional Cleaning Company | Our Story'
-// description: 'Learn about iCleaning Dubai. Professional cleaning company with 5+ years experience. Expert team, eco-friendly products, and guaranteed quality service.'
+// title: 'О нашей компании - Icleaning'
+// description: 'О нашей компании - Icleaning. Мы верим, что качественная чистка мебели, кондиционеров, ковров и не только — это уважение к пространству'
 // ===== КОНЕЦ SEO METADATA =====
 
 export default function AboutPage() {
