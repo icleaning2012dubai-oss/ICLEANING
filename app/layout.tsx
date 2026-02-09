@@ -1,12 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans, Tajawal } from "next/font/google";
 import "./globals.css";
-import { LanguageProvider } from "./contexts/LanguageProvider";
-import { CartProvider } from "./contexts/CartProvider";
-import Cart from "./components/Cart";
-import CartNotificationWrapper from "./components/CartNotificationWrapper";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import { headers } from "next/headers";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -48,19 +43,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Профессиональная химчистка с выездом на дом",
-  description: "Заказать профессиональную, качественную, экологическую химчистку онлайн в любое удобное для вас время! Звоните!",
-  keywords: ["cleaning Dubai", "carpet cleaning Dubai", "sofa cleaning", "curtain cleaning", "air conditioner cleaning", "клининг Дубай", "чистка ковров", "химчистка мебели", "iCleaning"],
-  authors: [{ name: "iCleaning Dubai" }],
-  metadataBase: new URL('https://clining-ten.vercel.app'),
-  alternates: {
-    canonical: '/',
-    languages: {
-      'en': '/en',
-      'ru': '/ru',
-      'ar': '/ar',
-    },
-  },
+  metadataBase: new URL('https://icleaning.ae'),
   robots: {
     index: true,
     follow: true,
@@ -71,31 +54,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_AE",
-    alternateLocale: ["ru_RU", "ar_AE"],
-    url: "https://icleaning.ae",
-    siteName: "iCleaning Dubai",
-    title: "iCleaning - Professional Cleaning Services in Dubai",
-    description: "Expert cleaning services: carpets, sofas, curtains, air conditioners. Eco-friendly, professional team. Book online!",
-    images: [
-      {
-        url: "https://clining-ten.vercel.app/images/hero.webp",
-        width: 1200,
-        height: 630,
-        alt: "iCleaning Dubai - Professional Cleaning Services",
-        type: "image/webp",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "iCleaning - Professional Cleaning Services in Dubai",
-    description: "Expert cleaning services: carpets, sofas, curtains, air conditioners",
-    images: ["https://clining-ten.vercel.app/images/hero.webp"],
-    creator: "@icleaningdubai",
   },
   icons: {
     icon: [
@@ -114,13 +72,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Get language from middleware header
+  const headersList = await headers();
+  const lang = headersList.get('x-lang') || 'ru';
+  const dir = lang === 'ar' ? 'rtl' : 'ltr';
+
   return (
-    <html lang="ru">
+    <html lang={lang} dir={dir} suppressHydrationWarning>
       <head>
         {/* Preconnect for performance */}
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -129,23 +92,12 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://img.youtube.com" />
         
-        {/* Prefetch service pages for faster navigation */}
-        <link rel="prefetch" href="/services/carpet-cleaning" />
-        <link rel="prefetch" href="/services/sofa-mattresses" />
-        <link rel="prefetch" href="/services/curtains-blinds" />
-        <link rel="prefetch" href="/services/air-conditioner" />
-        
         {/* Additional meta tags for better social media preview */}
-        <meta property="og:image" content="https://clining-ten.vercel.app/images/hero.webp" />
-        <meta property="og:image:secure_url" content="https://clining-ten.vercel.app/images/hero.webp" />
+        <meta property="og:image" content="https://icleaning.ae/images/hero.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/webp" />
         <meta property="og:image:alt" content="iCleaning Dubai - Professional Cleaning Services" />
-        
-        {/* Telegram specific */}
-        <meta name="telegram:card" content="summary_large_image" />
-        <meta name="telegram:image" content="https://clining-ten.vercel.app/images/hero.webp" />
         
         {/* Apple specific */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -159,15 +111,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${plusJakarta.variable} ${tajawal.variable} font-sans antialiased`}
       >
-        <LanguageProvider>
-          <CartProvider>
-            {/* <Header /> */}
-            {children}
-            {/* <Footer /> */}
-            <Cart />
-            <CartNotificationWrapper />
-          </CartProvider>
-        </LanguageProvider>
+        {children}
       </body>
     </html>
   );

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useLanguage } from '@/app/contexts/LanguageProvider';
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { t, getLocalizedPath } = useLanguage();
   return (
     <footer className="pb-4 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[1400px] mx-auto bg-gray-900 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden">
@@ -15,10 +15,10 @@ export default function Footer() {
           <div className="space-y-4 sm:space-y-6">
             <h4 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">{t('footer.company')}</h4>
             <div className="space-y-3 sm:space-y-4">
-              <Link href="/" className="block text-gray-300 hover:text-white transition-colors text-xs sm:text-sm">{t('nav.home')}</Link>
-              <Link href="/about" className="block text-gray-300 hover:text-white transition-colors text-xs sm:text-sm">{t('nav.about')}</Link>
-              <Link href="/#services" className="block text-gray-300 hover:text-white transition-colors text-xs sm:text-sm">{t('nav.services')}</Link>
-              <Link href="/contact" className="block text-gray-300 hover:text-white transition-colors text-xs sm:text-sm">{t('nav.contact')}</Link>
+              <Link href={getLocalizedPath('/')} className="block text-gray-300 hover:text-white transition-colors text-xs sm:text-sm">{t('nav.home')}</Link>
+              <Link href={getLocalizedPath('/about')} className="block text-gray-300 hover:text-white transition-colors text-xs sm:text-sm">{t('nav.about')}</Link>
+              <Link href={getLocalizedPath('/#services')} className="block text-gray-300 hover:text-white transition-colors text-xs sm:text-sm">{t('nav.services')}</Link>
+              <Link href={getLocalizedPath('/contact')} className="block text-gray-300 hover:text-white transition-colors text-xs sm:text-sm">{t('nav.contact')}</Link>
             </div>
           </div>
 
@@ -59,7 +59,7 @@ export default function Footer() {
                 <span className="text-xs sm:text-sm leading-relaxed">{t('footer.address2')}</span>
               </a>
 
-              <Link href="/terms" className="flex items-center gap-2.5 sm:gap-3 text-gray-300 hover:text-white transition-colors group">
+              <Link href={getLocalizedPath('/terms')} className="flex items-center gap-2.5 sm:gap-3 text-gray-300 hover:text-white transition-colors group">
                 <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center group-hover:bg-gray-700 transition-colors flex-shrink-0">
                   <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -120,10 +120,10 @@ export default function Footer() {
               ©2025 iCleaning. All rights reserved
             </p>
             <div className="flex items-center gap-4 sm:gap-6">
-              <Link href="/privacy" className="text-gray-500 hover:text-white text-xs sm:text-sm transition-colors">
+              <Link href={getLocalizedPath('/privacy')} className="text-gray-500 hover:text-white text-xs sm:text-sm transition-colors">
                 {t('footer.privacyPolicy')}
               </Link>
-              <Link href="/terms" className="text-gray-500 hover:text-white text-xs sm:text-sm transition-colors">
+              <Link href={getLocalizedPath('/terms')} className="text-gray-500 hover:text-white text-xs sm:text-sm transition-colors">
                 {t('footer.termsOfUse')}
               </Link>
             </div>

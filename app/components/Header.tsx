@@ -13,8 +13,11 @@ const Header = memo(function Header() {
   const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
   const [servicesCloseTimer, setServicesCloseTimer] = useState<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
-  const { language, setLanguage, t } = useLanguage();
+  const { language, setLanguage, t, getLocalizedPath } = useLanguage();
   const { totalItems, toggleCart } = useCart();
+
+  // Remove lang prefix from pathname for active state comparison
+  const pathWithoutLang = pathname.replace(/^\/(en|ru|ar)/, '') || '/';
 
   const handleServicesMouseEnter = () => {
     if (servicesCloseTimer) {
@@ -51,7 +54,7 @@ const Header = memo(function Header() {
         <div className="bg-white/80 backdrop-blur-md rounded-full px-4 sm:px-8 py-3 sm:py-4 shadow-2xl border border-gray-200/50">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link href="/" className="flex items-center">
+            <Link href={getLocalizedPath('/')} className="flex items-center">
               <div className="relative w-32 h-10 sm:w-40 sm:h-12">
                 <Image
                   src="/images/logo.svg"
@@ -67,16 +70,16 @@ const Header = memo(function Header() {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
               <Link 
-                href="/" 
+                href={getLocalizedPath('/')} 
                 className={`relative transition-all duration-300 font-medium group ${
-                  pathname === '/' 
+                  pathWithoutLang === '/' 
                     ? 'text-blue-600 font-semibold' 
                     : 'text-gray-700 hover:text-blue-600'
                 }`}
               >
                 {t('nav.home')}
                 <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
-                  pathname === '/' ? 'w-full' : 'w-0 group-hover:w-full'
+                  pathWithoutLang === '/' ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
               </Link>
               
@@ -88,7 +91,7 @@ const Header = memo(function Header() {
               >
                 <button 
                   className={`relative transition-all duration-300 font-medium group flex items-center gap-1 ${
-                    pathname.startsWith('/services') 
+                    pathWithoutLang.startsWith('/services') 
                       ? 'text-blue-600 font-semibold' 
                       : 'text-gray-700 hover:text-blue-600'
                   }`}
@@ -100,7 +103,7 @@ const Header = memo(function Header() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                   </svg>
                   <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
-                    pathname.startsWith('/services') ? 'w-full' : 'w-0 group-hover:w-full'
+                    pathWithoutLang.startsWith('/services') ? 'w-full' : 'w-0 group-hover:w-full'
                   }`}></span>
                 </button>
 
@@ -114,9 +117,9 @@ const Header = memo(function Header() {
                     {services.map((service) => (
                       <Link
                         key={service.slug}
-                        href={`/services/${service.slug}`}
+                        href={getLocalizedPath(`/services/${service.slug}`)}
                         className={`block px-4 py-3 transition-colors ${
-                          pathname === `/services/${service.slug}`
+                          pathWithoutLang === `/services/${service.slug}`
                             ? 'bg-blue-50 text-blue-600'
                             : 'text-gray-700 hover:bg-gray-50'
                         }`}
@@ -130,30 +133,30 @@ const Header = memo(function Header() {
               </div>
 
               <Link 
-                href="/about" 
+                href={getLocalizedPath('/about')} 
                 className={`relative transition-all duration-300 font-medium group ${
-                  pathname === '/about' 
+                  pathWithoutLang === '/about' 
                     ? 'text-blue-600 font-semibold' 
                     : 'text-gray-700 hover:text-blue-600'
                 }`}
               >
                 {t('nav.about')}
                 <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
-                  pathname === '/about' ? 'w-full' : 'w-0 group-hover:w-full'
+                  pathWithoutLang === '/about' ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
               </Link>
               
               <Link 
-                href="/contact" 
+                href={getLocalizedPath('/contact')} 
                 className={`relative transition-all duration-300 font-medium group ${
-                  pathname === '/contact' 
+                  pathWithoutLang === '/contact' 
                     ? 'text-blue-600 font-semibold' 
                     : 'text-gray-700 hover:text-blue-600'
                 }`}
               >
                 {t('nav.contact')}
                 <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
-                  pathname === '/contact' ? 'w-full' : 'w-0 group-hover:w-full'
+                  pathWithoutLang === '/contact' ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
               </Link>
             </nav>
@@ -207,7 +210,7 @@ const Header = memo(function Header() {
               </div>
 
               <Link 
-                href="/contact"
+                href={getLocalizedPath('/contact')}
                 className="hidden md:block px-6 py-2.5 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] hover:scale-105"
               >
                 {t('nav.contactUs')}
@@ -264,9 +267,9 @@ const Header = memo(function Header() {
           <div className="md:hidden mt-4 bg-white/90 backdrop-blur-md rounded-3xl p-6 shadow-2xl border border-gray-200/50">
             <nav className="flex flex-col space-y-4">
               <Link 
-                href="/" 
+                href={getLocalizedPath('/')} 
                 className={`transition-colors font-medium ${
-                  pathname === '/' 
+                  pathWithoutLang === '/' 
                     ? 'text-blue-600 font-semibold' 
                     : 'text-gray-700 hover:text-gray-900'
                 }`}
@@ -280,7 +283,7 @@ const Header = memo(function Header() {
                 <button
                   onClick={() => setIsServicesMenuOpen(!isServicesMenuOpen)}
                   className={`w-full flex items-center justify-between transition-colors font-medium ${
-                    pathname.startsWith('/services') 
+                    pathWithoutLang.startsWith('/services') 
                       ? 'text-blue-600 font-semibold' 
                       : 'text-gray-700 hover:text-gray-900'
                   }`}
@@ -299,9 +302,9 @@ const Header = memo(function Header() {
                     {services.map((service) => (
                       <Link
                         key={service.slug}
-                        href={`/services/${service.slug}`}
+                        href={getLocalizedPath(`/services/${service.slug}`)}
                         className={`block py-2 text-sm ${
-                          pathname === `/services/${service.slug}`
+                          pathWithoutLang === `/services/${service.slug}`
                             ? 'text-blue-600 font-medium'
                             : 'text-gray-600 hover:text-gray-900'
                         }`}
@@ -315,9 +318,9 @@ const Header = memo(function Header() {
               </div>
               
               <Link 
-                href="/about" 
+                href={getLocalizedPath('/about')} 
                 className={`transition-colors font-medium ${
-                  pathname === '/about' 
+                  pathWithoutLang === '/about' 
                     ? 'text-blue-600 font-semibold' 
                     : 'text-gray-700 hover:text-gray-900'
                 }`}
@@ -327,9 +330,9 @@ const Header = memo(function Header() {
               </Link>
               
               <Link 
-                href="/contact" 
+                href={getLocalizedPath('/contact')} 
                 className={`transition-colors font-medium ${
-                  pathname === '/contact' 
+                  pathWithoutLang === '/contact' 
                     ? 'text-blue-600 font-semibold' 
                     : 'text-gray-700 hover:text-gray-900'
                 }`}
@@ -363,7 +366,7 @@ const Header = memo(function Header() {
               </div>
 
               <Link 
-                href="/contact"
+                href={getLocalizedPath('/contact')}
                 className="w-full block text-center px-6 py-2.5 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] hover:scale-105"
                 onClick={() => setIsMenuOpen(false)}
               >

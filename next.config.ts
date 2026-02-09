@@ -54,6 +54,32 @@ const nextConfig: NextConfig = {
     } : false,
   },
   
+  // 301 редиректы со старого WordPress сайта (сохранение SEO)
+  // Старые URL были на русском → русский язык теперь на корне (без префикса)
+  async redirects() {
+    return [
+      // Основные страницы
+      { source: '/o-nas', destination: '/about', permanent: true },
+      { source: '/kontakty', destination: '/contact', permanent: true },
+      { source: '/shop', destination: '/', permanent: true },
+      { source: '/cart', destination: '/checkout', permanent: true },
+      { source: '/checkout-2', destination: '/checkout', permanent: true },
+      
+      // Услуги
+      { source: '/kovry-i-kovrolinovye-pokrytiya', destination: '/services/carpet-cleaning', permanent: true },
+      { source: '/ochistka-kondiczionera', destination: '/services/air-conditioner', permanent: true },
+      { source: '/divany-i-matrasy', destination: '/services/sofa-mattresses', permanent: true },
+      { source: '/shtory-i-zhalyuzi', destination: '/services/curtains-blinds', permanent: true },
+      
+      // Удалённые страницы → главная
+      { source: '/compare', destination: '/', permanent: true },
+      { source: '/gift-cards', destination: '/', permanent: true },
+      { source: '/wishlist', destination: '/', permanent: true },
+      { source: '/my-account', destination: '/', permanent: true },
+      { source: '/refund_returns', destination: '/terms', permanent: true },
+    ];
+  },
+
   // Заголовки кеширования
   async headers() {
     return [

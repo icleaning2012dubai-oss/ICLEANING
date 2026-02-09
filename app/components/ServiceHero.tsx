@@ -13,7 +13,7 @@ interface ServiceHeroProps {
 }
 
 export default function ServiceHero({ title, description, image, slug }: ServiceHeroProps) {
-  const { t } = useLanguage();
+  const { t, getLocalizedPath } = useLanguage();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const scrollToPricing = () => {
@@ -52,11 +52,11 @@ export default function ServiceHero({ title, description, image, slug }: Service
                 <div className="space-y-8">
                   {/* Breadcrumbs */}
                   <div className="flex items-center gap-2 text-white/80 text-sm">
-                    <Link href="/" className="hover:text-white transition-colors">
+                    <Link href={getLocalizedPath('/')} className="hover:text-white transition-colors">
                       {t('serviceHero.home')}
                     </Link>
                     <span>/</span>
-                    <Link href="/#services" className="hover:text-white transition-colors">
+                    <Link href={getLocalizedPath('/#services')} className="hover:text-white transition-colors">
                       {t('serviceHero.services')}
                     </Link>
                     <span>/</span>
