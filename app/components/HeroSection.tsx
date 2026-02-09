@@ -6,7 +6,7 @@ import { useLanguage } from '@/app/contexts/LanguageProvider';
 
 export default function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { t } = useLanguage();
+  const { t, getLocalizedPath } = useLanguage();
 
   return (
     <>
@@ -68,7 +68,7 @@ export default function HeroSection() {
                 </button>
                 
                 <a 
-                  href="/#services"
+                  href={getLocalizedPath('/#services')}
                   className="px-6 sm:px-8 py-3.5 sm:py-4 text-white border-2 border-white/50 rounded-full font-semibold text-sm sm:text-base md:text-lg hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-sm text-center"
                   suppressHydrationWarning
                 >
