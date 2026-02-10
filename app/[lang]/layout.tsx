@@ -17,7 +17,7 @@ export default async function LangLayout({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-
+  //
   if (!isValidLocale(lang)) {
     notFound();
   }
