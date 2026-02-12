@@ -8,7 +8,7 @@
   "hero.title1": "Reliable Cleanliness",
   "hero.title2": "Is Our Mission!",
   "hero.subtitle": "We clean sofas, carpets, curtains, mattresses, and air conditioners — quickly and professionally.",
-  "hero.getQuote": "Get a Quote",
+  "hero.getQuote": "Order Service",
   "hero.watchVideo": "Our Services",
   
   "about.badge": "About Us",
@@ -166,8 +166,6 @@
   "contactPage.addressNote": "(We do not accept visitors without prior appointment — please clarify details in advance).",
   "contactPage.socialTitle": "Support in messengers and social networks",
   "contactPage.socialSubtitle": "For your convenience, we are available on popular communication channels:",
-  "contactPage.contactManager": "Contact Manager",
-  "contactPage.openLink": "Open",
   "contactPage.whatsappDesc": "instant responses, before/after photos, appointment scheduling",
   "contactPage.instagramDesc": "follow our work, promotions and news",
   "contactPage.telegramDesc": "quick chat and reminders about your orders",
