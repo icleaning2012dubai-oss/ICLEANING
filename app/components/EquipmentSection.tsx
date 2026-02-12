@@ -85,17 +85,6 @@ export default function EquipmentSection() {
                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
                   <div className="w-2.5 h-2.5 rounded-full bg-white"></div>
                 </div>
-                <h4 className="text-lg font-bold">{t('equipment.floorTitle')}</h4>
-                <p className="text-white/90 leading-relaxed text-sm">
-                  {t('equipment.floorDesc')}
-                </p>
-              </div>
-
-              {/* Item 4 */}
-              <div className="space-y-3">
-                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                  <div className="w-2.5 h-2.5 rounded-full bg-white"></div>
-                </div>
                 <h4 className="text-lg font-bold">{t('equipment.upholsteryTitle')}</h4>
                 <p className="text-white/90 leading-relaxed text-sm">
                   {t('equipment.upholsteryDesc')}
