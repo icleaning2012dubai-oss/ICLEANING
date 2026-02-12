@@ -12,7 +12,7 @@ const StatsSection = memo(function StatsSection() {
           {/* Happy Clients */}
           <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
             <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-gradient-to-br from-blue-600 to-blue-400 bg-clip-text mb-3 sm:mb-4 md:mb-6">
-              500+
+              10000+
             </div>
             <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
               {t('stats.clients')}
