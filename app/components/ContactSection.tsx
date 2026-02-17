@@ -15,11 +15,33 @@ export default function ContactSection() {
   });
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setIsModalOpen(false);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/bitrix/create-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setShowSuccess(true);
+        setFormData({ name: '', phone: '', email: '', business: 'INDIVIDUAL', message: '' });
+        setTimeout(() => setShowSuccess(false), 4000);
+      } else {
+        alert('Error submitting form. Please try again.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('Error submitting form. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -175,9 +197,10 @@ export default function ContactSection() {
                 {/* Submit button */}
                 <button
                   type="submit"
-                  className="w-full px-8 py-4 bg-blue-600 text-white rounded-full font-semibold text-base hover:bg-blue-700 transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] hover:scale-105"
+                  disabled={isSubmitting}
+                  className="w-full px-8 py-4 bg-blue-600 text-white rounded-full font-semibold text-base hover:bg-blue-700 transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
-                  {t('contactForm.send')}
+                  {showSuccess ? '✓' : isSubmitting ? '...' : t('contactForm.send')}
                 </button>
               </form>
             </div>
