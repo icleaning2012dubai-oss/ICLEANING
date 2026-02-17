@@ -47,7 +47,7 @@ export default function ServiceHero({ title, description, image, slug }: Service
             </div>
 
             {/* Content */}
-            <div className="relative z-10 w-full px-8 md:px-12 lg:px-16 py-16">
+            <div className="relative z-10 w-full px-5 sm:px-8 md:px-12 lg:px-16 py-12 sm:py-16">
               <div className="max-w-3xl">
                 <div className="space-y-8">
                   {/* Breadcrumbs */}
@@ -65,10 +65,10 @@ export default function ServiceHero({ title, description, image, slug }: Service
 
                   {/* Main Heading */}
                   <div className="space-y-4">
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight">
                       {title}
                     </h1>
-                    <p className="text-lg md:text-xl text-white/95 leading-relaxed max-w-2xl font-light">
+                    <p className="text-base md:text-xl text-white/95 leading-relaxed max-w-2xl font-light">
                       {description}
                     </p>
                   </div>
