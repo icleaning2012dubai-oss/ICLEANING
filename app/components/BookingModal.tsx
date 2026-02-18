@@ -13,7 +13,9 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    email: '',
     service: '',
+    business: 'INDIVIDUAL',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
@@ -38,7 +40,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
       if (response.ok) {
         setShowSuccess(true);
-        setFormData({ name: '', phone: '', service: '' });
+        setFormData({ name: '', phone: '', email: '', service: '', business: 'INDIVIDUAL' });
         setTimeout(() => {
           setShowSuccess(false);
           onClose();
@@ -85,49 +87,79 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           </svg>
         </button>
 
-        <h2 className="text-2xl font-bold text-gray-900 mb-6" suppressHydrationWarning>{t('hero.getQuoteTitle')}</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('form.title')}</h2>
+        <p className="text-gray-600 mb-6">{t('form.subtitle')}</p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1" suppressHydrationWarning>{t('hero.nameLabel')}</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.name')}</label>
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleInputChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-              placeholder={t('hero.namePlaceholder')}
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-gray-900 placeholder:text-gray-400"
+              placeholder={t('form.namePlaceholder')}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1" suppressHydrationWarning>{t('hero.phoneLabel')}</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.phone')}</label>
             <input
               type="tel"
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-              placeholder="+971"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-gray-900 placeholder:text-gray-400"
+              placeholder={t('form.phonePlaceholder')}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1" suppressHydrationWarning>{t('hero.serviceLabel')}</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">{t('contactForm.mail')}</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-gray-900 placeholder:text-gray-400"
+              placeholder={t('contactForm.mailPlaceholder')}
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.serviceType')}</label>
             <select 
               name="service"
               value={formData.service}
               onChange={handleInputChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-gray-900 bg-white"
             >
-              <option value="" suppressHydrationWarning>{t('hero.selectService')}</option>
-              <option value="Carpet Cleaning" suppressHydrationWarning>{t('services.carpet')}</option>
-              <option value="Sofa & Mattresses" suppressHydrationWarning>{t('services.sofa')}</option>
-              <option value="Curtains & Blinds" suppressHydrationWarning>{t('services.curtains')}</option>
-              <option value="Air Conditioner" suppressHydrationWarning>{t('services.aircon')}</option>
+              <option value="">{t('form.selectService')}</option>
+              <option value="Carpet Cleaning">{t('form.carpetCleaning')}</option>
+              <option value="Sofa & Mattresses">{t('form.sofaMattresses')}</option>
+              <option value="Curtains & Blinds">{t('form.curtainsBlinds')}</option>
+              <option value="Air Conditioner">{t('form.airConditioner')}</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.clientType')}</label>
+            <select
+              name="business"
+              value={formData.business}
+              onChange={handleInputChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-gray-900 bg-white"
+            >
+              <option value="INDIVIDUAL">{t('contactForm.individual')}</option>
+              <option value="HOTELS">{t('contactForm.hotels')}</option>
+              <option value="RESTAURANTS">{t('contactForm.restaurants')}</option>
+              <option value="OFFICES">{t('contactForm.offices')}</option>
+              <option value="SHOPS">{t('contactForm.shops')}</option>
+              <option value="HOMES">{t('contactForm.homes')}</option>
             </select>
           </div>
 
@@ -135,10 +167,13 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
             type="submit"
             disabled={isSubmitting}
             className="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            suppressHydrationWarning
           >
-            {isSubmitting ? 'Sending...' : t('hero.submitButton')}
+            {isSubmitting ? '...' : t('form.submit')}
           </button>
+
+          <p className="text-xs text-gray-500 text-center">
+            {t('form.privacy')}
+          </p>
         </form>
       </div>
     </div>
