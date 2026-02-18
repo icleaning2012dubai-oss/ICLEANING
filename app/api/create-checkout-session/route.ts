@@ -23,6 +23,22 @@ export async function POST(req: NextRequest) {
       quantity: item.quantity,
     }));
 
+    // Добавляем НДС 5% как отдельную строку
+    const subtotal = items.reduce((sum: number, item: any) => sum + item.price * item.quantity, 0);
+    const vatAmount = subtotal * 0.05;
+    lineItems.push({
+      price_data: {
+        currency: 'aed',
+        product_data: {
+          name: 'VAT (5%)',
+          description: 'Value Added Tax',
+          images: [],
+        },
+        unit_amount: Math.round(vatAmount * 100),
+      },
+      quantity: 1,
+    });
+
     // Создаем checkout session
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],

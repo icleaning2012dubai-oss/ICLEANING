@@ -545,6 +545,7 @@
   "checkout.totalLabel": "ИТОГО",
   "checkout.quantityLabel": "Кол-во",
   "checkout.subtotal": "Итого",
+  "checkout.vat": "НДС (5%)",
   "checkout.total": "Итого",
   "checkout.infoMessage": "После оформления заказа мы свяжемся с Вами в течении 1-2 дней.",
   "checkout.submitButton": "Оформить заказ",
