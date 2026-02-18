@@ -13,6 +13,10 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
 
 export default function CheckoutPage() {
   const { items, totalPrice, clearCart } = useCart();
+
+  const VAT_RATE = 0.05;
+  const vatAmount = totalPrice * VAT_RATE;
+  const totalWithVat = totalPrice + vatAmount;
   const { t, getLocalizedPath } = useLanguage();
   const router = useRouter();
 
@@ -251,9 +255,13 @@ export default function CheckoutPage() {
                     <span>{t('checkout.subtotal')}</span>
                     <span className="text-blue-600 font-semibold">{totalPrice.toFixed(2)} د.إ</span>
                   </div>
+                  <div className="flex justify-between text-gray-700">
+                    <span>{t('checkout.vat')}</span>
+                    <span className="text-blue-600 font-semibold">{vatAmount.toFixed(2)} د.إ</span>
+                  </div>
                   <div className="flex justify-between text-xl font-bold text-gray-900 pt-3 border-t-2 border-gray-300">
                     <span>{t('checkout.total')}</span>
-                    <span className="text-blue-600">{totalPrice.toFixed(2)} د.إ</span>
+                    <span className="text-blue-600">{totalWithVat.toFixed(2)} د.إ</span>
                   </div>
                 </div>
 

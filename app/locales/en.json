@@ -557,6 +557,7 @@
   "checkout.totalLabel": "TOTAL",
   "checkout.quantityLabel": "Qty",
   "checkout.subtotal": "Subtotal",
+  "checkout.vat": "VAT (5%)",
   "checkout.total": "Total",
   "checkout.infoMessage": "After placing the order, we will contact you within 1-2 days.",
   "checkout.submitButton": "Place Order",

@@ -559,6 +559,7 @@
   "checkout.totalLabel": "المجموع",
   "checkout.quantityLabel": "الكمية",
   "checkout.subtotal": "المجموع الفرعي",
+  "checkout.vat": "ضريبة القيمة المضافة (5%)",
   "checkout.total": "المجموع",
   "checkout.infoMessage": "بعد تقديم الطلب، سنتواصل معك خلال 1-2 أيام.",
   "checkout.submitButton": "تقديم الطلب",
