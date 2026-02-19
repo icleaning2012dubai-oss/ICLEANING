@@ -212,7 +212,7 @@ export default function AirConditionerService() {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <div className="relative h-[500px] md:h-[600px]">
                   <Image
-                    src="/images/ac_cleaning.webp"
+                    src="/images/ac_cleaning(1).webp"
                     alt="AC Cleaning Process"
                     fill
                     className="object-cover"
