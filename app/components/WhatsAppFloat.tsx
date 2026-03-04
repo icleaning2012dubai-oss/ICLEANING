@@ -8,6 +8,15 @@ export default function WhatsAppFloat() {
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 group"
       aria-label="Contact us on WhatsApp"
+      data-gtm-whatsapp="true"
+      onClick={() => {
+        if (typeof window !== 'undefined' && (window as any).dataLayer) {
+          (window as any).dataLayer.push({
+            event: 'whatsapp_click',
+            click_value: 40,
+          });
+        }
+      }}
     >
       {/* Main Button */}
       <div className="relative">

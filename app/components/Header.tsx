@@ -41,11 +41,11 @@ const Header = memo(function Header() {
   ];
 
   const services = [
-    { slug: 'carpet-cleaning', name: { ru: 'Чистка ковров', en: 'Carpet Cleaning', ar: 'تنظيف السجاد' } },
-    { slug: 'sofa-mattresses', name: { ru: 'Диваны и матрасы', en: 'Sofa & Mattresses', ar: 'الأرائك والمراتب' } },
-    { slug: 'curtains-blinds', name: { ru: 'Шторы и жалюзи', en: 'Curtains & Blinds', ar: 'الستائر والستائر' } },
-    // { slug: 'regular-cleaning', name: { ru: 'Регулярная уборка', en: 'Regular Cleaning', ar: 'التنظيف المنتظم' } },
-    { slug: 'air-conditioner', name: { ru: 'Кондиционеры', en: 'Air Conditioner', ar: 'مكيف الهواء' } },
+    { slug: 'carpet-cleaning-dubai', name: { ru: 'Чистка ковров', en: 'Carpet Cleaning', ar: 'تنظيف السجاد' } },
+    { slug: 'sofa-cleaning-dubai', name: { ru: 'Диваны и матрасы', en: 'Sofa & Mattresses', ar: 'الأرائك والمراتب' } },
+    { slug: 'curtains-cleaning-dubai', name: { ru: 'Шторы и жалюзи', en: 'Curtains & Blinds', ar: 'الستائر والستائر' } },
+    // { slug: 'regular-cleaning-dubai', name: { ru: 'Регулярная уборка', en: 'Regular Cleaning', ar: 'التنظيف المنتظم' } },
+    { slug: 'ac-cleaning-dubai', name: { ru: 'Кондиционеры', en: 'Air Conditioner', ar: 'مكيف الهواء' } },
   ];
 
   return (

@@ -4,10 +4,10 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 const PREFETCH_ROUTES = [
-  '/services/carpet-cleaning',
-  '/services/sofa-mattresses',
-  '/services/curtains-blinds',
-  '/services/air-conditioner',
+  '/services/carpet-cleaning-dubai',
+  '/services/sofa-cleaning-dubai',
+  '/services/curtains-cleaning-dubai',
+  '/services/ac-cleaning-dubai',
   '/about',
   '/contact',
   '/checkout',

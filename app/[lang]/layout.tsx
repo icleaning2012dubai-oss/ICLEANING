@@ -4,6 +4,7 @@ import { CartProvider } from '@/app/contexts/CartProvider';
 import Cart from '@/app/components/Cart';
 import CartNotificationWrapper from '@/app/components/CartNotificationWrapper';
 import WhatsAppFloat from '@/app/components/WhatsAppFloat';
+import SchemaMarkup from '@/app/components/SchemaMarkup';
 import { notFound } from 'next/navigation';
 
 export function generateStaticParams() {
@@ -26,6 +27,7 @@ export default async function LangLayout({
   return (
     <LanguageProvider initialLanguage={lang as Locale}>
       <CartProvider>
+        <SchemaMarkup lang={lang} />
         {children}
         <Cart />
         <CartNotificationWrapper />

@@ -1,4 +1,4 @@
-воUser-agent: *
+User-agent: *
 Allow: /
 
 # Sitemaps

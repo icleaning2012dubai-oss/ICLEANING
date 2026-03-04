@@ -8,7 +8,7 @@ export interface ServiceData {
 }
 
 export const servicesData: Record<string, ServiceData> = {
-  'carpet-cleaning': {
+  'carpet-cleaning-dubai': {
     title: 'Carpet Cleaning',
     description: 'Professional deep cleaning for all types of carpets',
     image: '/images/service/kover-page.webp',
@@ -34,7 +34,7 @@ export const servicesData: Record<string, ServiceData> = {
       { step: 4, title: 'Final Check', description: 'Inspect results and ensure your complete satisfaction' }
     ]
   },
-  'sofa-mattresses': {
+  'sofa-cleaning-dubai': {
     title: 'Sofa & Mattresses',
     description: 'Remove dust mites, stains and allergens',
     image: '/images/service/dyvan-page.webp',
@@ -60,7 +60,7 @@ export const servicesData: Record<string, ServiceData> = {
       { step: 4, title: 'Sanitization', description: 'Apply anti-bacterial treatment for hygiene' }
     ]
   },
-  'curtains-blinds': {
+  'curtains-cleaning-dubai': {
     title: 'Curtains & Blinds',
     description: 'Professional dust and allergen removal',
     image: '/images/service/shtory-page.webp',
@@ -86,7 +86,7 @@ export const servicesData: Record<string, ServiceData> = {
       { step: 4, title: 'Finishing', description: 'Final touches and quality check' }
     ]
   },
-  'deep-cleaning': {
+  'deep-cleaning-dubai': {
     title: 'Deep Cleaning',
     description: 'Complete home sanitization service',
     image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1200&auto=format&fit=crop',
@@ -112,7 +112,7 @@ export const servicesData: Record<string, ServiceData> = {
       { step: 4, title: 'Verification', description: 'Walk-through to ensure satisfaction' }
     ]
   },
-  'air-conditioner': {
+  'ac-cleaning-dubai': {
     title: 'Air Conditioner',
     description: 'Maintain air quality and efficiency',
     image: '/images/ac_cleaning.webp',
@@ -138,7 +138,7 @@ export const servicesData: Record<string, ServiceData> = {
       { step: 4, title: 'Testing', description: 'Reassemble and test performance' }
     ]
   },
-  'regular-cleaning': {
+  'regular-cleaning-dubai': {
     title: 'Regular Cleaning',
     description: 'Maintain cleanliness without hassle',
     image: 'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?q=80&w=1200&auto=format&fit=crop',

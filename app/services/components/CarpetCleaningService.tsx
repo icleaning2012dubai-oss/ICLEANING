@@ -408,6 +408,7 @@ export default function CarpetCleaningService() {
                         title="Carpet Cleaning Expert Guide"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
+                        loading="lazy"
                         className="w-full h-full"
                       ></iframe>
                     </div>

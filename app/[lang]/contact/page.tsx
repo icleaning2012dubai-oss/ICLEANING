@@ -86,7 +86,7 @@ export default function ContactPage() {
                           <h3 className="text-lg font-semibold text-gray-900 mb-2">
                             {t('contactPage.phoneTitle')}
                           </h3>
-                          <a href="tel:+971508648401" className="text-xl md:text-2xl text-blue-600 hover:text-blue-700 font-bold transition-colors block">
+                          <a href="tel:+971508648401" data-gtm-phone="true" onClick={() => { if (typeof window !== 'undefined' && (window as any).dataLayer) { (window as any).dataLayer.push({ event: 'phone_click', click_value: 30 }); } }} className="text-xl md:text-2xl text-blue-600 hover:text-blue-700 font-bold transition-colors block">
                             +971 50 864 8401
                           </a>
                           <p className="text-gray-600 mt-2 text-sm">
