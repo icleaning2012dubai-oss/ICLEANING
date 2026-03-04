@@ -4,12 +4,12 @@ import type { Locale } from '@/app/i18n/config';
 const baseUrl = 'https://icleaning.ae';
 
 const serviceSlugs = [
-  'carpet-cleaning',
-  'sofa-mattresses',
-  'curtains-blinds',
-  'regular-cleaning',
-  'air-conditioner',
-  'deep-cleaning',
+  'carpet-cleaning-dubai',
+  'sofa-cleaning-dubai',
+  'curtains-cleaning-dubai',
+  'regular-cleaning-dubai',
+  'ac-cleaning-dubai',
+  'deep-cleaning-dubai',
 ] as const;
 
 const locales: Locale[] = ['en', 'ru', 'ar'];
@@ -23,7 +23,7 @@ export async function generateStaticParams() {
 
 // SEO метаданные для каждого сервиса на каждом языке
 const serviceMetadata: Record<string, Record<Locale, { title: string; description: string; keywords: string[] }>> = {
-  'carpet-cleaning': {
+  'carpet-cleaning-dubai': {
     en: {
       title: 'Carpet Cleaning Dubai | Professional Deep Cleaning Services',
       description: 'Professional carpet cleaning in Dubai. Deep steam cleaning, stain removal, fast drying. Eco-friendly products safe for kids & pets. Book now!',
@@ -40,7 +40,7 @@ const serviceMetadata: Record<string, Record<Locale, { title: string; descriptio
       keywords: ['تنظيف السجاد دبي', 'تنظيف السجاد بالبخار', 'تنظيف عميق للسجاد الإمارات'],
     },
   },
-  'sofa-mattresses': {
+  'sofa-cleaning-dubai': {
     en: {
       title: 'Sofa & Mattress Cleaning Dubai | Dust Mite Removal',
       description: 'Professional sofa and mattress cleaning in Dubai. Remove dust mites, stains & allergens. Deep fabric cleaning & sanitization. Book online!',
@@ -57,7 +57,7 @@ const serviceMetadata: Record<string, Record<Locale, { title: string; descriptio
       keywords: ['تنظيف الأرائك دبي', 'تنظيف المراتب', 'تنظيف المفروشات', 'إزالة عث الغبار الإمارات'],
     },
   },
-  'curtains-blinds': {
+  'curtains-cleaning-dubai': {
     en: {
       title: 'Curtains & Blinds Cleaning Dubai | On-site Professional Service',
       description: 'Professional curtain and blind cleaning in Dubai. On-site service, delicate fabric care, dust & allergen removal. No need to remove curtains!',
@@ -74,7 +74,7 @@ const serviceMetadata: Record<string, Record<Locale, { title: string; descriptio
       keywords: ['تنظيف الستائر دبي', 'تنظيف الستائر الدوارة', 'تنظيف الستائر في الموقع الإمارات'],
     },
   },
-  'regular-cleaning': {
+  'regular-cleaning-dubai': {
     en: {
       title: 'Regular Cleaning Service Dubai | Weekly & Monthly Packages',
       description: 'Regular home cleaning in Dubai. Weekly, bi-weekly or monthly packages. Professional team, quality guaranteed. Book your regular cleaning!',
@@ -91,7 +91,7 @@ const serviceMetadata: Record<string, Record<Locale, { title: string; descriptio
       keywords: ['التنظيف المنتظم دبي', 'التنظيف الأسبوعي', 'التنظيف الشهري', 'صيانة المنزل الإمارات'],
     },
   },
-  'air-conditioner': {
+  'ac-cleaning-dubai': {
     en: {
       title: 'Air Conditioner Cleaning Dubai | AC Maintenance & Repair',
       description: 'Professional AC cleaning and maintenance in Dubai. Improve air quality, reduce energy bills, extend AC lifespan. Expert technicians.',
@@ -108,7 +108,7 @@ const serviceMetadata: Record<string, Record<Locale, { title: string; descriptio
       keywords: ['تنظيف المكيفات دبي', 'صيانة المكيفات', 'إصلاح المكيفات', 'خدمة المكيفات الإمارات'],
     },
   },
-  'deep-cleaning': {
+  'deep-cleaning-dubai': {
     en: {
       title: 'Deep Cleaning Service Dubai | Complete Home Sanitization',
       description: 'Professional deep cleaning in Dubai. Complete home sanitization, kitchen, bathrooms, hard-to-reach areas. Move-in/out cleaning available.',

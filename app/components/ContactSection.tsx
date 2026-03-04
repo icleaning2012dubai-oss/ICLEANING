@@ -32,6 +32,14 @@ export default function ContactSection() {
       if (response.ok) {
         setShowSuccess(true);
         setFormData({ name: '', phone: '', email: '', business: 'INDIVIDUAL', message: '' });
+        // GTM dataLayer event
+        if (typeof window !== 'undefined' && (window as any).dataLayer) {
+          (window as any).dataLayer.push({
+            event: 'form_submit',
+            form_type: 'contact',
+            form_value: 50,
+          });
+        }
         setTimeout(() => setShowSuccess(false), 4000);
       } else {
         alert('Error submitting form. Please try again.');
@@ -120,7 +128,7 @@ export default function ContactSection() {
             <div className="absolute inset-0 backdrop-blur-sm bg-white/10"></div>
             
             <div className="relative z-10 p-8 md:p-10">
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} id="contact-form" data-gtm-form="lead" className="space-y-4">
                 {/* Name */}
                 <div>
                   <label className="block text-gray-900 text-sm font-medium mb-2">{t('contactForm.name')}</label>

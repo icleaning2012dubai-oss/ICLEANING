@@ -399,6 +399,7 @@ export default function CurtainsBlindsService() {
                       title="Curtains and Blinds Cleaning"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
+                      loading="lazy"
                       className="w-full h-full"
                     ></iframe>
                   </div>

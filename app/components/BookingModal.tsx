@@ -41,6 +41,14 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
       if (response.ok) {
         setShowSuccess(true);
         setFormData({ name: '', phone: '', email: '', service: '', business: 'INDIVIDUAL' });
+        // GTM dataLayer event
+        if (typeof window !== 'undefined' && (window as any).dataLayer) {
+          (window as any).dataLayer.push({
+            event: 'form_submit',
+            form_type: 'booking',
+            form_value: 60,
+          });
+        }
         setTimeout(() => {
           setShowSuccess(false);
           onClose();
@@ -90,7 +98,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
         <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('form.title')}</h2>
         <p className="text-gray-600 mb-6">{t('form.subtitle')}</p>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} id="booking-form" data-gtm-form="booking" className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">{t('form.name')}</label>
             <input

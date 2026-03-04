@@ -84,11 +84,11 @@ export default function ServicePage({ params }: { params: Promise<{ slug: string
 
           {/* Service-specific content with Suspense */}
           <Suspense fallback={<ServiceContentLoading />}>
-            {slug === 'carpet-cleaning' && <CarpetCleaningService />}
-            {slug === 'sofa-mattresses' && <SofaMattressesService />}
-            {slug === 'curtains-blinds' && <CurtainsBlindsService />}
-            {slug === 'regular-cleaning' && <RegularCleaningService />}
-            {slug === 'air-conditioner' && <AirConditionerService />}
+            {slug === 'carpet-cleaning-dubai' && <CarpetCleaningService />}
+            {slug === 'sofa-cleaning-dubai' && <SofaMattressesService />}
+            {slug === 'curtains-cleaning-dubai' && <CurtainsBlindsService />}
+            {slug === 'regular-cleaning-dubai' && <RegularCleaningService />}
+            {slug === 'ac-cleaning-dubai' && <AirConditionerService />}
           </Suspense>
 
           {/* Contact Section */}

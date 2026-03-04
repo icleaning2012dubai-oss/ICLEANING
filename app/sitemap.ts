@@ -8,11 +8,12 @@ const pages = [
   { path: '/', changeFrequency: 'daily' as const, priority: 1 },
   { path: '/about', changeFrequency: 'monthly' as const, priority: 0.8 },
   { path: '/contact', changeFrequency: 'monthly' as const, priority: 0.8 },
-  { path: '/services/carpet-cleaning', changeFrequency: 'weekly' as const, priority: 0.9 },
-  { path: '/services/sofa-mattresses', changeFrequency: 'weekly' as const, priority: 0.9 },
-  { path: '/services/curtains-blinds', changeFrequency: 'weekly' as const, priority: 0.9 },
-  { path: '/services/regular-cleaning', changeFrequency: 'weekly' as const, priority: 0.9 },
-  { path: '/services/air-conditioner', changeFrequency: 'weekly' as const, priority: 0.9 },
+  { path: '/services/carpet-cleaning-dubai', changeFrequency: 'weekly' as const, priority: 0.9 },
+  { path: '/services/sofa-cleaning-dubai', changeFrequency: 'weekly' as const, priority: 0.9 },
+  { path: '/services/curtains-cleaning-dubai', changeFrequency: 'weekly' as const, priority: 0.9 },
+  { path: '/services/regular-cleaning-dubai', changeFrequency: 'weekly' as const, priority: 0.9 },
+  { path: '/services/ac-cleaning-dubai', changeFrequency: 'weekly' as const, priority: 0.9 },
+  { path: '/services/deep-cleaning-dubai', changeFrequency: 'weekly' as const, priority: 0.9 },
   { path: '/checkout', changeFrequency: 'monthly' as const, priority: 0.7 },
 ];
 

@@ -13,35 +13,35 @@ export default function ServicesSection() {
       title: t('services.carpet'),
       description: t('services.carpetDesc'),
       image: '/images/service/kover.webp',
-      slug: 'carpet-cleaning'
+      slug: 'carpet-cleaning-dubai'
     },
     {
       id: 2,
       title: t('services.sofa'),
       description: t('services.sofaDesc'),
       image: '/images/service/sofa.webp',
-      slug: 'sofa-mattresses'
+      slug: 'sofa-cleaning-dubai'
     },
     {
       id: 3,
       title: t('services.curtains'),
       description: t('services.curtainsDesc'),
       image: '/images/service/shtora.webp',
-      slug: 'curtains-blinds'
+      slug: 'curtains-cleaning-dubai'
     },
     // {
     //   id: 4,
     //   title: `${t('services.regular')} & ${t('services.deep')}`,
     //   description: t('services.cleaningDesc'),
     //   image: 'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?q=80&w=800&auto=format&fit=crop',
-    //   slug: 'regular-cleaning'
+    //   slug: 'regular-cleaning-dubai'
     // },
     {
       id: 5,
       title: t('services.aircon'),
       description: t('services.airconDesc'),
       image: '/images/service/konder.webp',
-      slug: 'air-conditioner'
+      slug: 'ac-cleaning-dubai'
     }
   ];
   
