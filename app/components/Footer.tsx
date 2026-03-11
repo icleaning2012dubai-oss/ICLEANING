@@ -18,6 +18,8 @@ export default function Footer() {
               <Link href={getLocalizedPath('/')} className="block text-gray-300 hover:text-white transition-colors text-xs sm:text-sm">{t('nav.home')}</Link>
               <Link href={getLocalizedPath('/about')} className="block text-gray-300 hover:text-white transition-colors text-xs sm:text-sm">{t('nav.about')}</Link>
               <Link href={getLocalizedPath('/#services')} className="block text-gray-300 hover:text-white transition-colors text-xs sm:text-sm">{t('nav.services')}</Link>
+              <Link href={getLocalizedPath('/blog')} className="block text-gray-300 hover:text-white transition-colors text-xs sm:text-sm">{t('nav.blog')}</Link>
+              <Link href={getLocalizedPath('/portfolio')} className="block text-gray-300 hover:text-white transition-colors text-xs sm:text-sm">{t('nav.portfolio')}</Link>
               <Link href={getLocalizedPath('/contact')} className="block text-gray-300 hover:text-white transition-colors text-xs sm:text-sm">{t('nav.contact')}</Link>
             </div>
           </div>

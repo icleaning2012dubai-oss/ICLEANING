@@ -15,6 +15,8 @@ const pages = [
   { path: '/services/ac-cleaning-dubai', changeFrequency: 'weekly' as const, priority: 0.9 },
   { path: '/services/deep-cleaning-dubai', changeFrequency: 'weekly' as const, priority: 0.9 },
   { path: '/checkout', changeFrequency: 'monthly' as const, priority: 0.7 },
+  { path: '/blog', changeFrequency: 'daily' as const, priority: 0.8 },
+  { path: '/portfolio', changeFrequency: 'weekly' as const, priority: 0.8 },
 ];
 
 // Build a URL: default locale (ru) has no prefix, others get /{locale} prefix

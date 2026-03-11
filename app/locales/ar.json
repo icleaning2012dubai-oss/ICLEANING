@@ -587,5 +587,23 @@
   "testimonials.person3Text": "نهج احترافي في العمل. يعمل مكيف الهواء الآن بشكل أفضل بكثير، الهواء أنظف. أوصي به للجميع!",
   "testimonials.person4Name": "دميتري كوزلوف",
   "testimonials.person4Service": "تنظيف الستائر",
-  "testimonials.person4Text": "خدمة رائعة! عادت الستائر بعد التنظيف في حالة مثالية. الموظفون مهذبون، تم إنجاز العمل في الوقت المحدد."
+  "testimonials.person4Text": "خدمة رائعة! عادت الستائر بعد التنظيف في حالة مثالية. الموظفون مهذبون، تم إنجاز العمل في الوقت المحدد.",
+
+  "nav.blog": "المدونة",
+  "nav.portfolio": "أعمالنا",
+
+  "blog.badge": "المدونة",
+  "blog.title": "مقالات مفيدة",
+  "blog.subtitle": "نصائح التنظيف والعناية بالمنزل من خبراء آي كلينينغ",
+  "blog.readMore": "اقرأ المزيد",
+  "blog.noPosts": "لا توجد مقالات بعد",
+  "blog.noPostsDescription": "سيتم نشر محتوى مفيد قريبًا",
+  "blog.notFound": "المقال غير موجود",
+  "blog.backToBlog": "العودة إلى المدونة",
+
+  "portfolio.badge": "أعمالنا",
+  "portfolio.title": "أعمالنا",
+  "portfolio.subtitle": "نتائج التنظيف الاحترافي — قبل وبعد",
+  "portfolio.noItems": "لا توجد عناصر بعد",
+  "portfolio.noItemsDescription": "سيتم نشر أمثلة على أعمالنا قريبًا"
 }

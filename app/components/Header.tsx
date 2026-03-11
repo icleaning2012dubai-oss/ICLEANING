@@ -147,6 +147,34 @@ const Header = memo(function Header() {
               </Link>
               
               <Link 
+                href={getLocalizedPath('/blog')} 
+                className={`relative transition-all duration-300 font-medium group ${
+                  pathWithoutLang.startsWith('/blog') 
+                    ? 'text-blue-600 font-semibold' 
+                    : 'text-gray-700 hover:text-blue-600'
+                }`}
+              >
+                {t('nav.blog')}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
+                  pathWithoutLang.startsWith('/blog') ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
+              </Link>
+              
+              <Link 
+                href={getLocalizedPath('/portfolio')} 
+                className={`relative transition-all duration-300 font-medium group ${
+                  pathWithoutLang === '/portfolio' 
+                    ? 'text-blue-600 font-semibold' 
+                    : 'text-gray-700 hover:text-blue-600'
+                }`}
+              >
+                {t('nav.portfolio')}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
+                  pathWithoutLang === '/portfolio' ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
+              </Link>
+
+              <Link 
                 href={getLocalizedPath('/contact')} 
                 className={`relative transition-all duration-300 font-medium group ${
                   pathWithoutLang === '/contact' 
@@ -329,6 +357,30 @@ const Header = memo(function Header() {
                 {t('nav.about')}
               </Link>
               
+              <Link 
+                href={getLocalizedPath('/blog')} 
+                className={`transition-colors font-medium ${
+                  pathWithoutLang.startsWith('/blog') 
+                    ? 'text-blue-600 font-semibold' 
+                    : 'text-gray-700 hover:text-gray-900'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('nav.blog')}
+              </Link>
+              
+              <Link 
+                href={getLocalizedPath('/portfolio')} 
+                className={`transition-colors font-medium ${
+                  pathWithoutLang === '/portfolio' 
+                    ? 'text-blue-600 font-semibold' 
+                    : 'text-gray-700 hover:text-gray-900'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('nav.portfolio')}
+              </Link>
+
               <Link 
                 href={getLocalizedPath('/contact')} 
                 className={`transition-colors font-medium ${
