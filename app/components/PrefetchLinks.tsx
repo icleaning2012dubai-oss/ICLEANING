@@ -11,6 +11,8 @@ const PREFETCH_ROUTES = [
   '/about',
   '/contact',
   '/checkout',
+  '/blog',
+  '/portfolio',
 ];
 
 export default function PrefetchLinks() {

@@ -594,5 +594,23 @@
   "testimonials.person3Text": "Professional approach to work. The air conditioner now works much better, the air is cleaner. I recommend it to everyone!",
   "testimonials.person4Name": "David Johnson",
   "testimonials.person4Service": "Curtain Cleaning",
-  "testimonials.person4Text": "Wonderful service! The curtains came back after cleaning in perfect condition. The staff is polite, the work was done on time."
+  "testimonials.person4Text": "Wonderful service! The curtains came back after cleaning in perfect condition. The staff is polite, the work was done on time.",
+
+  "nav.blog": "Blog",
+  "nav.portfolio": "Portfolio",
+
+  "blog.badge": "Blog",
+  "blog.title": "Useful Articles",
+  "blog.subtitle": "Cleaning tips and home care advice from iCleaning experts",
+  "blog.readMore": "Read more",
+  "blog.noPosts": "No articles yet",
+  "blog.noPostsDescription": "Useful content is coming soon",
+  "blog.notFound": "Article not found",
+  "blog.backToBlog": "Back to blog",
+
+  "portfolio.badge": "Portfolio",
+  "portfolio.title": "Our Work",
+  "portfolio.subtitle": "Professional cleaning results — before and after",
+  "portfolio.noItems": "No items yet",
+  "portfolio.noItemsDescription": "Examples of our work are coming soon"
 }

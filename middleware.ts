@@ -14,6 +14,7 @@ export function middleware(request: NextRequest) {
     pathname.startsWith('/api/') ||
     pathname.startsWith('/_next/') ||
     pathname.startsWith('/images/') ||
+    pathname.startsWith('/admin') ||
     pathname.includes('.') // files with extensions (favicon.ico, robots.txt, etc.)
   ) {
     const response = NextResponse.next();
