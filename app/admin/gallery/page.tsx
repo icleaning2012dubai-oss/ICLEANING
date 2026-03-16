@@ -52,7 +52,7 @@ export default function AdminGalleryList() {
   return (
     <div>
       <div className="flex items-center justify-between mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Галерея</h1>
+        <h2 className="text-xl font-semibold text-gray-700">До / После</h2>
         <Link
           href="/admin/gallery/new"
           className="px-6 py-2.5 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
