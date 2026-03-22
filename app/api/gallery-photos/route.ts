@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
 import { GalleryPhoto } from '@/lib/models/GalleryPhoto';
 
-// GET /api/gallery-photos
+// GET /api/gallery-photosж.
 export async function GET(request: NextRequest) {
   try {
     if (!process.env.MONGODB_URI) return NextResponse.json([]);
