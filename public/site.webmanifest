@@ -9,15 +9,10 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/images/logo.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/logo.ico",
+      "src": "/favicon.ico",
       "sizes": "48x48",
-      "type": "image/x-icon"
+      "type": "image/x-icon",
+      "purpose": "any maskable"
     }
   ],
   "categories": ["lifestyle", "cleaning", "services"],
