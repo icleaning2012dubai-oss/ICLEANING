@@ -58,13 +58,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/logo.ico", sizes: "any" },
-      { url: "/images/logo.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
     ],
     apple: [
-      { url: "/images/logo.svg", sizes: "180x180", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "180x180" },
     ],
-    shortcut: "/logo.ico",
+    shortcut: "/favicon.ico",
   },
   manifest: "/site.webmanifest",
   verification: {
