@@ -13,7 +13,7 @@ interface BlogPost {
   title: { ru: string; en: string; ar: string };
   excerpt: { ru: string; en: string; ar: string };
   coverImage: string;
-  tags: string[];
+  tags: Array<{ ru: string; en: string; ar: string }>;
   published: boolean;
   createdAt: string;
 }
@@ -108,12 +108,12 @@ export default function BlogPage() {
                     <div className="p-6">
                       {post.tags.length > 0 && (
                         <div className="flex flex-wrap gap-2 mb-3">
-                          {post.tags.slice(0, 3).map((tag) => (
+                          {post.tags.slice(0, 3).map((tag, idx) => (
                             <span
-                              key={tag}
+                              key={idx}
                               className="px-2 py-0.5 bg-blue-50 text-blue-600 text-xs rounded-full font-medium"
                             >
-                              {tag}
+                              {tag[lang] || tag.en || tag.ru}
                             </span>
                           ))}
                         </div>

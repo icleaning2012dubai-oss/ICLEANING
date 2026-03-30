@@ -1,0 +1,1794 @@
+{
+  "sprint": {
+    "id": 2,
+    "name": "Спринт 1",
+    "state": "active",
+    "startDate": "2026-03-10T09:43:13.000Z",
+    "endDate": "2026-03-31T09:43:00.000Z",
+    "board": "SCRUM board"
+  },
+  "issues": [
+    {
+      "key": "SCRUM-163",
+      "summary": "[Frontend] Розробка сторінки кошика",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 6.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 6.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-67",
+      "summary": "[ARCH] ESLint + Prettier + Husky + lint-staged + commitlint",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "backend",
+        "devops",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-88",
+      "summary": "[I18N] nestjs-i18n setup + JSON файли перекладів",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "backend",
+        "i18n",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-164",
+      "summary": "[Frontend] Розробка інтерфейсу оформлення замовлення (checkout)",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 8.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 8.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-162",
+      "summary": "[Frontend] Розробка сторінки порівняння товарів (таблиця: атрибути, рейтинг, ціна, назва, фото)",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 8.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 8.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-78",
+      "summary": "[DB] Інфраструктура міграцій + seed-скрипти",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "backend",
+        "database",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-87",
+      "summary": "[I18N] Конфігурація env: I18N_DEFAULT/SUPPORTED/FALLBACK_LANGUAGE",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 2.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 2.0,
+      "labels": [
+        "backend",
+        "i18n",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 1.0
+    },
+    {
+      "key": "SCRUM-172",
+      "summary": "[Frontend] Кабінет продавця: створення внутрішніх категорій",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-73",
+      "summary": "[ARCH] ValidationPipe + версіонування API /api/v1/",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "Highest",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "architecture",
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 1.0
+    },
+    {
+      "key": "SCRUM-171",
+      "summary": "[Frontend] Кабінет продавця: управління статусами товару (чернетка / опублікований / прихований)",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-68",
+      "summary": "[ARCH] Конфігурація @nestjs/config + Zod валідація env",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "Highest",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "architecture",
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-69",
+      "summary": "[ARCH] CoreModule: DatabaseModule + ConfigModule + CacheModule",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "Highest",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "architecture",
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-120",
+      "summary": "[PRODUCTS] Список товарів продавця + базові фільтри",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-65",
+      "summary": "[ARCH] Ініціалізація NestJS проєкту з монорепо структурою",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "Highest",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "architecture",
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-74",
+      "summary": "[ARCH] Swagger/OpenAPI + Rate limiting throttler",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "architecture",
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-70",
+      "summary": "[ARCH] LoggerModule — structured JSON logging + request-id",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-76",
+      "summary": "[ARCH] Docker Compose dev-середовище",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "devops",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-90",
+      "summary": "[DEVOPS] Docker multi-stage build для NestJS API + worker",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "devops",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-91",
+      "summary": "[DEVOPS] CI пайплайн: lint + type-check + unit tests (GitHub Actions)",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "Задача",
+      "priority": "Highest",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "devops",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-93",
+      "summary": "[DEVOPS] Секрети та змінні: GitHub Secrets + .env management + Doppler",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "devops",
+        "security",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-92",
+      "summary": "[DEVOPS] CI пайплайн: build Docker image + push to registry",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "devops",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-95",
+      "summary": "[DEVOPS] Staging deploy пайплайн: auto-deploy on merge to develop",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "Задача",
+      "priority": "Highest",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "devops",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 5.0
+    },
+    {
+      "key": "SCRUM-148",
+      "summary": "[Frontend] Головна: блок банерів та рекламних пропозицій",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-168",
+      "summary": "[Frontend] Кабінет продавця: пошук та фільтрація товарів/послуг",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 5.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 5.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-170",
+      "summary": "[Frontend] Кабінет продавця: форма редагування товару/послуги",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-169",
+      "summary": "[Frontend] Кабінет продавця: форма створення товару/послуги",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 6.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 6.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-167",
+      "summary": "[Frontend] Кабінет продавця: список товарів/послуг",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-141",
+      "summary": "[DEVOPS] Frontend CI/CD: React.js build + deploy (Cloudflare Pages)",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "devops",
+        "frontend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-149",
+      "summary": "[Frontend] Головна: блок популярних категорій",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-150",
+      "summary": "[Frontend] Головна: блок популярних товарів/послуг",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-151",
+      "summary": "[Frontend] Головна: блок нових товарів/послуг",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-152",
+      "summary": "[Frontend] Головна: блок рекомендованих товарів/послуг",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-153",
+      "summary": "[Frontend] Розробка сторінки каталогу товарів/послуг",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 6.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 6.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-154",
+      "summary": "[Frontend] Каталог: фільтри (ціна, бренд, рейтинг, наявність)",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 8.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 8.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-155",
+      "summary": "[Frontend] Каталог: сортування товарів/послуг",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-156",
+      "summary": "[Frontend] Розробка сторінки товару/послуги",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 6.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 6.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-157",
+      "summary": "[Frontend] Сторінка товару: галерея зображень",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-158",
+      "summary": "[Frontend] Сторінка товару: блок характеристик",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-159",
+      "summary": "[Frontend] Сторінка товару: блок опису",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 2.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 2.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-160",
+      "summary": "[Frontend] Сторінка товару: блок відгуків",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 5.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 5.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-161",
+      "summary": "[Frontend] Сторінка товару: блок схожих товарів",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-81",
+      "summary": "[DB] Міграція: user_sessions + verification_codes",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "backend",
+        "database",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-79",
+      "summary": "[DB] BaseEntity: id BIGSERIAL + public_uid UUID + timestamps + soft delete",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "Highest",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "backend",
+        "database",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-83",
+      "summary": "[CAT-DB-1] Marketplace Categories DDL",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "История",
+      "priority": "Highest",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "backend",
+        "catalog",
+        "database",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-75",
+      "summary": "[ARCH] CORS + Helmet + compression + Health checks",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 2.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 2.0,
+      "labels": [
+        "backend",
+        "security",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-84",
+      "summary": "[CAT-DB-3] Attribute Groups DDL",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "История",
+      "priority": "High",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "backend",
+        "catalog",
+        "database",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 1.0
+    },
+    {
+      "key": "SCRUM-66",
+      "summary": "[ARCH] TypeScript strict mode + path aliases + tsconfig",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 2.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 2.0,
+      "labels": [
+        "architecture",
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-86",
+      "summary": "[CAT-DB-5] Brands DDL",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 2.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 2.0,
+      "labels": [
+        "backend",
+        "catalog",
+        "database",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 1.0
+    },
+    {
+      "key": "SCRUM-82",
+      "summary": "[DB] Міграція: sellers + seller_profiles + seller_documents",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "backend",
+        "database",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-89",
+      "summary": "[I18N] LocaleInterceptor: ?lang= → Accept-Language → fallback uk",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "backend",
+        "i18n",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-72",
+      "summary": "[ARCH] Глобальні interceptors: response transform + logging + timeout",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "architecture",
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-71",
+      "summary": "[ARCH] Глобальні exception filters: бізнес/валідація/404/500",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "Highest",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "architecture",
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-85",
+      "summary": "[CAT-DB-4] Attributes & Options DDL",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "История",
+      "priority": "High",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "backend",
+        "catalog",
+        "database",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-77",
+      "summary": "[DB] TypeORM + PostgreSQL + PgBouncer connection pooling",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "Highest",
+      "original_estimate_h": 5.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 5.0,
+      "labels": [
+        "backend",
+        "database",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-105",
+      "summary": "[AUTH] Макс 5 активних сесій FIFO + SessionGuard + інвалідація",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "backend",
+        "security",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-101",
+      "summary": "[AUTH] OTP: crypto.randomInt + Redis TTL 300с + audit log",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "backend",
+        "security",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-116",
+      "summary": "[SELLERS] Верифікація документів продавця",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "Medium",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-115",
+      "summary": "[SELLERS] Профіль магазину: назва + опис + лого + банер + контакти",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-102",
+      "summary": "[AUTH] SMS: Console (dev) + Eskiz.uz (prod) + Circuit Breaker + fallback",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "backend",
+        "integration",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 5.0
+    },
+    {
+      "key": "SCRUM-98",
+      "summary": "[AUTH] Реєстрація: DTO-валідація + argon2 хешування + унікальність",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "Highest",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "backend",
+        "security",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-117",
+      "summary": "[SELLERS] Менеджери продавця з JSONB-дозволами",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "Medium",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-106",
+      "summary": "[AUTH] POST /auth/logout + POST /auth/logout-all",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 2.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 2.0,
+      "labels": [
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 1.0
+    },
+    {
+      "key": "SCRUM-99",
+      "summary": "[AUTH] Реєстрація: атомарна транзакція users + user_profiles",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-104",
+      "summary": "[AUTH] Сесії: PostgreSQL + Redis fast store + cookie httpOnly",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "Highest",
+      "original_estimate_h": 5.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 5.0,
+      "labels": [
+        "backend",
+        "security",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-109",
+      "summary": "[USERS] CRUD профілю: ПІБ + аватар + locale",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-110",
+      "summary": "[USERS] CRUD адрес: кілька адрес + за замовчуванням",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "Medium",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-111",
+      "summary": "[USERS] Зміна email/phone з OTP підтвердженням",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "Medium",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "backend",
+        "security",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-121",
+      "summary": "[PRODUCTS] Submit на модерацію: draft → pending_review",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-112",
+      "summary": "[USERS] Зміна пароля + деактивація акаунту",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "backend",
+        "security",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-113",
+      "summary": "[USERS] RBAC: ролі buyer/seller/admin + RolesGuard + PermissionsGuard",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "Highest",
+      "original_estimate_h": 5.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 5.0,
+      "labels": [
+        "backend",
+        "security",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-114",
+      "summary": "[SELLERS] Реєстрація продавця: заявка → модерація → активація",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 5.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 5.0,
+      "labels": [
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 5.0
+    },
+    {
+      "key": "SCRUM-174",
+      "summary": "[Frontend] Кабінет продавця: редагування та видалення категорій",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-118",
+      "summary": "[PRODUCTS] Базова міграція: таблиця products (MVP)",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "Highest",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "backend",
+        "database",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-119",
+      "summary": "[PRODUCTS] CRUD товарів для seller: створення + редагування",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "Highest",
+      "original_estimate_h": 5.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 5.0,
+      "labels": [
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 5.0
+    },
+    {
+      "key": "SCRUM-108",
+      "summary": "[AUTH] GET /auth/sessions — мої пристрої + DELETE сесії",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "Medium",
+      "original_estimate_h": 2.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 2.0,
+      "labels": [
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-122",
+      "summary": "[PRODUCTS] Soft delete + архівація + дублювання лістингу",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "Medium",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "backend",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-94",
+      "summary": "[DEVOPS] PostgreSQL + Redis managed інфраструктура (staging)",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "devops",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-103",
+      "summary": "[AUTH] Email: Console (dev) + SendGrid (prod) + HTML шаблон OTP",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "backend",
+        "integration",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-80",
+      "summary": "[DB] Міграція: users + user_profiles + user_addresses",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "Highest",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "backend",
+        "database",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-107",
+      "summary": "[AUTH] Скидання пароля: OTP → reset_token TTL 10 хв",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "backend",
+        "security",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-140",
+      "summary": "[DEVOPS] Database backup strategy + migration CI validation",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "devops",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-97",
+      "summary": "[DEVOPS] Git branching strategy + branch protection rules",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 2.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 2.0,
+      "labels": [
+        "devops",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 1.0
+    },
+    {
+      "key": "SCRUM-96",
+      "summary": "[DEVOPS] Nginx reverse proxy + SSL (staging)",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "devops",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-135",
+      "summary": "[DEVOPS] E2E tests CI step: PostgreSQL + Redis service containers",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "devops",
+        "sprint-1",
+        "testing"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-136",
+      "summary": "[DEVOPS] Production infrastructure provisioning",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 6.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 6.0,
+      "labels": [
+        "devops",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-165",
+      "summary": "[Frontend] Розробка дашборду продавця",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 6.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 6.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-173",
+      "summary": "[Frontend] Кабінет продавця: створення підкатегорій",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 3.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 3.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-138",
+      "summary": "[DEVOPS] Моніторинг: health checks + Sentry error tracking",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "Задача",
+      "priority": "High",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "devops",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-139",
+      "summary": "[DEVOPS] Logging infrastructure: structured logs + aggregation",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "Задача",
+      "priority": "Medium",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "devops",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 2.0
+    },
+    {
+      "key": "SCRUM-137",
+      "summary": "[DEVOPS] Production deploy пайплайн: manual trigger + approval",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Pavel Smirny",
+      "type": "Задача",
+      "priority": "Highest",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "devops",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    },
+    {
+      "key": "SCRUM-166",
+      "summary": "[Frontend] Розробка сторінки аналітики та звітів продавця",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 8.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 8.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-175",
+      "summary": "[Frontend] Кабінет продавця: список замовлень",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Артем Михайленко",
+      "type": "История",
+      "priority": "Medium",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "frontend"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": null
+    },
+    {
+      "key": "SCRUM-100",
+      "summary": "[AUTH] Вхід: auto-detect email/phone + блокування після 5 спроб",
+      "status": "Готово",
+      "status_category": "Готово",
+      "assignee": "Volodymyr Lysenko",
+      "type": "Задача",
+      "priority": "Highest",
+      "original_estimate_h": 4.0,
+      "time_spent_h": 0.0,
+      "remaining_h": 4.0,
+      "labels": [
+        "backend",
+        "security",
+        "sprint-1"
+      ],
+      "parent_key": "",
+      "parent_summary": "",
+      "story_points": 3.0
+    }
+  ],
+  "total_issues": 93
+}
