@@ -13,7 +13,7 @@ export default function AdminBlogNew() {
     excerpt: { ru: '', en: '', ar: '' },
     content: { ru: '', en: '', ar: '' },
     coverImage: '',
-    tags: '',
+    tags: { ru: '', en: '', ar: '' },
     published: false,
   });
 
@@ -32,12 +32,18 @@ export default function AdminBlogNew() {
     e.preventDefault();
     setSaving(true);
     try {
+      const ruTags = form.tags.ru.split(',').map((t) => t.trim()).filter(Boolean);
+      const enTags = form.tags.en.split(',').map((t) => t.trim()).filter(Boolean);
+      const arTags = form.tags.ar.split(',').map((t) => t.trim()).filter(Boolean);
+      const maxLen = Math.max(ruTags.length, enTags.length, arTags.length);
+      const tags = Array.from({ length: maxLen }, (_, i) => ({
+        ru: ruTags[i] || '',
+        en: enTags[i] || '',
+        ar: arTags[i] || '',
+      }));
       const body = {
         ...form,
-        tags: form.tags
-          .split(',')
-          .map((t) => t.trim())
-          .filter(Boolean),
+        tags,
       };
       const res = await fetch('/api/blog', {
         method: 'POST',
@@ -135,15 +141,20 @@ export default function AdminBlogNew() {
         </div>
 
         {/* Tags */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Теги (через запятую)</label>
-          <input
-            type="text"
-            value={form.tags}
-            onChange={(e) => handleChange('tags', e.target.value)}
-            placeholder="cleaning, tips, dubai"
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
-          />
+        <div className="space-y-4">
+          <h2 className="text-lg font-semibold text-gray-900">Теги (через запятую)</h2>
+          {(['ru', 'en', 'ar'] as const).map((lng) => (
+            <div key={lng}>
+              <label className="block text-sm font-medium text-gray-500 mb-1">{lng.toUpperCase()}</label>
+              <input
+                type="text"
+                value={form.tags[lng]}
+                onChange={(e) => handleChange('tags', e.target.value, lng)}
+                placeholder={lng === 'ru' ? 'уборка, советы, Дубай' : lng === 'en' ? 'cleaning, tips, Dubai' : 'تنظيف, نصائح, دبي'}
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
+              />
+            </div>
+          ))}
         </div>
 
         {/* Published */}

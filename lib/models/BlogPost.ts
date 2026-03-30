@@ -6,7 +6,7 @@ export interface IBlogPost extends Document {
   excerpt: { ru: string; en: string; ar: string };
   content: { ru: string; en: string; ar: string };
   coverImage: string;
-  tags: string[];
+  tags: Array<{ ru: string; en: string; ar: string }>;
   published: boolean;
   createdAt: Date;
   updatedAt: Date;
@@ -31,7 +31,11 @@ const BlogPostSchema = new Schema<IBlogPost>(
       ar: { type: String, default: '' },
     },
     coverImage: { type: String, required: true },
-    tags: [{ type: String }],
+    tags: [{
+      ru: { type: String, required: true },
+      en: { type: String, required: true },
+      ar: { type: String, default: '' },
+    }],
     published: { type: Boolean, default: false },
   },
   { timestamps: true }

@@ -14,7 +14,7 @@ interface BlogPost {
   excerpt: { ru: string; en: string; ar: string };
   content: { ru: string; en: string; ar: string };
   coverImage: string;
-  tags: string[];
+  tags: Array<{ ru: string; en: string; ar: string }>;
   published: boolean;
   createdAt: string;
 }
@@ -137,9 +137,9 @@ export default function BlogArticlePage() {
               </span>
               {post.tags.length > 0 && (
                 <div className="flex flex-wrap gap-2">
-                  {post.tags.map((tag) => (
-                    <span key={tag} className="px-2 py-0.5 bg-blue-50 text-blue-600 rounded-full text-xs font-medium">
-                      {tag}
+                  {post.tags.map((tag, idx) => (
+                    <span key={idx} className="px-2 py-0.5 bg-blue-50 text-blue-600 rounded-full text-xs font-medium">
+                      {tag[lang] || tag.en || tag.ru}
                     </span>
                   ))}
                 </div>
