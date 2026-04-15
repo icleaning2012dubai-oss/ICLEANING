@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useLanguage } from '@/app/contexts/LanguageProvider';
 
 export default function Footer() {
-  const { t, getLocalizedPath } = useLanguage();
+  const { language, t, getLocalizedPath } = useLanguage();
   return (
     <footer className="pb-4 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[1400px] mx-auto bg-gray-900 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden">
@@ -105,8 +105,33 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Empty column for spacing on larger screens */}
-          <div className="hidden lg:block"></div>
+          {/* Areas */}
+          <div className="space-y-4 sm:space-y-6">
+            <h4 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">{language === 'ru' ? 'Районы' : language === 'ar' ? 'المناطق' : 'Areas'}</h4>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2 sm:gap-y-3">
+              {[
+                { slug: 'dubai-marina', name: 'Dubai Marina' },
+                { slug: 'jlt', name: 'JLT' },
+                { slug: 'palm-jumeirah', name: 'Palm Jumeirah' },
+                { slug: 'downtown-dubai', name: 'Downtown' },
+                { slug: 'al-barsha', name: 'Al Barsha' },
+                { slug: 'deira', name: 'Deira' },
+                { slug: 'bur-dubai', name: 'Bur Dubai' },
+                { slug: 'international-city', name: 'Int. City' },
+                { slug: 'jumeirah', name: 'Jumeirah' },
+                { slug: 'abu-dhabi', name: 'Abu Dhabi' },
+                { slug: 'sharjah', name: 'Sharjah' },
+              ].map((loc) => (
+                <Link
+                  key={loc.slug}
+                  href={getLocalizedPath(`/locations/${loc.slug}`)}
+                  className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm"
+                >
+                  {loc.name}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
 
           {/* Large Brand Text with Gradient */}

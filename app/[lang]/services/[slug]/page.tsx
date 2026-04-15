@@ -13,6 +13,7 @@ import SofaMattressesService from '@/app/[lang]/services/components/SofaMattress
 import CurtainsBlindsService from '@/app/[lang]/services/components/CurtainsBlindsService';
 import RegularCleaningService from '@/app/[lang]/services/components/RegularCleaningService';
 import AirConditionerService from '@/app/[lang]/services/components/AirConditionerService';
+import RelatedSubServices from '@/app/components/RelatedSubServices';
 
 // Loading fallback component
 function ServiceContentLoading() {
@@ -90,6 +91,9 @@ export default function ServicePage({ params }: { params: Promise<{ slug: string
             {slug === 'regular-cleaning-dubai' && <RegularCleaningService />}
             {slug === 'ac-cleaning-dubai' && <AirConditionerService />}
           </Suspense>
+
+          {/* Related Sub-Services */}
+          <RelatedSubServices parentSlug={slug} />
 
           {/* Contact Section */}
           <ContactSection />
