@@ -283,7 +283,7 @@ function shuffle<T>(arr: T[]): T[] {
 // ── PortfolioPage ──────────────────────────────────────────────────────────────
 export default function PortfolioPage() {
   const { language, t } = useLanguage();
-  const [activeTab, setActiveTab] = useState<'before-after' | 'gallery'>('before-after');
+  const [activeTab, setActiveTab] = useState<'before-after' | 'gallery'>('gallery');
   const [items, setItems] = useState<GalleryItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeFilter, setActiveFilter] = useState('');
@@ -397,7 +397,7 @@ export default function PortfolioPage() {
             {/* Tab switcher */}
             <div className="flex justify-center mb-10">
               <div className="inline-flex bg-white rounded-full p-1 shadow-md border border-gray-100">
-                {(['before-after', 'gallery'] as const).map((tab) => (
+                {(['gallery', 'before-after'] as const).map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
