@@ -61,60 +61,7 @@ export default function SofaMattressesService() {
             </div>
             
             <div className="relative z-10">
-              {/* Toggle Switch */}
-              <div className="flex justify-center mb-12">
-                <div className="inline-flex rounded-full bg-gray-100 p-1">
-                  <button
-                    onClick={() => setIsSofa(false)}
-                    className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
-                      !isSofa 
-                        ? 'bg-blue-600 text-white shadow-lg' 
-                        : 'text-gray-600 hover:text-gray-900'
-                    }`}
-                  >
-                    {t('sofa.mattressSizes')}
-                  </button>
-                  <button
-                    onClick={() => setIsSofa(true)}
-                    className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
-                      isSofa 
-                        ? 'bg-blue-600 text-white shadow-lg' 
-                        : 'text-gray-600 hover:text-gray-900'
-                    }`}
-                  >
-                    {t('sofa.sofaSizes')}
-                  </button>
-                </div>
-              </div>
-
-              {/* Unified Pricing Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {currentPrices.map((item, index) => (
-                  <div 
-                    key={item.id}
-                    className={`group relative rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 ${
-                      item.highlighted ? 'border-2 border-blue-200 bg-white' : isSofa ? 'bg-blue-50/50 hover:bg-blue-50' : 'bg-white'
-                    }`}
-                  >
-                    <div className="text-center">
-                      <h4 className="text-xl font-bold text-gray-900 mb-2">
-                        {t(item.nameKey)}
-                      </h4>
-                      <p className="text-gray-500 text-sm mb-6">
-                        {t(item.descKey)}
-                      </p>
-                      
-                      <div className="mb-8">
-                        <div className="text-4xl font-bold text-blue-600 mb-3">
-                          AED {item.price}
-                        </div>
-                      </div>
-                      
-                      <button 
-                        onClick={() => addToCart({ 
-                          id: item.id, 
-                          name: t(item.nameKey), 
-                          price: item.price, 
+              // Удалено по запросу: сервисы уборки больше не предоставляются
                           category: item.category 
                         })}
                         className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)]"

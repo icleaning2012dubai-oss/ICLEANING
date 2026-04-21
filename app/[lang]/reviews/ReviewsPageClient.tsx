@@ -6,7 +6,9 @@ import ContactSection from '@/app/components/ContactSection';
 import BookingModal from '@/app/components/BookingModal';
 import { useLanguage } from '@/app/contexts/LanguageProvider';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { buildWhatsAppLink } from '@/app/utils/whatsapp';
 
 interface Review {
   name: string;
@@ -150,6 +152,7 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 export default function ReviewsPageClient() {
+  const pathname = usePathname();
   const { language, t, getLocalizedPath } = useLanguage();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -302,7 +305,7 @@ export default function ReviewsPageClient() {
                     {language === 'ru' ? 'Заказать услугу' : language === 'ar' ? 'اطلب الخدمة' : 'Book Service'}
                   </button>
                   <a
-                    href="https://wa.me/971585828091"
+                    href={buildWhatsAppLink(language, pathname)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-10 py-4 border-2 border-white/50 text-white rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2"

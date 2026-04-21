@@ -1,9 +1,16 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
+import { useLanguage } from '@/app/contexts/LanguageProvider';
+import { buildWhatsAppLink } from '@/app/utils/whatsapp';
+
 export default function WhatsAppFloat() {
+  const pathname = usePathname();
+  const { language } = useLanguage();
+
   return (
     <a
-      href="https://api.whatsapp.com/send/?phone=971508648401&text&type=phone_number&app_absent=0"
+      href={buildWhatsAppLink(language, pathname)}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 group"

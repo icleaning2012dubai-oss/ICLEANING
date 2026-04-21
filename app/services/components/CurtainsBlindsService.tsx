@@ -1,43 +1,4 @@
-'use client';
-
-import Image from 'next/image';
-import { useLanguage } from '@/app/contexts/LanguageProvider';
-import { useCart } from '@/app/contexts/CartProvider';
-
-export default function CurtainsBlindsService() {
-  const { t } = useLanguage();
-  const { addToCart } = useCart();
-  
-  return (
-    <>
-      {/* Introduction Section */}
-      {/* <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="relative bg-white rounded-3xl p-8 md:p-12 shadow-2xl mb-12 overflow-hidden">
-            <div className="absolute top-0 right-0 w-full h-full opacity-90">
-              <Image
-                src="/images/decorative2.webp"
-                alt="Decorative"
-                fill
-                className="object-cover"
-              />
-            </div>
-            
-            <div className="relative z-10 text-center">
-              <p className="text-gray-600 text-lg max-w-4xl mx-auto leading-relaxed">
-                {t('curtains.intro')}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* Pricing Section */}
-      <section id="pricing-section" className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1400px] mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-16">{t('curtains.sizesTitle')}</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+// Удалено по запросу: сервисы уборки больше не предоставляются
             {/* Blinds Card */}
             <div className="group relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-12 shadow-2xl hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)] transition-all duration-300 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-gray-700/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

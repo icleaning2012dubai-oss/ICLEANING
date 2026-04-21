@@ -11,60 +11,7 @@ export default function CarpetCleaningService() {
   const [isHandmade, setIsHandmade] = useState(false);
 
   // Pricing data
-  const regularPrices = [
-    { size: 'small', sqm: 4, price: 99, oldPrice: 150, calc: '2m x 2m = 99 AED' },
-    { size: 'medium', sqm: 6, price: 150, oldPrice: 175, calc: '2m x 3m = 150 AED' },
-    { size: 'large', sqm: 12, price: 300, oldPrice: 336, calc: '1m = 25 AED' }
-  ];
-
-  const handmadePrices = [
-    { size: 'small', sqm: 4, price: 396, oldPrice: undefined, calc: '2m x 2m = 396 AED' },
-    { size: 'medium', sqm: 6, price: 594, oldPrice: undefined, calc: '2m x 3m = 594 AED' },
-    { size: 'large', sqm: 12, price: 1188, oldPrice: undefined, calc: '1m = 99 AED' }
-  ];
-
-  const currentPrices = isHandmade ? handmadePrices : regularPrices;
-
-  return (
-    <>
-      {/* Pricing Section */}
-      <section id="pricing-section" className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1400px] mx-auto">
-          {/* Header with decorative element */}
-          <div className="relative bg-white rounded-3xl p-8 md:p-12 shadow-2xl mb-12 overflow-hidden">
-            <div className="absolute top-0 right-0 w-full h-full opacity-5">
-              <Image
-                src="/images/decorative2.webp"
-                alt="Decorative"
-                fill
-                className="object-cover"
-              />
-            </div>
-            
-            <div className="relative z-10 flex items-start justify-between gap-8">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-                {t('carpet.sizesTitle')}
-              </h2>
-              <p className="text-gray-600 text-sm max-w-xs hidden md:block">
-                {t('carpet.sizesSubtitle')}
-              </p>
-            </div>
-          </div>
-          
-          {/* Toggle Switch */}
-          <div className="flex justify-center mb-12">
-            <div className="inline-flex items-center bg-white rounded-full p-2 shadow-xl">
-              <button
-                onClick={() => setIsHandmade(false)}
-                className={`px-8 py-4 rounded-full font-semibold transition-all duration-300 ${
-                  !isHandmade
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'text-gray-600 hover:text-gray-900'
-                }`}
-              >
-                {t('carpet.regularTitle')}
-              </button>
-              <button
+  // Удалено по запросу: сервисы уборки больше не предоставляются
                 onClick={() => setIsHandmade(true)}
                 className={`px-8 py-4 rounded-full font-semibold transition-all duration-300 ${
                   isHandmade

@@ -65,7 +65,6 @@ export default function AirConditionerService() {
                   ))}
                 </div>
                 
-                {/* Type label */}
                 <div className="text-center">
                   <p className={`font-bold text-sm mb-1 ${selectedPackage === pkg.id ? 'text-blue-600' : 'text-gray-900'}`}>
                     {pkg.type}
