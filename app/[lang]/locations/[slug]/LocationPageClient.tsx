@@ -1,6 +1,6 @@
 'use client';
 
-import { notFound } from 'next/navigation';
+import { notFound, usePathname } from 'next/navigation';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import ContactSection from '@/app/components/ContactSection';
@@ -9,6 +9,7 @@ import { useLanguage } from '@/app/contexts/LanguageProvider';
 import { locationsData } from '@/app/data/locationsData';
 import { useState } from 'react';
 import Link from 'next/link';
+import { buildWhatsAppLink } from '@/app/utils/whatsapp';
 
 const locationColors: Record<string, string> = {
   'dubai-marina': 'from-blue-600 to-cyan-500',
@@ -32,6 +33,7 @@ const locationIcons: Record<string, React.ReactNode> = {
 };
 
 export default function LocationPageClient({ slug }: { slug: string }) {
+  const pathname = usePathname();
   const { language, t, getLocalizedPath } = useLanguage();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const page = locationsData[slug];
@@ -211,7 +213,7 @@ export default function LocationPageClient({ slug }: { slug: string }) {
                       {t('serviceHero.bookService')}
                     </button>
                     <a
-                      href="https://wa.me/971585828091"
+                      href={buildWhatsAppLink(language, pathname)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full py-3.5 bg-green-500 text-white rounded-xl font-semibold hover:bg-green-600 transition-all duration-300 flex items-center justify-center gap-2"

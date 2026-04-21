@@ -147,10 +147,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-gray-900 bg-white"
             >
               <option value="">{t('form.selectService')}</option>
-              <option value="Carpet Cleaning">{t('form.carpetCleaning')}</option>
-              <option value="Sofa & Mattresses">{t('form.sofaMattresses')}</option>
-              <option value="Curtains & Blinds">{t('form.curtainsBlinds')}</option>
-              <option value="Air Conditioner">{t('form.airConditioner')}</option>
+              {/* Все услуги уборки удалены по запросу */}
             </select>
           </div>
 

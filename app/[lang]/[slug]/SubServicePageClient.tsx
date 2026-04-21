@@ -1,6 +1,6 @@
 'use client';
 
-import { notFound } from 'next/navigation';
+import { notFound, usePathname } from 'next/navigation';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import ContactSection from '@/app/components/ContactSection';
@@ -10,6 +10,7 @@ import { subServicesData, getSubServicesForParent } from '@/app/data/subServices
 import { servicesData } from '@/app/services/serviceData';
 import { useState } from 'react';
 import Link from 'next/link';
+import { buildWhatsAppLink } from '@/app/utils/whatsapp';
 
 // Per-category features, process steps, FAQ — keeps pages unique
 const categoryData: Record<string, {
@@ -142,6 +143,7 @@ function FeatureIcon({ iconKey }: { iconKey: string }) {
 }
 
 export default function SubServicePageClient({ slug }: { slug: string }) {
+  const pathname = usePathname();
   const { language, t, getLocalizedPath } = useLanguage();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -327,7 +329,7 @@ export default function SubServicePageClient({ slug }: { slug: string }) {
                   {bookBtnText}
                 </button>
                 <a
-                  href="https://wa.me/971585828091"
+                  href={buildWhatsAppLink(language, pathname)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-10 py-4 border-2 border-white/50 text-white rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2"

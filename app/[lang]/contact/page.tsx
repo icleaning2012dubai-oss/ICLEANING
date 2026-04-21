@@ -1,9 +1,11 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import Image from 'next/image';
 import { useLanguage } from '@/app/contexts/LanguageProvider';
+import { buildWhatsAppLink } from '@/app/utils/whatsapp';
 
 // ===== SEO METADATA - ДЛЯ СЕОШНИКА =====
 // TODO: Добавить metadata для страницы "Контакты"
@@ -14,7 +16,8 @@ import { useLanguage } from '@/app/contexts/LanguageProvider';
 // ===== КОНЕЦ SEO METADATA =====
 
 export default function ContactPage() {
-  const { t, getLocalizedPath } = useLanguage();
+  const pathname = usePathname();
+  const { language, t, getLocalizedPath } = useLanguage();
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 relative">
       {/* Background pattern */}
@@ -170,7 +173,7 @@ export default function ContactPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                       {/* WhatsApp */}
-                      <a href="https://api.whatsapp.com/send/?phone=971508648401&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="group relative bg-white/10 backdrop-blur-md rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-white/20 hover:border-green-400 cursor-pointer">
+                      <a href={buildWhatsAppLink(language, pathname)} target="_blank" rel="noopener noreferrer" className="group relative bg-white/10 backdrop-blur-md rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-white/20 hover:border-green-400 cursor-pointer">
                         <div className="flex items-center gap-4 mb-4">
                           <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                             <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">

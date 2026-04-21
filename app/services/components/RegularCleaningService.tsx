@@ -1,42 +1,4 @@
-'use client';
-
-import Image from 'next/image';
-import { useLanguage } from '@/app/contexts/LanguageProvider';
-import { useCart } from '@/app/contexts/CartProvider';
-
-export default function RegularCleaningService() {
-  const { t } = useLanguage();
-  const { addToCart } = useCart();
-  
-  return (
-    <>
-      {/* Hero Description Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 ">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="relative  rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden bg-white">
-            <div className="absolute top-0 right-0 w-full h-full opacity-90">
-              <Image
-                src="/images/decorative2.webp"
-                alt="Decorative"
-                fill
-                className="object-cover"
-              />
-            </div>
-            
-            <div className="relative z-10 max-w-4xl mx-auto text-center">
-              
-              
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
-                {t('regular.heroTitle')}
-              </h2>
-              
-              <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
-                {t('regular.heroDesc')}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+// Удалено по запросу: сервисы уборки больше не предоставляются
 
       {/* Pricing Section */}
       <section id="pricing-section" className="py-20 px-4 sm:px-6 lg:px-8">
