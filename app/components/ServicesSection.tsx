@@ -7,7 +7,7 @@ import { useLanguage } from '@/app/contexts/LanguageProvider';
 export default function ServicesSection() {
   const { t } = useLanguage();
   
-  const services = [];
+  const services: Array<{ id: number; title: string; description: string; image: string; slug: string }> = [];
   
   return (
     <section id="services" className="px-4 sm:px-6 lg:px-8 pt-10">

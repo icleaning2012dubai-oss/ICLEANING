@@ -1,12 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2025-12-15.clover',
-});
-
-const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
 const BITRIX_WEBHOOK_URL = 'https://sladikmladik.bitrix24.ru/rest/19494/pswzhpup008nfd6i/crm.lead.add';
+
+function getStripeClient() {
+  const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+
+  if (!stripeSecretKey) {
+    throw new Error('STRIPE_SECRET_KEY is not configured');
+  }
+
+  return new Stripe(stripeSecretKey, {
+    apiVersion: '2025-12-15.clover',
+  });
+}
 
 // Функция для создания лида в Bitrix24
 async function createBitrixLead(session: Stripe.Checkout.Session) {
@@ -65,8 +72,17 @@ async function createBitrixLead(session: Stripe.Checkout.Session) {
 
 export async function POST(req: NextRequest) {
   try {
+    const stripe = getStripeClient();
+    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+    if (!webhookSecret) {
+      throw new Error('STRIPE_WEBHOOK_SECRET is not configured');
+    }
+
     const body = await req.text();
-    const signature = req.headers.get('stripe-signature')!;
+    const signature = req.headers.get('stripe-signature');
+    if (!signature) {
+      return NextResponse.json({ error: 'Missing stripe-signature header' }, { status: 400 });
+    }
 
     let event: Stripe.Event;
 
