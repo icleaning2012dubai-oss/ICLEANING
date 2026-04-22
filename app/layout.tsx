@@ -56,15 +56,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-    ],
-    apple: [
-      { url: "/favicon.ico", sizes: "180x180" },
-    ],
-    shortcut: "/favicon.ico",
-  },
   manifest: "/site.webmanifest",
   verification: {
     google: "your-google-verification-code",
