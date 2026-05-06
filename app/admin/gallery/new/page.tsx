@@ -10,7 +10,6 @@ const SERVICES = [
   { value: 'curtains', label: 'Шторы' },
   { value: 'ac', label: 'Кондиционеры' },
   { value: 'mattress', label: 'Матрасы' },
-  { value: 'general', label: 'Общая уборка' },
 ];
 
 export default function AdminGalleryNew() {

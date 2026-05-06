@@ -4,7 +4,6 @@ import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 
 const CATEGORIES = [
-  { value: 'cleaning', label: 'Уборка' },
   { value: 'carpet',   label: 'Ковры' },
   { value: 'sofa',     label: 'Диваны' },
   { value: 'curtains', label: 'Шторы' },
@@ -29,7 +28,7 @@ export default function AdminGalleryPhotos() {
   const [uploading, setUploading] = useState(false);
   const [filterCat, setFilterCat] = useState('');
   const [showForm, setShowForm] = useState(false);
-  const [form, setForm] = useState({ alt: '', category: 'cleaning', url: '', order: 0 });
+  const [form, setForm] = useState({ alt: '', category: 'carpet', url: '', order: 0 });
   const inputRef = useRef<HTMLInputElement>(null);
 
   const fetchPhotos = (cat = filterCat) => {
@@ -73,7 +72,7 @@ export default function AdminGalleryPhotos() {
       body: JSON.stringify({ ...form, published: true, source: 'upload' }),
     });
     setShowForm(false);
-    setForm({ alt: '', category: 'cleaning', url: '', order: 0 });
+    setForm({ alt: '', category: 'carpet', url: '', order: 0 });
     fetchPhotos();
   };
 
