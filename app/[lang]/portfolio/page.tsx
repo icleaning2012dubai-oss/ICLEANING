@@ -29,19 +29,6 @@ interface StaticPhoto {
 
 // ── Static gallery photos ──────────────────────────────────────────────────────
 const STATIC_PHOTOS: StaticPhoto[] = [
-  { src: '/images/cleaning/general1.webp',          alt: 'General Cleaning',        category: 'cleaning', width: 1200, height: 800  },
-  { src: '/images/cleaning/general2.webp',          alt: 'General Cleaning 2',      category: 'cleaning', width: 800,  height: 1066 },
-  { src: '/images/cleaning/regular.webp',           alt: 'Regular Cleaning',        category: 'cleaning', width: 1200, height: 900  },
-  { src: '/images/cleaning/tchatelna.webp',         alt: 'Detailed Cleaning',       category: 'cleaning', width: 800,  height: 1200 },
-  { src: '/images/cleaning/vanna.webp',             alt: 'Bathroom Cleaning',       category: 'cleaning', width: 1200, height: 800  },
-  { src: '/images/cleaning/pol.webp',               alt: 'Floor Cleaning',          category: 'cleaning', width: 900,  height: 1200 },
-  { src: '/images/cleaning/okna.webp',              alt: 'Window Cleaning',         category: 'cleaning', width: 1200, height: 800  },
-  { src: '/images/cleaning/poverhna.webp',          alt: 'Surface Cleaning',        category: 'cleaning', width: 800,  height: 600  },
-  { src: '/images/cleaning/podmet.webp',            alt: 'Sweeping',                category: 'cleaning', width: 1200, height: 900  },
-  { src: '/images/cleaning/legka.webp',             alt: 'Light Cleaning',          category: 'cleaning', width: 800,  height: 1100 },
-  { src: '/images/decorative.webp',                 alt: 'Decorative Cleaning',     category: 'cleaning', width: 1200, height: 800  },
-  { src: '/images/decorative2.webp',                alt: 'Decorative Cleaning 2',   category: 'cleaning', width: 900,  height: 1200 },
-  { src: '/images/room_cleaning.webp',              alt: 'Room Cleaning',           category: 'cleaning', width: 1200, height: 800  },
   { src: '/images/carpet_cleaning.webp',            alt: 'Carpet Cleaning',         category: 'carpet',   width: 1200, height: 800  },
   { src: '/images/carpet/wool.webp',                alt: 'Wool Carpet',             category: 'carpet',   width: 1200, height: 900  },
   { src: '/images/carpet/silk.webp',                alt: 'Silk Carpet',             category: 'carpet',   width: 800,  height: 1100 },
@@ -66,12 +53,11 @@ const STATIC_PHOTOS: StaticPhoto[] = [
 ];
 
 const SERVICE_FILTERS = [
-  { key: '',         label: { ru: 'Все',          en: 'All',       ar: 'الكل'    } },
-  { key: 'cleaning', label: { ru: 'Уборка',        en: 'Cleaning',  ar: 'التنظيف' } },
-  { key: 'carpet',   label: { ru: 'Ковры',         en: 'Carpets',   ar: 'السجاد'  } },
-  { key: 'sofa',     label: { ru: 'Диваны',        en: 'Sofas',     ar: 'الأرائك' } },
-  { key: 'curtains', label: { ru: 'Шторы',         en: 'Curtains',  ar: 'الستائر' } },
-  { key: 'ac',       label: { ru: 'Кондиционеры', en: 'AC',        ar: 'المكيفات'} },
+  { key: '',         label: { ru: 'Все',           en: 'All',       ar: 'الكل'    } },
+  { key: 'carpet',   label: { ru: 'Ковры',          en: 'Carpets',   ar: 'السجاد'  } },
+  { key: 'sofa',     label: { ru: 'Диваны',         en: 'Sofas',     ar: 'الأرائك' } },
+  { key: 'curtains', label: { ru: 'Шторы',          en: 'Curtains',  ar: 'الستائر' } },
+  { key: 'ac',       label: { ru: 'Кондиционеры',  en: 'AC',        ar: 'المكيفات'} },
 ];
 
 // ── BeforeAfterSlider ──────────────────────────────────────────────────────────
