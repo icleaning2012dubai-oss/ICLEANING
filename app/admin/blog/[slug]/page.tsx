@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import ImageUploader from '@/app/admin/components/ImageUploader';
+import BlockEditor from '@/app/admin/components/BlockEditor';
 
 export default function AdminBlogEdit() {
   const router = useRouter();
@@ -153,16 +154,14 @@ export default function AdminBlogEdit() {
 
         {/* Content */}
         <div className="space-y-4">
-          <h2 className="text-lg font-semibold text-gray-900">Контент (HTML)</h2>
+          <h2 className="text-lg font-semibold text-gray-900">Контент статьи</h2>
           {(['ru', 'en', 'ar'] as const).map((lang) => (
             <div key={lang}>
-              <label className="block text-sm font-medium text-gray-500 mb-1">{lang.toUpperCase()}</label>
-              <textarea
+              <label className="block text-sm font-medium text-gray-500 mb-2">{lang.toUpperCase()}</label>
+              <BlockEditor
                 value={form.content[lang]}
-                onChange={(e) => handleChange('content', e.target.value, lang)}
-                required={lang !== 'ar'}
-                rows={8}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none font-mono text-sm"
+                onChange={(html) => handleChange('content', html, lang)}
+                folder="icleaning/blog"
               />
             </div>
           ))}

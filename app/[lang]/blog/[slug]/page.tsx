@@ -160,7 +160,7 @@ export default function BlogArticlePage() {
 
             {/* Content — rendered as HTML */}
             <div
-              className="prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 prose-img:rounded-xl"
+              className="blog-content"
               dangerouslySetInnerHTML={{ __html: post.content[lang] || post.content.en }}
             />
 
