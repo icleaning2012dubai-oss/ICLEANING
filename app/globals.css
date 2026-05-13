@@ -1,5 +1,213 @@
 @import "tailwindcss";
 
+/* ============================================
+   BLOG ARTICLE CONTENT STYLES
+   Styles semantic HTML stored in MongoDB.
+   No classes needed in the HTML itself.
+   ============================================ */
+
+/* Headings */
+.blog-content h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 2.5rem 0 1rem;
+  line-height: 1.3;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e6f5ff;
+}
+.blog-content h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 1.5rem 0 0.5rem;
+  line-height: 1.4;
+}
+
+/* Paragraphs & text */
+.blog-content p {
+  color: #374151;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+}
+.blog-content strong {
+  font-weight: 600;
+  color: #111827;
+}
+.blog-content em {
+  color: #6b7280;
+  font-style: italic;
+}
+.blog-content a {
+  color: #1E90FE;
+  text-decoration: underline;
+}
+
+/* Lists */
+.blog-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0;
+}
+.blog-content ul li {
+  color: #374151;
+  padding: 4px 0 4px 1.5rem;
+  line-height: 1.7;
+  position: relative;
+}
+.blog-content ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0.4rem;
+  color: #1E90FE;
+  font-weight: bold;
+}
+.blog-content ol {
+  padding-left: 1.5rem;
+  margin: 0.75rem 0;
+}
+.blog-content ol li {
+  color: #374151;
+  padding: 3px 0;
+  line-height: 1.7;
+}
+
+/* Images */
+.blog-content img {
+  width: 100%;
+  border-radius: 16px;
+  margin: 2rem 0;
+  object-fit: cover;
+  display: block;
+  max-height: 500px;
+}
+
+/* Blockquote — used for highlights / tips */
+.blog-content blockquote {
+  background: #fffbeb;
+  border-left: 4px solid #f59e0b;
+  border-radius: 0 12px 12px 0;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  color: #92400e;
+}
+.blog-content blockquote p {
+  color: #92400e;
+  margin: 0;
+}
+
+/* Tables — comparison tables */
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+}
+.blog-content thead {
+  background: #1E90FE;
+}
+.blog-content thead th {
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+.blog-content tbody tr:nth-child(even) {
+  background: #f0f9ff;
+}
+.blog-content tbody tr:nth-child(odd) {
+  background: #ffffff;
+}
+.blog-content tbody td {
+  padding: 10px 16px;
+  color: #374151;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+}
+
+/* FAQ items — <details>/<summary> accordion */
+.blog-content details {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  margin: 0.75rem 0;
+  overflow: hidden;
+}
+.blog-content summary {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #111827;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.blog-content summary::-webkit-details-marker { display: none; }
+.blog-content summary::after {
+  content: "›";
+  margin-left: auto;
+  font-size: 1.25rem;
+  color: #1E90FE;
+  transition: transform 0.2s;
+}
+.blog-content details[open] summary::after {
+  transform: rotate(90deg);
+}
+.blog-content details > p,
+.blog-content details > ul,
+.blog-content details > ol {
+  padding: 0 1.25rem 1rem;
+  margin-top: 0;
+}
+
+/* Info box — <div class="info"> */
+.blog-content .info {
+  background: #eff6ff;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid #1E90FE;
+}
+.blog-content .info p { color: #1e40af; margin: 0; }
+
+/* Price cards — <div class="prices"> */
+.blog-content .prices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.blog-content .prices > div {
+  background: #f0f9ff;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+}
+.blog-content .prices .label {
+  font-weight: 600;
+  color: #1E90FE;
+  font-size: 0.9rem;
+}
+.blog-content .prices .amount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  display: block;
+  margin: 0.25rem 0;
+}
+.blog-content .prices .note {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* ============================================ */
+
 /* Critical performance optimizations */
 * {
   -webkit-font-smoothing: antialiased;
