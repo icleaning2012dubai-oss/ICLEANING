@@ -145,7 +145,13 @@ export default function Footer() {
           </div>
 
           {/* Bottom Bar */}
-          <div className="flex flex-col md:flex-row justify-between items-center pt-6 sm:pt-8 border-t border-gray-800 gap-3 sm:gap-4">
+          <div className="pt-6 sm:pt-8 border-t border-gray-800">
+            <div className="text-gray-600 text-xs mb-4 space-y-0.5 text-center md:text-left">
+              <p>GOLDEN SMART I CLEANING LAUNDRY SERVICES L.L.C</p>
+              <p>Jebel Ali Industrial First, Plot 1797-0, Building S10, Dubai, UAE</p>
+              <p>Trade License No: 1134424</p>
+            </div>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
             <p className="text-gray-500 text-xs sm:text-sm text-center md:text-left">
               ©2025 iCleaning. All rights reserved
             </p>
@@ -157,6 +163,7 @@ export default function Footer() {
                 {t('footer.termsOfUse')}
               </Link>
             </div>
+          </div>
           </div>
         </div>
       </div>
