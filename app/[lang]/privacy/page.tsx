@@ -49,6 +49,28 @@ export default function PrivacyPage() {
           </section>
 
           <section className="border-t border-gray-200 pt-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              {t('privacy.title') === 'Privacy Policy' ? 'Marketing Communications and WhatsApp' :
+               t('privacy.title') === 'Политика конфиденциальности' ? 'Маркетинговые сообщения и WhatsApp' :
+               'الرسائل التسويقية وواتساب'}
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              {t('privacy.title') === 'Privacy Policy' ?
+                'GOLDEN SMART I CLEANING LAUNDRY SERVICES L.L.C has the right to send the User notifications about new products and services, special offers, booking confirmations, and various events via WhatsApp, SMS, email, and other communication channels.' :
+               t('privacy.title') === 'Политика конфиденциальности' ?
+                'Компания GOLDEN SMART I CLEANING LAUNDRY SERVICES L.L.C имеет право отправлять Пользователю уведомления о новых продуктах и услугах, специальных предложениях, подтверждениях бронирования и различных событиях через WhatsApp, SMS, электронную почту и другие каналы связи.' :
+                'تحق لشركة GOLDEN SMART I CLEANING LAUNDRY SERVICES L.L.C إرسال إشعارات للمستخدم حول المنتجات والخدمات الجديدة والعروض الخاصة وتأكيدات الحجز والأحداث المختلفة عبر واتساب والرسائل القصيرة والبريد الإلكتروني وقنوات الاتصال الأخرى.'}
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              {t('privacy.title') === 'Privacy Policy' ?
+                'The User may opt out of receiving such messages at any time by sending a request to customer@icleaning.ae with the subject line "Unsubscribe", or by replying "STOP" to any WhatsApp message received.' :
+               t('privacy.title') === 'Политика конфиденциальности' ?
+                'Пользователь может в любое время отказаться от получения таких сообщений, направив запрос на адрес электронной почты customer@icleaning.ae с пометкой «Отказ от уведомлений», или написав слово "STOP" в ответ на любое полученное сообщение WhatsApp.' :
+                'يمكن للمستخدم إلغاء الاشتراك في تلقي هذه الرسائل في أي وقت عن طريق إرسال طلب إلى customer@icleaning.ae بعنوان "إلغاء الاشتراك"، أو بالرد بكلمة "STOP" على أي رسالة واتساب مستلمة.'}
+            </p>
+          </section>
+
+          <section className="border-t border-gray-200 pt-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Log Data</h2>
             <p className="text-gray-700 leading-relaxed">
               {t('privacy.title') === 'Privacy Policy' ?
