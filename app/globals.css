@@ -75,11 +75,11 @@
 /* Images */
 .blog-content img {
   width: 100%;
+  max-width: 100%;
+  height: auto;
   border-radius: 16px;
   margin: 2rem 0;
-  object-fit: cover;
   display: block;
-  max-height: 500px;
 }
 
 /* Blockquote — used for highlights / tips */

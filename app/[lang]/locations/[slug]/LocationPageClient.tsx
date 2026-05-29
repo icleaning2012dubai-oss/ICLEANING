@@ -23,6 +23,7 @@ const locationColors: Record<string, string> = {
   'jumeirah': 'from-sky-600 to-blue-400',
   'abu-dhabi': 'from-amber-600 to-yellow-500',
   'sharjah': 'from-fuchsia-600 to-pink-500',
+  'ajman': 'from-orange-600 to-red-500',
 };
 
 const locationIcons: Record<string, React.ReactNode> = {

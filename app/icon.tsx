@@ -18,7 +18,7 @@ export default async function Icon() {
         style={{
           width: '100%',
           height: '100%',
-          borderRadius: '50%',
+          borderRadius: '20%',
           overflow: 'hidden',
           display: 'flex',
         }}

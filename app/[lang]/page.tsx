@@ -72,8 +72,12 @@ export async function generateMetadata({
 
 
 // Lazy load компоненты ниже fold (не видны сразу)
-const StatsSection = dynamic(() => import('@/app/components/StatsSection'), {
+const WhyChooseUsSection = dynamic(() => import('@/app/components/WhyChooseUsSection'), {
   loading: () => <div className="h-48 bg-gradient-to-br from-blue-50 to-blue-100" />
+});
+
+const OurWorksSection = dynamic(() => import('@/app/components/OurWorksSection'), {
+  loading: () => <div className="h-96 bg-white" />
 });
 
 const TeamSection = dynamic(() => import('@/app/components/TeamSection'), {
@@ -119,10 +123,11 @@ export default function Home() {
           <ServicesSection />
           <TeamSection />
           {/* <AboutSection /> */}
-          <StatsSection />
+          <WhyChooseUsSection />
           
           <EquipmentSection />
           
+          <OurWorksSection />
           {/* <TestimonialsSection /> */}
           <ContactSection />
           <VideoSection />

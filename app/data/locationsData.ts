@@ -742,6 +742,54 @@ Book a day ahead. We'll contact you and find a convenient time for Sharjah visit
 وفروا: اطلبوا أريكة + سجادة + كرسيين – نعطي خصم 15% وقد نلغي رسوم الطريق.`,
     },
   },
+
+  'ajman': {
+    slug: 'ajman',
+    h1: {
+      ru: 'Клининг в Аджмане – выезд из Дубая по записи',
+      en: 'Cleaning in Ajman – By Appointment from Dubai',
+      ar: 'تنظيف في عجمان – بموعد مسبق من دبي',
+    },
+    title: {
+      ru: 'Уборка и химчистка в Аджмане | iCleaning',
+      en: 'Cleaning Services in Ajman | iCleaning',
+      ar: 'خدمات التنظيف في عجمان | iCleaning',
+    },
+    description: {
+      ru: 'Химчистка диванов, ковров, штор и уборка квартир в Аджмане. Выезд из Дубая по предварительной записи.',
+      en: 'Sofa, carpet, curtain cleaning and apartment cleaning in Ajman. By appointment from Dubai.',
+      ar: 'تنظيف الأرائك والسجاد والستائر وتنظيف الشقق في عجمان. بموعد مسبق من دبي.',
+    },
+    content: {
+      ru: `Аджман – самый компактный эмират ОАЭ, дорога из Дубая занимает 50–70 минут в зависимости от пробок. Мы работаем по предварительной записи и берём фиксированную доплату за выезд – 150 AED. При двух и более заказах в один день в Аджмане доплата делится.
+
+Где работаем: Al Nuaimiya, Al Rashidiya, Al Rawda, Al Jurf, Ajman Corniche, Ajman Marina, Emirates City.
+
+Популярные услуги в Аджмане: химчистка диванов и кресел, чистка матрасов, стирка штор, генеральная уборка квартир и вилл, мойка кондиционеров.
+
+Совет: соберите соседей в одном здании – дорога делится, выходит дешевле для каждой квартиры.
+
+Запись минимум за день. Не работаем по пятницам.`,
+      en: `Ajman is the smallest emirate in the UAE. The drive from Dubai takes 50–70 minutes depending on traffic. We work by appointment and charge a fixed travel fee – 150 AED. With two or more orders the same day in Ajman, the fee is shared.
+
+Where we work: Al Nuaimiya, Al Rashidiya, Al Rawda, Al Jurf, Ajman Corniche, Ajman Marina, Emirates City.
+
+Popular services in Ajman: sofa & armchair cleaning, mattress cleaning, curtain washing, deep apartment & villa cleaning, AC cleaning.
+
+Tip: gather neighbours in the same building – the travel fee is split, making it cheaper per apartment.
+
+Book at least a day ahead. We do not work on Fridays.`,
+      ar: `عجمان أصغر إمارات الدولة. تستغرق الرحلة من دبي 50-70 دقيقة حسب الازدحام. نعمل بموعد مسبق ونفرض رسوم انتقال ثابتة – 150 درهم. مع طلبين أو أكثر في نفس اليوم في عجمان، يتم تقسيم الرسوم.
+
+أين نعمل: النعيمية، الراشدية، الروضة، الجرف، كورنيش عجمان، عجمان مارينا، إمارات سيتي.
+
+الخدمات الشائعة في عجمان: تنظيف الأرائك والكراسي، تنظيف المراتب، غسيل الستائر، التنظيف العميق للشقق والفلل، تنظيف المكيفات.
+
+نصيحة: اجمعوا الجيران في نفس المبنى – يتم تقسيم رسوم الطريق، فتكون أرخص لكل شقة.
+
+احجزوا قبل يوم على الأقل. لا نعمل أيام الجمعة.`,
+    },
+  },
 };
 
 export function getAllLocationSlugs(): string[] {

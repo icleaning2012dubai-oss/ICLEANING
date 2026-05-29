@@ -208,20 +208,20 @@ function MasonryGallery({
 
   return (
     <>
-      <div className="columns-2 sm:columns-3 lg:columns-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {photos.map((photo, i) => (
           <div
             key={`${photo.src}-${i}`}
-            className="mb-4 break-inside-avoid overflow-hidden rounded-xl cursor-pointer group relative"
+            className="overflow-hidden rounded-2xl cursor-pointer group relative bg-white shadow-sm hover:shadow-xl transition-shadow"
             onClick={() => openLightbox(i)}
           >
-            <div className="relative w-full overflow-hidden rounded-xl" style={{ aspectRatio: `${photo.width} / ${photo.height}` }}>
+            <div className="relative w-full overflow-hidden rounded-2xl aspect-[4/3]">
               <Image
                 src={photo.src}
                 alt={photo.alt}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
                 <svg className="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -233,9 +233,9 @@ function MasonryGallery({
         ))}
 
         {/* Skeleton-заглушки при подгрузке */}
-        {loadingMore && [...Array(8)].map((_, i) => (
-          <div key={`sk-${i}`} className="mb-4 break-inside-avoid rounded-xl overflow-hidden">
-            <div className="w-full bg-gray-200 animate-pulse rounded-xl" style={{ aspectRatio: i % 3 === 0 ? '3/4' : '4/3', minHeight: 160 }} />
+        {loadingMore && [...Array(6)].map((_, i) => (
+          <div key={`sk-${i}`} className="rounded-2xl overflow-hidden">
+            <div className="w-full bg-gray-200 animate-pulse rounded-2xl aspect-[4/3]" />
           </div>
         ))}
       </div>

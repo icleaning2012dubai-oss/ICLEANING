@@ -38,7 +38,7 @@ const Header = memo(function Header() {
   const languages = [
     { code: 'ru', name: 'Русский', flag: '🇷🇺' },
     { code: 'en', name: 'English', flag: '🇬🇧' },
-    { code: 'ar', name: 'العربية', flag: '🇸🇦' }
+    { code: 'ar', name: 'العربية', flag: '�🇪' }
   ];
 
   const services = [
@@ -52,8 +52,6 @@ const Header = memo(function Header() {
       icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z" strokeWidth={1.5} strokeLinejoin="round"/></svg> },
     { slug: 'ac-cleaning-dubai', name: { ru: 'Кондиционеры', en: 'Air Conditioner', ar: 'المكيفات' }, color: 'bg-sky-50 text-sky-600',
       icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" strokeWidth={1.5} strokeLinecap="round"/></svg> },
-    { slug: 'regular-cleaning-dubai', name: { ru: 'Регулярная уборка', en: 'Regular Cleaning', ar: 'التنظيف المنتظم' }, color: 'bg-blue-50 text-blue-600',
-      icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/><path d="M9 22V12h6v10" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/></svg> },
   ];
 
   const subServiceShortName = (sub: SubServicePage): string => {
@@ -211,20 +209,6 @@ const Header = memo(function Header() {
               </Link>
 
               <Link 
-                href={getLocalizedPath('/about')} 
-                className={`relative transition-all duration-300 font-medium group ${
-                  pathWithoutLang === '/about' 
-                    ? 'text-blue-600 font-semibold' 
-                    : 'text-gray-700 hover:text-blue-600'
-                }`}
-              >
-                {t('nav.about')}
-                <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
-                  pathWithoutLang === '/about' ? 'w-full' : 'w-0 group-hover:w-full'
-                }`}></span>
-              </Link>
-              
-              <Link 
                 href={getLocalizedPath('/blog')} 
                 className={`relative transition-all duration-300 font-medium group ${
                   pathWithoutLang.startsWith('/blog') 
@@ -277,6 +261,20 @@ const Header = memo(function Header() {
                 {t('nav.contact')}
                 <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
                   pathWithoutLang === '/contact' ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
+              </Link>
+
+              <Link 
+                href={getLocalizedPath('/about')} 
+                className={`relative transition-all duration-300 font-medium group ${
+                  pathWithoutLang === '/about' 
+                    ? 'text-blue-600 font-semibold' 
+                    : 'text-gray-700 hover:text-blue-600'
+                }`}
+              >
+                {t('nav.about')}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
+                  pathWithoutLang === '/about' ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
               </Link>
             </nav>
@@ -473,18 +471,6 @@ const Header = memo(function Header() {
               </Link>
 
               <Link 
-                href={getLocalizedPath('/about')} 
-                className={`transition-colors font-medium ${
-                  pathWithoutLang === '/about' 
-                    ? 'text-blue-600 font-semibold' 
-                    : 'text-gray-700 hover:text-gray-900'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('nav.about')}
-              </Link>
-              
-              <Link 
                 href={getLocalizedPath('/blog')} 
                 className={`transition-colors font-medium ${
                   pathWithoutLang.startsWith('/blog') 
@@ -530,6 +516,18 @@ const Header = memo(function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.contact')}
+              </Link>
+
+              <Link 
+                href={getLocalizedPath('/about')} 
+                className={`transition-colors font-medium ${
+                  pathWithoutLang === '/about' 
+                    ? 'text-blue-600 font-semibold' 
+                    : 'text-gray-700 hover:text-gray-900'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('nav.about')}
               </Link>
               
               {/* Mobile Language Switcher */}
