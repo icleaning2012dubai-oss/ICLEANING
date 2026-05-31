@@ -163,9 +163,9 @@ export default function Footer() {
           <div className="pt-6 sm:pt-8 border-t border-gray-800">
             <div className="text-gray-600 text-xs mb-4 space-y-0.5 text-center md:text-left">
               <p>ICleaning Dubai</p>
-              <p>Jebel Ali 1 industrial, Dubai, United Arab Emirates</p>
+              <p>Jebeli Ali 1 Industrial Dubai, Dubai United Arab Emirates</p>
               <p>Trade License No: 1134424</p>
-              <p><span style={{ color: '#111827' }}>+971 55 387 1270</span></p>
+              <p><span style={{ color: '#111827' }}>+971553871270</span></p>
             </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
             <p className="text-gray-500 text-xs sm:text-sm text-center md:text-left">
