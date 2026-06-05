@@ -36,9 +36,9 @@ const Header = memo(function Header() {
   };
 
   const languages = [
-    { code: 'ru', name: 'Русский', flag: '🇷🇺' },
-    { code: 'en', name: 'English', flag: '🇬🇧' },
-    { code: 'ar', name: 'العربية', flag: '🇸🇦' }
+    { code: 'ru', name: 'Русский', flag: 'RU' },
+    { code: 'en', name: 'English', flag: 'EN' },
+    { code: 'ar', name: 'العربية', flag: 'AR' }
   ];
 
   const services = [
@@ -48,12 +48,12 @@ const Header = memo(function Header() {
       icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 18V12a2 2 0 012-2h12a2 2 0 012 2v6" strokeWidth={1.5} strokeLinecap="round"/><path d="M2 18h20M6 10V7a2 2 0 012-2h8a2 2 0 012 2v3" strokeWidth={1.5} strokeLinecap="round"/></svg> },
     { slug: 'curtains-cleaning-dubai', name: { ru: 'Шторы и жалюзи', en: 'Curtains & Blinds', ar: 'الستائر' }, color: 'bg-pink-50 text-pink-600',
       icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 3h16M4 3v14c0 0 4-3 8 0s8 0 8 0V3" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/><path d="M4 21h16" strokeWidth={1.5} strokeLinecap="round"/></svg> },
+    /* DEEP CLEANING — временно скрыто
     { slug: 'deep-cleaning-dubai', name: { ru: 'Генеральная уборка', en: 'Deep Cleaning', ar: 'التنظيف العميق' }, color: 'bg-emerald-50 text-emerald-600',
       icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z" strokeWidth={1.5} strokeLinejoin="round"/></svg> },
+    */
     { slug: 'ac-cleaning-dubai', name: { ru: 'Кондиционеры', en: 'Air Conditioner', ar: 'المكيفات' }, color: 'bg-sky-50 text-sky-600',
       icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" strokeWidth={1.5} strokeLinecap="round"/></svg> },
-    { slug: 'regular-cleaning-dubai', name: { ru: 'Регулярная уборка', en: 'Regular Cleaning', ar: 'التنظيف المنتظم' }, color: 'bg-blue-50 text-blue-600',
-      icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/><path d="M9 22V12h6v10" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/></svg> },
   ];
 
   const subServiceShortName = (sub: SubServicePage): string => {
@@ -209,20 +209,6 @@ const Header = memo(function Header() {
                   pathWithoutLang === '/prices' ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
               </Link>
-
-              <Link 
-                href={getLocalizedPath('/about')} 
-                className={`relative transition-all duration-300 font-medium group ${
-                  pathWithoutLang === '/about' 
-                    ? 'text-blue-600 font-semibold' 
-                    : 'text-gray-700 hover:text-blue-600'
-                }`}
-              >
-                {t('nav.about')}
-                <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
-                  pathWithoutLang === '/about' ? 'w-full' : 'w-0 group-hover:w-full'
-                }`}></span>
-              </Link>
               
               <Link 
                 href={getLocalizedPath('/blog')} 
@@ -279,6 +265,20 @@ const Header = memo(function Header() {
                   pathWithoutLang === '/contact' ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
               </Link>
+
+              <Link 
+                href={getLocalizedPath('/about')} 
+                className={`relative transition-all duration-300 font-medium group ${
+                  pathWithoutLang === '/about' 
+                    ? 'text-blue-600 font-semibold' 
+                    : 'text-gray-700 hover:text-blue-600'
+                }`}
+              >
+                {t('nav.about')}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
+                  pathWithoutLang === '/about' ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
+              </Link>
             </nav>
 
             {/* Contact Button & Cart & Language Switcher */}
@@ -289,7 +289,7 @@ const Header = memo(function Header() {
                   onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
                   className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-white hover:bg-gray-50 border border-gray-200 rounded-xl transition-all duration-200 shadow-sm"
                 >
-                  <span className="text-xl">{languages.find(l => l.code === language)?.flag}</span>
+                  <span className="text-xs font-bold text-gray-700">{languages.find(l => l.code === language)?.flag}</span>
                   <span className="text-sm font-medium text-gray-700 hidden sm:inline">
                     {languages.find(l => l.code === language)?.name}
                   </span>
@@ -316,7 +316,7 @@ const Header = memo(function Header() {
                             : 'text-gray-700 hover:bg-gray-50'
                         }`}
                       >
-                        <span className="text-xl">{lang.flag}</span>
+                        <span className="text-xs font-bold w-5 text-center">{lang.flag}</span>
                         <span className="font-medium">{lang.name}</span>
                         {language === lang.code && (
                           <svg className="w-5 h-5 ml-auto text-blue-600" fill="currentColor" viewBox="0 0 20 20">
@@ -471,18 +471,6 @@ const Header = memo(function Header() {
               >
                 {language === 'ru' ? 'Цены' : language === 'ar' ? 'الأسعار' : 'Prices'}
               </Link>
-
-              <Link 
-                href={getLocalizedPath('/about')} 
-                className={`transition-colors font-medium ${
-                  pathWithoutLang === '/about' 
-                    ? 'text-blue-600 font-semibold' 
-                    : 'text-gray-700 hover:text-gray-900'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('nav.about')}
-              </Link>
               
               <Link 
                 href={getLocalizedPath('/blog')} 
@@ -531,6 +519,18 @@ const Header = memo(function Header() {
               >
                 {t('nav.contact')}
               </Link>
+
+              <Link 
+                href={getLocalizedPath('/about')} 
+                className={`transition-colors font-medium ${
+                  pathWithoutLang === '/about' 
+                    ? 'text-blue-600 font-semibold' 
+                    : 'text-gray-700 hover:text-gray-900'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('nav.about')}
+              </Link>
               
               {/* Mobile Language Switcher */}
               <div className="border-t border-gray-200 pt-4 space-y-2">
@@ -545,7 +545,7 @@ const Header = memo(function Header() {
                       language === lang.code ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
                     }`}
                   >
-                    <span className="text-xl">{lang.flag}</span>
+                    <span className="text-xs font-bold w-5 text-center">{lang.flag}</span>
                     <span className="font-medium">{lang.name}</span>
                     {language === lang.code && (
                       <svg className="w-5 h-5 ml-auto text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">

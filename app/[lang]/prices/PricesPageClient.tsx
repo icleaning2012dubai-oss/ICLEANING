@@ -35,11 +35,11 @@ const priceCategories: PriceCategory[] = [
     serviceSlug: 'sofa-cleaning-dubai',
     popular: true,
     items: [
-      { name: { ru: 'Двухместный диван', en: '2-seater sofa', ar: 'أريكة مقعدين' }, price: '200–250 AED' },
-      { name: { ru: 'Трёхместный диван', en: '3-seater sofa', ar: 'أريكة 3 مقاعد' }, price: '300–350 AED', popular: true },
-      { name: { ru: 'Угловой диван', en: 'Corner sofa', ar: 'أريكة زاوية' }, price: '350–500 AED' },
-      { name: { ru: 'Кожаный диван', en: 'Leather sofa', ar: 'أريكة جلدية' }, price: 'от 350 AED' },
-      { name: { ru: 'Кресло', en: 'Armchair', ar: 'كرسي' }, price: '100–150 AED' },
+      { name: { ru: 'Двухместный диван', en: '2-seater sofa', ar: 'أريكة مقعدين' }, price: '140 AED' },
+      { name: { ru: 'Трёхместный диван', en: '3-seater sofa', ar: 'أريكة 3 مقاعد' }, price: '210 AED', popular: true },
+      { name: { ru: 'Угловой диван (L-shape)', en: 'L-shape sofa', ar: 'أريكة زاوية' }, price: '280 AED' },
+      { name: { ru: 'Кожаный диван', en: 'Leather sofa', ar: 'أريكة جلدية' }, price: 'от 80 AED/место' },
+      { name: { ru: 'Кресло', en: 'Armchair', ar: 'كرسي' }, price: '80–120 AED' },
     ],
   },
   {
@@ -51,9 +51,9 @@ const priceCategories: PriceCategory[] = [
     popular: true,
     items: [
       { name: { ru: 'Синтетический ковёр', en: 'Synthetic carpet', ar: 'سجاد صناعي' }, price: '30 AED/м²' },
-      { name: { ru: 'Шерстяной ковёр', en: 'Wool carpet', ar: 'سجاد صوفي' }, price: '35 AED/м²', popular: true },
+      { name: { ru: 'Шерстяной ковёр', en: 'Wool carpet', ar: 'سجاد صوفي' }, price: '50 AED/м²', popular: true },
       { name: { ru: 'Шёлковый ковёр', en: 'Silk carpet', ar: 'سجاد حريري' }, price: '50 AED/м²' },
-      { name: { ru: 'Персидский / ручной работы', en: 'Persian / handmade', ar: 'فارسي / مصنوع يدويًا' }, price: 'от 200 AED' },
+      { name: { ru: 'Персидский / ручной работы', en: 'Persian / handmade', ar: 'فارسي / مصنوع يدوياً' }, price: 'от 100 AED/м²' },
     ],
   },
   {
@@ -63,12 +63,13 @@ const priceCategories: PriceCategory[] = [
     icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 3h16M4 3v14c0 0 4-3 8 0s8 0 8 0V3" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/><path d="M4 21h16" strokeWidth={1.5} strokeLinecap="round"/></svg>,
     serviceSlug: 'curtains-cleaning-dubai',
     items: [
-      { name: { ru: 'Штора (стандартная)', en: 'Curtain (standard)', ar: 'ستارة (قياسية)' }, price: 'от 50 AED' },
-      { name: { ru: 'Вертикальные жалюзи', en: 'Vertical blinds', ar: 'ستائر عمودية' }, price: 'от 150 AED' },
-      { name: { ru: 'Горизонтальные жалюзи', en: 'Horizontal blinds', ar: 'ستائر أفقية' }, price: 'от 100 AED' },
-      { name: { ru: 'Рулонные шторы', en: 'Roller blinds', ar: 'ستائر رول' }, price: 'от 80 AED' },
+      { name: { ru: 'Штора (стандартная)', en: 'Curtain (standard)', ar: 'ستارة (قياسية)' }, price: 'от 17 AED/м²' },
+      { name: { ru: 'Вертикальные жалюзи', en: 'Vertical blinds', ar: 'ستائر عمودية' }, price: 'от 25 AED/м²' },
+      { name: { ru: 'Горизонтальные жалюзи', en: 'Horizontal blinds', ar: 'ستائر أفقية' }, price: 'от 25 AED/м²' },
+      { name: { ru: 'Рулонные шторы', en: 'Roller blinds', ar: 'ستائر رول' }, price: 'от 35 AED/м²' },
     ],
   },
+  /* DEEP CLEANING — временно скрыто
   {
     title: { ru: 'Генеральная уборка', en: 'Deep Cleaning', ar: 'تنظيف عميق' },
     shortTitle: { ru: 'Уборка', en: 'Cleaning', ar: 'تنظيف' },
@@ -85,6 +86,7 @@ const priceCategories: PriceCategory[] = [
       { name: { ru: 'Офис (за 1 уборщика/час)', en: 'Office (per cleaner/hour)', ar: 'مكتب (لكل عامل/ساعة)' }, price: '30 AED/ч' },
     ],
   },
+  */
   {
     title: { ru: 'Чистка матрасов', en: 'Mattress Cleaning', ar: 'تنظيف المراتب' },
     shortTitle: { ru: 'Матрасы', en: 'Mattresses', ar: 'مراتب' },
@@ -92,8 +94,8 @@ const priceCategories: PriceCategory[] = [
     icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="8" width="20" height="10" rx="3" strokeWidth={1.5}/><path d="M2 14h20" strokeWidth={1.5}/><path d="M6 8V6a2 2 0 012-2h8a2 2 0 012 2v2" strokeWidth={1.5}/></svg>,
     serviceSlug: 'sofa-cleaning-dubai',
     items: [
-      { name: { ru: 'Односпальный матрас', en: 'Single mattress', ar: 'مرتبة فردية' }, price: 'от 200 AED' },
-      { name: { ru: 'Двуспальный матрас', en: 'Double mattress', ar: 'مرتبة مزدوجة' }, price: 'от 350 AED' },
+      { name: { ru: 'Односпальный матрас', en: 'Single mattress', ar: 'مرتبة فردية' }, price: '145 AED' },
+      { name: { ru: 'Двуспальный матрас', en: 'Double mattress', ar: 'مرتبة مزدوجة' }, price: 'от 225 AED' },
       { name: { ru: 'Ортопедический', en: 'Orthopedic', ar: 'طبي' }, price: 'от 400 AED' },
     ],
   },
@@ -104,8 +106,8 @@ const priceCategories: PriceCategory[] = [
     icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" strokeWidth={1.5} strokeLinecap="round"/></svg>,
     serviceSlug: 'ac-cleaning-dubai',
     items: [
-      { name: { ru: '1 сплит-система', en: '1 split unit', ar: 'وحدة سبليت واحدة' }, price: 'от 150 AED' },
-      { name: { ru: 'Канальный кондиционер', en: 'Ducted AC', ar: 'تكييف مركزي' }, price: 'от 250 AED' },
+      { name: { ru: '1 сплит-система', en: '1 split unit', ar: 'وحدة سبليت واحدة' }, price: 'от 350 AED' },
+      { name: { ru: 'Канальный кондиционер', en: 'Ducted AC', ar: 'تكييف مركزي' }, price: 'от 350 AED' },
     ],
   },
   {
@@ -115,11 +117,10 @@ const priceCategories: PriceCategory[] = [
     icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" strokeWidth={1.5}/><path d="M12 3v18M3 12h18" strokeWidth={1.5}/></svg>,
     serviceSlug: 'deep-cleaning-dubai',
     items: [
-      { name: { ru: 'Стандартное окно', en: 'Standard window', ar: 'نافذة قياسية' }, price: 'от 15 AED' },
-      { name: { ru: 'Панорамное окно', en: 'Panoramic window', ar: 'نافذة بانورامية' }, price: 'от 150 AED' },
-      { name: { ru: 'Все окна в квартире', en: 'All apartment windows', ar: 'جميع نوافذ الشقة' }, price: '299 AED' },
+      { name: { ru: 'Стандартное окно', en: 'Standard window', ar: 'نافذة قياسية' }, price: 'от 250 AED/час' },
     ],
   },
+  /* DISINFECTION — временно скрыто
   {
     title: { ru: 'Дезинфекция', en: 'Disinfection', ar: 'التطهير' },
     shortTitle: { ru: 'Дезинф.', en: 'Disinfect', ar: 'تطهير' },
@@ -130,6 +131,7 @@ const priceCategories: PriceCategory[] = [
       { name: { ru: '1-комнатная квартира', en: '1-bedroom apartment', ar: 'شقة غرفة واحدة' }, price: 'от 350 AED' },
     ],
   },
+  */
 ];
 
 export default function PricesPageClient() {

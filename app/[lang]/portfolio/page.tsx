@@ -50,14 +50,18 @@ const STATIC_PHOTOS: StaticPhoto[] = [
   { src: '/images/ac/gluboka.webp',                 alt: 'Deep AC Cleaning',        category: 'ac',       width: 1200, height: 800  },
   { src: '/images/ac/standart.webp',                alt: 'Standard AC Service',     category: 'ac',       width: 800,  height: 1066 },
   { src: '/images/ac/promyshlena.webp',             alt: 'Industrial AC Service',   category: 'ac',       width: 1200, height: 800  },
+  { src: '/images/room_cleaning.webp',              alt: 'Room Cleaning Stains',    category: 'stains',   width: 1200, height: 800  },
+  { src: '/images/carpet/wool.webp',                alt: 'Stain on Wool Carpet',    category: 'stains',   width: 1200, height: 900  },
+  { src: '/images/sofa/standart-sofa.webp',         alt: 'Sofa Stain Removal',      category: 'stains',   width: 800,  height: 1066 },
 ];
 
 const SERVICE_FILTERS = [
-  { key: '',         label: { ru: 'Все',           en: 'All',       ar: 'الكل'    } },
-  { key: 'carpet',   label: { ru: 'Ковры',          en: 'Carpets',   ar: 'السجاد'  } },
-  { key: 'sofa',     label: { ru: 'Диваны',         en: 'Sofas',     ar: 'الأرائك' } },
-  { key: 'curtains', label: { ru: 'Шторы',          en: 'Curtains',  ar: 'الستائر' } },
-  { key: 'ac',       label: { ru: 'Кондиционеры',  en: 'AC',        ar: 'المكيفات'} },
+  { key: '',         label: { ru: 'Все',           en: 'All',          ar: 'الكل'    } },
+  { key: 'carpet',   label: { ru: 'Ковры',          en: 'Carpets',      ar: 'السجаد'  } },
+  { key: 'sofa',     label: { ru: 'Диваны',         en: 'Sofas',        ar: 'الأرائك' } },
+  { key: 'curtains', label: { ru: 'Шторы',          en: 'Curtains',     ar: 'الستаئر' } },
+  { key: 'ac',       label: { ru: 'Кондиционеры',  en: 'AC',           ar: 'المكيفات'} },
+  { key: 'stains',   label: { ru: 'Пятна',         en: 'Stains',       ar: 'البقع'   } },
 ];
 
 // ── BeforeAfterSlider ──────────────────────────────────────────────────────────
@@ -208,34 +212,31 @@ function MasonryGallery({
 
   return (
     <>
-      <div className="columns-2 sm:columns-3 lg:columns-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
         {photos.map((photo, i) => (
           <div
             key={`${photo.src}-${i}`}
-            className="mb-4 break-inside-avoid overflow-hidden rounded-xl cursor-pointer group relative"
+            className="overflow-hidden rounded-xl cursor-pointer group relative aspect-[4/3]"
             onClick={() => openLightbox(i)}
           >
-            <div className="relative w-full overflow-hidden rounded-xl" style={{ aspectRatio: `${photo.width} / ${photo.height}` }}>
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                <svg className="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                </svg>
-              </div>
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              sizes="(max-width: 640px) 50vw, 33vw"
+            />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+              <svg className="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg>
             </div>
           </div>
         ))}
 
-        {/* Skeleton-заглушки при подгрузке */}
-        {loadingMore && [...Array(8)].map((_, i) => (
-          <div key={`sk-${i}`} className="mb-4 break-inside-avoid rounded-xl overflow-hidden">
-            <div className="w-full bg-gray-200 animate-pulse rounded-xl" style={{ aspectRatio: i % 3 === 0 ? '3/4' : '4/3', minHeight: 160 }} />
+        {loadingMore && [...Array(6)].map((_, i) => (
+          <div key={`sk-${i}`} className="rounded-xl overflow-hidden aspect-[4/3]">
+            <div className="w-full h-full bg-gray-200 animate-pulse rounded-xl" />
           </div>
         ))}
       </div>

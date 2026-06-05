@@ -56,10 +56,10 @@ export default function PrivacyPage() {
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               {t('privacy.title') === 'Privacy Policy' ?
-                'GOLDEN SMART I CLEANING LAUNDRY SERVICES L.L.C has the right to send the User notifications about new products and services, special offers, booking confirmations, and various events via WhatsApp, SMS, email, and other communication channels.' :
+                'ICleaning Dubai has the right to send the User notifications about new products and services, special offers, booking confirmations, and various events via WhatsApp, SMS, email, and other communication channels.' :
                t('privacy.title') === 'Политика конфиденциальности' ?
-                'Компания GOLDEN SMART I CLEANING LAUNDRY SERVICES L.L.C имеет право отправлять Пользователю уведомления о новых продуктах и услугах, специальных предложениях, подтверждениях бронирования и различных событиях через WhatsApp, SMS, электронную почту и другие каналы связи.' :
-                'تحق لشركة GOLDEN SMART I CLEANING LAUNDRY SERVICES L.L.C إرسال إشعارات للمستخدم حول المنتجات والخدمات الجديدة والعروض الخاصة وتأكيدات الحجز والأحداث المختلفة عبر واتساب والرسائل القصيرة والبريد الإلكتروني وقنوات الاتصال الأخرى.'}
+                'Компания ICleaning Dubai имеет право отправлять Пользователю уведомления о новых продуктах и услугах, специальных предложениях, подтверждениях бронирования и различных событиях через WhatsApp, SMS, электронную почту и другие каналы связи.' :
+                'تحق لشركة ICleaning Dubai إرسال إشعارات للمستخدم حول المنتجات والخدمات الجديدة والعروض الخاصة وتأكيدات الحجز والأحداث المختلفة عبر واتساب والرسائل القصيرة والبريد الإلكتروني وقنوات الاتصال الأخرى.'}
             </p>
             <p className="text-gray-700 leading-relaxed">
               {t('privacy.title') === 'Privacy Policy' ?

@@ -18,16 +18,14 @@ export default async function Icon() {
         style={{
           width: '100%',
           height: '100%',
-          borderRadius: '50%',
+          borderRadius: '20%',
           overflow: 'hidden',
+          backgroundImage: `url(data:image/jpeg;base64,${base64})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
           display: 'flex',
         }}
-      >
-        <img
-          src={`data:image/jpeg;base64,${base64}`}
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-        />
-      </div>
+      />
     ),
     { ...size }
   )

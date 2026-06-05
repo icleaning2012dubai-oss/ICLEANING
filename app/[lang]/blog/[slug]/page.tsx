@@ -159,9 +159,23 @@ export default function BlogArticlePage() {
             </div>
 
             {/* Content — rendered as HTML */}
+            <style>{`
+              .blog-content img {
+                width: 100% !important;
+                height: auto !important;
+                max-height: none !important;
+                border-radius: 16px;
+                margin: 2rem auto;
+                display: block;
+              }
+            `}</style>
             <div
               className="blog-content"
-              dangerouslySetInnerHTML={{ __html: post.content[lang] || post.content.en }}
+              dangerouslySetInnerHTML={{ __html: (post.content[lang] || post.content.en || '')
+                .replace(/<img([^>]*?)style="[^"]*"([^>]*?)>/gi, '<img$1$2>')
+                .replace(/<img([^>]*?)\swidth="[^"]*"([^>]*?)>/gi, '<img$1$2>')
+                .replace(/<img([^>]*?)\sheight="[^"]*"([^>]*?)>/gi, '<img$1$2>')
+              }}
             />
 
             {/* Back to blog */}

@@ -76,6 +76,14 @@ const StatsSection = dynamic(() => import('@/app/components/StatsSection'), {
   loading: () => <div className="h-48 bg-gradient-to-br from-blue-50 to-blue-100" />
 });
 
+const WhyChooseUsSection = dynamic(() => import('@/app/components/WhyChooseUsSection'), {
+  loading: () => <div className="h-80 bg-white" />
+});
+
+const OurWorksSection = dynamic(() => import('@/app/components/OurWorksSection'), {
+  loading: () => <div className="h-96 bg-gradient-to-br from-blue-50 to-blue-100" />
+});
+
 const TeamSection = dynamic(() => import('@/app/components/TeamSection'), {
   loading: () => <div className="h-96 bg-white" />
 });
@@ -120,6 +128,8 @@ export default function Home() {
           <TeamSection />
           {/* <AboutSection /> */}
           <StatsSection />
+          <WhyChooseUsSection />
+          <OurWorksSection />
           
           <EquipmentSection />
           

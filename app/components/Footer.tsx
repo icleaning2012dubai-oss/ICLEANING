@@ -110,7 +110,7 @@ export default function Footer() {
 
           {/* Areas */}
           <div className="space-y-4 sm:space-y-6">
-            <h4 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">{language === 'ru' ? 'Районы' : language === 'ar' ? 'المناطق' : 'Areas'}</h4>
+            <h4 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">{language === 'ru' ? 'Районы Дубая' : language === 'ar' ? 'مناطق دبي' : 'Dubai Areas'}</h4>
             <div className="grid grid-cols-2 gap-x-4 gap-y-2 sm:gap-y-3">
               {[
                 { slug: 'dubai-marina', name: 'Dubai Marina' },
@@ -122,8 +122,23 @@ export default function Footer() {
                 { slug: 'bur-dubai', name: 'Bur Dubai' },
                 { slug: 'international-city', name: 'Int. City' },
                 { slug: 'jumeirah', name: 'Jumeirah' },
+              ].map((loc) => (
+                <Link
+                  key={loc.slug}
+                  href={getLocalizedPath(`/locations/${loc.slug}`)}
+                  className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm"
+                >
+                  {loc.name}
+                </Link>
+              ))}
+            </div>
+
+            <h4 className="text-base sm:text-lg font-bold mt-6 mb-3">{language === 'ru' ? 'Другие эмираты' : language === 'ar' ? 'إمارات أخرى' : 'Other Emirates'}</h4>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2 sm:gap-y-3">
+              {[
                 { slug: 'abu-dhabi', name: 'Abu Dhabi' },
                 { slug: 'sharjah', name: 'Sharjah' },
+                { slug: 'ajman', name: 'Ajman' },
               ].map((loc) => (
                 <Link
                   key={loc.slug}
@@ -147,9 +162,10 @@ export default function Footer() {
           {/* Bottom Bar */}
           <div className="pt-6 sm:pt-8 border-t border-gray-800">
             <div className="text-gray-600 text-xs mb-4 space-y-0.5 text-center md:text-left">
-              <p>GOLDEN SMART I CLEANING LAUNDRY SERVICES L.L.C</p>
-              <p>Jebel Ali Industrial First, Plot 1797-0, Building S10, Dubai, UAE</p>
+              <p>ICleaning Dubai</p>
+              <p>Jebeli Ali 1 Industrial Dubai, Dubai United Arab Emirates</p>
               <p>Trade License No: 1134424</p>
+              <p><span style={{ color: '#111827' }}>+971553871270</span></p>
             </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
             <p className="text-gray-500 text-xs sm:text-sm text-center md:text-left">
