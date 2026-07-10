@@ -25,10 +25,10 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  const locale = (lang as Locale) || 'ru';
-  const meta = metaByLang[locale] || metaByLang.ru;
+  const locale = (lang as Locale) || 'en';
+  const meta = metaByLang[locale] || metaByLang.en;
   const path = '/prices';
-  const canonical = locale === 'ru' ? `${baseUrl}${path}` : `${baseUrl}/${locale}${path}`;
+  const canonical = locale === 'en' ? `${baseUrl}${path}` : `${baseUrl}/${locale}${path}`;
 
   return {
     title: meta.title,
@@ -36,8 +36,8 @@ export async function generateMetadata({
     alternates: {
       canonical,
       languages: {
-        en: `${baseUrl}/en${path}`,
-        ru: `${baseUrl}${path}`,
+        en: `${baseUrl}${path}`,
+        ru: `${baseUrl}/ru${path}`,
         ar: `${baseUrl}/ar${path}`,
         'x-default': `${baseUrl}${path}`,
       },

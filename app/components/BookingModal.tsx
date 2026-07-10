@@ -8,8 +8,24 @@ interface BookingModalProps {
   onClose: () => void;
 }
 
+// Service options for the booking form. Value is a stable English label (sent to
+// CRM); the visible text is localized.
+const SERVICE_OPTIONS: { value: string; label: { ru: string; en: string; ar: string } }[] = [
+  { value: 'Carpet Cleaning', label: { ru: 'Чистка ковров', en: 'Carpet Cleaning', ar: 'تنظيف السجاد' } },
+  { value: 'Premium Rug Cleaning', label: { ru: 'Элитные ковры', en: 'Premium Rug Cleaning', ar: 'سجاد فاخر' } },
+  { value: 'Carpet Flooring Cleaning', label: { ru: 'Чистка ковролина', en: 'Carpet Flooring Cleaning', ar: 'تنظيف الموكيت' } },
+  { value: 'Sofa Cleaning', label: { ru: 'Химчистка диванов', en: 'Sofa Cleaning', ar: 'تنظيف الأرائك' } },
+  { value: 'Upholstery Cleaning', label: { ru: 'Мягкая мебель', en: 'Upholstery Cleaning', ar: 'تنظيف المفروشات' } },
+  { value: 'Mattress Cleaning', label: { ru: 'Чистка матрасов', en: 'Mattress Cleaning', ar: 'تنظيف المراتب' } },
+  { value: 'Curtain & Blinds Cleaning', label: { ru: 'Шторы и жалюзи', en: 'Curtains & Blinds', ar: 'الستائر والمصاريع' } },
+  { value: 'Window Cleaning', label: { ru: 'Мойка окон', en: 'Window Cleaning', ar: 'تنظيف النوافذ' } },
+  { value: 'Central AC Cleaning', label: { ru: 'Чистка кондиционеров', en: 'Central AC Cleaning', ar: 'تنظيف المكيفات' } },
+  { value: 'Other', label: { ru: 'Другое', en: 'Other', ar: 'أخرى' } },
+];
+
 export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const lang = language as 'ru' | 'en' | 'ar';
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -147,7 +163,11 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-gray-900 bg-white"
             >
               <option value="">{t('form.selectService')}</option>
-              {/* Все услуги уборки удалены по запросу */}
+              {SERVICE_OPTIONS.map((opt) => (
+                <option key={opt.value} value={opt.value}>
+                  {opt.label[lang] || opt.label.ru}
+                </option>
+              ))}
             </select>
           </div>
 

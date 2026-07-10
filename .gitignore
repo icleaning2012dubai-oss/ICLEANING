@@ -42,3 +42,6 @@ next-env.d.ts
 
 # local scripts with secrets
 jira_create_tasks.py
+
+# Local backups (SEO rework)
+_backup/

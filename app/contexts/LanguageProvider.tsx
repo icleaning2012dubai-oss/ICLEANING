@@ -40,7 +40,7 @@ export function LanguageProvider({
 
   // Get language from URL param (preferred) or initialLanguage prop
   const urlLang = params?.lang as Language | undefined;
-  const currentLang = urlLang && validLanguages.includes(urlLang) ? urlLang : (initialLanguage || 'ru');
+  const currentLang = urlLang && validLanguages.includes(urlLang) ? urlLang : (initialLanguage || 'en');
 
   const [language, setLanguageState] = useState<Language>(currentLang);
   const [isClient, setIsClient] = useState(false);
@@ -73,8 +73,8 @@ export function LanguageProvider({
     // Replace language segment in current URL
     if (pathname) {
       const pathWithoutLang = pathname.replace(/^\/(en|ru|ar)/, '') || '/';
-      // Default locale (ru) lives at root — no prefix
-      const newPath = lang === 'ru' ? pathWithoutLang : `/${lang}${pathWithoutLang}`;
+      // Default locale (en) lives at root — no prefix
+      const newPath = lang === 'en' ? pathWithoutLang : `/${lang}${pathWithoutLang}`;
       router.push(newPath);
     }
   }, [pathname, router]);
@@ -85,12 +85,12 @@ export function LanguageProvider({
   }, [language]);
 
   // Helper to construct localized paths
-  // Russian (default) has no prefix; en/ar get /{lang} prefix
+  // English (default) has no prefix; ru/ar get /{lang} prefix
   const getLocalizedPath = useCallback((path: string): string => {
     // Strip any existing locale prefix first
     const cleanPath = path.replace(/^\/(en|ru|ar)/, '') || '/';
-    // Default locale (ru) lives at root — no prefix
-    if (language === 'ru') {
+    // Default locale (en) lives at root — no prefix
+    if (language === 'en') {
       return cleanPath;
     }
     if (cleanPath.startsWith('/')) {

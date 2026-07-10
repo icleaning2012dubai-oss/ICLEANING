@@ -3,17 +3,23 @@
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '@/app/contexts/LanguageProvider';
 import { buildWhatsAppLink } from '@/app/utils/whatsapp';
+import { isSeoLanding } from '@/app/data/seoLandings';
 
 export default function WhatsAppFloat() {
   const pathname = usePathname();
   const { language } = useLanguage();
+
+  // On SEO landings the sticky mobile bar already has a WhatsApp button —
+  // hide the floating one on mobile there (keep it on desktop / other pages).
+  const slug = pathname.replace(/^\/(en|ar)/, '').replace(/^\//, '').split('/')[0];
+  const onLanding = isSeoLanding(slug);
 
   return (
     <a
       href={buildWhatsAppLink(language, pathname)}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 group"
+      className={`fixed right-4 sm:right-6 bottom-6 z-50 group ${onLanding ? 'hidden lg:block' : ''}`}
       aria-label="Contact us on WhatsApp"
       data-gtm-whatsapp="true"
       onClick={() => {

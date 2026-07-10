@@ -1,11 +1,63 @@
+# iCleaning robots.txt
+# Last updated: 2026-07-10
+
 User-agent: *
+
+# Allow crawling so non-commercial pages can return the `noindex, follow`
+# header from middleware. Only commercial service landings appear in sitemap.
 Allow: /
 
-# Sitemaps
+# English commercial service pages (default locale, no prefix)
+Allow: /carpet-cleaning$
+Allow: /premium-rug-cleaning$
+Allow: /carpet-flooring-cleaning$
+Allow: /sofa-cleaning$
+Allow: /upholstery-cleaning$
+Allow: /mattress-cleaning$
+Allow: /curtain-cleaning$
+Allow: /window-cleaning$
+Allow: /central-ac-cleaning$
+
+# Russian commercial service pages
+Allow: /ru/carpet-cleaning$
+Allow: /ru/premium-rug-cleaning$
+Allow: /ru/carpet-flooring-cleaning$
+Allow: /ru/sofa-cleaning$
+Allow: /ru/upholstery-cleaning$
+Allow: /ru/mattress-cleaning$
+Allow: /ru/curtain-cleaning$
+Allow: /ru/window-cleaning$
+Allow: /ru/central-ac-cleaning$
+
+# Arabic commercial service pages
+Allow: /ar/carpet-cleaning$
+Allow: /ar/premium-rug-cleaning$
+Allow: /ar/carpet-flooring-cleaning$
+Allow: /ar/sofa-cleaning$
+Allow: /ar/upholstery-cleaning$
+Allow: /ar/mattress-cleaning$
+Allow: /ar/curtain-cleaning$
+Allow: /ar/window-cleaning$
+Allow: /ar/central-ac-cleaning$
+
+# Let crawlers reach the 301 redirects from old English-prefixed URLs
+Allow: /en/carpet-cleaning$
+Allow: /en/premium-rug-cleaning$
+Allow: /en/carpet-flooring-cleaning$
+Allow: /en/sofa-cleaning$
+Allow: /en/upholstery-cleaning$
+Allow: /en/mattress-cleaning$
+Allow: /en/curtain-cleaning$
+Allow: /en/window-cleaning$
+Allow: /en/central-ac-cleaning$
+
+# Assets required for rendering
+Allow: /_next/static/
+Allow: /_next/image
+Allow: /_next/image?*
+Allow: /images/
+Allow: /assets/
+Allow: /favicon.ico
+
 Sitemap: https://icleaning.ae/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 1
-
-# Host
-Host: https://icleaning.ae
+Host: icleaning.ae

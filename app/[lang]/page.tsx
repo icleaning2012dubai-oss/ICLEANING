@@ -41,18 +41,18 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  const locale = (lang as Locale) || 'ru';
-  const meta = metaByLang[locale] || metaByLang.ru;
+  const locale = (lang as Locale) || 'en';
+  const meta = metaByLang[locale] || metaByLang.en;
 
   return {
     title: meta.title,
     description: meta.description,
     keywords: meta.keywords,
     alternates: {
-      canonical: locale === 'ru' ? baseUrl : `${baseUrl}/${locale}`,
+      canonical: locale === 'en' ? baseUrl : `${baseUrl}/${locale}`,
       languages: {
-        en: `${baseUrl}/en`,
-        ru: baseUrl,
+        en: baseUrl,
+        ru: `${baseUrl}/ru`,
         ar: `${baseUrl}/ar`,
         'x-default': baseUrl,
       },
@@ -60,7 +60,7 @@ export async function generateMetadata({
     openGraph: {
       title: meta.ogTitle,
       description: meta.ogDesc,
-      url: locale === 'ru' ? baseUrl : `${baseUrl}/${locale}`,
+      url: locale === 'en' ? baseUrl : `${baseUrl}/${locale}`,
       locale: locale === 'ar' ? 'ar_AE' : locale === 'ru' ? 'ru_RU' : 'en_AE',
       alternateLocale: ['en_AE', 'ru_RU', 'ar_AE'].filter(l => !l.startsWith(locale)),
       siteName: 'iCleaning Dubai',

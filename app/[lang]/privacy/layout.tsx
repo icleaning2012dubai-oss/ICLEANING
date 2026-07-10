@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: locale === 'ru' ? 'Политика конфиденциальности iCleaning Дубай.' : locale === 'ar' ? 'سياسة خصوصية iCleaning دبي.' : 'Privacy policy for iCleaning Dubai cleaning services.',
     robots: { index: false, follow: true },
     alternates: {
-      canonical: locale === 'ru' ? `${baseUrl}/privacy` : `${baseUrl}/${locale}/privacy`,
-      languages: { en: `${baseUrl}/en/privacy`, ru: `${baseUrl}/privacy`, ar: `${baseUrl}/ar/privacy`, 'x-default': `${baseUrl}/privacy` },
+      canonical: locale === 'en' ? `${baseUrl}/privacy` : `${baseUrl}/${locale}/privacy`,
+      languages: { en: `${baseUrl}/privacy`, ru: `${baseUrl}/ru/privacy`, ar: `${baseUrl}/ar/privacy`, 'x-default': `${baseUrl}/privacy` },
     },
   };
 }

@@ -5,46 +5,38 @@ import Link from 'next/link';
 import { useLanguage } from '@/app/contexts/LanguageProvider';
 
 export default function ServicesSection() {
-  const { t } = useLanguage();
-  
+  const { t, getLocalizedPath } = useLanguage();
+
+  // Link straight to the SEO landings (the main service pages) — no redirect hop.
   const services: Array<{ id: number; title: string; description: string; image: string; slug: string }> = [
     {
       id: 1,
       title: t('services.carpet'),
       description: t('services.carpetDesc'),
       image: '/images/carpet_cleaning.webp',
-      slug: 'carpet-cleaning-dubai',
+      slug: 'carpet-cleaning',
     },
     {
       id: 2,
       title: t('services.sofa'),
       description: t('services.sofaDesc'),
       image: '/images/sofa_cleaning.webp',
-      slug: 'sofa-cleaning-dubai',
+      slug: 'sofa-cleaning',
     },
     {
       id: 3,
       title: t('services.curtains'),
       description: t('services.curtainsDesc'),
       image: '/images/curtain_cleaning.webp',
-      slug: 'curtains-cleaning-dubai',
+      slug: 'curtain-cleaning',
     },
     {
       id: 4,
       title: t('services.aircon'),
       description: t('services.airconDesc'),
       image: '/images/ac_cleaning.webp',
-      slug: 'ac-cleaning-dubai',
+      slug: 'central-ac-cleaning',
     },
-    /* DEEP CLEANING — временно скрыто
-    {
-      id: 5,
-      title: t('services.deep'),
-      description: t('services.cleaningDesc'),
-      image: '/images/room_cleaning.webp',
-      slug: 'deep-cleaning-dubai',
-    },
-    */
   ];
   
   return (
@@ -122,7 +114,7 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Arrow button top right */}
-                <Link href={`/services/${service.slug}`} className="absolute top-6 right-6 z-30">
+                <Link href={getLocalizedPath(`/${service.slug}`)} className="absolute top-6 right-6 z-30">
                   <div className="w-12 h-12 rounded-full border-2 border-white/50 backdrop-blur-sm flex items-center justify-center transition-transform duration-300 hover:scale-110 hover:bg-white/20 cursor-pointer">
                     <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
@@ -144,7 +136,7 @@ export default function ServicesSection() {
                     </div>
                     
                     {/* Order button - always visible */}
-                    <Link href={`/services/${service.slug}`}>
+                    <Link href={getLocalizedPath(`/${service.slug}`)}>
                       <button className="w-full px-6 py-4 bg-blue-600 text-white rounded-full font-semibold transition-all duration-300 flex items-center justify-between hover:bg-blue-700 shadow-lg hover:shadow-xl hover:scale-105">
                         <span>{t('services.viewDetails')}</span>
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

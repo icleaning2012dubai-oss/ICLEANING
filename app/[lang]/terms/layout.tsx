@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: locale === 'ru' ? 'Условия предоставления услуг iCleaning Дубай.' : locale === 'ar' ? 'شروط وأحكام خدمات iCleaning دبي.' : 'Terms and conditions for iCleaning Dubai services.',
     robots: { index: false, follow: true },
     alternates: {
-      canonical: locale === 'ru' ? `${baseUrl}/terms` : `${baseUrl}/${locale}/terms`,
-      languages: { en: `${baseUrl}/en/terms`, ru: `${baseUrl}/terms`, ar: `${baseUrl}/ar/terms`, 'x-default': `${baseUrl}/terms` },
+      canonical: locale === 'en' ? `${baseUrl}/terms` : `${baseUrl}/${locale}/terms`,
+      languages: { en: `${baseUrl}/terms`, ru: `${baseUrl}/ru/terms`, ar: `${baseUrl}/ar/terms`, 'x-default': `${baseUrl}/terms` },
     },
   };
 }

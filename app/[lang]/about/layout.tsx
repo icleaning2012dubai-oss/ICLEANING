@@ -31,8 +31,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: meta.description,
     keywords: meta.keywords,
     alternates: {
-      canonical: locale === 'ru' ? `${baseUrl}/about` : `${baseUrl}/${locale}/about`,
-      languages: { en: `${baseUrl}/en/about`, ru: `${baseUrl}/about`, ar: `${baseUrl}/ar/about`, 'x-default': `${baseUrl}/about` },
+      canonical: locale === 'en' ? `${baseUrl}/about` : `${baseUrl}/${locale}/about`,
+      languages: { en: `${baseUrl}/about`, ru: `${baseUrl}/ru/about`, ar: `${baseUrl}/ar/about`, 'x-default': `${baseUrl}/about` },
     },
     openGraph: {
       title: meta.title,

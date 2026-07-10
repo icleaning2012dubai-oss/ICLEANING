@@ -27,7 +27,7 @@ export async function generateMetadata({
   }
 
   const path = `/locations/${slug}`;
-  const canonical = locale === 'ru' ? `${baseUrl}${path}` : `${baseUrl}/${locale}${path}`;
+  const canonical = locale === 'en' ? `${baseUrl}${path}` : `${baseUrl}/${locale}${path}`;
 
   return {
     title: page.title[locale] || page.title.ru,
@@ -35,8 +35,8 @@ export async function generateMetadata({
     alternates: {
       canonical,
       languages: {
-        en: `${baseUrl}/en${path}`,
-        ru: `${baseUrl}${path}`,
+        en: `${baseUrl}${path}`,
+        ru: `${baseUrl}/ru${path}`,
         ar: `${baseUrl}/ar${path}`,
         'x-default': `${baseUrl}${path}`,
       },

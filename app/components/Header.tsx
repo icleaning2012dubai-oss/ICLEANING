@@ -2,11 +2,84 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState, memo } from 'react';
+import { useState, useEffect, memo } from 'react';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '@/app/contexts/LanguageProvider';
 import { useCart } from '@/app/contexts/CartProvider';
-import { getSubServicesForParent, type SubServicePage } from '@/app/data/subServicesData';
+
+// All service landings are top-level now (no category grouping) — flat menu.
+const stroke = { fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
+const menuServices: {
+  slug: string;
+  name: { ru: string; en: string; ar: string };
+  desc: { ru: string; en: string; ar: string };
+  icon: React.ReactNode;
+}[] = [
+  {
+    slug: 'carpet-cleaning',
+    name: { ru: 'Чистка ковров', en: 'Carpet cleaning', ar: 'تنظيف السجاد' },
+    desc: { ru: 'Стандартные машинные ковры', en: 'Only machine-made carpets', ar: 'السجاد الآلي' },
+    icon: <svg viewBox="0 0 24 24" {...stroke}><rect x="3" y="6" width="18" height="12" rx="1" /><path d="M3 10h18M3 14h18M3 18v2M21 18v2" /></svg>,
+  },
+  {
+    slug: 'premium-rug-cleaning',
+    name: { ru: 'Чистка элитных ковров', en: 'Premium rug cleaning', ar: 'تنظيف السجاد الفاخر' },
+    desc: { ru: 'Шёлк, шерсть, персидские, handmade', en: 'Silk, wool, Persian, handmade', ar: 'حرير، صوف، فارسي' },
+    icon: <svg viewBox="0 0 24 24" {...stroke}><path d="M6 3h12l3 5-9 12L3 8z" /><path d="M3 8h18M9 3L6.5 8 12 20M15 3l2.5 5L12 20" /></svg>,
+  },
+  {
+    slug: 'carpet-flooring-cleaning',
+    name: { ru: 'Чистка ковролина', en: 'Carpet flooring cleaning', ar: 'تنظيف الموكيت' },
+    desc: { ru: 'Ковровое покрытие на месте', en: 'Wall-to-wall carpet, on-site', ar: 'الموكيت في الموقع' },
+    icon: <svg viewBox="0 0 24 24" {...stroke}><rect x="3" y="3" width="18" height="18" rx="1" /><path d="M3 9h18M3 15h18M9 3v18M15 3v18" /></svg>,
+  },
+  {
+    slug: 'sofa-cleaning',
+    name: { ru: 'Химчистка диванов', en: 'Sofa cleaning', ar: 'تنظيف الأرائك' },
+    desc: { ru: 'Диваны и кресла, ткань и кожа', en: 'All upholstered furniture', ar: 'الأرائك القماشية والجلدية' },
+    icon: <svg viewBox="0 0 24 24" {...stroke}><path d="M5 11V8a2 2 0 012-2h10a2 2 0 012 2v3M3 12a2 2 0 012-2 2 2 0 012 2v4h10v-4a2 2 0 012-2 2 2 0 012 2v6M4 18v2M20 18v2" /></svg>,
+  },
+  {
+    slug: 'upholstery-cleaning',
+    name: { ru: 'Чистка мягкой мебели', en: 'Chairs & upholstery', ar: 'تنظيف المفروشات' },
+    desc: { ru: 'Стулья, кресла, изголовья', en: 'Chairs and armchairs', ar: 'الكراسي والمقاعد' },
+    icon: <svg viewBox="0 0 24 24" {...stroke}><path d="M7 11V7a2 2 0 012-2h6a2 2 0 012 2v4M5 11a1.5 1.5 0 013 0v4h8v-4a1.5 1.5 0 013 0v3H5zM7 18v2M17 18v2" /></svg>,
+  },
+  {
+    slug: 'mattress-cleaning',
+    name: { ru: 'Чистка матрасов', en: 'Mattress cleaning', ar: 'تنظيف المراتب' },
+    desc: { ru: 'Матрасы всех размеров на дому', en: 'Single, queen, king, baby', ar: 'مراتب بكل الأحجام' },
+    icon: <svg viewBox="0 0 24 24" {...stroke}><rect x="3" y="8" width="18" height="9" rx="2.5" /><path d="M6 8v9M10 8v9M14 8v9M18 8v9M3 17v2M21 17v2" /></svg>,
+  },
+  {
+    slug: 'curtain-cleaning',
+    name: { ru: 'Чистка штор и жалюзи', en: 'Curtain cleaning', ar: 'تنظيف الستائر' },
+    desc: { ru: 'Снятие, чистка и навеска', en: 'Take down, clean, rehang', ar: 'الإزالة والتنظيف والتعليق' },
+    icon: <svg viewBox="0 0 24 24" {...stroke}><path d="M3 4h18M5 4v16c1.5-1 3-1 4.5 0V4M14.5 4v16c1.5-1 3-1 4.5 0V4" /></svg>,
+  },
+  {
+    slug: 'window-cleaning',
+    name: { ru: 'Мойка окон', en: 'Windows cleaning', ar: 'تنظيف النوافذ' },
+    desc: { ru: 'Внутренняя мойка окон', en: 'Villa window & glass cleaning', ar: 'تنظيف النوافذ الداخلية' },
+    icon: <svg viewBox="0 0 24 24" {...stroke}><rect x="4" y="3" width="16" height="18" rx="1" /><path d="M12 3v18M4 12h16" /></svg>,
+  },
+  {
+    slug: 'central-ac-cleaning',
+    name: { ru: 'Чистка кондиционеров', en: 'AC cleaning', ar: 'تنظيف التكييف' },
+    desc: { ru: 'Центральные и канальные системы', en: 'AC units and split systems', ar: 'الأنظمة المركزية والمجاري' },
+    icon: <svg viewBox="0 0 24 24" {...stroke}><rect x="3" y="5" width="18" height="8" rx="2" /><path d="M6 9h9M6 17c1-1 1-2 0-3M10 18c1-1 1-2 0-3M14 17c1-1 1-2 0-3" /></svg>,
+  },
+];
+
+// Brand-coloured icon tiles, grouped by service family (carpets / furniture / curtains / AC).
+const menuTile = (i: number): string =>
+  i < 3
+    ? 'bg-amber-50 text-amber-600'
+    : i < 6
+      ? 'bg-violet-50 text-violet-600'
+      : i < 8
+        ? 'bg-pink-50 text-pink-600'
+        : 'bg-sky-50 text-sky-600';
 
 const Header = memo(function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,6 +92,16 @@ const Header = memo(function Header() {
 
   // Remove lang prefix from pathname for active state comparison
   const pathWithoutLang = pathname.replace(/^\/(en|ru|ar)/, '') || '/';
+
+  // Lock background scroll while the mobile menu is open.
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [isMenuOpen]);
 
   const handleServicesMouseEnter = () => {
     if (servicesCloseTimer) {
@@ -41,47 +124,6 @@ const Header = memo(function Header() {
     { code: 'ar', name: 'العربية', flag: 'AR' }
   ];
 
-  const services = [
-    { slug: 'carpet-cleaning-dubai', name: { ru: 'Чистка ковров', en: 'Carpet Cleaning', ar: 'تنظيف السجاد' }, color: 'bg-amber-50 text-amber-600',
-      icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" strokeWidth={1.5}/><path d="M3 9h18M3 15h18M9 3v18M15 3v18" strokeWidth={1.5}/></svg> },
-    { slug: 'sofa-cleaning-dubai', name: { ru: 'Диваны и матрасы', en: 'Sofa & Mattresses', ar: 'الأرائك والمراتب' }, color: 'bg-violet-50 text-violet-600',
-      icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 18V12a2 2 0 012-2h12a2 2 0 012 2v6" strokeWidth={1.5} strokeLinecap="round"/><path d="M2 18h20M6 10V7a2 2 0 012-2h8a2 2 0 012 2v3" strokeWidth={1.5} strokeLinecap="round"/></svg> },
-    { slug: 'curtains-cleaning-dubai', name: { ru: 'Шторы и жалюзи', en: 'Curtains & Blinds', ar: 'الستائر' }, color: 'bg-pink-50 text-pink-600',
-      icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 3h16M4 3v14c0 0 4-3 8 0s8 0 8 0V3" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/><path d="M4 21h16" strokeWidth={1.5} strokeLinecap="round"/></svg> },
-    /* DEEP CLEANING — временно скрыто
-    { slug: 'deep-cleaning-dubai', name: { ru: 'Генеральная уборка', en: 'Deep Cleaning', ar: 'التنظيف العميق' }, color: 'bg-emerald-50 text-emerald-600',
-      icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z" strokeWidth={1.5} strokeLinejoin="round"/></svg> },
-    */
-    { slug: 'ac-cleaning-dubai', name: { ru: 'Кондиционеры', en: 'Air Conditioner', ar: 'المكيفات' }, color: 'bg-sky-50 text-sky-600',
-      icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" strokeWidth={1.5} strokeLinecap="round"/></svg> },
-  ];
-
-  const subServiceShortName = (sub: SubServicePage): string => {
-    const names: Record<string, { ru: string; en: string; ar: string }> = {
-      'leather-sofa-cleaning': { ru: 'Кожаный диван', en: 'Leather Sofa', ar: 'أريكة جلدية' },
-      'fabric-sofa-cleaning': { ru: 'Тканевый диван', en: 'Fabric Sofa', ar: 'أريكة قماشية' },
-      'mattress-cleaning': { ru: 'Матрас', en: 'Mattress', ar: 'مرتبة' },
-      'orthopedic-mattress-cleaning': { ru: 'Ортопед. матрас', en: 'Ortho Mattress', ar: 'مرتبة طبية' },
-      'wool-carpet-cleaning': { ru: 'Шерстяной ковёр', en: 'Wool Carpet', ar: 'سجاد صوفي' },
-      'silk-carpet-cleaning': { ru: 'Шёлковый ковёр', en: 'Silk Carpet', ar: 'سجاد حريري' },
-      'persian-rug-cleaning': { ru: 'Персидский ковёр', en: 'Persian Rug', ar: 'سجاد فارسي' },
-      'handmade-rug-cleaning': { ru: 'Ручной работы', en: 'Handmade Rug', ar: 'سجاد يدوي' },
-      'curtain-cleaning': { ru: 'Стирка штор', en: 'Curtain Wash', ar: 'غسيل ستائر' },
-      'blind-cleaning': { ru: 'Жалюзи', en: 'Blinds', ar: 'ستائر معدنية' },
-      'vertical-blinds-cleaning': { ru: 'Вертикальные', en: 'Vertical Blinds', ar: 'عمودية' },
-      'horizontal-blinds-cleaning': { ru: 'Горизонтальные', en: 'Horizontal', ar: 'أفقية' },
-      'roller-blind-cleaning': { ru: 'Рулонные', en: 'Roller Blinds', ar: 'رول' },
-      'deep-cleaning': { ru: 'Глубокая чистка', en: 'Deep Clean', ar: 'تنظيف عميق' },
-      'post-construction-cleaning': { ru: 'После ремонта', en: 'Post-Reno', ar: 'بعد التجديد' },
-      'villa-cleaning': { ru: 'Вилла', en: 'Villa', ar: 'فيلا' },
-      'office-cleaning': { ru: 'Офис', en: 'Office', ar: 'مكتب' },
-      'window-cleaning': { ru: 'Окна', en: 'Windows', ar: 'نوافذ' },
-      'disinfection-services': { ru: 'Дезинфекция', en: 'Disinfection', ar: 'تعقيم' },
-    };
-    const n = names[sub.slug];
-    if (n) return n[language as 'ru' | 'en' | 'ar'] || n.ru;
-    return sub.h1[language as 'ru' | 'en' | 'ar'] || sub.h1.ru;
-  };
 
   return (
     <header className="fixed top-1 left-0 right-0 z-30 px-2 sm:px-4 lg:px-8">
@@ -144,51 +186,33 @@ const Header = memo(function Header() {
 
                 {/* Services Mega Menu */}
                 {isServicesMenuOpen && (
-                  <div 
-                    className="absolute top-full -left-8 mt-3 w-[560px] bg-white rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100 z-50 p-5"
+                  <div
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[820px] max-w-[92vw] bg-white rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100 z-50 p-5"
                     onMouseEnter={handleServicesMouseEnter}
                     onMouseLeave={handleServicesMouseLeave}
                   >
-                    <div className="grid grid-cols-2 gap-4">
-                      {services.map((service) => {
-                        const subs = getSubServicesForParent(service.slug);
+                    <div className="grid grid-cols-3 gap-x-5 gap-y-1">
+                      {menuServices.map((s, i) => {
+                        const active = pathWithoutLang === `/${s.slug}`;
                         return (
-                          <div key={service.slug} className="group/card">
-                            <Link
-                              href={getLocalizedPath(`/services/${service.slug}`)}
-                              className={`flex items-center gap-3 p-2 -m-2 rounded-xl transition-colors ${
-                                pathWithoutLang === `/services/${service.slug}`
-                                  ? 'bg-blue-50'
-                                  : 'hover:bg-gray-50'
-                              }`}
-                              onClick={() => setIsServicesMenuOpen(false)}
-                            >
-                              <span className={`flex items-center justify-center w-9 h-9 rounded-lg ${service.color} flex-shrink-0`}>
-                                {service.icon}
+                          <Link
+                            key={s.slug}
+                            href={getLocalizedPath(`/${s.slug}`)}
+                            onClick={() => setIsServicesMenuOpen(false)}
+                            className={`flex items-start gap-3 p-3 rounded-2xl transition-colors ${active ? 'bg-blue-50' : 'hover:bg-gray-50'}`}
+                          >
+                            <span className={`flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center ${menuTile(i)}`}>
+                              <span className="block w-6 h-6">{s.icon}</span>
+                            </span>
+                            <span className="min-w-0 pt-0.5">
+                              <span className={`block font-semibold text-sm leading-snug ${active ? 'text-blue-600' : 'text-gray-900'}`}>
+                                {s.name[language as keyof typeof s.name]}
                               </span>
-                              <span className={`font-semibold text-sm ${
-                                pathWithoutLang === `/services/${service.slug}` ? 'text-blue-600' : 'text-gray-900'
-                              }`}>
-                                {service.name[language as keyof typeof service.name]}
+                              <span className="block text-xs text-gray-400 leading-snug mt-0.5">
+                                {s.desc[language as keyof typeof s.desc]}
                               </span>
-                            </Link>
-                            {subs.length > 0 && (
-                              <div className="mt-1.5 ml-12 flex flex-wrap gap-x-1 gap-y-0.5">
-                                {subs.map((sub, i) => (
-                                  <span key={sub.slug} className="inline-flex items-center">
-                                    <Link
-                                      href={getLocalizedPath(`/${sub.slug}`)}
-                                      className="text-xs text-gray-400 hover:text-blue-600 transition-colors"
-                                      onClick={() => setIsServicesMenuOpen(false)}
-                                    >
-                                      {subServiceShortName(sub)}
-                                    </Link>
-                                    {i < subs.length - 1 && <span className="text-gray-300 mx-1">&middot;</span>}
-                                  </span>
-                                ))}
-                              </div>
-                            )}
-                          </div>
+                            </span>
+                          </Link>
                         );
                       })}
                     </div>
@@ -384,7 +408,7 @@ const Header = memo(function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 bg-white/90 backdrop-blur-md rounded-3xl p-6 shadow-2xl border border-gray-200/50">
+          <div className="md:hidden mt-4 bg-white/90 backdrop-blur-md rounded-3xl p-6 shadow-2xl border border-gray-200/50 max-h-[calc(100dvh-7rem)] overflow-y-auto overscroll-contain">
             <nav className="flex flex-col space-y-4">
               <Link 
                 href={getLocalizedPath('/')} 
@@ -418,42 +442,26 @@ const Header = memo(function Header() {
                 
                 {/* Mobile Services Menu */}
                 {isServicesMenuOpen && (
-                  <div className="mt-3 ml-1 space-y-3">
-                    {services.map((service) => {
-                      const subs = getSubServicesForParent(service.slug);
+                  <div className="mt-3 ml-1 flex flex-col gap-0.5">
+                    {menuServices.map((s, i) => {
+                      const active = pathWithoutLang === `/${s.slug}`;
                       return (
-                        <div key={service.slug}>
-                          <Link
-                            href={getLocalizedPath(`/services/${service.slug}`)}
-                            className={`flex items-center gap-3 py-1 ${
-                              pathWithoutLang === `/services/${service.slug}`
-                                ? 'text-blue-600'
-                                : 'text-gray-700 hover:text-gray-900'
-                            }`}
-                            onClick={() => setIsMenuOpen(false)}
-                          >
-                            <span className={`flex items-center justify-center w-7 h-7 rounded-md ${service.color} flex-shrink-0`}>
-                              {service.icon}
+                        <Link
+                          key={s.slug}
+                          href={getLocalizedPath(`/${s.slug}`)}
+                          onClick={() => setIsMenuOpen(false)}
+                          className={`flex items-start gap-3 py-2 px-2 -mx-2 rounded-xl ${active ? 'bg-blue-50' : ''}`}
+                        >
+                          <span className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center ${menuTile(i)}`}>
+                            <span className="block w-5 h-5">{s.icon}</span>
+                          </span>
+                          <span className="min-w-0 pt-0.5">
+                            <span className={`block text-sm font-semibold leading-snug ${active ? 'text-blue-600' : 'text-gray-900'}`}>
+                              {s.name[language as keyof typeof s.name]}
                             </span>
-                            <span className="text-sm font-semibold">{service.name[language as keyof typeof service.name]}</span>
-                          </Link>
-                          {subs.length > 0 && (
-                            <div className="ml-10 mt-1 flex flex-wrap gap-x-1 gap-y-0.5">
-                              {subs.map((sub, i) => (
-                                <span key={sub.slug} className="inline-flex items-center">
-                                  <Link
-                                    href={getLocalizedPath(`/${sub.slug}`)}
-                                    className="text-xs text-gray-400 hover:text-blue-600"
-                                    onClick={() => setIsMenuOpen(false)}
-                                  >
-                                    {subServiceShortName(sub)}
-                                  </Link>
-                                  {i < subs.length - 1 && <span className="text-gray-300 mx-0.5">&middot;</span>}
-                                </span>
-                              ))}
-                            </div>
-                          )}
-                        </div>
+                            <span className="block text-xs text-gray-400 leading-snug">{s.desc[language as keyof typeof s.desc]}</span>
+                          </span>
+                        </Link>
                       );
                     })}
                   </div>
