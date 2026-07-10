@@ -687,19 +687,25 @@ function LeadForm({
       </div>
 
       {/* Trust strip — social proof up top, before the ask (keeps the CTA clean) */}
-      <div className="flex items-center gap-2 -mt-0.5 pb-0.5">
+      <div className="flex items-center gap-2.5 -mt-0.5 pb-0.5">
         <div className="flex -space-x-2 flex-shrink-0">
           {[33, 47, 32].map((n) => (
             <img key={n} src={`https://i.pravatar.cc/100?img=${n}`} alt="" className="w-7 h-7 rounded-full border-2 border-white object-cover shadow-sm" loading="lazy" />
           ))}
         </div>
-        <div className="flex text-amber-400 flex-shrink-0">
-          {[0, 1, 2, 3, 4].map((i) => (
-            <svg key={i} className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.364 1.118l1.287 3.958c.3.922-.755 1.688-1.54 1.118l-3.366-2.446a1 1 0 00-1.175 0l-3.366 2.446c-.784.57-1.838-.196-1.539-1.118l1.286-3.958a1 1 0 00-.363-1.118L2.98 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.286-3.958z" /></svg>
-          ))}
+        <div className="leading-tight min-w-0">
+          <div className="flex items-center gap-1.5">
+            <div className="flex text-amber-400">
+              {[0, 1, 2, 3, 4].map((i) => (
+                <svg key={i} className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.364 1.118l1.287 3.958c.3.922-.755 1.688-1.54 1.118l-3.366-2.446a1 1 0 00-1.175 0l-3.366 2.446c-.784.57-1.838-.196-1.539-1.118l1.286-3.958a1 1 0 00-.363-1.118L2.98 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.286-3.958z" /></svg>
+              ))}
+            </div>
+            <span className="text-gray-900 font-bold text-sm">4.9</span>
+          </div>
+          <div className="text-gray-500 text-xs whitespace-nowrap">
+            <span className="font-semibold text-gray-700">4,234+</span> {tr('довольных клиентов', 'happy customers', 'عميل سعيد')}
+          </div>
         </div>
-        <span className="text-gray-900 font-bold text-sm flex-shrink-0">4.9</span>
-        <span className="text-gray-500 text-xs truncate min-w-0"><span className="font-semibold text-gray-700">4,234+</span> {tr('довольных клиентов', 'happy customers', 'عميل سعيد')}</span>
       </div>
       <input className={inputCls} name="name" autoComplete="name" placeholder={tr('Имя', 'Name', 'الاسم')} value={form.name} onChange={onChange('name')} required />
       <input className={inputCls} name="tel" type="tel" inputMode="tel" autoComplete="tel" placeholder={tr('Телефон / WhatsApp', 'Phone / WhatsApp', 'الهاتف')} value={form.phone} onChange={onChange('phone')} required />
