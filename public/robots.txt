@@ -60,4 +60,3 @@ Allow: /assets/
 Allow: /favicon.ico
 
 Sitemap: https://icleaning.ae/sitemap.xml
-Host: icleaning.ae

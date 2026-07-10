@@ -32,7 +32,7 @@ export default function SchemaMarkup({ lang = 'ru' }: { lang?: string }) {
     ],
     sameAs: [
       'https://www.instagram.com/icleaning_dubai/',
-      'https://api.whatsapp.com/send/?phone=971508648401',
+      'https://api.whatsapp.com/send/?phone=971565055016',
     ],
     aggregateRating: {
       '@type': 'AggregateRating',
