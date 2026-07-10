@@ -11,7 +11,7 @@ export default function WhatsAppFloat() {
 
   // On SEO landings the sticky mobile bar already has a WhatsApp button —
   // hide the floating one on mobile there (keep it on desktop / other pages).
-  const slug = pathname.replace(/^\/(en|ar)/, '').replace(/^\//, '').split('/')[0];
+  const slug = pathname.replace(/^\/(en|ru|ar)(?=\/|$)/, '').replace(/^\//, '').split('/')[0];
   const onLanding = isSeoLanding(slug);
 
   return (
