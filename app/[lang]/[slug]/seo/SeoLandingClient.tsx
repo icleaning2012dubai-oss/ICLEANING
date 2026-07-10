@@ -10,6 +10,7 @@ import { FeatureIcon, iconColors } from '@/app/components/FeatureIcon';
 import { useLanguage } from '@/app/contexts/LanguageProvider';
 import { buildWhatsAppLink } from '@/app/utils/whatsapp';
 import { trackCta } from '@/app/utils/trackCta';
+import { fireLeadFormSuccess } from '@/app/utils/leadEvent';
 import { getSeoLanding } from '@/app/data/seoLandings';
 import { getSectionImage } from '@/app/data/seoLandings/sectionImages';
 import DatePicker from './DatePicker';
@@ -653,6 +654,7 @@ function LeadForm({
         body: JSON.stringify({ name: form.name, phone: form.phone, service: page.serviceEntity, message }),
       });
       if (!res.ok) throw new Error('failed');
+      fireLeadFormSuccess('top');
       trackCta('lead_form_submit', {
         page_slug: slug,
         service_entity: page.serviceEntity,

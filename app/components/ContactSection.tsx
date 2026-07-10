@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { useLanguage } from '@/app/contexts/LanguageProvider';
+import { fireLeadFormSuccess } from '@/app/utils/leadEvent';
 
 export default function ContactSection() {
   const { t } = useLanguage();
@@ -32,6 +33,8 @@ export default function ContactSection() {
       if (response.ok) {
         setShowSuccess(true);
         setFormData({ name: '', phone: '', email: '', business: 'INDIVIDUAL', message: '' });
+        // Single per-page lead conversion event (dedupes with the hero form).
+        fireLeadFormSuccess('bottom');
         // GTM dataLayer event
         if (typeof window !== 'undefined' && (window as any).dataLayer) {
           (window as any).dataLayer.push({
@@ -94,7 +97,7 @@ export default function ContactSection() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-lg font-bold text-gray-900">+971 50 864 8401</div>
+                    <div className="text-lg font-bold text-gray-900">+971 56 505 5016</div>
                     <div className="text-sm text-gray-500">{t('contactForm.available')}</div>
                   </div>
                 </div>

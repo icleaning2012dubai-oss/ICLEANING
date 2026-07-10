@@ -31,13 +31,13 @@ export default function Footer() {
           <div className="space-y-4 sm:space-y-6">
             <h4 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">{t('footer.contactInfo')}</h4>
             <div className="space-y-3 sm:space-y-4">
-              <a href="tel:+971508648401" data-gtm-phone="true" onClick={() => { if (typeof window !== 'undefined' && (window as any).dataLayer) { (window as any).dataLayer.push({ event: 'phone_click', click_value: 30 }); } }} className="flex items-center gap-2.5 sm:gap-3 text-gray-300 hover:text-white transition-colors group">
+              <a href="tel:+971565055016" data-gtm-phone="true" onClick={() => { if (typeof window !== 'undefined' && (window as any).dataLayer) { (window as any).dataLayer.push({ event: 'phone_click', click_value: 30 }); } }} className="flex items-center gap-2.5 sm:gap-3 text-gray-300 hover:text-white transition-colors group">
                 <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center group-hover:bg-gray-700 transition-colors flex-shrink-0">
                   <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
-                <span className="text-xs sm:text-sm">+971 50 864 8401</span>
+                <span className="text-xs sm:text-sm">+971 56 505 5016</span>
               </a>
 
               <a href="mailto:customer@icleaning.ae" className="flex items-center gap-2.5 sm:gap-3 text-gray-300 hover:text-white transition-colors group">
@@ -165,7 +165,7 @@ export default function Footer() {
               <p>ICleaning Dubai</p>
               <p>Jebeli Ali 1 Industrial Dubai, Dubai United Arab Emirates</p>
               <p>Trade License No: 1134424</p>
-              <p><span style={{ color: '#111827' }}>+971553871270</span></p>
+              <p><span style={{ color: '#111827' }}>+971 56 505 5016</span></p>
             </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
             <p className="text-gray-500 text-xs sm:text-sm text-center md:text-left">

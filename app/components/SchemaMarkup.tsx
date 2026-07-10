@@ -7,7 +7,7 @@ export default function SchemaMarkup({ lang = 'ru' }: { lang?: string }) {
     image: 'https://icleaning.ae/images/logo.svg',
     logo: 'https://icleaning.ae/images/logo.svg',
     url: 'https://icleaning.ae',
-    telephone: '+971508648401',
+    telephone: '+971565055016',
     email: 'customer@icleaning.ae',
     address: {
       '@type': 'PostalAddress',
