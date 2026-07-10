@@ -199,7 +199,7 @@ export default function SeoLandingClient({ slug }: { slug: string }) {
                     <h1 className="text-[2rem] sm:text-4xl md:text-5xl font-bold text-white leading-[1.07] tracking-tight mb-5 max-w-2xl">
                       {pick(page.hero.h1, lang)}
                     </h1>
-                    <p className="text-white/85 text-base sm:text-lg max-w-xl mb-7">{pick(page.hero.paragraph, lang)}</p>
+                    <p className="hidden lg:block text-white/85 text-base sm:text-lg max-w-xl mb-7">{pick(page.hero.paragraph, lang)}</p>
                     <div className="flex flex-wrap gap-2.5 mb-8">
                       {page.hero.miniFacts.map((f, i) => (
                         <span
