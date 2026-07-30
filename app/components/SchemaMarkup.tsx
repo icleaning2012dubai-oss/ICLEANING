@@ -7,7 +7,7 @@ export default function SchemaMarkup({ lang = 'ru' }: { lang?: string }) {
     image: 'https://icleaning.ae/images/logo.svg',
     logo: 'https://icleaning.ae/images/logo.svg',
     url: 'https://icleaning.ae',
-    telephone: '+971565055016',
+    telephone: '+971543084339',
     email: 'customer@icleaning.ae',
     address: {
       '@type': 'PostalAddress',
@@ -32,7 +32,7 @@ export default function SchemaMarkup({ lang = 'ru' }: { lang?: string }) {
     ],
     sameAs: [
       'https://www.instagram.com/icleaning_dubai/',
-      'https://api.whatsapp.com/send/?phone=971565055016',
+      'https://api.whatsapp.com/send/?phone=971543084339',
     ],
     aggregateRating: {
       '@type': 'AggregateRating',

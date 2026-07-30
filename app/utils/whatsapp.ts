@@ -1,6 +1,6 @@
 import { mainServices } from '@/app/data/seoLandings/mainServices';
 
-const WHATSAPP_PHONE = '971565055016';
+const WHATSAPP_PHONE = '971543084339';
 
 type SupportedLanguage = 'ru' | 'en' | 'ar';
 

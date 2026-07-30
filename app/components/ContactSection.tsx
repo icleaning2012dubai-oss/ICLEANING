@@ -97,7 +97,7 @@ export default function ContactSection() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-lg font-bold text-gray-900">+971 56 505 5016</div>
+                    <div className="text-lg font-bold text-gray-900">+971 54 308 4339</div>
                     <div className="text-sm text-gray-500">{t('contactForm.available')}</div>
                   </div>
                 </div>
