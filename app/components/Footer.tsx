@@ -118,9 +118,6 @@ export default function Footer() {
                 { slug: 'palm-jumeirah', name: 'Palm Jumeirah' },
                 { slug: 'downtown-dubai', name: 'Downtown' },
                 { slug: 'al-barsha', name: 'Al Barsha' },
-                { slug: 'deira', name: 'Deira' },
-                { slug: 'bur-dubai', name: 'Bur Dubai' },
-                { slug: 'international-city', name: 'Int. City' },
                 { slug: 'jumeirah', name: 'Jumeirah' },
               ].map((loc) => (
                 <Link
@@ -138,7 +135,6 @@ export default function Footer() {
               {[
                 { slug: 'abu-dhabi', name: 'Abu Dhabi' },
                 { slug: 'sharjah', name: 'Sharjah' },
-                { slug: 'ajman', name: 'Ajman' },
               ].map((loc) => (
                 <Link
                   key={loc.slug}

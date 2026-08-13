@@ -744,6 +744,10 @@ Book a day ahead. We'll contact you and find a convenient time for Sharjah visit
   },
 };
 
+// Undesirable / de-emphasised areas — kept out of nav, cross-links and static
+// generation. Their URLs 301-redirect to home (see next.config).
+export const HIDDEN_LOCATIONS = new Set(['deira', 'bur-dubai', 'international-city']);
+
 export function getAllLocationSlugs(): string[] {
-  return Object.keys(locationsData);
+  return Object.keys(locationsData).filter((slug) => !HIDDEN_LOCATIONS.has(slug));
 }

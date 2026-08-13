@@ -10,7 +10,6 @@ const WORKS = [
   { src: '/images/sofa_cleaning.webp',     label: { ru: 'Диваны и матрасы',   en: 'Sofa & Mattresses',  ar: 'الأرائك والمراتب'} },
   { src: '/images/curtain_cleaning.webp',  label: { ru: 'Шторы и жалюзи',     en: 'Curtains & Blinds',  ar: 'الستائر والمظلات'} },
   { src: '/images/ac_cleaning.webp',       label: { ru: 'Кондиционеры',       en: 'AC Cleaning',        ar: 'تنظيف المكيفات'  } },
-  { src: '/images/room_cleaning.webp',     label: { ru: 'Глубокая уборка',    en: 'Deep Cleaning',      ar: 'التنظيف العميق'  } },
   { src: '/images/carpet/wool.webp',       label: { ru: 'Шерстяные ковры',    en: 'Wool Carpets',       ar: 'السجاد الصوفي'   } },
   { src: '/images/sofa/leather-sofa.webp', label: { ru: 'Кожаные диваны',     en: 'Leather Sofas',      ar: 'الأرائك الجلدية' } },
   { src: '/images/curtains/classic.webp',  label: { ru: 'Классические шторы', en: 'Classic Curtains',   ar: 'الستائر الكلاسيكية'} },

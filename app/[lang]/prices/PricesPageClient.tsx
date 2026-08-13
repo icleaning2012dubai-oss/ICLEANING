@@ -115,7 +115,7 @@ const priceCategories: PriceCategory[] = [
     shortTitle: { ru: 'Окна', en: 'Windows', ar: 'نوافذ' },
     iconColor: 'bg-cyan-100 text-cyan-600',
     icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" strokeWidth={1.5}/><path d="M12 3v18M3 12h18" strokeWidth={1.5}/></svg>,
-    serviceSlug: 'deep-cleaning-dubai',
+    serviceSlug: 'window-cleaning',
     items: [
       { name: { ru: 'Стандартное окно', en: 'Standard window', ar: 'نافذة قياسية' }, price: 'от 250 AED/час' },
     ],

@@ -64,16 +64,6 @@ export default function SchemaMarkup({ lang = 'ru' }: { lang?: string }) {
       description: lang === 'ar' ? 'خدمة تنظيف الستائر في دبي' : lang === 'en' ? 'Professional curtains and blinds cleaning in Dubai' : 'Профессиональная чистка штор и жалюзи в Дубае',
       url: 'https://icleaning.ae/services/curtains-cleaning-dubai',
     },
-    {
-      name: lang === 'ar' ? 'التنظيف المنتظم' : lang === 'en' ? 'Regular Cleaning' : 'Регулярная уборка',
-      description: lang === 'ar' ? 'خدمة التنظيف المنتظم في دبي' : lang === 'en' ? 'Professional regular cleaning service in Dubai' : 'Профессиональная регулярная уборка в Дубае',
-      url: 'https://icleaning.ae/services/regular-cleaning-dubai',
-    },
-    {
-      name: lang === 'ar' ? 'التنظيف العميق' : lang === 'en' ? 'Deep Cleaning' : 'Глубокая уборка',
-      description: lang === 'ar' ? 'خدمة التنظيف العميق في دبي' : lang === 'en' ? 'Professional deep cleaning service in Dubai' : 'Профессиональная глубокая уборка в Дубае',
-      url: 'https://icleaning.ae/services/deep-cleaning-dubai',
-    },
   ];
 
   const serviceSchema = services.map((service) => ({
