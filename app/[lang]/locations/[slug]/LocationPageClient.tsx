@@ -6,7 +6,7 @@ import Footer from '@/app/components/Footer';
 import ContactSection from '@/app/components/ContactSection';
 import BookingModal from '@/app/components/BookingModal';
 import { useLanguage } from '@/app/contexts/LanguageProvider';
-import { locationsData, HIDDEN_LOCATIONS } from '@/app/data/locationsData';
+import { locationsData } from '@/app/data/locationsData';
 import { useState } from 'react';
 import Link from 'next/link';
 import { buildWhatsAppLink } from '@/app/utils/whatsapp';
@@ -47,7 +47,7 @@ export default function LocationPageClient({ slug }: { slug: string }) {
   const paragraphs = content.split('\n\n').filter(p => p.trim());
   const gradient = locationColors[slug] || 'from-blue-600 to-blue-500';
 
-  const otherLocations = Object.values(locationsData).filter(l => l.slug !== slug && !HIDDEN_LOCATIONS.has(l.slug));
+  const otherLocations = Object.values(locationsData).filter(l => l.slug !== slug);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 relative">

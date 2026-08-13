@@ -146,15 +146,17 @@ const nextConfig: NextConfig = {
       { source: '/en/orthopedic-mattress-cleaning', destination: '/mattress-cleaning', statusCode: 301 },
       { source: '/:lang(ru|ar)/orthopedic-mattress-cleaning', destination: '/:lang/mattress-cleaning', statusCode: 301 },
 
-      // Убранные (нежелательные) районы → главная
+      // Убранные районы (не входят в список спроса) → главная
       { source: '/locations/deira', destination: '/', statusCode: 301 },
       { source: '/locations/bur-dubai', destination: '/', statusCode: 301 },
       { source: '/locations/international-city', destination: '/', statusCode: 301 },
-      { source: '/locations/ajman', destination: '/', statusCode: 301 },
+      { source: '/locations/jlt', destination: '/', statusCode: 301 },
+      { source: '/locations/al-barsha', destination: '/', statusCode: 301 },
       { source: '/:lang(ru|ar)/locations/deira', destination: '/:lang', statusCode: 301 },
       { source: '/:lang(ru|ar)/locations/bur-dubai', destination: '/:lang', statusCode: 301 },
       { source: '/:lang(ru|ar)/locations/international-city', destination: '/:lang', statusCode: 301 },
-      { source: '/:lang(ru|ar)/locations/ajman', destination: '/:lang', statusCode: 301 },
+      { source: '/:lang(ru|ar)/locations/jlt', destination: '/:lang', statusCode: 301 },
+      { source: '/:lang(ru|ar)/locations/al-barsha', destination: '/:lang', statusCode: 301 },
 
       // Удалённые страницы → главная
       { source: '/compare', destination: '/', statusCode: 301 },

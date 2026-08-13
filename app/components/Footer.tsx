@@ -113,12 +113,18 @@ export default function Footer() {
             <h4 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">{language === 'ru' ? 'Районы Дубая' : language === 'ar' ? 'مناطق دبي' : 'Dubai Areas'}</h4>
             <div className="grid grid-cols-2 gap-x-4 gap-y-2 sm:gap-y-3">
               {[
-                { slug: 'dubai-marina', name: 'Dubai Marina' },
-                { slug: 'jlt', name: 'JLT' },
                 { slug: 'palm-jumeirah', name: 'Palm Jumeirah' },
-                { slug: 'downtown-dubai', name: 'Downtown' },
-                { slug: 'al-barsha', name: 'Al Barsha' },
+                { slug: 'jvc', name: 'JVC' },
+                { slug: 'al-barari', name: 'Al Barari' },
+                { slug: 'damac-hills', name: 'Damac Hills' },
                 { slug: 'jumeirah', name: 'Jumeirah' },
+                { slug: 'dubai-hills-estate', name: 'Dubai Hills' },
+                { slug: 'dubai-marina', name: 'Dubai Marina' },
+                { slug: 'business-bay', name: 'Business Bay' },
+                { slug: 'downtown-dubai', name: 'Downtown' },
+                { slug: 'arabian-ranches', name: 'Arabian Ranches' },
+                { slug: 'jbr', name: 'JBR' },
+                { slug: 'creek-harbour', name: 'Creek Harbour' },
               ].map((loc) => (
                 <Link
                   key={loc.slug}
@@ -135,6 +141,7 @@ export default function Footer() {
               {[
                 { slug: 'abu-dhabi', name: 'Abu Dhabi' },
                 { slug: 'sharjah', name: 'Sharjah' },
+                { slug: 'ajman', name: 'Ajman' },
               ].map((loc) => (
                 <Link
                   key={loc.slug}
