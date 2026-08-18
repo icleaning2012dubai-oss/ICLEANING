@@ -64,6 +64,26 @@ const SERVICE_FILTERS = [
   { key: 'stains',   label: { ru: 'Пятна',         en: 'Stains',       ar: 'البقع'   } },
 ];
 
+// ── ShareLinkButton (copy a direct link to one before/after example) ───────
+function ShareLinkButton({ path, labels }: { path: string; labels: { copy: string; copied: string } }) {
+  const [done, setDone] = useState(false);
+  return (
+    <button
+      type="button"
+      onClick={async () => {
+        const url = (typeof window !== 'undefined' ? window.location.origin : 'https://icleaning.ae') + path;
+        try { await navigator.clipboard.writeText(url); } catch { /* ignore */ }
+        setDone(true);
+        setTimeout(() => setDone(false), 1800);
+      }}
+      className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
+    >
+      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 010 5.656l-3 3a4 4 0 01-5.656-5.656l1.5-1.5M10.172 13.828a4 4 0 010-5.656l3-3a4 4 0 015.656 5.656l-1.5 1.5" /></svg>
+      {done ? labels.copied : labels.copy}
+    </button>
+  );
+}
+
 // ── BeforeAfterSlider ──────────────────────────────────────────────────────────
 function BeforeAfterSlider({ before, after, alt }: { before: string; after: string; alt: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -269,7 +289,7 @@ function shuffle<T>(arr: T[]): T[] {
 
 // ── PortfolioPage ──────────────────────────────────────────────────────────────
 export default function PortfolioPage() {
-  const { language, t } = useLanguage();
+  const { language, t, getLocalizedPath } = useLanguage();
   const [activeTab, setActiveTab] = useState<'before-after' | 'gallery'>('gallery');
   const [items, setItems] = useState<GalleryItem[]>([]);
   const [loading, setLoading] = useState(true);
@@ -284,6 +304,7 @@ export default function PortfolioPage() {
   const galleryInitialized = useRef(false);
 
   const lang = language as 'ru' | 'en' | 'ar';
+  const tr = (ru: string, en: string, ar: string) => (lang === 'en' ? en : lang === 'ar' ? ar : ru);
 
   // ── Fetch before/after ──
   useEffect(() => {
@@ -462,6 +483,21 @@ export default function PortfolioPage() {
                           {(item.description[lang] || item.description.en) && (
                             <p className="text-gray-600 text-sm">{item.description[lang] || item.description.en}</p>
                           )}
+                          <div className="mt-3 flex items-center gap-4 border-t border-gray-100 pt-3">
+                            <a
+                              href={getLocalizedPath(`/portfolio/${item._id}`)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-blue-700"
+                            >
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                              {tr('Открыть', 'Open', 'فتح')}
+                            </a>
+                            <ShareLinkButton
+                              path={getLocalizedPath(`/portfolio/${item._id}`)}
+                              labels={{ copy: tr('Копировать ссылку', 'Copy link', 'نسخ الرابط'), copied: tr('Скопировано!', 'Copied!', 'تم النسخ!') }}
+                            />
+                          </div>
                         </div>
                       </div>
                     ))}
