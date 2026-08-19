@@ -262,6 +262,20 @@ const Header = memo(function Header() {
                 }`}></span>
               </Link>
 
+              <Link
+                href={getLocalizedPath('/before-after')}
+                className={`relative transition-all duration-300 font-medium group ${
+                  pathWithoutLang === '/before-after'
+                    ? 'text-blue-600 font-semibold'
+                    : 'text-gray-700 hover:text-blue-600'
+                }`}
+              >
+                {t('nav.beforeAfter')}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
+                  pathWithoutLang === '/before-after' ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
+              </Link>
+
               <Link 
                 href={getLocalizedPath('/reviews')} 
                 className={`relative transition-all duration-300 font-medium group ${
@@ -502,6 +516,18 @@ const Header = memo(function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.portfolio')}
+              </Link>
+
+              <Link
+                href={getLocalizedPath('/before-after')}
+                className={`transition-colors font-medium ${
+                  pathWithoutLang === '/before-after'
+                    ? 'text-blue-600 font-semibold'
+                    : 'text-gray-700 hover:text-gray-900'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('nav.beforeAfter')}
               </Link>
 
               <Link 
