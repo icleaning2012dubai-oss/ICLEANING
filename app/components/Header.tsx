@@ -128,7 +128,7 @@ const Header = memo(function Header() {
   return (
     <header className="fixed top-1 left-0 right-0 z-30 px-2 sm:px-4 lg:px-8">
       <div className="max-w-[1400px] mx-auto">
-        <div className="bg-white/80 backdrop-blur-md rounded-full px-4 sm:px-8 py-3 sm:py-4 shadow-2xl border border-gray-200/50">
+        <div className="bg-white/80 backdrop-blur-md rounded-full px-4 sm:px-6 py-3 sm:py-4 shadow-2xl border border-gray-200/50">
           <div className="flex justify-between items-center">
             {/* Logo */}
             <Link href={getLocalizedPath('/')} className="flex items-center">
@@ -145,7 +145,7 @@ const Header = memo(function Header() {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden lg:flex items-center gap-x-4 xl:gap-x-5 text-[15px]">
               <Link 
                 href={getLocalizedPath('/')} 
                 className={`relative transition-all duration-300 font-medium group ${
@@ -369,7 +369,7 @@ const Header = memo(function Header() {
 
               <Link 
                 href={getLocalizedPath('/contact')}
-                className="hidden md:block px-6 py-2.5 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] hover:scale-105"
+                className="hidden lg:block px-6 py-2.5 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-all duration-300 shadow-[0_8px_30px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)] hover:scale-105"
               >
                 {t('nav.contactUs')}
               </Link>
@@ -403,7 +403,7 @@ const Header = memo(function Header() {
               {/* Mobile menu button */}
               <button 
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="md:hidden p-1.5 sm:p-2 text-gray-700 hover:text-gray-900 transition-colors"
+                className="lg:hidden p-1.5 sm:p-2 text-gray-700 hover:text-gray-900 transition-colors"
                 aria-label="Меню"
               >
                 {isMenuOpen ? (
@@ -422,7 +422,7 @@ const Header = memo(function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 bg-white/90 backdrop-blur-md rounded-3xl p-6 shadow-2xl border border-gray-200/50 max-h-[calc(100dvh-7rem)] overflow-y-auto overscroll-contain">
+          <div className="lg:hidden mt-4 bg-white/90 backdrop-blur-md rounded-3xl p-6 shadow-2xl border border-gray-200/50 max-h-[calc(100dvh-7rem)] overflow-y-auto overscroll-contain">
             <nav className="flex flex-col space-y-4">
               <Link 
                 href={getLocalizedPath('/')} 
