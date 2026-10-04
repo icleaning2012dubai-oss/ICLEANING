@@ -95,7 +95,6 @@ export const servicesData: Record<string, ServiceData> = {
       'Hard-to-reach areas',
       'Kitchen deep clean',
       'Bathroom sanitization',
-      'Window cleaning',
       'Floor treatment'
     ],
     benefits: [

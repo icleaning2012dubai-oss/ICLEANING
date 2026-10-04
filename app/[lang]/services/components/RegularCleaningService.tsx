@@ -527,13 +527,13 @@ export default function RegularCleaningService() {
               </div>
             </div>
 
-            {/* Window & Blinds */}
+            {/* Blinds */}
             <div className="group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 <div className="relative h-[250px] lg:h-auto lg:col-span-2 overflow-hidden">
                   <Image
                     src="/images/cleaning/okna.webp"
-                    alt="Window Cleaning"
+                    alt="Blind Cleaning"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />

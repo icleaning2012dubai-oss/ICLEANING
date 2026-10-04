@@ -21,29 +21,29 @@ export const batch2: Record<string, LocationPage> = {
     content: {
       ru: `Barsha Heights (Tecom) — плотный смешанный район в самом центре: жилые башни соседствуют с офисами рядом с Media City и Internet City. Здесь много арендаторов, которые работают неподалёку, поэтому квартиры обжитые, а мебель и текстиль быстро набирают городскую пыль.
 
-Чаще всего в Tecom нас зовут на чистку кондиционеров — сплит- и центральные системы гоняют воздух почти круглый год, и без обслуживания появляются запах и пыль. Следом идут мойка панорамных окон в башнях, химчистка диванов и стирка штор.
+Чаще всего в Tecom нас зовут на чистку кондиционеров — сплит- и центральные системы гоняют воздух почти круглый год, и без обслуживания появляются запах и пыль. Следом идут химчистка диванов и стирка штор.
 
 Мы приезжаем прямо к вашей башне, паркуемся сами и разбираемся с пропуском на охране — вам не нужно ничего оплачивать за парковку. Ковры и шторы при желании забираем в работу и привозим обратно чистыми, чтобы не занимать квартиру на время сушки.
 
-Одна понятная цена — ковры от 99 AED. На всё остальное — диваны, кресла, матрасы, шторы, окна и кондиционеры — считаем по фото: так вы сразу видите честную сумму без выезда «на осмотр».
+Одна понятная цена — ковры от 99 AED. На всё остальное — диваны, кресла, матрасы, шторы и кондиционеры — считаем по фото: так вы сразу видите честную сумму без выезда «на осмотр».
 
 Пришлите пару фото дивана, ковра или кондиционера в WhatsApp — быстро сориентируем по цене и подберём удобное время.`,
       en: `Barsha Heights (Tecom) is a dense, mixed-use pocket right in the middle of the city, where residential towers sit alongside offices near Media City and Internet City. Plenty of residents work nearby, so homes are lived-in and the fabrics and filters pick up city dust fast.
 
-The call we get most in Tecom is AC cleaning — split and central systems run almost year-round, and without servicing they start to smell and blow dust. Close behind come the floor-to-ceiling windows in the towers, sofa cleaning, and curtain washing.
+The call we get most in Tecom is AC cleaning — split and central systems run almost year-round, and without servicing they start to smell and blow dust. Close behind come sofa cleaning and curtain washing.
 
 We come straight to your tower, park ourselves and sort out the security pass — there's nothing for you to pay toward parking. Carpets and curtains we can take away and return clean, so your flat isn't tied up while they dry.
 
-One clear price to anchor on — carpets from AED 99. Everything else — sofas, chairs, mattresses, curtains, windows and AC units — is quoted from a photo, so you see an honest figure before anyone drives over.
+One clear price to anchor on — carpets from AED 99. Everything else — sofas, chairs, mattresses, curtains and AC units — is quoted from a photo, so you see an honest figure before anyone drives over.
 
 Send a couple of photos of your sofa, carpet or AC unit on WhatsApp and we'll give you a quick price and a convenient slot.`,
       ar: `برشا هايتس (تيكوم) منطقة مختلطة ومكتظة في قلب المدينة، حيث تجاور الأبراج السكنية المكاتب قرب مدينة الإعلام ومدينة الإنترنت. كثير من السكان يعملون في الجوار، لذا الشقق مأهولة والأقمشة والفلاتر تلتقط غبار المدينة بسرعة.
 
-أكثر ما نُطلب له في تيكوم هو تنظيف المكيفات — أنظمة السبليت والمركزية تعمل طوال العام تقريبًا، وبدون صيانة تبدأ الروائح والغبار. يليه تنظيف النوافذ البانورامية في الأبراج، وتنظيف الأرائك، وغسيل الستائر.
+أكثر ما نُطلب له في تيكوم هو تنظيف المكيفات — أنظمة السبليت والمركزية تعمل طوال العام تقريبًا، وبدون صيانة تبدأ الروائح والغبار. يليه تنظيف الأرائك وغسيل الستائر.
 
 نأتي مباشرة إلى برجك، نركن سيارتنا بأنفسنا ونرتب تصريح الأمن — لا شيء عليك دفعه مقابل الموقف. السجاد والستائر يمكننا أخذها وإعادتها نظيفة حتى لا تبقى شقتك مشغولة أثناء التجفيف.
 
-سعر واضح واحد للمرجع — السجاد من 99 درهم. وكل ما عداه — الأرائك والكراسي والمراتب والستائر والنوافذ والمكيفات — نسعّره من الصورة، لترى مبلغًا صادقًا قبل أن يأتي أحد.
+سعر واضح واحد للمرجع — السجاد من 99 درهم. وكل ما عداه — الأرائك والكراسي والمراتب والستائر والمكيفات — نسعّره من الصورة، لترى مبلغًا صادقًا قبل أن يأتي أحد.
 
 أرسل صورتين لأريكتك أو سجادتك أو مكيفك عبر واتساب ونعطيك سعرًا سريعًا وموعدًا مناسبًا.`,
     },
@@ -110,36 +110,36 @@ Drop a photo of your sofa, rug or AC-fitted room on WhatsApp and we'll quote it 
       ar: 'تنظيف السجاد والأرائك في دبي مارينا | iCleaning',
     },
     description: {
-      ru: 'Химчистка диванов, ковров и штор, мойка окон и чистка кондиционеров в башнях Dubai Marina. Приезжаем в башню, парковку берём на себя. Ковры от 99 AED.',
-      en: 'Sofa, carpet and curtain cleaning, windows and AC service in Dubai Marina towers. We come to your tower and handle parking. Carpets from AED 99.',
-      ar: 'تنظيف الأرائك والسجاد والستائر، وتنظيف النوافذ والمكيفات في أبراج دبي مارينا. نأتي إلى برجك ونتكفل بالموقف. السجاد من 99 درهم.',
+      ru: 'Химчистка диванов, ковров и штор, чистка кондиционеров в башнях Dubai Marina. Приезжаем в башню, парковку берём на себя. Ковры от 99 AED.',
+      en: 'Sofa, carpet and curtain cleaning and AC service in Dubai Marina towers. We come to your tower and handle parking. Carpets from AED 99.',
+      ar: 'تنظيف الأرائك والسجاد والستائر وتنظيف المكيفات في أبراج دبي مارينا. نأتي إلى برجك ونتكفل بالموقف. السجاد من 99 درهم.',
     },
     content: {
       ru: `Dubai Marina — плотная набережная из высоток: Marina Gate, Marina Promenade, Marina Pinnacle и десятки других башен. Место оживлённое, а близость к морю и стройкам означает постоянный песок и пыль, которые оседают на диванах, коврах и в кондиционерах.
 
-Здесь чаще всего заказывают химчистку диванов и ковров, чистку сплит-кондиционеров, стирку штор и мойку панорамных окон — с внутренней стороны, чтобы вид на марину снова был чистым. Всё это мы делаем прямо в квартире.
+Здесь чаще всего заказывают химчистку диванов и ковров, чистку сплит-кондиционеров и стирку штор. Всё это мы делаем прямо в квартире.
 
 Мы знаем, как заезжать в марину: приезжаем к вашей башне, сами разбираемся с парковкой и пропуском на охране — доплат за это нет. Ковры и шторы при необходимости забираем, чистим и привозим обратно, чтобы не занимать квартиру во время сушки.
 
-Единственный фиксированный ориентир — ковры от 99 AED. Диваны, кресла, шторы, окна и кондиционеры оцениваем по фото: честная сумма сразу, без выезда ради осмотра.
+Единственный фиксированный ориентир — ковры от 99 AED. Диваны, кресла, шторы и кондиционеры оцениваем по фото: честная сумма сразу, без выезда ради осмотра.
 
 Пришлите фото дивана, ковра или кондиционера в WhatsApp — назовём цену и подберём время, удобное между работой и залом.`,
       en: `Dubai Marina is a tight waterfront wall of high-rises — Marina Gate, Marina Promenade, Marina Pinnacle and dozens more towers. It's a busy place, and being next to the water and ongoing construction means constant sand and dust settling into sofas, rugs and AC units.
 
-The most common jobs here are sofa and carpet cleaning, split-AC service, curtain washing, and cleaning the floor-to-ceiling windows from the inside so the marina view is crisp again. All of it we do right there in the apartment.
+The most common jobs here are sofa and carpet cleaning, split-AC service, and curtain washing. All of it we do right there in the apartment.
 
 We know how to get into the marina: we come to your tower, sort the parking and the security pass ourselves — no surcharge for any of that. Carpets and curtains we can take away, clean and return, so the flat isn't tied up while they dry.
 
-The one fixed anchor is carpets from AED 99. Sofas, chairs, curtains, windows and AC units are quoted from a photo — an honest figure up front, with no visit just to look.
+The one fixed anchor is carpets from AED 99. Sofas, chairs, curtains and AC units are quoted from a photo — an honest figure up front, with no visit just to look.
 
 Send a photo of your sofa, rug or AC unit on WhatsApp and we'll price it and find a slot that fits between work and the gym.`,
       ar: `دبي مارينا جدار ضيق من ناطحات السحاب على الواجهة البحرية — Marina Gate وMarina Promenade وMarina Pinnacle وعشرات الأبراج الأخرى. المكان مزدحم، والقرب من الماء وأعمال البناء يعني رملًا وغبارًا دائمين يستقران في الأرائك والسجاد والمكيفات.
 
-الأعمال الأكثر شيوعًا هنا هي تنظيف الأرائك والسجاد، وصيانة مكيفات السبليت، وغسيل الستائر، وتنظيف النوافذ البانورامية من الداخل ليعود منظر المارينا صافيًا. كل ذلك ننجزه داخل الشقة مباشرة.
+الأعمال الأكثر شيوعًا هنا هي تنظيف الأرائك والسجاد، وصيانة مكيفات السبليت، وغسيل الستائر. كل ذلك ننجزه داخل الشقة مباشرة.
 
 نعرف كيف ندخل المارينا: نأتي إلى برجك، ونرتب الموقف وتصريح الأمن بأنفسنا — دون أي رسوم إضافية. السجاد والستائر يمكننا أخذها وتنظيفها وإعادتها حتى لا تبقى الشقة مشغولة أثناء التجفيف.
 
-المرجع الثابت الوحيد هو السجاد من 99 درهم. الأرائك والكراسي والستائر والنوافذ والمكيفات تُسعّر من الصورة — مبلغ صادق مقدمًا، دون زيارة للمعاينة فقط.
+المرجع الثابت الوحيد هو السجاد من 99 درهم. الأرائك والكراسي والستائر والمكيفات تُسعّر من الصورة — مبلغ صادق مقدمًا، دون زيارة للمعاينة فقط.
 
 أرسل صورة لأريكتك أو سجادتك أو مكيفك عبر واتساب، ونحدد السعر ونجد موعدًا يناسبك بين العمل والنادي.`,
     },

@@ -287,13 +287,13 @@ Price – from 50 AED per curtain (standard size). Ironing and steam treatment �
     content: {
       ru: `Жалюзи – удобно, но мыть каждую ламель вручную – это долго и муторно. Мы используем ультразвуковую ванну: жалюзи разбираются, помещаются в специальный раствор, и ультразвук выбивает грязь из микрощелей. Метод подходит для пластика, алюминия, ткани. Деревянные жалюзи чистим только сухой мягкой щёткой и пылесосом – вода для них враг.
 
-Цены: чистка вертикальных жалюзи – от 150 AED, горизонтальных – от 100 AED, рулонных – от 80 AED. Скидка 15% при заказе чистки всех окон в квартире.`,
+Цены: чистка вертикальных жалюзи – от 150 AED, горизонтальных – от 100 AED, рулонных – от 80 AED.`,
       en: `Blinds are convenient, but washing each slat by hand is tedious and time-consuming. We use an ultrasonic bath: blinds are disassembled, placed in a special solution, and ultrasound knocks dirt out of micro-crevices. This method works for plastic, aluminum, and fabric. Wooden blinds are cleaned only with a soft dry brush and vacuum – water is their enemy.
 
-Prices: vertical blind cleaning – from 150 AED, horizontal – from 100 AED, roller – from 80 AED. 15% discount when ordering cleaning for all windows in the apartment.`,
+Prices: vertical blind cleaning – from 150 AED, horizontal – from 100 AED, roller – from 80 AED.`,
       ar: `الستائر المعدنية مريحة، لكن غسل كل شريحة يدويًا أمر طويل وممل. نستخدم حمام الموجات فوق الصوتية: يتم تفكيك الستائر، ووضعها في محلول خاص، وتقوم الموجات فوق الصوتية بإخراج الأوساخ من الشقوق الدقيقة. هذه الطريقة مناسبة للبلاستيك والألومنيوم والقماش. الستائر الخشبية نقوم بتنظيفها فقط بفرشاة ناعمة جافة ومكنسة كهربائية – الماء عدوها.
 
-الأسعار: تنظيف الستائر العمودية – من 150 درهم، الأفقية – من 100 درهم، الرول – من 80 درهم. خصم 15% عند طلب تنظيف جميع نوافذ الشقة.`,
+الأسعار: تنظيف الستائر العمودية – من 150 درهم، الأفقية – من 100 درهم، الرول – من 80 درهم.`,
     },
     image: '/images/service/shtory-page.webp',
   },
@@ -391,9 +391,9 @@ Prices: vertical blind cleaning – from 150 AED, horizontal – from 100 AED, r
       ar: 'تنظيف عميق في دبي – خدمة تنظيف متكاملة',
     },
     description: {
-      ru: 'Профессиональная генеральная уборка в Дубае. Мытье окон, чистка кухни, дезинфекция, уборка после ремонта. Цены от 299 AED.',
-      en: 'Professional deep cleaning in Dubai. Window washing, kitchen cleaning, disinfection, post-renovation cleaning. Prices from 299 AED.',
-      ar: 'تنظيف عميق احترافي في دبي. غسيل النوافذ، تنظيف المطبخ، التطهير، التنظيف بعد التجديد. الأسعار من 299 درهم.',
+      ru: 'Профессиональная генеральная уборка в Дубае. Чистка кухни, дезинфекция, уборка после ремонта. Цены от 299 AED.',
+      en: 'Professional deep cleaning in Dubai. Kitchen cleaning, disinfection, post-renovation cleaning. Prices from 299 AED.',
+      ar: 'تنظيف عميق احترافي في دبي. تنظيف المطبخ، التطهير، التنظيف بعد التجديد. الأسعار من 299 درهم.',
     },
     content: {
       ru: `Генеральная уборка – это когда чисто везде, включая плинтусы, решётки вентиляции, верхушки шкафов и под кроватью. Заказывают её обычно перед переездом, после ремонта, перед приездом гостей или раз в сезон.
@@ -511,9 +511,9 @@ We guarantee results – if you find a dirty spot after cleaning, we redo it for
       ar: 'تنظيف مكاتب احترافي – يوميًا أو وفق جدول',
     },
     description: {
-      ru: 'Ежедневная и генеральная уборка офисов в Дубае. Уборка после рабочего дня, чистка ковров, мытьё окон. Договор и отчётность.',
-      en: 'Daily and deep office cleaning in Dubai. After-hours cleaning, carpet cleaning, window washing. Contract and reporting.',
-      ar: 'تنظيف يومي وعميق للمكاتب في دبي. تنظيف بعد ساعات العمل، تنظيف السجاد، غسيل النوافذ. عقد وتقارير.',
+      ru: 'Ежедневная и генеральная уборка офисов в Дубае. Уборка после рабочего дня, чистка ковров. Договор и отчётность.',
+      en: 'Daily and deep office cleaning in Dubai. After-hours cleaning, carpet cleaning. Contract and reporting.',
+      ar: 'تنظيف يومي وعميق للمكاتب في دبي. تنظيف بعد ساعات العمل، تنظيف السجاد. عقد وتقارير.',
     },
     content: {
       ru: `Чистота в офисе влияет на имидж компании и здоровье сотрудников. Мы работаем в нерабочее время – вечером или в выходные. Убираем open-space, кабинеты руководителей, переговорные, кухню и санузлы. Чистим корпоративные ковры, кожаную мебель, стеклянные перегородки. Есть договор, закрывающие документы, страхование. Цена – от 30 AED/час за одного уборщика. Генеральная уборка – от 500 AED.`,

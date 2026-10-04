@@ -7,15 +7,15 @@ const baseUrl = 'https://icleaning.ae';
 const metaByLang: Record<Locale, { title: string; description: string }> = {
   ru: {
     title: 'Цены на химчистку и уборку в Дубае | iCleaning',
-    description: 'Актуальные цены на химчистку диванов, ковров, штор, генеральную уборку, мойку окон и чистку кондиционеров в Дубае. Прозрачные тарифы, без скрытых доплат.',
+    description: 'Актуальные цены на химчистку диванов, ковров, штор, генеральную уборку и чистку кондиционеров в Дубае. Прозрачные тарифы, без скрытых доплат.',
   },
   en: {
     title: 'Cleaning Prices in Dubai | iCleaning',
-    description: 'Current prices for sofa, carpet, curtain cleaning, deep cleaning, window washing, and AC maintenance in Dubai. Transparent pricing, no hidden fees.',
+    description: 'Current prices for sofa, carpet, curtain cleaning, deep cleaning and AC maintenance in Dubai. Transparent pricing, no hidden fees.',
   },
   ar: {
     title: 'أسعار التنظيف في دبي | iCleaning',
-    description: 'أسعار حالية لتنظيف الأرائك والسجاد والستائر والتنظيف العميق وغسيل النوافذ وصيانة المكيفات في دبي. أسعار شفافة بدون رسوم مخفية.',
+    description: 'أسعار حالية لتنظيف الأرائك والسجاد والستائر والتنظيف العميق وصيانة المكيفات في دبي. أسعار شفافة بدون رسوم مخفية.',
   },
 };
 

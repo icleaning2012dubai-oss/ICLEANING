@@ -3,7 +3,7 @@ import type { LocationPage } from './types';
 // Content covers ONLY the 9 specialty services: carpet & rug cleaning,
 // premium rug cleaning, wall-to-wall carpet (ковролин) cleaning, sofa cleaning,
 // upholstery cleaning, mattress cleaning, curtain & blind cleaning,
-// window cleaning, central/split AC cleaning. No general/deep/home cleaning.
+// central/split AC cleaning. No general/deep/home cleaning.
 
 export const batch5: Record<string, LocationPage> = {
   'nad-al-sheba': {
@@ -67,9 +67,9 @@ Carpets start from AED 99. Sofas, mattresses, curtains and AC are priced by phot
       ar: 'تنظيف السجاد والأرائك في صبحا هارتلاند | iCleaning',
     },
     description: {
-      ru: 'Химчистка премиум-ковров, больших диванов, стирка штор, чистка окон и кондиционеров в Sobha Hartland. Приедем в башню или на виллу. Ковры от 99 AED.',
-      en: 'Premium rug, large sofa, curtain, window and AC cleaning in Sobha Hartland. We come to your tower or villa. Carpets from AED 99, other items priced by photo.',
-      ar: 'تنظيف السجاد الفاخر والأرائك الكبيرة والستائر والنوافذ والمكيفات في صبحا هارتلاند. نأتي إلى برجك أو فيلتك. السجاد من 99 درهم.',
+      ru: 'Химчистка премиум-ковров, больших диванов, стирка штор и чистка кондиционеров в Sobha Hartland. Приедем в башню или на виллу. Ковры от 99 AED.',
+      en: 'Premium rug, large sofa, curtain and AC cleaning in Sobha Hartland. We come to your tower or villa. Carpets from AED 99, other items priced by photo.',
+      ar: 'تنظيف السجاد الفاخر والأرائك الكبيرة والستائر والمكيفات في صبحا هارتلاند. نأتي إلى برجك أو فيلتك. السجاد من 99 درهم.',
     },
     content: {
       ru: `Sobha Hartland в MBR City – зелёный премиальный район у воды, где соседствуют виллы и апартаментные башни. Здесь ценят дорогой текстиль: шёлковые и шерстяные ковры, большие диваны, длинные шторы во всю стену.
@@ -78,27 +78,27 @@ Carpets start from AED 99. Sofas, mattresses, curtains and AC are priced by phot
 
 Приезжаем в башни и на виллы Hartland, чистим большие угловые диваны и кресла из ткани и кожи. Снимаем и стираем шторы, а затем вешаем обратно – удобно, когда потолки высокие.
 
-Дополнительно моем панорамные окна и чистим сплит-кондиционеры, чтобы в квартире у канала было свежо. Парковку решаем сами.
+Дополнительно чистим сплит-кондиционеры, чтобы в квартире у канала было свежо. Парковку решаем сами.
 
-Ковры – от 99 AED. Премиум-ковры, диваны, шторы, окна и кондиционеры считаем по фото. Пришлите фотографии в WhatsApp – подготовим точную смету.`,
+Ковры – от 99 AED. Премиум-ковры, диваны, шторы и кондиционеры считаем по фото. Пришлите фотографии в WhatsApp – подготовим точную смету.`,
       en: `Sobha Hartland in MBR City is an upscale, green waterfront community where villas sit alongside apartment towers. Residents here invest in fine textiles: silk and wool rugs, large sofas, and full-height curtains.
 
 We handle premium rugs with care – silk, wool, Persian and handmade. These we usually collect for gentle cleaning at our workshop and return to you. Standard and oversized carpets can also be cleaned on-site.
 
 We come to Hartland towers and villas to clean large corner sofas and armchairs in fabric and leather. We take curtains down, clean them and hang them back – handy when the ceilings are high.
 
-We also clean panoramic windows and service split AC units to keep your waterfront home fresh. We sort out parking ourselves.
+We also service split AC units to keep your waterfront home fresh. We sort out parking ourselves.
 
-Carpets start from AED 99. Premium rugs, sofas, curtains, windows and AC are quoted by photo. Send pictures on WhatsApp and we'll prepare an exact estimate.`,
+Carpets start from AED 99. Premium rugs, sofas, curtains and AC are quoted by photo. Send pictures on WhatsApp and we'll prepare an exact estimate.`,
       ar: `صبحا هارتلاند في مدينة محمد بن راشد مجتمع فاخر أخضر على الواجهة المائية، حيث تجاور الفلل الأبراج السكنية. يقدّر السكان هنا المنسوجات الفاخرة: السجاد الحريري والصوفي، والأرائك الكبيرة، والستائر الممتدة على كامل الجدار.
 
 نتعامل مع السجاد الفاخر بعناية – حرير، صوف، فارسي، ومصنوع يدويًا. غالبًا ما نأخذ هذا السجاد إلى الورشة لتنظيف لطيف ونعيده إليك. أما السجاد العادي والكبير فيمكن تنظيفه في المكان أيضًا.
 
 نأتي إلى أبراج وفلل هارتلاند لتنظيف الأرائك الزاوية الكبيرة والكراسي القماشية والجلدية. ننزل الستائر وننظفها ونعلقها مرة أخرى – مفيد عندما تكون الأسقف عالية.
 
-كما ننظف النوافذ البانورامية ونخدم المكيفات المنفصلة لإبقاء منزلك على القناة منعشًا. نتولى أمر الموقف بأنفسنا.
+كما نخدم المكيفات المنفصلة لإبقاء منزلك على القناة منعشًا. نتولى أمر الموقف بأنفسنا.
 
-السجاد من 99 درهم. السجاد الفاخر والأرائك والستائر والنوافذ والمكيفات بالسعر حسب الصورة. أرسل الصور عبر واتساب وسنجهز تقديرًا دقيقًا.`,
+السجاد من 99 درهم. السجاد الفاخر والأرائك والستائر والمكيفات بالسعر حسب الصورة. أرسل الصور عبر واتساب وسنجهز تقديرًا دقيقًا.`,
     },
   },
 
@@ -163,38 +163,38 @@ Carpets start from AED 99. Sofas, mattresses, curtains and AC are priced by phot
       ar: 'تنظيف السجاد والأرائك في الجداف | iCleaning',
     },
     description: {
-      ru: 'Чистка сплит-кондиционеров, окон, диванов, ковров и штор в Al Jaddaf. Приедем в вашу башню у Крика. Ковры от 99 AED, остальное по фото в WhatsApp.',
-      en: 'Split AC, window, sofa, carpet and curtain cleaning in Al Jaddaf. We come to your tower by the Creek. Carpets from AED 99, other items priced by photo on WhatsApp.',
-      ar: 'تنظيف المكيفات والنوافذ والأرائك والسجاد والستائر في الجداف. نأتي إلى برجك عند الخور. السجاد من 99 درهم، والباقي بالصورة عبر واتساب.',
+      ru: 'Чистка сплит-кондиционеров, диванов, ковров и штор в Al Jaddaf. Приедем в вашу башню у Крика. Ковры от 99 AED, остальное по фото в WhatsApp.',
+      en: 'Split AC, sofa, carpet and curtain cleaning in Al Jaddaf. We come to your tower by the Creek. Carpets from AED 99, other items priced by photo on WhatsApp.',
+      ar: 'تنظيف المكيفات والأرائك والسجاد والستائر في الجداف. نأتي إلى برجك عند الخور. السجاد من 99 درهم، والباقي بالصورة عبر واتساب.',
     },
     content: {
       ru: `Al Jaddaf – центральный район у Дубайского Крика, рядом с Healthcare City. Здесь много апартаментных башен и отелей, живут занятые люди, которым важно быстро привести в порядок квартиру без лишних хлопот.
 
-Чаще всего в Al Jaddaf заказывают чистку сплит-кондиционеров – в высотках они работают почти круглый год и набирают пыль. Моем и панорамные окна, чтобы вид на Крик оставался чистым.
+Чаще всего в Al Jaddaf заказывают чистку сплит-кондиционеров – в высотках они работают почти круглый год и набирают пыль.
 
 Приезжаем прямо в вашу башню: чистим тканевые и кожаные диваны и кресла на месте. Ковры чистим у вас или забираем в цех, если так удобнее. Шторы можем снять, почистить и повесить обратно.
 
 Работаем аккуратно, паркуемся по правилам башни и решаем вопрос с охраной и грузовым лифтом сами.
 
-Ковры – от 99 AED. Кондиционеры, окна, диваны и шторы считаем по фото. Пришлите фотографии в WhatsApp – ответим с точной ценой в тот же день.`,
+Ковры – от 99 AED. Кондиционеры, диваны и шторы считаем по фото. Пришлите фотографии в WhatsApp – ответим с точной ценой в тот же день.`,
       en: `Al Jaddaf is a central area by the Creek, next to Healthcare City. It's full of apartment towers and hotels, home to busy people who want their place sorted quickly and without fuss.
 
-The most common request in Al Jaddaf is split AC cleaning – in high-rises the units run almost year-round and collect dust. We also clean panoramic windows so the Creek view stays clear.
+The most common request in Al Jaddaf is split AC cleaning – in high-rises the units run almost year-round and collect dust.
 
 We come straight to your tower: we clean fabric and leather sofas and armchairs on-site. Carpets are cleaned in your home or collected for our workshop if that's easier. Curtains we can take down, clean and hang back.
 
 We work carefully, park by the tower's rules and sort out security and the service lift ourselves.
 
-Carpets start from AED 99. AC, windows, sofas and curtains are priced by photo. Send pictures on WhatsApp and we'll reply with an exact price the same day.`,
+Carpets start from AED 99. AC, sofas and curtains are priced by photo. Send pictures on WhatsApp and we'll reply with an exact price the same day.`,
       ar: `الجداف منطقة مركزية عند خور دبي، بجوار مدينة دبي الطبية. مليئة بالأبراج السكنية والفنادق، ويسكنها أشخاص مشغولون يريدون ترتيب منزلهم بسرعة ودون عناء.
 
-الطلب الأكثر شيوعًا في الجداف هو تنظيف المكيفات المنفصلة – في الأبراج العالية تعمل الوحدات طوال العام تقريبًا وتجمع الغبار. كما ننظف النوافذ البانورامية ليبقى منظر الخور صافيًا.
+الطلب الأكثر شيوعًا في الجداف هو تنظيف المكيفات المنفصلة – في الأبراج العالية تعمل الوحدات طوال العام تقريبًا وتجمع الغبار.
 
 نأتي مباشرة إلى برجك: ننظف الأرائك والكراسي القماشية والجلدية في المكان. ننظف السجاد في منزلك أو نأخذه إلى الورشة إن كان ذلك أسهل. الستائر يمكننا إنزالها وتنظيفها وتعليقها مرة أخرى.
 
 نعمل بعناية، ونركن وفق قواعد البرج، ونتولى أمر الأمن ومصعد الخدمة بأنفسنا.
 
-السجاد من 99 درهم. المكيفات والنوافذ والأرائك والستائر بالسعر حسب الصورة. أرسل الصور عبر واتساب وسنرد بسعر دقيق في نفس اليوم.`,
+السجاد من 99 درهم. المكيفات والأرائك والستائر بالسعر حسب الصورة. أرسل الصور عبر واتساب وسنرد بسعر دقيق في نفس اليوم.`,
     },
   },
 };

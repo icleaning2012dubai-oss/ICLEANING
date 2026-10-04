@@ -3,7 +3,7 @@ import type { LocationPage } from './types';
 // Content covers ONLY the 9 specialty services: carpet & rug cleaning,
 // premium rug cleaning, wall-to-wall carpet (ковролин) cleaning, sofa cleaning,
 // upholstery cleaning, mattress cleaning, curtain & blind cleaning,
-// window cleaning, central/split AC cleaning. No general/deep/home cleaning.
+// central/split AC cleaning. No general/deep/home cleaning.
 
 export const batch3: Record<string, LocationPage> = {
   'business-bay': {
@@ -19,30 +19,30 @@ export const batch3: Record<string, LocationPage> = {
       ar: 'تنظيف السجاد والأرائك في الخليج التجاري | iCleaning',
     },
     description: {
-      ru: 'Химчистка диванов, ковров, штор, чистка сплит-кондиционеров и окон в Business Bay. Приедем в вашу башню, парковку берём на себя. Ковры от 99 AED.',
-      en: 'Sofa, carpet and curtain cleaning, split AC and window service in Business Bay. We come to your tower. Carpets from AED 99, other items by photo.',
-      ar: 'تنظيف الأرائك والسجاد والستائر والمكيفات والنوافذ في الخليج التجاري. نأتي إلى برجك. السجاد من 99 درهم، والباقي بالصورة عبر واتساب.',
+      ru: 'Химчистка диванов, ковров, штор, чистка сплит-кондиционеров в Business Bay. Приедем в вашу башню, парковку берём на себя. Ковры от 99 AED.',
+      en: 'Sofa, carpet and curtain cleaning plus split AC service in Business Bay. We come to your tower. Carpets from AED 99, other items by photo.',
+      ar: 'تنظيف الأرائك والسجاد والستائر والمكيفات في الخليج التجاري. نأتي إلى برجك. السجاد من 99 درهم، والباقي بالصورة عبر واتساب.',
     },
     content: {
       ru: `Business Bay — деловой центр вдоль канала рядом с Downtown: башни с апартаментами, офисные этажи, панорамные окна. Пыль с бульваров и стройки оседает на мягкой мебели и коврах быстро, а сплит-кондиционеры работают почти круглый год.
 
 Чаще всего в Business Bay нас зовут на химчистку диванов и кресел прямо в квартире, чистку ковров и чистку сплит-кондиционеров — снимаем крышку, промываем испаритель и фильтры, чтобы ушёл запах сырости. Работаем аккуратно в жилых башнях: знаем, где грузовой лифт, паркуемся по правилам и парковку оплачиваем сами.
 
-Ковры и шторы при желании забираем с собой: почистим в цехе и привезём обратно в удобное время — так удобнее, если ковёр большой или штор много. Панорамные окна моем изнутри, жалюзи чистим отдельно.
+Ковры и шторы при желании забираем с собой: почистим в цехе и привезём обратно в удобное время — так удобнее, если ковёр большой или штор много. Жалюзи чистим отдельно.
 
 Цена на ковры — от 99 AED. По диванам, матрасам, шторам и кондиционерам считаем по фото: пришлите фотографии в WhatsApp, укажите размер и материал — назовём точную цену и приедем в удобный день.`,
       en: `Business Bay is the canal-side business hub next to Downtown: apartment towers, office floors and floor-to-ceiling glass. Dust from the boulevards and nearby construction settles on upholstery and carpets fast, and split ACs run almost year-round.
 
 In Business Bay we are most often booked for sofa and armchair cleaning right in the apartment, carpet cleaning and split AC cleaning — we open the unit, flush the coil and filters so the damp smell goes away. We work carefully inside residential towers: we know the service lift, park by the rules and cover parking ourselves.
 
-Carpets and curtains can be picked up and returned: we clean them at our workshop and bring them back at a time that suits you — handy when a rug is large or there are many curtain panels. Panoramic windows are cleaned from the inside, blinds handled separately.
+Carpets and curtains can be picked up and returned: we clean them at our workshop and bring them back at a time that suits you — handy when a rug is large or there are many curtain panels. Blinds are handled separately.
 
 Carpet cleaning starts from AED 99. For sofas, mattresses, curtains and AC units we price by photo: send pictures on WhatsApp with the size and material, and we will confirm the exact price and a day to come.`,
       ar: `الخليج التجاري مركز أعمال على ضفاف القناة بجوار وسط المدينة: أبراج سكنية وطوابق مكاتب وواجهات زجاجية كاملة. يتراكم غبار الشوارع والبناء على المفروشات والسجاد بسرعة، وتعمل المكيفات المنفصلة طوال العام تقريبًا.
 
 في الخليج التجاري غالبًا ما نُطلب لتنظيف الأرائك والكراسي داخل الشقة، وتنظيف السجاد، وتنظيف المكيفات المنفصلة — نفتح الوحدة ونغسل الملف والفلاتر لإزالة رائحة الرطوبة. نعمل بعناية داخل الأبراج السكنية: نعرف المصعد الخدمي، ونركن حسب القواعد وندفع الموقف بأنفسنا.
 
-يمكننا أخذ السجاد والستائر معنا: ننظفها في الورشة ونعيدها في الوقت المناسب لكم — وهذا أسهل عندما تكون السجادة كبيرة أو الستائر كثيرة. ننظف النوافذ البانورامية من الداخل، والستائر المعدنية على حدة.
+يمكننا أخذ السجاد والستائر معنا: ننظفها في الورشة ونعيدها في الوقت المناسب لكم — وهذا أسهل عندما تكون السجادة كبيرة أو الستائر كثيرة. ننظف الستائر المعدنية على حدة.
 
 يبدأ تنظيف السجاد من 99 درهم. أما الأرائك والمراتب والستائر والمكيفات فنُسعّرها بالصورة: أرسلوا الصور عبر واتساب مع الحجم والخامة، وسنؤكد السعر الدقيق ويوم الزيارة.`,
     },
@@ -70,21 +70,21 @@ Carpet cleaning starts from AED 99. For sofas, mattresses, curtains and AC units
 
 Здесь мы чаще всего делаем химчистку диванов, чистку ковров и матрасов и чистку сплит-кондиционеров прямо в квартире. Работаем в высотных башнях: заранее оформляем пропуск и грузовой лифт с ресепшн, паркуемся по правилам, парковку оплачиваем сами.
 
-Шторы и ковры можем забрать и вернуть после чистки в цехе — удобно для длинных панорамных штор и больших ковров. Панорамные окна моем изнутри, жалюзи чистим отдельно.
+Шторы и ковры можем забрать и вернуть после чистки в цехе — удобно для длинных панорамных штор и больших ковров. Жалюзи чистим отдельно.
 
 Ковры — от 99 AED. Диваны, матрасы, шторы и кондиционеры считаем по фото: пришлите фотографии в WhatsApp с размером и материалом, назовём цену и приедем в удобное время.`,
       en: `Dubai Creek Harbour is a new waterfront community: fresh apartment towers, a marina and views toward Creek Tower. The buildings are new, but sea air and dust from the promenade still settle on sofas, carpets and mattresses, and split ACs pick up humidity quickly.
 
 Here we are most often booked for sofa cleaning, carpet and mattress cleaning and split AC cleaning right in the apartment. We work in the high-rise towers: we arrange the pass and service lift with reception in advance, park by the rules and cover parking ourselves.
 
-Curtains and carpets can be collected and returned after cleaning at our workshop — convenient for long panoramic curtains and large rugs. Floor-to-ceiling windows are cleaned from the inside, blinds handled separately.
+Curtains and carpets can be collected and returned after cleaning at our workshop — convenient for long panoramic curtains and large rugs. Blinds are handled separately.
 
 Carpets start from AED 99. Sofas, mattresses, curtains and AC units are priced by photo: send pictures on WhatsApp with the size and material, and we will quote and schedule a convenient time.`,
       ar: `ميناء الخور مجتمع جديد على الواجهة المائية: أبراج سكنية حديثة ومرسى وإطلالات على برج الخور. المباني جديدة، لكن هواء البحر وغبار الممشى يستقران على الأرائك والسجاد والمراتب، وتكتسب المكيفات المنفصلة الرطوبة بسرعة.
 
 هنا غالبًا ما نُطلب لتنظيف الأرائك، وتنظيف السجاد والمراتب، وتنظيف المكيفات المنفصلة داخل الشقة مباشرة. نعمل في الأبراج العالية: نرتب التصريح والمصعد الخدمي مع الاستقبال مسبقًا، ونركن حسب القواعد وندفع الموقف بأنفسنا.
 
-يمكننا أخذ الستائر والسجاد وإعادتها بعد التنظيف في الورشة — وهذا مريح للستائر البانورامية الطويلة والسجاد الكبير. ننظف النوافذ الكاملة من الداخل، والستائر المعدنية على حدة.
+يمكننا أخذ الستائر والسجاد وإعادتها بعد التنظيف في الورشة — وهذا مريح للستائر البانورامية الطويلة والسجاد الكبير. ننظف الستائر المعدنية على حدة.
 
 يبدأ السجاد من 99 درهم. أما الأرائك والمراتب والستائر والمكيفات فنُسعّرها بالصورة: أرسلوا الصور عبر واتساب مع الحجم والخامة، وسنحدد السعر والموعد المناسب.`,
     },
@@ -145,32 +145,32 @@ Carpets start from AED 99. For sofas, mattresses, curtains and AC units we price
       ar: 'تنظيف السجاد والأرائك في جي بي آر | iCleaning',
     },
     description: {
-      ru: 'Химчистка диванов, ковров, штор, чистка сплит-кондиционеров и окон в JBR. Приедем в башню на The Walk. Ковры от 99 AED, остальное по фото в WhatsApp.',
-      en: 'Sofa, carpet and curtain cleaning, split AC and window service in JBR. We come to your tower on The Walk. Carpets from AED 99, rest by photo.',
-      ar: 'تنظيف الأرائك والسجاد والستائر والمكيفات والنوافذ في جي بي آر. نأتي إلى برجك على الممشى. السجاد من 99 درهم، والباقي بالصورة.',
+      ru: 'Химчистка диванов, ковров, штор, чистка сплит-кондиционеров в JBR. Приедем в башню на The Walk. Ковры от 99 AED, остальное по фото в WhatsApp.',
+      en: 'Sofa, carpet and curtain cleaning plus split AC service in JBR. We come to your tower on The Walk. Carpets from AED 99, rest by photo.',
+      ar: 'تنظيف الأرائك والسجاد والستائر والمكيفات في جي بي آر. نأتي إلى برجك على الممشى. السجاد من 99 درهم، والباقي بالصورة.',
     },
     content: {
       ru: `JBR (Jumeirah Beach Residence) — пляжные башни вдоль The Walk: море, песок и постоянный поток людей. Соль и песок с пляжа быстро оседают на диванах и коврах, а солёный воздух тянется и в кондиционеры.
 
-Здесь чаще всего заказывают химчистку диванов, чистку ковров и чистку сплит-кондиционеров прямо в квартире, а ещё стирку штор и мойку окон — вид на море хочется держать чистым. Работаем в высотных башнях The Walk: оформляем пропуск и грузовой лифт заранее, паркуемся по правилам, парковку оплачиваем сами.
+Здесь чаще всего заказывают химчистку диванов, чистку ковров и чистку сплит-кондиционеров прямо в квартире, а ещё стирку штор — вид на море хочется держать чистым. Работаем в высотных башнях The Walk: оформляем пропуск и грузовой лифт заранее, паркуемся по правилам, парковку оплачиваем сами.
 
 Большие ковры и шторы можем забрать и вернуть после чистки в цехе — так проще, чем сушить их в квартире у моря. Диваны, кресла и кондиционеры чистим на месте.
 
-Ковры — от 99 AED. Диваны, шторы, окна и кондиционеры считаем по фото: пришлите фотографии в WhatsApp с размером и материалом, назовём цену и приедем в удобное время.`,
+Ковры — от 99 AED. Диваны, шторы и кондиционеры считаем по фото: пришлите фотографии в WhatsApp с размером и материалом, назовём цену и приедем в удобное время.`,
       en: `JBR (Jumeirah Beach Residence) is beachfront towers along The Walk: sea, sand and a constant flow of people. Salt and sand from the beach settle on sofas and carpets fast, and the salty air reaches the AC units too.
 
-Here people most often book sofa cleaning, carpet cleaning and split AC cleaning right in the apartment, plus curtain washing and window cleaning — a sea view is worth keeping clear. We work in the high-rise towers on The Walk: we arrange the pass and service lift in advance, park by the rules and cover parking ourselves.
+Here people most often book sofa cleaning, carpet cleaning and split AC cleaning right in the apartment, plus curtain washing — a sea view is worth keeping clear. We work in the high-rise towers on The Walk: we arrange the pass and service lift in advance, park by the rules and cover parking ourselves.
 
 Large carpets and curtains can be collected and returned after cleaning at our workshop — easier than drying them in a seaside apartment. Sofas, armchairs and AC units are cleaned on site.
 
-Carpets start from AED 99. Sofas, curtains, windows and AC units are priced by photo: send pictures on WhatsApp with the size and material, and we will quote and come at a convenient time.`,
+Carpets start from AED 99. Sofas, curtains and AC units are priced by photo: send pictures on WhatsApp with the size and material, and we will quote and come at a convenient time.`,
       ar: `جي بي آر (جميرا بيتش ريزيدنس) أبراج على الشاطئ بمحاذاة الممشى: بحر ورمال وتدفق دائم للناس. يستقر الملح والرمل من الشاطئ على الأرائك والسجاد بسرعة، ويصل الهواء المالح إلى المكيفات أيضًا.
 
-هنا غالبًا ما يُطلب تنظيف الأرائك وتنظيف السجاد وتنظيف المكيفات المنفصلة داخل الشقة مباشرة، إضافة إلى غسيل الستائر وتنظيف النوافذ — فإطلالة البحر تستحق أن تبقى صافية. نعمل في أبراج الممشى العالية: نرتب التصريح والمصعد الخدمي مسبقًا، ونركن حسب القواعد وندفع الموقف بأنفسنا.
+هنا غالبًا ما يُطلب تنظيف الأرائك وتنظيف السجاد وتنظيف المكيفات المنفصلة داخل الشقة مباشرة، إضافة إلى غسيل الستائر — فإطلالة البحر تستحق أن تبقى صافية. نعمل في أبراج الممشى العالية: نرتب التصريح والمصعد الخدمي مسبقًا، ونركن حسب القواعد وندفع الموقف بأنفسنا.
 
 يمكننا أخذ السجاد الكبير والستائر وإعادتها بعد تنظيفها في الورشة — وهذا أسهل من تجفيفها في شقة على البحر. أما الأرائك والكراسي والمكيفات فننظفها في الموقع.
 
-يبدأ السجاد من 99 درهم. أما الأرائك والستائر والنوافذ والمكيفات فنُسعّرها بالصورة: أرسلوا الصور عبر واتساب مع الحجم والخامة، وسنحدد السعر ونأتي في الوقت المناسب.`,
+يبدأ السجاد من 99 درهم. أما الأرائك والستائر والمكيفات فنُسعّرها بالصورة: أرسلوا الصور عبر واتساب مع الحجم والخامة، وسنحدد السعر ونأتي في الوقت المناسب.`,
     },
   },
 

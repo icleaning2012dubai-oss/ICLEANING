@@ -84,7 +84,7 @@ const categoryData: Record<string, {
     process: [
       { title: { ru: 'Оценка', en: 'Assessment', ar: 'التقييم' }, desc: { ru: 'Осматриваем помещение, составляем план', en: 'Inspect premises, create a plan', ar: 'نفحص المبنى، نضع خطة' } },
       { title: { ru: 'Кухня и ванная', en: 'Kitchen & Bathroom', ar: 'المطبخ والحمام' }, desc: { ru: 'Глубокая чистка самых сложных зон', en: 'Deep cleaning of the toughest areas', ar: 'تنظيف عميق لأصعب المناطق' } },
-      { title: { ru: 'Комнаты и окна', en: 'Rooms & Windows', ar: 'الغرف والنوافذ' }, desc: { ru: 'Пыль, полы, плинтусы, окна изнутри', en: 'Dust, floors, baseboards, interior windows', ar: 'الغبار، الأرضيات، اللوح، النوافذ من الداخل' } },
+      { title: { ru: 'Комнаты', en: 'Rooms', ar: 'الغرف' }, desc: { ru: 'Пыль, полы, плинтусы, поверхности', en: 'Dust, floors, baseboards, surfaces', ar: 'الغبار، الأرضيات، الألواح، الأسطح' } },
       { title: { ru: 'Финальная проверка', en: 'Final Inspection', ar: 'الفحص النهائي' }, desc: { ru: 'Вместе проверяем результат по чек-листу', en: 'Together we check results against checklist', ar: 'معًا نتحقق من النتائج مقابل قائمة الفحص' } },
     ],
     faq: [
