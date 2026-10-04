@@ -91,9 +91,12 @@ const nextConfig: NextConfig = {
       { source: '/:lang(ru|ar)/services/ac-cleaning-dubai', destination: '/:lang/central-ac-cleaning', statusCode: 301 },
 
       // Старые slug'и → сразу на актуальные коммерческие лендинги
-      { source: '/services/window-cleaning', destination: '/window-cleaning', statusCode: 301 },
-      { source: '/en/services/window-cleaning', destination: '/window-cleaning', statusCode: 301 },
-      { source: '/:lang(ru|ar)/services/window-cleaning', destination: '/:lang/window-cleaning', statusCode: 301 },
+      // window-cleaning service discontinued → home
+      { source: '/window-cleaning', destination: '/', statusCode: 301 },
+      { source: '/en/window-cleaning', destination: '/', statusCode: 301 },
+      { source: '/:lang(ru|ar)/window-cleaning', destination: '/:lang', statusCode: 301 },
+      { source: '/services/window-cleaning', destination: '/', statusCode: 301 },
+      { source: '/:lang(ru|ar)/services/window-cleaning', destination: '/:lang', statusCode: 301 },
       { source: '/services/carpet-cleaning', destination: '/carpet-cleaning', statusCode: 301 },
       { source: '/services/sofa-mattresses', destination: '/sofa-cleaning', statusCode: 301 },
       { source: '/services/curtains-blinds', destination: '/curtain-cleaning', statusCode: 301 },

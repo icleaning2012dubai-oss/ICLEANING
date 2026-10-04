@@ -18,7 +18,6 @@ const SERVICE_OPTIONS: { value: string; label: { ru: string; en: string; ar: str
   { value: 'Upholstery Cleaning', label: { ru: 'Мягкая мебель', en: 'Upholstery Cleaning', ar: 'تنظيف المفروشات' } },
   { value: 'Mattress Cleaning', label: { ru: 'Чистка матрасов', en: 'Mattress Cleaning', ar: 'تنظيف المراتب' } },
   { value: 'Curtain & Blinds Cleaning', label: { ru: 'Шторы и жалюзи', en: 'Curtains & Blinds', ar: 'الستائر والمصاريع' } },
-  { value: 'Window Cleaning', label: { ru: 'Мойка окон', en: 'Window Cleaning', ar: 'تنظيف النوافذ' } },
   { value: 'Central AC Cleaning', label: { ru: 'Чистка кондиционеров', en: 'Central AC Cleaning', ar: 'تنظيف المكيفات' } },
   { value: 'Other', label: { ru: 'Другое', en: 'Other', ar: 'أخرى' } },
 ];

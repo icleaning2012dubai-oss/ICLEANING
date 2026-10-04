@@ -23,7 +23,6 @@ const COMMERCIAL_SLUGS = new Set([
   'upholstery-cleaning',
   'mattress-cleaning',
   'curtain-cleaning',
-  'window-cleaning',
   'central-ac-cleaning',
 ]);
 

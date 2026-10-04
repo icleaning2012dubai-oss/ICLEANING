@@ -58,12 +58,6 @@ const menuServices: {
     icon: <svg viewBox="0 0 24 24" {...stroke}><path d="M3 4h18M5 4v16c1.5-1 3-1 4.5 0V4M14.5 4v16c1.5-1 3-1 4.5 0V4" /></svg>,
   },
   {
-    slug: 'window-cleaning',
-    name: { ru: 'Мойка окон', en: 'Windows cleaning', ar: 'تنظيف النوافذ' },
-    desc: { ru: 'Внутренняя мойка окон', en: 'Villa window & glass cleaning', ar: 'تنظيف النوافذ الداخلية' },
-    icon: <svg viewBox="0 0 24 24" {...stroke}><rect x="4" y="3" width="16" height="18" rx="1" /><path d="M12 3v18M4 12h16" /></svg>,
-  },
-  {
     slug: 'central-ac-cleaning',
     name: { ru: 'Чистка кондиционеров', en: 'AC cleaning', ar: 'تنظيف التكييف' },
     desc: { ru: 'Центральные и канальные системы', en: 'AC units and split systems', ar: 'الأنظمة المركزية والمجاري' },

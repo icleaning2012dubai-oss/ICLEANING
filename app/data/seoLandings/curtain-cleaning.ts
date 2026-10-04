@@ -368,15 +368,6 @@ export const curtainCleaning: SeoLanding = {
 
   related: [
     {
-      slug: 'window-cleaning',
-      title: { ru: 'Мойка окон', en: 'Internal Window Cleaning', ar: 'تنظيف النوافذ الداخلية' },
-      text: {
-        ru: 'Логичная пара после чистки штор и жалюзи.',
-        en: 'Useful because curtains and windows are cleaned around the same room area.',
-        ar: 'مفيد لأن الستائر والنوافذ تُنظف في المنطقة نفسها من الغرفة.',
-      },
-    },
-    {
       slug: 'upholstery-cleaning',
       title: { ru: 'Химчистка мягкой мебели', en: 'Upholstery & Soft Furniture Cleaning', ar: 'تنظيف المفروشات والأثاث الناعم' },
       text: {

@@ -523,32 +523,6 @@ We guarantee results – if you find a dirty spot after cleaning, we redo it for
     image: '/images/cleaning/deep-cleaning.webp',
   },
 
-  'window-cleaning': {
-    slug: 'window-cleaning',
-    parentService: 'deep-cleaning-dubai',
-    h1: {
-      ru: 'Мойка окон в Дубае – от квартиры до небоскрёба',
-      en: 'Window Cleaning in Dubai – From Apartments to Skyscrapers',
-      ar: 'تنظيف النوافذ في دبي – من الشقق إلى ناطحات السحاب',
-    },
-    title: {
-      ru: 'Чистка окон на высоте – профессиональное оборудование',
-      en: 'High-Rise Window Cleaning – Professional Equipment',
-      ar: 'تنظيف النوافذ على ارتفاعات – معدات احترافية',
-    },
-    description: {
-      ru: 'Мойка окон в квартирах, виллах, офисах и небоскребах Дубая. Используем альпинистское снаряжение и телескопические штанги.',
-      en: 'Window cleaning in apartments, villas, offices, and skyscrapers in Dubai. We use climbing equipment and telescopic poles.',
-      ar: 'تنظيف النوافذ في الشقق والفلل والمكاتب وناطحات السحاب في دبي. نستخدم معدات التسلق والعصي التلسكوبية.',
-    },
-    content: {
-      ru: `В Дубае много панорамных окон, и мыть их самостоятельно не только трудно, но и опасно. Наши мастера имеют допуск к высотным работам. Моем окна снаружи с помощью телескопических штанг до 15 метров или с альпинистским снаряжением – если выше. Используем деминерализованную воду – после неё не остаётся разводов. Цена: от 15 AED за окно (стандартное) до 150 AED за сложное панорамное. При заказе мойки всех окон в квартире – фиксированная стоимость 299 AED.`,
-      en: `Dubai has many panoramic windows, and cleaning them yourself is not only difficult but dangerous. Our specialists are certified for high-altitude work. We wash windows from the outside using telescopic poles up to 15 meters or climbing equipment for higher floors. We use demineralized water – it leaves no streaks. Price: from 15 AED per window (standard) to 150 AED for complex panoramic. When ordering all windows in the apartment – fixed price 299 AED.`,
-      ar: `دبي بها العديد من النوافذ البانورامية، وتنظيفها بنفسك ليس صعبًا فحسب بل خطيرًا أيضًا. متخصصونا معتمدون للعمل على ارتفاعات. نغسل النوافذ من الخارج باستخدام عصي تلسكوبية حتى 15 مترًا أو معدات التسلق للطوابق العليا. نستخدم ماء منزوع المعادن – لا يترك خطوطًا. السعر: من 15 درهم للنافذة (القياسية) إلى 150 درهم للنوافذ البانورامية المعقدة. عند طلب جميع نوافذ الشقة – سعر ثابت 299 درهم.`,
-    },
-    image: '/images/cleaning/deep-cleaning.webp',
-  },
-
   'disinfection-services': {
     slug: 'disinfection-services',
     parentService: 'deep-cleaning-dubai',

@@ -42,11 +42,6 @@ export const mainServices: {
     blurb: { ru: 'Шторы и жалюзи: снятие и навеска.', en: 'Curtains and blinds, removal & rehang.', ar: 'ستائر وبلايز، فك وإعادة تركيب.' },
   },
   {
-    slug: 'window-cleaning',
-    name: { ru: 'Мойка окон', en: 'Window Cleaning', ar: 'تنظيف النوافذ' },
-    blurb: { ru: 'Внутренняя мойка окон.', en: 'Internal window cleaning.', ar: 'تنظيف النوافذ من الداخل.' },
-  },
-  {
     slug: 'central-ac-cleaning',
     name: { ru: 'Чистка кондиционеров', en: 'Central AC Cleaning', ar: 'تنظيف المكيفات المركزية' },
     blurb: { ru: 'Центральные и канальные системы.', en: 'Central & ducted AC systems.', ar: 'أنظمة التكييف المركزية والمخفية عبر القنوات.' },

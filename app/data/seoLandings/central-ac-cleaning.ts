@@ -386,14 +386,5 @@ export const centralAcCleaning: SeoLanding = {
         ar: 'مفيد عندما يؤثر تراكم الغبار على الستائر والأسطح الداخلية.',
       },
     },
-    {
-      slug: 'window-cleaning',
-      title: { ru: 'Мойка окон', en: 'Internal Window Cleaning', ar: 'تنظيف النوافذ الداخلية' },
-      text: {
-        ru: 'Для общего освежения квартиры, виллы или офиса.',
-        en: 'Useful for broader apartment or villa refresh requests.',
-        ar: 'مفيد لطلبات تجديد الشقة أو الفيلا بشكل أوسع.',
-      },
-    },
   ],
 };

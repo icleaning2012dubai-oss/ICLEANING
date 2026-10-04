@@ -53,11 +53,6 @@ export const serviceGallery: Record<string, string[]> = {
     '/images/ac/promyshlena.webp',
     '/images/service/konder.webp',
   ],
-  // Only okna.webp is a real window photo in the library — the rest were floors/surfaces.
-  // Waiting on client window-work photos (add here like kovrolin/matras).
-  'window-cleaning': [
-    '/images/cleaning/okna.webp',
-  ],
 };
 
 export function getServiceGallery(slug: string): string[] {

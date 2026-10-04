@@ -7,9 +7,8 @@ import { upholsteryCleaning } from './upholstery-cleaning';
 import { curtainCleaning } from './curtain-cleaning';
 import { mattressCleaning } from './mattress-cleaning';
 import { centralAcCleaning } from './central-ac-cleaning';
-import { windowCleaning } from './window-cleaning';
 
-// Registry of the 9 approved SEO landing pages from the handoff.
+// Registry of the approved SEO landing pages from the handoff.
 const all: SeoLanding[] = [
   carpetCleaning,
   premiumRugCleaning,
@@ -19,7 +18,6 @@ const all: SeoLanding[] = [
   curtainCleaning,
   mattressCleaning,
   centralAcCleaning,
-  windowCleaning,
 ];
 
 export const seoLandings: Record<string, SeoLanding> = Object.fromEntries(

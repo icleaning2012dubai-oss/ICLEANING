@@ -41,11 +41,6 @@ export const sectionImages: Record<string, Record<string, string>> = {
     'professional-central-ac-cleaning': '/images/ac/gluboka.webp',
     'central-ac-scope': '/images/ac/standart.webp',
   },
-  'window-cleaning': {
-    'window-at-home': '/images/cleaning/legka.webp',
-    'window-materials-methods': '/images/cleaning/poverhna.webp',
-    'professional-window-cleaning': '/images/cleaning/okna.webp',
-  },
 };
 
 export function getSectionImage(slug: string, sectionId: string): string | undefined {
